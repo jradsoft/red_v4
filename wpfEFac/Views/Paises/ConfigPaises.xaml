@@ -1,0 +1,39 @@
+﻿<Page x:Class="wpfEFac.ConfigPaises"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="285" d:DesignWidth="620"
+	Title="ConfigPaises" Loaded="Page_Loaded">
+
+    <Grid>
+        <GroupBox Header="Paises" Name="groupBox1" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="26"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Content="Nuevo País" Height="23" HorizontalAlignment="Right" Margin="522,1,0,0" Name="bttNuevoPais" VerticalAlignment="Top" Width="75" Click="bttNuevoPais_Click" />
+                <TextBlock Grid.Row="1" Grid.RowSpan="2" Height="23" HorizontalAlignment="Center" Margin="0,0,0,0" Name="txbPrevioSiguiente" Text="Previo 123456789 Siguiente" VerticalAlignment="Top" />
+                <DataGrid AutoGenerateColumns="False" Grid.Row="2" Height="211" HorizontalAlignment="Stretch" Name="dtgPaises" VerticalAlignment="Top">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn x:Name="strID" Binding="{Binding Path=strID}" Header="ID" Width="30"/>
+                        <DataGridTextColumn x:Name="strNombre" Binding="{Binding Path=strNombrePais}" Header="Nombre" Width="300"/>
+                        <DataGridTemplateColumn Header="Opciones" Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Name="bttEditar" Click="bttEditar_Click">Editar</Button>
+                                        <Button>Borrar</Button>
+                                    </StackPanel>                                   
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>                                
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Page>

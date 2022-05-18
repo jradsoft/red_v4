@@ -1,0 +1,92 @@
+﻿<Window x:Class="wpfEFac.Views.EMail.Email"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:wpfEFac.ViewModel"
+        Title="Email" Height="500" Width="600" 
+        Icon="/wpfEFac;component/Images/Icons/emailCFD.ico"
+        >
+    <Window.Resources>
+        <vm:EmailViewModel x:Key="EmailViewModel" />
+    </Window.Resources>
+
+    <Grid x:Name="LayoutRoot" DataContext="{StaticResource EmailViewModel}">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF6693D1" Offset="1" />
+                <GradientStop Color="White" Offset="0.098" />
+                <GradientStop Color="#FFEBF0F7" Offset="0.607" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90*" />
+            <ColumnDefinition Width="70*" />
+            <ColumnDefinition Width="70*" />
+            <ColumnDefinition Width="70*" />
+            <ColumnDefinition Width="70*" />
+            <ColumnDefinition Width="100*" />
+            <ColumnDefinition Width="100*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32*" />
+            <RowDefinition Height="32*" />
+            <RowDefinition Height="32*" />
+            <RowDefinition Height="34*" />
+            <RowDefinition Height="294*" />
+            <RowDefinition Height="37*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="Collapsed">De:</TextBlock>
+
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="4" VerticalAlignment="Center"
+                   ToolTip="Direccion de correo con la que se enviara el correo electronico"
+                   Margin="5" Text="{Binding Path=FromEmail}"/>
+
+        <TextBlock Text="Para:" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center"
+                ToolTip="Presione para elegir de las cuentas de correos de clientes almacenadas en la base de datos" />
+
+        <TextBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" VerticalAlignment="Center"
+                 Margin="5" HorizontalScrollBarVisibility="Auto" x:Name="txtEmailCliente" 
+                 ToolTip="Ingrese cuentas de correo electronico separadas por una ';'" />
+
+        <TextBlock Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" >Asunto:</TextBlock>
+
+        <TextBox Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="5" VerticalAlignment="Center"
+                 Margin="5" HorizontalScrollBarVisibility="Auto" 
+                 ToolTip="Escriba el asunto del correo electronico" Text="{Binding Path=Subject, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Border Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"
+                ToolTip="Archivos adjuntos">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Adjuntos</TextBlock>
+                <Image HorizontalAlignment="Center" Stretch="Fill" Source="/wpfEFac;component/Images/attachement.ico" />
+            </StackPanel>
+        </Border>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="6">
+            <StackPanel Name="stpXmlAttachment" Orientation="Horizontal"
+                    ToolTip="Archivo XML a ser enviado">
+                <Image Source="/wpfEFac;component/Images/Icons/doc_xml_icon.png" Grid.Column="1" Grid.Row="3" />
+                <TextBlock Text="{Binding Path=XMLAttachement}" VerticalAlignment="Center" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                    ToolTip="Archivo PDF a ser enviado">
+                <Image Source="/wpfEFac;component/Images/Icons/pdfIcon.png" Grid.Column="1" Grid.Row="3" />
+                <TextBlock Text="{Binding Path=PDFAttachement}" VerticalAlignment="Center" />
+            </StackPanel>
+        </StackPanel>
+
+        <TextBox Grid.Row="4" Grid.ColumnSpan="7" Margin="5" TextWrapping="Wrap" 
+                 AcceptsTab="True" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
+                 Text="{Binding Path=Message}"
+                 ToolTip="Escriba el mensaje del correo electronico" />
+
+        <Button Content="Enviar" Grid.Row="5" Grid.Column="4" VerticalAlignment="Center" Visibility="Collapsed"
+                Margin="5" ToolTip="Presione para enviar el correo electronico a las direcciones de correo electronico escritas"
+                Command="{Binding Path=SendEmailCommand}" />
+
+        <Button Content="Cancelar" Grid.Row="5" Grid.Column="6" VerticalAlignment="Center" 
+                Margin="5" ToolTip="Presione para cancelar y no enviar el correo electronico" Click="Button_Click" />
+        <Button Content="Enviar Email" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="5" Height="23" HorizontalAlignment="Left" Margin="5" Name="cmdEnviarEmail" VerticalAlignment="Top" Width="75" Click="cmdEnviarEmail_Click" />
+    </Grid>
+</Window>

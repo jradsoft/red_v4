@@ -1,0 +1,707 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8C8DA560-81BC-4100-B11A-F567B9694DA3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>wpfEFac</RootNamespace>
+    <AssemblyName>wpfEFac</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight.Extras.WPF4">
+      <HintPath>..\..\..\Program Files\Laurent Bugnion (GalaSoft)\Mvvm Light Toolkit\Binaries\WPF4\GalaSoft.MvvmLight.Extras.WPF4.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.WPF4">
+      <HintPath>..\..\..\Program Files\Laurent Bugnion (GalaSoft)\Mvvm Light Toolkit\Binaries\WPF4\GalaSoft.MvvmLight.WPF4.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip.CF, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Ionic.Zip.CF.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.Office.Interop.Excel\15.0.0.0__71e9bce111e9429c\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SQLite, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Laurent Bugnion (GalaSoft)\Mvvm Light Toolkit\Binaries\WPF4\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Helpers\AddendaEntry.cs" />
+    <Compile Include="Helpers\BannerTotales.cs" />
+    <Compile Include="Helpers\CarritoComprasEntry.cs" />
+    <Compile Include="Helpers\CFDReporte.cs" />
+    <Compile Include="Helpers\ConceptoPreFactura.cs" />
+    <Compile Include="Helpers\ConvertidorNumeroLetra.cs" />
+    <Compile Include="Helpers\Detalle_PreFactura.cs" />
+    <Compile Include="Helpers\EntityEnum.cs" />
+    <Compile Include="Helpers\ExtensionsMethods.cs" />
+    <Compile Include="Helpers\Validador.cs" />
+    <Compile Include="Models\AgregarProductosViewModels.cs" />
+    <Compile Include="Models\BusClientes.cs" />
+    <Compile Include="Models\Cat.cs" />
+    <Compile Include="Models\CFDModels.cs" />
+    <Compile Include="Models\ConnectorImportCsv.cs" />
+    <Compile Include="Models\ConnectorImportSAE40.cs" />
+    <Compile Include="Models\ConnectorOleDb.cs" />
+    <Compile Include="Models\ConnectorSave.cs" />
+    <Compile Include="Models\ConnectorTypes.cs" />
+    <Compile Include="Models\DataCompPago.cs" />
+    <Compile Include="Models\DataGridCP.cs" />
+    <Compile Include="Models\dataCartaPorte.cs" />
+    <Compile Include="Models\DataClientes.cs" />
+    <Compile Include="Models\DataFacturas.cs" />
+    <Compile Include="Models\DataGrupos.cs" />
+    <Compile Include="Models\DataPaises.cs" />
+    <Compile Include="Models\DataPreFactura.cs" />
+    <Compile Include="Models\DataProductos.cs" />
+    <Compile Include="Models\dataServParCons.cs" />
+    <Compile Include="Models\DataUsuario.cs" />
+    <Compile Include="Models\DataVehiculos.cs" />
+    <Compile Include="Models\EditarClienteViewModel.cs" />
+    <Compile Include="Models\EditarEmpresaViewModel.cs" />
+    <Compile Include="Models\EditarGrupoViewModels.cs" />
+    <Compile Include="Models\EditarPaisViewModels.cs" />
+    <Compile Include="Models\EditarProductosViewModel.cs" />
+    <Compile Include="Models\EditarUsuarioViewModel.cs" />
+    <Compile Include="Models\EditarVehiculoViewModel.cs" />
+    <Compile Include="Models\eFacDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eFacDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmpresaData.cs" />
+    <Compile Include="Models\Identifier.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\MailSender.cs" />
+    <Compile Include="Models\PreFacturaViewModel.cs" />
+    <Compile Include="Models\ProductoData.cs" />
+    <Compile Include="Models\PuntoVentaViewModel.cs" />
+    <Compile Include="Models\Relacionados.cs" />
+    <Compile Include="Models\RelayCommand.cs" />
+    <Compile Include="Models\ReporteMensual.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\WPFEmailer.cs" />
+    <Compile Include="Service References\wsAdesoftSecurity\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\EmailViewModel.cs" />
+    <Compile Include="Views\CFD\CFD.xaml.cs">
+      <DependentUpon>CFD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Clientes\AgregarCliente.xaml.cs">
+      <DependentUpon>AgregarCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Clientes\DirectorioClientes.xaml.cs">
+      <DependentUpon>DirectorioClientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Clientes\EditarCliente.xaml.cs">
+      <DependentUpon>EditarCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfigRegional.xaml.cs">
+      <DependentUpon>ConfigRegional.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Configuracion.xaml.cs">
+      <DependentUpon>Configuracion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EMail\Email.xaml.cs">
+      <DependentUpon>Email.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Empresa\ConfigEmpresa.xaml.cs">
+      <DependentUpon>ConfigEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Empresa\EditarEmpresa.xaml.cs">
+      <DependentUpon>EditarEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Empresa\Registro.xaml.cs">
+      <DependentUpon>Registro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\General\BuscarClienteWindow.xaml.cs">
+      <DependentUpon>BuscarClienteWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Grupos\AgregarGrupos.xaml.cs">
+      <DependentUpon>AgregarGrupos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Grupos\ConfigGrupos.xaml.cs">
+      <DependentUpon>ConfigGrupos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Grupos\EditarGrupo.xaml.cs">
+      <DependentUpon>EditarGrupo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ImportarDatos\ImportarDatos.xaml.cs">
+      <DependentUpon>ImportarDatos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Paises\AgregarPais.xaml.cs">
+      <DependentUpon>AgregarPais.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Paises\ConfigPaises.xaml.cs">
+      <DependentUpon>ConfigPaises.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Paises\EditarPais.xaml.cs">
+      <DependentUpon>EditarPais.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Productos\AgregarProductos.xaml.cs">
+      <DependentUpon>AgregarProductos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Productos\CategoriaWindow.xaml.cs">
+      <DependentUpon>CategoriaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Productos\ConfigCatalogo.xaml.cs">
+      <DependentUpon>ConfigCatalogo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Productos\EditarProducto.xaml.cs">
+      <DependentUpon>EditarProducto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Productos\UnidadMedidaWindow.xaml.cs">
+      <DependentUpon>UnidadMedidaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PuntoVenta\AddComentario.xaml.cs">
+      <DependentUpon>AddComentario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PuntoVenta\AddDataSPC.xaml.cs">
+      <DependentUpon>AddDataSPC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PuntoVenta\AddProductoWindow.xaml.cs">
+      <DependentUpon>AddProductoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PuntoVenta\CancelaCFDi.xaml.cs">
+      <DependentUpon>CancelaCFDi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PuntoVenta\DefaultPuntoVenta.xaml.cs">
+      <DependentUpon>DefaultPuntoVenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PuntoVenta\PaymentFactura.xaml.cs">
+      <DependentUpon>PaymentFactura.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PuntoVenta\PreFactura.xaml.cs">
+      <DependentUpon>PreFactura.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Regional\ConfigParametros.xaml.cs">
+      <DependentUpon>ConfigParametros.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Regional\EditarParametros.xaml.cs">
+      <DependentUpon>EditarParametros.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReporteMensual\ReporteMensual.xaml.cs">
+      <DependentUpon>ReporteMensual.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Usuarios\AgregarUsuarios.xaml.cs">
+      <DependentUpon>AgregarUsuarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Usuarios\ConfigUsuarios.xaml.cs">
+      <DependentUpon>ConfigUsuarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Usuarios\EditarUsuario.xaml.cs">
+      <DependentUpon>EditarUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vehiculos\AgregarVehiculo.xaml.cs">
+      <DependentUpon>AgregarVehiculo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vehiculos\ConfigVehiculos.xaml.cs">
+      <DependentUpon>ConfigVehiculos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vehiculos\EditarVehiculo.xaml.cs">
+      <DependentUpon>EditarVehiculo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VinculosInteres\PdfViewer.xaml.cs">
+      <DependentUpon>PdfViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VinculosInteres\Vinculos.xaml.cs">
+      <DependentUpon>Vinculos.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\Acordion.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\CFD\CFD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Clientes\AgregarCliente.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Clientes\DirectorioClientes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Clientes\EditarCliente.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ConfigRegional.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Configuracion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EMail\Email.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Empresa\ConfigEmpresa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Empresa\EditarEmpresa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Empresa\Registro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\General\BuscarClienteWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Grupos\AgregarGrupos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Grupos\ConfigGrupos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Grupos\EditarGrupo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ImportarDatos\ImportarDatos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Login\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Paises\AgregarPais.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Paises\ConfigPaises.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Paises\EditarPais.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Productos\AgregarProductos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Productos\CategoriaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Productos\ConfigCatalogo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Productos\EditarProducto.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Productos\UnidadMedidaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PuntoVenta\AddComentario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PuntoVenta\AddDataSPC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PuntoVenta\AddProductoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PuntoVenta\CancelaCFDi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PuntoVenta\DefaultPuntoVenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PuntoVenta\PaymentFactura.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PuntoVenta\PreFactura.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Regional\ConfigParametros.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Regional\EditarParametros.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReporteMensual\ReporteMensual.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Usuarios\AgregarUsuarios.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Usuarios\ConfigUsuarios.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Usuarios\EditarUsuario.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Vehiculos\AgregarVehiculo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Vehiculos\ConfigVehiculos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Vehiculos\EditarVehiculo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VinculosInteres\PdfViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VinculosInteres\Vinculos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\bin\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ComprobanteFiscalDigital.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReciboArrendamiento.rdlc" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Debug\eFacDB.db" />
+    <None Include="bin\Debug\Pagos10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Models\eFacDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>eFacDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\wpfEFac.Helpers.Detalle_PreFactura.datasource" />
+    <None Include="Properties\DataSources\wpfEFac.Models.eFacDBEntities.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\wsAdesoftSecurity\ServiceSecurity.wsdl" />
+    <None Include="Service References\wsAdesoftSecurity\ServiceSecurity.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsAdesoftSecurity\ServiceSecurity1.wsdl" />
+    <None Include="Service References\wsAdesoftSecurity\ServiceSecurity1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsAdesoftSecurity\ServiceSecurity2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsAdesoftSecurity\wpfEFac.wsAdesoftSecurity.InfoSocialMedia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsAdesoftSecurity\wpfEFac.wsAdesoftSecurity.SegUserSession.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\shoppingcart_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\doc_xml_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\pdfIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\save.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\ReportImages\" />
+    <Folder Include="Views\Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CursorIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\1280363786_people.ico" />
+    <Resource Include="Images\Icons\1280363818_client.ico" />
+    <Resource Include="Images\Icons\1280363830_web.ico" />
+    <Resource Include="Images\Icons\1280363854_shopping.ico" />
+    <Resource Include="Images\Icons\1280363917_book.ico" />
+    <Resource Include="Images\Icons\1280363995_home.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\1280356387_Settings.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CFDIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\EFacIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\IconoEFacWindow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Marquesina.jpg" />
+    <SplashScreen Include="Images\moto_0118.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\addCFD.ico" />
+    <Resource Include="Images\Icons\approveCFD.ico" />
+    <Resource Include="Images\Icons\cancelCFD.ico" />
+    <Resource Include="Images\Icons\deleteCFD.ico" />
+    <Resource Include="Images\Icons\editCFD.ico" />
+    <Resource Include="Images\Icons\emailCFD.ico" />
+    <Resource Include="Images\Icons\printCFD.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\certificatesCFD.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\txtReportCFD.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Paper-arrow-back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AddProduct.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AddUser.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\homeEmpresa Editar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\attachement.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dlleFac\dlleFac.csproj">
+      <Project>{3ADB0213-A5F0-4E9C-A6F4-272B77236CA6}</Project>
+      <Name>dlleFac</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenCode128\GenCode128.csproj">
+      <Project>{32817BF9-E380-4467-9C7F-936F4B122BC7}</Project>
+      <Name>GenCode128</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QRCodeLib\QRCodeLib.csproj">
+      <Project>{E98126B2-AF17-4783-96B9-856D6744DCA3}</Project>
+      <Name>QRCodeLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bin\Debug\impresionF.xslt">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bin\Debug\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\wsAdesoftSecurity\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsAdesoftSecurity\ServiceSecurity.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsAdesoftSecurity\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsAdesoftSecurity\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsAdesoftSecurity\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\calendar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\camion.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

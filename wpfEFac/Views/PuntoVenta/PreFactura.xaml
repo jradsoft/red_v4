@@ -1,0 +1,1224 @@
+﻿<Page x:Class="wpfEFac.Views.PuntoVenta.PreFactura"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:toolkit="http://schemas.microsoft.com/wpf/2008/toolkit"
+        xmlns:toolkit_input="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"  
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d"
+        d:DesignHeight="600"
+        d:DesignWidth="1650"
+        Loaded="Page_Loaded"
+        Title="Pre Factura" 
+      >
+    <Grid >
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF6693D1" Offset="1" />
+                <GradientStop Color="White" Offset="0.098" />
+                <GradientStop Color="#FFEBF0F7" Offset="0.607" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="560*" />
+            
+            <ColumnDefinition Width="179*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            
+            <RowDefinition Height="190*" />
+            <RowDefinition Height="110*" />
+            <RowDefinition Height="250*" />
+            <RowDefinition Height="40" />
+            
+        </Grid.RowDefinitions>
+        <!--Datos de Factura-->
+
+        
+
+        
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Margin="1,0,0,90" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="152*" />
+                
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500*" />
+                <ColumnDefinition Width="300*" />
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Header="Emisor" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="grpDatosFiscales" Grid.RowSpan="2">
+                    <Grid x:Name="grdEmpresa">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="22" />
+                            <RowDefinition Height="22" />
+                            <RowDefinition Height="22" />
+                            <RowDefinition Height="22" />
+                            <RowDefinition Height="22" />
+                            <RowDefinition Height="22" />
+                            <RowDefinition Height="22" />
+                            <RowDefinition Height="22" />
+                        <RowDefinition Height="22" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="0">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Serie:" Width="75" />
+                        <TextBox x:Name="txtSerie" HorizontalAlignment="Center" VerticalAlignment="Top" Text="" Height="23"  Width="225" />
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Folio:" Width="100"/>
+                        <TextBox x:Name="txtFolio" HorizontalAlignment="Center" VerticalAlignment="Top" Text="" Height="23"  Width="200" />
+                        <TextBlock HorizontalAlignment="Center" Visibility="Collapsed" x:Name="txbBusarExcel" VerticalAlignment="Top" Text="Buscar Excel:" Width="70"/>
+                        <Button  VerticalAlignment="Center" Name="bttBuscarExcel" Visibility="Collapsed" Content="Buscar..." Width="50" Height="30" Click="bttBuscarExcel_Click"/>
+                        <TextBlock HorizontalAlignment="Center" Visibility="Collapsed" x:Name="txbBusarXML" VerticalAlignment="Top" Text="Buscar XML:" Width="70"/>
+                        <Button  VerticalAlignment="Center" Name="bttBuscarXML" Visibility="Collapsed" Content="Buscar..." Width="50" Height="30" Click="bttBuscarXML_Click"/>
+                        <TextBlock HorizontalAlignment="Center" Visibility="Collapsed" x:Name="txbBusarPDF" VerticalAlignment="Top" Text="Buscar PDF:" Width="70"/>
+                        <Button  VerticalAlignment="Center" Name="bttBuscarPDF" Visibility="Collapsed" Content="Buscar..." Width="50" Height="30" Click="bttBuscarPDF_Click"/>
+                    </StackPanel>
+
+                   
+                    
+                    <StackPanel Orientation="Horizontal" Grid.Row="1">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Metodo pago:" Width="75" />
+                        <ComboBox VerticalAlignment="Center" x:Name="cmbMetodoPago" SelectedIndex="0" Width="225">
+                        <ComboBoxItem>
+                            <TextBlock>PUE-PAGO EN UNA SOLA EXHIBICION</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>PPD-PAGO EN PARCIALIDADES</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Cond. pago:" Width="100"/>
+                        <TextBox x:Name="txtCondicionesPago" HorizontalAlignment="Center" VerticalAlignment="Top" Text="" Height="23"  Width="200" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Forma Pago:" Width="75" />
+
+                        <ComboBox VerticalAlignment="Center" x:Name="cmbFormaPago" SelectedIndex="0" Width="225">
+                            <ComboBoxItem>
+                                <TextBlock>01-EFECTIVO</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>02-CHEQUE NOMINATIVO</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>03-TRANSFERENCIA ELECTRONICA  DE FONDOS</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>04-TARJETA DE CREDITO</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>05-MONEDERO ELECTRONICO</TextBlock>
+                            </ComboBoxItem>
+
+                            <ComboBoxItem>
+                                <TextBlock>06-DINERO ELECTRONICO</TextBlock>
+                            </ComboBoxItem>
+
+
+                            <ComboBoxItem>
+                                <TextBlock>08-VALES DE DESPENSA</TextBlock>
+                            </ComboBoxItem>
+
+                            <ComboBoxItem>
+                                <TextBlock>12-DACION EN PAGO</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>13-PAGO POR SUBROGACION</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>14-PAGO POR CONSIGNACION</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>15-CONDONACION</TextBlock>
+                            </ComboBoxItem>
+
+                            <ComboBoxItem>
+                                <TextBlock>17-COMPENSACION</TextBlock>
+                            </ComboBoxItem>
+
+                            <ComboBoxItem>
+                                <TextBlock>23-NOVACION</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>24-CONFUSION</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>25-REMISION DE DEUDA</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>26-PREINSCRIPCION O CADUDIDAD</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>27-A SATISFACCION DEL ACREDOR</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>28-TARJETA DE DEBITO</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>29-TARJETA DE SERVICIO</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>30-APLICACION DE ANTICIPOS</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>31-INTERMEDIARIOS PAGO</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>99-POR DEFINIR</TextBlock>
+                            </ComboBoxItem>
+                        </ComboBox>
+
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Uso de CFDI:" Width="100"/>
+                        <!--<TextBox x:Name="txtTipoCambio" HorizontalAlignment="Center" VerticalAlignment="Top" Text="1.0000" Height="23"  Width="200" />-->
+                        <ComboBox VerticalAlignment="Center" x:Name="cmbUsoCfdi" SelectedIndex="2" Width="200">
+                            <ComboBoxItem>
+                                <TextBlock>G01-ADQUISICIÓN DE MERCANCÍAS</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>G02-DEVOLUCIONES, DESCUENTOS O BONIFICACIONES</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>G03-GASTOS EN GENERAL</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>I01-CONSTRUCCIONES</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>I02-MOBILARIO Y EQUIPO DE OFICINA POR INVERSIONES</TextBlock>
+                            </ComboBoxItem>
+
+                            <ComboBoxItem>
+                                <TextBlock>I03-EQUIPO DE TRANSPORTE</TextBlock>
+                            </ComboBoxItem>
+
+
+                            <ComboBoxItem>
+                                <TextBlock>I04-EQUIPO DE COMPUTO Y ACCESORIOS</TextBlock>
+                            </ComboBoxItem>
+
+                            <ComboBoxItem>
+                                <TextBlock>I05-DADOS, TROQUELES, MOLDES, MATRICES Y HERRAMENTAL</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>I06-COMUNICACIONES TELEFÓNICAS</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>I07-COMUNICACIONES SATELITALES</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>I08-OTRA MAQUINARIA Y EQUIPO</TextBlock>
+                            </ComboBoxItem>
+
+                            <ComboBoxItem>
+                                <TextBlock>D01-HONORARIOS MÉDICOS, DENTALES Y GASTOS HOSPITALARIOS.</TextBlock>
+                            </ComboBoxItem>
+
+                            <ComboBoxItem>
+                                <TextBlock>D02-GASTOS MÉDICOS POR INCAPACIDAD O DISCAPACIDAD</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>D03-GASTOS FUNERALES.</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>D04-DONATIVOS.</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>D05-INTERESES REALES EFECTIVAMENTE PAGADOS POR CRÉDITOS HIPOTECARIOS (CASA HABITACIÓN).</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>D06-APORTACIONES VOLUNTARIAS AL SAR.</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>D07-PRIMAS POR SEGUROS DE GASTOS MÉDICOS.</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>D08-GASTOS DE TRANSPORTACIÓN ESCOLAR OBLIGATORIA.</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>D09-DEPÓSITOS EN CUENTAS PARA EL AHORRO, PRIMAS QUE TENGAN COMO BASE PLANES DE PENSIONES.</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>D10-PAGOS POR SERVICIOS EDUCATIVOS (COLEGIATURAS)</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>S01-SIN EFECTOS FISCALES</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>CP01-PAGOS</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>CN01-NOMINA</TextBlock>
+                            </ComboBoxItem>
+                        </ComboBox>
+
+                        <TextBlock HorizontalAlignment="Center" x:Name="txbTipoRelacion" VerticalAlignment="Top" Text="Tipo de relación:" Width="100" Visibility="Collapsed"/>
+
+                        <ComboBox VerticalAlignment="Center" x:Name="cmbTipoRelacion" SelectedIndex="0" Width="225" Visibility="Collapsed">
+                            <ComboBoxItem>
+                                <TextBlock>01-NOTAS DE CRÉDITO DE DOCUMENTOS RELACIONADOS</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>02-NOTAS DE DÉBITO DE LOS DOCUMENTOS RELACIONADOS</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>03-DEVOLUCIÓN DE MERCANCÍAS SOBRE FACTURAS O TRASLADOS PREVIOS</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>04-SUSTITUCIÓN DE LOS CFDI PREVIOS</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>05-TRASLADOS DE MERCANCÍAS FACTURADOS PREVIAMENTE</TextBlock>
+                            </ComboBoxItem>
+
+                            <ComboBoxItem>
+                                <TextBlock>06-FACTURA GENERADA POR LOS TRASLADOS PREVIOS</TextBlock>
+                            </ComboBoxItem>
+
+
+                            <ComboBoxItem>
+                                <TextBlock>07-CFDI POR APLICACIÓN DE ANTICIPO</TextBlock>
+                            </ComboBoxItem>
+
+                            <ComboBoxItem>
+                                <TextBlock>08-FACTURAS GENERADAS POR PAGOS EN PARCIALIDADES</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>09-FACTURA GENERADA POR PAGOS DIFERIDOS</TextBlock>
+                            </ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="3">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Divisa:" Width="50" />
+                        <TextBox x:Name="txtDivisa" Width="50"/>
+                        <TextBlock HorizontalAlignment="Center" Visibility="Visible" VerticalAlignment="Top" Text="TC:" Width="20"/>
+                        <TextBox x:Name="txtTipoCambio" HorizontalAlignment="Center" Visibility="Visible" VerticalAlignment="Top" Text="1.0000" Height="23"  Width="50" />
+                        
+                        <TextBlock VerticalAlignment="Top" Text="Comp CartaPorte:" x:Name="txbChkAddCCP" />
+                        <CheckBox x:Name="chbAddCCP" Unchecked="chbAddCCP_Unchecked" Checked="chbAddCCP_Checked" VerticalAlignment="Center" />
+
+                        <TextBlock VerticalAlignment="Top" Text="Factoraje:" x:Name="txbChkaddXML" />
+                        <CheckBox x:Name="chbAddFactoraje" Unchecked="chbAddFactoraje_Unchecked" Checked="chbAddFactoraje_Checked" VerticalAlignment="Center" />
+
+                        <TextBlock VerticalAlignment="Top" Text="serv par const:" x:Name="txbChkspc" />
+                        <CheckBox x:Name="chbSPC" Unchecked="chbSPC_Unchecked" Checked="chbSPC_Checked" VerticalAlignment="Center" />
+
+
+                    </StackPanel>
+
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Left" x:Name="spPermisos" Visibility="Collapsed">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Permiso SCT:"  />
+                        <ComboBox x:Name="txtPermisoSCT" SelectedIndex="0" Width="50" >
+
+                            <ComboBoxItem>
+                                <TextBlock>TPAF01-Autotransporte Federal de carga general</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>TPAF02-Transporte privado de carga</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>TPAF03-Autotransporte Federal de Carga Especializada de materiales y residuos peligrosos</TextBlock>
+                            </ComboBoxItem>
+                        </ComboBox>
+                        
+                       
+
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="No permiso SCT:" />
+                        <TextBox x:Name="txtNoPermSCT" HorizontalAlignment="Center" VerticalAlignment="Top" Text="654321" Height="23"  Width="80" />
+
+                        <TextBlock Text="Aseguradora Reponsabilidad civil:" />
+                        <TextBox x:Name="txtAeguraRespCivil" HorizontalAlignment="Center" VerticalAlignment="Top" Text="QUALITAS" Height="23"  Width="80" />
+
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Poliza Resp Civil:" />
+                        <TextBox x:Name="txtPolRespCivil" HorizontalAlignment="Center" VerticalAlignment="Top" Text="123456" Height="23"  Width="80" />
+
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Aseguradora Carga:" />
+                        <TextBox x:Name="txtAseguraCarga" HorizontalAlignment="Center" VerticalAlignment="Top" Text="123456" Height="23"  Width="80" />
+
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="5" HorizontalAlignment="Left" x:Name="spVehiculo" Visibility="Collapsed">
+                        <TextBlock  Text="Placa:"  />
+                        <toolkit_input:AutoCompleteBox x:Name="atcVehiculoTracto" Height="25" Width="100"
+                                                           ValueMemberPath="strPlaca" FilterMode="Contains"
+                                                           SelectionChanged="atcVehiculoTracto_SelectionChanged" ToolTip="Escriba la Placa de la Unidad y se despliega una lista de opciones posibles"
+                                                           Loaded="atcVehiculoTracto_Loaded" VerticalAlignment="Top"
+                                                           
+                                                       >
+
+                            <toolkit_input:AutoCompleteBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Height="Auto" Width="200">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+
+                                        </Grid.RowDefinitions>
+
+
+                                        <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding strPlaca}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+                                    </Grid>
+                                </DataTemplate>
+                            </toolkit_input:AutoCompleteBox.ItemTemplate>
+
+
+                        </toolkit_input:AutoCompleteBox>
+                        <!--<TextBox x:Name="txtPlaca"  Width="50"/>-->
+
+                        <TextBlock  Text="Configuracion vehicular:" />
+                        <!--<TextBox x:Name="cmbConfVehi"  Width="80" >C2</TextBox>-->
+                        <ComboBox x:Name="cmbConfVehi" SelectedIndex="0" Width="80" ></ComboBox>
+
+                        <TextBlock Text="Año/Modelo:" />
+                        <TextBox x:Name="txtAnoModel"  Height="23"  Width="80" />
+
+                        <TextBlock Text="NumeroPedimento:" Visibility="Collapsed" />
+                        <TextBox x:Name="txtNumPedimento" Visibility="Collapsed"  Text="01" Height="23"  Width="80" />
+
+                        <TextBlock Text="Peso neto Total:" />
+                        <TextBox x:Name="txtPesoNetoTotal"  Text="0.00" Height="23"  Width="80" />
+                        <TextBlock Text="Unidad Peso:" />
+                        <ComboBox x:Name="cmbUnidadPeso" SelectedIndex="0" Width="80" ></ComboBox>
+                        <!--<TextBox x:Name="txtUnidadMedida"  Text="" Height="23"  Width="80" />-->
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="6" x:Name="spRemolque"  Visibility="Collapsed"
+                                >
+                        <TextBlock  Text="Proveedor:" Width="58"  Visibility="Collapsed"/>
+                        <TextBox x:Name="txtProveeedor" Width="124" Visibility="Collapsed"/>
+
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Pedido:" Width="40" Visibility="Collapsed"/>
+                        <TextBox x:Name="txtPedido" HorizontalAlignment="Center" VerticalAlignment="Top" Text="" Visibility="Collapsed" Height="23"  Width="150" />
+
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="CC:" Width="20" Visibility="Collapsed"/>
+                        <TextBox x:Name="txtCC" HorizontalAlignment="Center" VerticalAlignment="Top" Text="" Height="23"  Width="200" Visibility="Collapsed" />
+
+                        <TextBlock FontWeight="Normal">Placa</TextBlock>
+                        <toolkit_input:AutoCompleteBox x:Name="atcVehiculoRemolque" Height="25" Width="100"
+                                                           ValueMemberPath="strPlaca" FilterMode="Contains"
+                                                           SelectionChanged="atcVehiculoRemolque_SelectionChanged" ToolTip="Escriba la Placa del Remolque y se despliega una lista de opciones posibles"
+                                                           Loaded="atcVehiculoTracto_Loaded" VerticalAlignment="Top"
+                                                           
+                                                       >
+
+                            <toolkit_input:AutoCompleteBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Height="Auto" Width="200">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+
+                                        </Grid.RowDefinitions>
+
+
+                                        <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding strPlaca}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+                                    </Grid>
+                                </DataTemplate>
+                            </toolkit_input:AutoCompleteBox.ItemTemplate>
+
+
+                        </toolkit_input:AutoCompleteBox>
+
+                        <!--<TextBox x:Name="txtPlacaRemolque" Width="102"></TextBox>-->
+                        <TextBlock>Tipo Remolque</TextBlock>
+                        <ComboBox VerticalAlignment="Center" x:Name="cmbTipoRemolque" SelectedIndex="0" Width="50"></ComboBox>
+                        <Button x:Name="btnSaveRemolque" Click="btnSaveRemolque_Click"  Height="26" Width="150">
+                            <Button.Content>
+                                <StackPanel Background="Transparent" Orientation="Horizontal">
+                                    <Image Source="/wpfEFac;component/Images/Icons/save.ico" />
+                                    <TextBlock Background="Transparent"> Guardar Remolque</TextBlock>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="7" HorizontalAlignment="Left" x:Name="spUnidad" Visibility="Collapsed">
+                       
+                        <TextBlock  Text="Ubi-Oper:" />
+                        <ComboBox x:Name="cmbUbicaciones" SelectedIndex="0" Width="80" Visibility="Collapsed" ></ComboBox>
+
+                        <toolkit_input:AutoCompleteBox x:Name="atcUbicaciones" Height="25" Width="100"
+                                                           ValueMemberPath="strNombreComercial" FilterMode="Contains"
+                                                           SelectionChanged="atcUbicaciones_SelectionChanged" ToolTip="Escriba la razon social y se despliega una lista de opciones posibles"
+                                                           Loaded="atcUbicaciones_Loaded" VerticalAlignment="Top"
+                                                           
+                                                       >
+
+                            <toolkit_input:AutoCompleteBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Height="Auto" Width="200">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                           
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                     
+                                        </Grid.RowDefinitions>
+                                        
+                                       
+                                        <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding strNombreComercial}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                        
+                                    </Grid>
+                                </DataTemplate>
+                            </toolkit_input:AutoCompleteBox.ItemTemplate>
+
+
+                        </toolkit_input:AutoCompleteBox>
+
+
+
+                        <TextBlock>Salida-Llegada</TextBlock>
+                        <DatePicker Name="dtpFechaSal_lleg"  Width="80" />
+                        <TextBlock>id Origen</TextBlock>
+                        <TextBox x:Name="txtIdOrigen" Width="100">OR000001</TextBox>
+                        <TextBlock>id Destino</TextBlock>
+                        <TextBox x:Name="txtIdDestino" Width="100">DE000001</TextBox>
+                        <TextBlock>Distancia Recorrida</TextBlock>
+                        <TextBox x:Name="txtDistRecoDes" Width="60"></TextBox>
+                        <Button x:Name="btnAddUbicacion" Click="btnAddUbicacion_Click" Height="20" Width="100">
+                            <Button.Content>
+                                <StackPanel Background="Transparent" Orientation="Horizontal">
+                                    
+                                    <TextBlock Background="Transparent"> Agregar</TextBlock>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+
+
+                    </StackPanel>
+                </Grid>
+                
+                
+            </GroupBox>
+            
+            <!--Datos Cliente-->
+            <StackPanel Grid.Column="1" Orientation="Vertical" Grid.RowSpan="2">
+                
+                <GroupBox Header="RECEPTOR" HorizontalAlignment="Stretch" Name="grpCliente"  Height="170" Width="Auto">
+                    
+                    <Grid x:Name="grdCliente" Width="Auto" HorizontalAlignment="Stretch" Height="160">
+                    
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25*" />
+                            <RowDefinition Height="25*" />
+                            <RowDefinition Height="25*" />
+                            <RowDefinition Height="35*" />
+                            <RowDefinition Height="35*" />
+                        </Grid.RowDefinitions>
+
+                        <Grid>
+                            
+                            <StackPanel Orientation="Horizontal">
+                                
+                               <toolkit_input:AutoCompleteBox x:Name="atcNombreCliente" Height="25" Width="200"
+                                                           ValueMemberPath="strRazonSocial" FilterMode="Contains"
+                                                           SelectionChanged="atcNombreCliente_SelectionChanged" ToolTip="Escriba la razon social y se despliega una lista de opciones posibles"
+                                                           Loaded="atcNombreCliente_Loaded" VerticalAlignment="Top"
+                                                              
+                                                              >
+                                <toolkit_input:AutoCompleteBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid Height="Auto" Width="200">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="25*" />
+                                                <RowDefinition Height="25*" />
+                                                <RowDefinition Height="25*" />
+                                                    <RowDefinition Height="25*" />
+                                                </Grid.RowDefinitions>
+                                            <StackPanel Grid.Column="0" Grid.RowSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                <TextBlock Text="n" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Webdings" FontWeight="Bold" />
+                                            </StackPanel>
+                                            <TextBlock Grid.Column="1" Grid.Row="0" Text="Razon Social: " FontWeight="Bold" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                                            <TextBlock Grid.Column="2" Grid.Row="0" Text="{Binding strRazonSocial}" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                                            <TextBlock Grid.Column="1" Grid.Row="1" Text="Nombre Comercial: " HorizontalAlignment="Right" Background="Transparent" VerticalAlignment="Center" />
+                                            <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding strNombreComercial}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                            <TextBlock Grid.Column="1" Grid.Row="2" Text="RFC: " Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                                            <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding strRFC}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </toolkit_input:AutoCompleteBox.ItemTemplate>
+                            </toolkit_input:AutoCompleteBox>
+
+                            <!--<myControls:AutoCompleteTextBox x:Name="atcNombreCliente" Height="23"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="1" ToolTip="Buscar cliente por nombre" />-->
+                            <!--<input:AutoCompleteBox Name="atcClientes" Height="25" />-->
+
+                            <Button Name="btnBuscarCliente" Click="btnBuscarCliente_Click" VerticalAlignment="Top" Width="100" ToolTip="Permite buscar un cliente especifico" Height="25">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/wpfEFac;component/Images/Icons/search.ico" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Buscar</TextBlock>
+                                </StackPanel>
+                            </Button>
+                            </StackPanel>
+                            
+                            
+                        </Grid>
+
+                        <!--<ComboBox Grid.Row="1" Height="25" IsEditable="True" StaysOpenOnEdit="True" >
+                        <TextBlock>Hello</TextBlock>
+                        <TextBlock>World</TextBlock>
+                        <TextBlock>This</TextBlock>
+                        <TextBlock>is</TextBlock>
+                        <TextBlock>Autocomplete</TextBlock>
+                        <TextBlock>Textbox</TextBlock>
+                    </ComboBox>-->
+
+                        <toolkit_input:AutoCompleteBox Grid.Row="1" x:Name="atcRFC" Height="25" ValueMemberPath="strRFC" FilterMode="Contains" SelectionChanged="atcRFC_SelectionChanged" ToolTip="Escriba el RFC y se le muestra una lista de opciones disponibles" Loaded="atcRFC_Loaded">
+                            <toolkit_input:AutoCompleteBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Height="Auto" Width="350">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="25*" />
+                                            <RowDefinition Height="25*" />
+                                            <RowDefinition Height="25*" />
+                                        </Grid.RowDefinitions>
+                                        <StackPanel Grid.Column="0" Grid.RowSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <TextBlock Text="n" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Webdings" FontWeight="Bold" />
+                                        </StackPanel>
+                                        <TextBlock Grid.Column="1" Grid.Row="0" Text="Razon Social: " FontWeight="Bold" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                                        <TextBlock Grid.Column="2" Grid.Row="0" Text="{Binding strRazonSocial}" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                                       
+                                        <TextBlock Grid.Column="1" Grid.Row="1" Text="Nombre Comercial: " HorizontalAlignment="Right" Background="Transparent" VerticalAlignment="Center" />
+                                        <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding strNombreComercial}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                        
+                                        <TextBlock Grid.Column="1" Grid.Row="2" Text="RFC: " Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                                        <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding strRFC}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                    </Grid>
+                                </DataTemplate>
+                            </toolkit_input:AutoCompleteBox.ItemTemplate>
+                        </toolkit_input:AutoCompleteBox>
+
+                        <!--<TextBox Grid.Row="1" x:Name="txtRFCCliente" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" />-->
+                        <!--<StackPanel Grid.Row="2">-->
+                        <TextBox x:Name="txtDomicilioCliente" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" TextWrapping="Wrap" AcceptsReturn="True" Height="25" IsReadOnly="True" Margin="0,0,0,0" Grid.RowSpan="2" />
+
+                        <StackPanel Grid.Row="3" Orientation="Horizontal" x:Name="spOrigen" Visibility="Collapsed">
+                            <TextBlock x:Name="lblOrigen" Visibility="Visible">Origen</TextBlock>
+                            <TextBox Width="250" Visibility="Visible" x:Name="txtOrigen"  Text ="" HorizontalAlignment="Stretch" VerticalAlignment="Top" TextWrapping="Wrap" AcceptsReturn="True" Height="25" IsReadOnly="False" Margin="0,0,0,0" Grid.RowSpan="2" />
+                        </StackPanel>
+                        <StackPanel Grid.Row="4" Orientation="Horizontal" x:Name="spRecoger" Visibility="Collapsed">
+                            <TextBlock x:Name="lblRecogerEn" Visibility="Visible" >Recoger en</TextBlock>
+
+                            <TextBox Width="250" Visibility="Visible" x:Name="txtRecogerEn" Grid.Row="4" Text="" HorizontalAlignment="Stretch" VerticalAlignment="Top" TextWrapping="Wrap" AcceptsReturn="True" Height="25" IsReadOnly="False" Margin="0,0,0,0" Grid.RowSpan="2" />
+                        </StackPanel>
+                            <!--<TextBlock>Partida:</TextBlock>
+                        <TextBox Name="txtPartida" ></TextBox>-->
+                        <!--</StackPanel>-->
+                    </Grid>
+                </GroupBox>
+                
+
+            </StackPanel>
+            
+        </Grid>
+        
+        
+
+        <!--Forma de pago-->
+        <Border Grid.Row="2" Grid.ColumnSpan="3" Margin="0,0,169,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="304*" />
+                    <ColumnDefinition Width="131*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </Border>
+
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="433"> </ColumnDefinition>
+                    <ColumnDefinition Width="33*"></ColumnDefinition>
+                    <ColumnDefinition Width="33*"></ColumnDefinition>
+                    
+                </Grid.ColumnDefinitions>
+                <DataGrid x:Name="dtgUbicaciones" Visibility="Collapsed" Grid.Row="1"   IsReadOnly="True"  ItemsSource="{Binding MyData}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Foreground="Black" Width="*" Header="intID" Binding="{Binding intID, Mode=TwoWay}" Visibility="Visible" IsReadOnly="false" />
+                        <DataGridTextColumn Foreground="Black" Width="*" Header="RFC" Binding="{Binding strRFC, Mode=TwoWay}" IsReadOnly="false" />
+                        <DataGridTextColumn Foreground="Black" Width="*" Header="Nombre" Binding="{Binding strRazonSocial, Mode=TwoWay}"  IsReadOnly="false" />
+                        <DataGridTextColumn Foreground="Black" Width="*" Header="Descripcion" Binding="{Binding strDescripcion, Mode=TwoWay}" IsReadOnly="false" />
+                        <DataGridTextColumn Foreground="Black" Width="*" Header="Tipo"  Binding="{Binding strTipo, Mode=TwoWay}" IsReadOnly="false"/>
+                        <DataGridTextColumn Foreground="Black" Width="*" Header="Fecha"  Binding="{Binding dtmFecha, Mode=TwoWay}" IsReadOnly="false"/>
+                        <DataGridTextColumn Foreground="Black" Width="*" Header="idOrigen"  Binding="{Binding idOrigen, Mode=TwoWay}" IsReadOnly="false"/>
+                        <DataGridTextColumn Foreground="Black" Width="*" Header="idDestino"  Binding="{Binding idDestino, Mode=TwoWay}" IsReadOnly="false"/>
+                        <DataGridTextColumn Foreground="Black" Width="*" Header="Distancia Recorrida"  Binding="{Binding dcmDistancia, Mode=TwoWay}" IsReadOnly="false"/>
+                        
+                        <DataGridTemplateColumn Header="Eliminar" x:Name="dtDeleteColumn" Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel x:Name="cmdEliminar" Orientation="Horizontal">
+                                        <Button x:Name="bttEliminarUbicacion" Click="bttEliminarUbicacion_Click">Borrar</Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+
+
+                <StackPanel Orientation="Vertical" Grid.Column="0" x:Name="spEncabezado" Visibility="Visible">
+                <TextBlock x:Name="lblEncabezado" Text="ENCABEZADO: " />
+                <TextBox x:Name="txtEncabezado" Height="60" Width="305" AcceptsReturn="True" TextWrapping="Wrap" ToolTip="Escriba las observaciones." VerticalScrollBarVisibility="Visible" MinLines="1"></TextBox>
+            </StackPanel>
+                <StackPanel Orientation="Vertical" Grid.Column="1" x:Name="spObservaciones" Visibility="Visible">
+                <TextBlock x:Name="lblObservaciones" Text="OBSERVACIONES: " />
+                    <TextBox x:Name="txtObservaciones" Height="60" Width="305" AcceptsReturn="True" TextWrapping="Wrap" ToolTip="Escriba las observaciones." VerticalScrollBarVisibility="Visible" MinLines="1"></TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Grid.Column="2" x:Name="spDestino" Visibility="Collapsed">
+                    <GroupBox Header="DESTINO" HorizontalAlignment="Stretch" Name="grpDestino2"  Height="80" Width="Auto" >
+
+                        <Grid x:Name="grdDestino2" Width="Auto" HorizontalAlignment="Stretch" Height="60">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="10*" />
+
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                <TextBlock>Destino</TextBlock>
+                                <TextBox x:Name="txtDestino" Width="200"></TextBox>
+
+                                <TextBlock>RFC</TextBlock>
+                                <TextBox x:Name="txtRfcDestinatario" Width="100"></TextBox>
+                            </StackPanel>
+
+
+                            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                                <TextBlock>Destinatario</TextBlock>
+                                <TextBox x:Name="txtDestinatario" Width="290"></TextBox>
+
+
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="2" Orientation="Horizontal">
+
+
+                                <TextBlock>Domicilio</TextBlock>
+                                <TextBox x:Name="txtDomicilioDestinatario" Width="120"></TextBox>
+                                <TextBlock>Entregar En</TextBlock>
+                                <TextBox x:Name="txtEntregarEn" Width="120"></TextBox>
+                            </StackPanel>
+
+
+                        </Grid>
+                    </GroupBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Grid.Column="0" x:Name="spOrigenCCP" Visibility="Collapsed" >
+
+                    <GroupBox Header="ORIGEN" HorizontalAlignment="Stretch" Name="grpOrigen"  Height="120" Width="Auto" Visibility="Visible">
+
+                        <Grid x:Name="grdOrigen" Width="Auto" HorizontalAlignment="Stretch" Height="100">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="10*" />
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+
+
+                                <TextBlock>RFC Rem</TextBlock>
+                                <TextBox x:Name="txtRfcRemitente" >REFA860424NP1</TextBox>
+                                <!--<TextBlock>Nom Remitente</TextBlock>
+                                <TextBox x:Name="txtNombreRem" >ALEJANDRO REYES</TextBox>-->
+                               
+                            </StackPanel>
+
+
+                            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+
+                                <TextBlock>Pais</TextBlock>
+                                <ComboBox x:Name="cmbPaisOr" SelectedIndex="0" Width="50" >
+
+                                    <ComboBoxItem>
+                                        <TextBlock>MEX-México</TextBlock>
+                                    </ComboBoxItem>
+                                </ComboBox>
+                                <TextBlock >Estado</TextBlock>
+                                <!--<TextBox VerticalAlignment="Center" x:Name="cmbEstadoOr"  Width="50">VER</TextBox>-->
+                                <ComboBox VerticalAlignment="Center" x:Name="cmbEstadoOr" DropDownClosed="cmbEstadoOr_DropDownClosed" SelectionChanged="cmbEstadoOr_SelectionChanged"   SelectedIndex="0" Width="50"></ComboBox>
+                                <TextBlock>Localidad</TextBlock>
+                                <!--<TextBox x:Name="cmbLocOr"  Width="80" >12</TextBox>-->
+                                <ComboBox x:Name="cmbLocOr" SelectedIndex="0" DropDownClosed="cmbLocOr_DropDownClosed" Width="80"></ComboBox>
+                                <TextBlock>Municipio</TextBlock>
+                                <!--<TextBox VerticalAlignment="Center" x:Name="cmbMunicipioOr" Width="80">118</TextBox>-->
+                                <ComboBox VerticalAlignment="Center" x:Name="cmbMunicipioOr" SelectedIndex="0" Width="80"></ComboBox>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+
+                                <TextBlock>No Ext</TextBlock>
+                                <TextBox x:Name="txtNoExO" Width="50">02</TextBox>
+
+                                <TextBlock>Codigo Postal</TextBlock>
+                                <TextBox x:Name="txtCpOr" TextChanged="txtCpOr_TextChanged" Width="80"></TextBox>
+                                
+                                <TextBlock>Colonia</TextBlock>
+                                <ComboBox VerticalAlignment="Center" x:Name="cmbColOr" SelectedIndex="0" Width="50"></ComboBox>
+                                <!--TextBox VerticalAlignment="Center" x:Name="cmbColOr" Width="50">2805</TextBox>-->
+
+                                <TextBlock>Calle</TextBlock>
+                                <TextBox x:Name="txtCalleOr" Width="100">Orizaba centro</TextBox>
+                            </StackPanel>
+                            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+
+                                <TextBlock Visibility="Collapsed">Tipo  estacion</TextBlock>
+                                <ComboBox Visibility="Collapsed" x:Name="txtTipoEstOr" SelectedIndex="0" >
+                                    <ComboBoxItem>
+                                        <TextBlock>01-Origen Nacional</TextBlock>
+                                    </ComboBoxItem>
+                                    <ComboBoxItem>
+                                        <TextBlock>02-Intermedia</TextBlock>
+                                    </ComboBoxItem>
+                                    <ComboBoxItem>
+                                        <TextBlock>03-Destino Final Naciona</TextBlock>
+                                    </ComboBoxItem>
+                                </ComboBox>
+
+                                <TextBlock x:Name="txtAddOr" Width="100">Origen agregado 0</TextBlock>
+
+                                <!--TextBlock>Distancia Recorrida</TextBlock>
+                                <TextBox x:Name="txtDistRecoOr" Width="100">1</TextBox>-->
+                            </StackPanel>
+                            <Button x:Name="btnSaveUbicacionOr" Click="btnSaveUbicacionOr_Click" Height="20" Width="150" Margin="317,19,0,1" Grid.Row="2" Grid.RowSpan="2">
+                                <Button.Content>
+                                    <StackPanel Background="Transparent" Orientation="Horizontal">
+                                        <Image Source="/wpfEFac;component/Images/Icons/save.ico" />
+                                        <TextBlock Background="Transparent"> Guardar Origen</TextBlock>
+                                    </StackPanel>
+                                </Button.Content>
+                            </Button>
+                        </Grid>
+                    </GroupBox>
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Grid.Column="1" x:Name="spDestinoCCP" Visibility="Collapsed" >
+
+                   
+                    <GroupBox Header="DESTINO" HorizontalAlignment="Stretch" Name="grpDestino"  Height="120" Width="Auto" Visibility="Visible">
+
+                        <Grid x:Name="grdDestino" Width="Auto" HorizontalAlignment="Stretch" Height="100">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="10*" />
+                                
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+
+
+                                <TextBlock>RFC Dest</TextBlock>
+                                <TextBox x:Name="txtRfcDest" >SIO180807ID1</TextBox>
+                                <TextBlock>Llegada</TextBlock>
+                                <DatePicker Name="dtpFechaLlegada" Width="120"  />
+                                
+                                <!--<TextBlock>Nom Destinatario</TextBlock>
+                                <TextBox x:Name="txtNombreDest" >SOLUCIONES DE INGENIERIA OL, S.A DE C.V.</TextBox>-->
+                                
+                            </StackPanel>
+
+                         
+
+
+                            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
+                                <TextBlock>Pais</TextBlock>
+                                <ComboBox x:Name="cmbPaisDes" SelectedIndex="0" Width="50" >
+                                    <ComboBoxItem>
+                                        <TextBlock>MEX-México</TextBlock>
+                                    </ComboBoxItem>
+                                </ComboBox>
+                                <TextBlock Grid.Row="1">Estado</TextBlock>
+                                <!--<TextBox VerticalAlignment="Center" x:Name="cmbEstadoDes"  Width="50" >VER</TextBox>-->
+                                <ComboBox VerticalAlignment="Center" x:Name="cmbEstadoDes" SelectionChanged="cmbEstadoDes_SelectionChanged" SelectedIndex="0" Width="50" ></ComboBox>
+                                <TextBlock>Localidad</TextBlock>
+                                <!--<TextBox VerticalAlignment="Center" x:Name="cmbLocDes"  Width="80">07</TextBox>-->
+                                <ComboBox VerticalAlignment="Center" x:Name="cmbLocDes" SelectedIndex="0" Width="80"></ComboBox>
+                               
+                                <TextBlock>Municipio</TextBlock>
+                                <!--<TextBox VerticalAlignment="Center" x:Name="cmbMunicipioDes"  Width="80">044</TextBox>-->
+                                <ComboBox VerticalAlignment="Center" x:Name="cmbMunicipioDes" SelectedIndex="0" Width="80"></ComboBox>
+                                <TextBlock>No Ext</TextBlock>
+                                <TextBox x:Name="txtNoExD" Width="50">03</TextBox>
+
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+
+                                <TextBlock>Codigo Postal</TextBlock>
+                                <TextBox x:Name="txtCpDes" TextChanged="txtCpDes_TextChanged" Width="80">94500</TextBox>
+
+                                <TextBlock>Colonia</TextBlock>
+                                <!--<TextBox VerticalAlignment="Center" x:Name="cmbColDes"  Width="50">2926</TextBox>-->
+                                <ComboBox VerticalAlignment="Center" x:Name="cmbColDes" SelectedIndex="0" Width="50"></ComboBox>
+
+                                <TextBlock>Calle</TextBlock>
+                                <TextBox x:Name="txtCalleDes" Width="100">03</TextBox>
+                                <TextBlock>Referencia</TextBlock>
+                                <TextBox x:Name="txtRefDes" Width="100">CASA BLANCA</TextBox>
+                            </StackPanel>
+                            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+
+                                <TextBlock Visibility="Collapsed">Tipo  estacion</TextBlock>
+                                <ComboBox Visibility="Collapsed" x:Name="txtTipoEstDes" SelectedIndex="0" >
+                                    <ComboBoxItem>
+                                        <TextBlock>01-Origen Nacional</TextBlock>
+                                    </ComboBoxItem>
+                                    <ComboBoxItem>
+                                        <TextBlock>02-Intermedia</TextBlock>
+                                    </ComboBoxItem>
+                                    <ComboBoxItem>
+                                        <TextBlock>03-Destino Final Naciona</TextBlock>
+                                    </ComboBoxItem>
+                                </ComboBox>
+                                <!--<TextBox x:Name="txtTipoEstDes" Width="100">03</TextBox>-->
+                                <TextBlock x:Name="txtAddDes" Width="120">Destino agregado 0</TextBlock>
+                                
+                               
+
+                                <Button x:Name="btnSaveUbicacionDes" Click="btnSaveUbicacionDes_Click"  Height="20" Width="150">
+                                    <Button.Content>
+                                        <StackPanel Background="Transparent" Orientation="Horizontal">
+                                            <Image Source="/wpfEFac;component/Images/Icons/save.ico" />
+                                            <TextBlock Background="Transparent"> Guardar Destino</TextBlock>
+                                        </StackPanel>
+                                    </Button.Content>
+                                </Button>
+
+
+                            </StackPanel>
+                            
+                            
+                            
+                        </Grid> 
+                     </GroupBox>
+
+                    <TextBlock x:Name="lblObservacionesAdicionales" Text="Impuestos Adicionales: " Visibility="Hidden"></TextBlock>
+                    <TextBox x:Name="txtImpuestosAdicionales" Height="60" Width="325" AcceptsReturn="True" TextWrapping="Wrap" Visibility="Hidden" ToolTip="Escriba las observaciones." VerticalScrollBarVisibility="Visible" MinLines="1"></TextBox>
+
+                </StackPanel>
+               
+            </Grid>
+
+
+        </StackPanel>
+        
+
+           
+            
+                
+            <Grid Grid.Column="0" Grid.Row="2">
+                    
+
+            
+                <Grid VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="370"></ColumnDefinition>
+                    <ColumnDefinition Width="190*" />
+                    <ColumnDefinition Width="189*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                <Expander Header="Detalle" HorizontalAlignment="Stretch" Name="xpnDetalleFactura"  IsExpanded="True" VerticalAlignment="Stretch" Grid.ColumnSpan="2">
+                    <DataGrid x:Name="dtgConceptos" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Stretch" >
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Accion">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Name="BorrarEntry" Click="BorrarEntry_Click">Borrar</Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="Cant." Binding="{Binding Path=Cantidad}"  />
+                            <DataGridTextColumn Header="Unidad." Binding="{Binding Path=Unidad}"  />    
+                            <DataGridTextColumn Header="Clave Sat" Binding="{Binding Path=clveSat}" Visibility="Collapsed"  />
+                            <DataGridTextColumn Header="Peso kg" Binding="{Binding Path=pesoKg}"  Visibility="Collapsed"  />
+                            <DataGridTextColumn Header="Nombre" Binding="{Binding Path=Nombre}" />
+                                <DataGridTextColumn Header="Precio" Binding="{Binding Path=FormatPrecioUnitario}"  />
+                            <DataGridTextColumn Header="Desc" Binding="{Binding Path=Descuento}"  />
+                            <DataGridTextColumn Header="IVA" Binding="{Binding Path=IVA}"  />
+                            <DataGridTextColumn Header="ret IVA" Binding="{Binding Path=retIVA}"  />
+                            <DataGridTextColumn Header="ret ISR" Binding="{Binding Path=retISR}" />
+                            <DataGridTextColumn Header="ret IEPS" Binding="{Binding Path=retIEPS}"  />
+                            <DataGridTextColumn Header="partida" Binding="{Binding Path=strPartida}" />
+                            <DataGridTextColumn Header="Importe" Binding="{Binding Path=FormatImporte}"  />
+                            <DataGridTextColumn Header="IdOrigen" Binding="{Binding Path=IdOrigen}" />
+                            <DataGridTextColumn Header="IdDestino" Binding="{Binding Path=IdDestino}"  />
+                            <DataGridTextColumn Header="strMP" Binding="{Binding Path=strMP}"  />
+                            <DataGridTextColumn Header="strClvMP" Binding="{Binding Path=strClvMP}"  />
+                            <DataGridTextColumn Header="Embalaje" Binding="{Binding Path=Embalaje}"  />
+                        </DataGrid.Columns>
+
+                
+                </DataGrid>
+                </Expander>
+
+                    <Expander Grid.Column="2" Header="Operadores" HorizontalAlignment="Stretch" Name="xpnAddenda" IsExpanded="true" Visibility="Collapsed"
+                              VerticalAlignment="Stretch" FontWeight="Normal"  FontStyle="Normal">
+
+                    <GroupBox Header="" HorizontalAlignment="Stretch" Name="grpOperadores"  Height="250" Width="Auto" Visibility="Visible">
+
+                        <Grid x:Name="grdOperadores" Width="Auto" HorizontalAlignment="Stretch" Height="200">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="10*" />
+
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0" Orientation="Horizontal" Visibility="Collapsed">
+                                <!--<TextBlock>Residencia Fiscal</TextBlock>
+                                <ComboBox VerticalAlignment="Center" x:Name="cmbPaisRes" SelectedIndex="0" Width="50">
+                                    <ComboBoxItem>
+                                        <TextBlock>MEX-México</TextBlock>
+                                    </ComboBoxItem>
+                                </ComboBox>-->
+                                <TextBlock>RFC Operador</TextBlock>
+                                <TextBox x:Name="txtRFCOp" Width="76" ></TextBox>
+
+                                <TextBlock>Nombre Operador</TextBlock>
+                                <TextBox x:Name="txtNombreOp" Width="76" ></TextBox>
+
+                            </StackPanel>
+
+
+                            <StackPanel Grid.Row="1" Orientation="Horizontal" Visibility="Collapsed" >
+                                <TextBlock>Num lic</TextBlock>
+                                <TextBox x:Name="txtLicOp" Width="76"></TextBox>
+                                <TextBlock>Tipo Figura</TextBlock>
+                                <ComboBox x:Name="cmbTipoFigura" SelectedIndex="0" Width="82">
+                                    <ComboBoxItem>
+                                        <TextBlock>01-Operador</TextBlock>
+                                    </ComboBoxItem>
+                                    <ComboBoxItem>
+                                        <TextBlock>02-Propietario</TextBlock>
+                                    </ComboBoxItem>
+                                    <ComboBoxItem>
+                                        <TextBlock>03-Arrendador</TextBlock>
+                                    </ComboBoxItem>
+                                    <ComboBoxItem>
+                                        <TextBlock>04-Notificado</TextBlock>
+                                    </ComboBoxItem>
+
+                                   
+                                </ComboBox>
+                                
+
+                            </StackPanel>
+                            
+
+                           
+                           
+                            
+                            <StackPanel Grid.Row="4" Orientation="Horizontal">
+                                <TextBlock FontWeight="Bold">Remolques</TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Visibility="Collapsed" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                                <TextBlock x:Name="txtAddOp" Width="120">Operador agregado 0</TextBlock>
+                               
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="5" Orientation="Horizontal">
+
+                                
+                               
+                            </StackPanel>
+
+
+
+                        </Grid>
+                    </GroupBox>
+                    <!--<Grid Visibility="Collapsed">
+                        <DataGrid x:Name="dtgAddenda" AutoGenerateColumns="False"  Margin="1,0,-1,0" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="IdAddenda" Binding="{Binding Path=idAddenda}" IsReadOnly="True" Width="20" Visibility="Collapsed" />
+                                <DataGridTextColumn Header="Pos" Binding="{Binding Path=idPos}" IsReadOnly="True" Width="20" Visibility="Collapsed" />
+                                    <DataGridTextColumn Header="Concepto" Binding="{Binding Path=Descripcion}" IsReadOnly="True" Width="SizeToCells" />
+                                    <DataGridTextColumn Header="Valor" Binding="{Binding Path=Default, Mode=TwoWay}" IsReadOnly="False" Width="SizeToCells" />
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>-->
+                </Expander>
+                </Grid>
+            
+        </Grid>
+        
+
+
+            
+
+        
+        
+        
+
+        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="3" VerticalAlignment="Stretch">
+            <Grid VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100*" />
+                    <RowDefinition Height="200*" />
+                </Grid.RowDefinitions>
+
+                
+
+
+
+                <!--<Image Source="/wpfEFac;component/bin/Debug/logo.jpg" Grid.Row="0" VerticalAlignment="Stretch" Height="150" ImageFailed="Image_ImageFailed" />-->
+                <Grid Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="91*" />
+                        <ColumnDefinition Width="172*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                    <RowDefinition />
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="10*" />
+                    </Grid.RowDefinitions>
+
+                
+
+                <TextBlock x:Name="lblImporte" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                Importe
+            </TextBlock>
+
+                <TextBox Grid.Row="1" Grid.Column="1" Height="23" IsReadOnly="False" HorizontalAlignment="Left" Margin="5,0,0,0" Name="txtImporte" VerticalAlignment="Center" Width="150" TextAlignment="Right" Text="0.00"/>
+
+
+                    <TextBlock x:Name="lblDescuento" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="2" Margin="0,0,0,2">Descuento</TextBlock>
+                    <TextBox Height="23" HorizontalAlignment="Left" IsReadOnly="False" Name="txtDescuento" Grid.Row="2" Margin="5,0,0,0" TextAlignment="Right" VerticalAlignment="Center" Width="150" Grid.Column="1"  Text="0.00"/>
+                    
+                    
+
+                    <TextBlock x:Name="lblSubtotal" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" >
+                SubTotal
+                    </TextBlock>
+            
+                    <TextBox Grid.Row="3" Grid.Column="1" Height="23" IsReadOnly="False" HorizontalAlignment="Left" Margin="5,0,0,0" Name="txtSubtotal" VerticalAlignment="Center" Width="150" TextAlignment="Right" Text="0.00"/>
+
+
+            <TextBlock x:Name="lblIva" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                IVA
+            </TextBlock>
+
+                    <TextBox Grid.Row="4" Grid.Column="1" Height="23" IsReadOnly="False" HorizontalAlignment="Left" Margin="5,0,0,0" Name="txtIva" VerticalAlignment="Center" Width="150" TextAlignment="Right" Text="0.00"/>
+
+
+                    <TextBlock x:Name="lblTotal" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                TOTAL
+                    </TextBlock>
+                    <TextBox Height="23" HorizontalAlignment="Left" IsReadOnly="False" Name="txtTotal" Margin="5,0,0,0" TextAlignment="Right" VerticalAlignment="Center" Width="150" Grid.Column="1" Grid.Row="5" Text="0.00"/>
+
+                    
+            <TextBlock x:Name="lblRetIva" Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,0,1">
+                Ret. IVA
+            </TextBlock>
+            <TextBox Grid.Row="6" Grid.Column="1" Height="23" IsReadOnly="False" HorizontalAlignment="Left" Margin="5,0,0,0" Name="txtRetIva" VerticalAlignment="Center" Width="150" TextAlignment="Right"  Text="0.00"/>
+                    
+            <TextBlock x:Name="lblRetIsr" Grid.Row="7" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                Ret. ISR
+            </TextBlock>
+            <TextBox Height="23" HorizontalAlignment="Left" IsReadOnly="False" Name="txtRetIsr" Margin="5,0,0,0" TextAlignment="Right" VerticalAlignment="Center" Width="150" Grid.Column="1" Grid.Row="7" Text="0.00"/>
+
+                    <TextBlock x:Name="lblRetIeps" Grid.Row="8" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                Ret. IEPS
+                    </TextBlock>
+                    <TextBox Height="23" HorizontalAlignment="Left" IsReadOnly="False" Name="txtRetIeps" Margin="5,0,0,0" TextAlignment="Right" VerticalAlignment="Center" Width="150" Grid.Column="1" Grid.Row="8" Text="0.00"/>
+
+                    <TextBlock x:Name="lblGranTotal" Grid.Row="9" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold">
+                Gran TOTAL
+                    </TextBlock>
+                    <TextBox FontWeight="Bold" Height="23" HorizontalAlignment="Left" IsReadOnly="False" Name="txtGranTotal" Margin="5,0,0,0" TextAlignment="Right" VerticalAlignment="Center" Width="150" Grid.Column="1" Grid.Row="9" Text="0.00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </Grid>
+            <!--
+            <TextBox Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="7" x:Name="txtNumeroLetra" IsReadOnly="True" TextWrapping="Wrap"></TextBox>
+            -->
+            </Grid>
+        </StackPanel>
+
+       
+        
+        
+
+
+        <StackPanel Grid.Row="3">
+            <Grid Height="39" Width="403">
+            <Button HorizontalAlignment="Left" Name="btnAgregarCarrito" Click="btnAgregarCarrito_Click" VerticalAlignment="Center" Height="30">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/wpfEFac;component/Images/Icons/shoppingcart_128.png"></Image>
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Agregar conceptos</TextBlock>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+
+            <Button x:Name="btnGuardar" Click="btnGuardar_Click"  Margin="0,0,0,0" Height="26" Width="100">
+                <Button.Content>
+                    <StackPanel Background="Transparent" Orientation="Horizontal">
+                        <Image Source="/wpfEFac;component/Images/Icons/save.ico" />
+                        <TextBlock Background="Transparent"> Guardar</TextBlock>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

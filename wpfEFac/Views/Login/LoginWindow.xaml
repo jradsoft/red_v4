@@ -1,0 +1,40 @@
+﻿<Window x:Class="wpfEFac.Views.Login.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Login" Height="237" Width="300" FontSize="14"
+        WindowStyle="ToolWindow" Loaded="Window_Loaded" Icon="/wpfEFac;component/Images/IconoEFacWindow.png" Topmost="True">
+    <Grid Name="LayoutRoot" MaxHeight="200" MaxWidth="300" MinWidth="240" MinHeight="150">
+        <Grid.Background>
+            <ImageBrush ImageSource="/wpfEFac;component/Images/Marquesina.jpg" />
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*" />
+            <ColumnDefinition Width="178*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="53" />
+            <RowDefinition Height="53" />
+            <RowDefinition Height="54*" />
+            <RowDefinition Height="38*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        
+        <!--Usuario-->
+        <TextBlock Text="Usuario: " Grid.RowSpan="1" Height="Auto" HorizontalAlignment="Right" Name="txbUsuario" VerticalAlignment="Center" Foreground="White" />
+        <TextBox Grid.Column="1" Height="23" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,16,0,14" Name="txtUsuario" Width="150" TabIndex="1" ToolTip="Ingrese su usuario" TextChanged="txtUsuario_TextChanged" />
+        <!--Contraseña-->
+        <TextBlock Height="Auto" HorizontalAlignment="Right" Name="txbContraseña" Text="Contraseña: " VerticalAlignment="Center" Grid.Row="1" Foreground="White" />
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="10,0,0,0" Name="pwbContraseña" VerticalAlignment="Center" Width="150" Grid.Column="1" Grid.Row="1" PasswordChanged="pwbContraseña_PasswordChanged" TabIndex="2" ToolTip="Ingrese su contraseña" />
+        
+        <!--Botones para ok y cancel-->
+        <Button Content="Cancelar" Grid.Column="1" Grid.Row="3" Height="Auto" HorizontalAlignment="Right" Name="bttCancel" VerticalAlignment="Center" Width="75" Click="bttCancel_Click" Margin="0,1,0,11" TabIndex="5" />
+        <Button Content="Ingresar" Grid.Column="1" Grid.Row="3" Height="Auto" HorizontalAlignment="Right" Name="bttOK" VerticalAlignment="Center" Width="75" Margin="0,1,81,11" Click="bttOK_Click" TabIndex="4" IsDefault="True" />
+        
+        <!--Validaciones -->
+        <Label Content="" Height="28" HorizontalAlignment="Left" Margin="46,30,0,0" FontSize="10" Name="lblUsuario" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2" Width="214" />
+        <Label Content="" Grid.Row="1" Height="28" HorizontalAlignment="Left" Margin="46,30,0,0" FontSize="10" Name="lblPassword" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2" Width="214" />
+        
+        <TextBlock Foreground="White" Height="Auto"  Name="txbEmpresa" Text="Empresa: " VerticalAlignment="Center" Grid.Row="2" HorizontalAlignment="Right" />
+        <ComboBox Grid.Column="1" Grid.Row="2" Height="23" HorizontalAlignment="Stretch" Name="cmbEmpresa" VerticalAlignment="Center" TabIndex="3" />
+    </Grid>
+</Window>

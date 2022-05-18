@@ -1,0 +1,145 @@
+﻿<Window x:Class="wpfEFac.Views.Clientes.EditarCliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Editar Cliente" Height="730" Width="520" Icon="/wpfEFac;component/Images/AddUser.ico">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF6693D1" Offset="1" />
+                <GradientStop Color="White" Offset="0.098" />
+                <GradientStop Color="#FFEBF0F7" Offset="0.607" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="13*" />
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="38*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Height="23" Name="txbRFC" Text="RFC " VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox Grid.Column="1" Grid.Row="0" Height="23" HorizontalAlignment="Left" Name="txtRFC" VerticalAlignment="Center" Width="280" TabIndex="1" MaxLength="13" />
+        <TextBlock Grid.Row="2" Grid.Column="0" Height="23" Name="txbRazonSocial" Text="Nombre o Razón Social " VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Height="23" HorizontalAlignment="Left" Name="txtRazonSocial" VerticalAlignment="Center" Width="280" TabIndex="2" />
+        <TextBlock Grid.Row="4" Grid.Column="0" Height="23" Name="txbNombreComercial" Text="Nombre Comercial" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox Grid.Column="1" Grid.Row="4" Height="23" HorizontalAlignment="Left" Name="txtNombreComercial" VerticalAlignment="Center" Width="280" TabIndex="3" />
+        <TextBlock Grid.Row="5" Grid.Column="0" Height="23" Name="txbGiro" Text="Giro" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox Grid.Column="1" Grid.Row="5" Height="23" HorizontalAlignment="Left" Name="txtGiro" VerticalAlignment="Center" Width="280" TabIndex="4" />
+        <TextBlock Grid.Row="6" Grid.Column="0" Height="23" Name="txbTipoInscripcion" Text="Tipo de Inscripción" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <ComboBox Grid.Column="1" Grid.Row="6" Height="22" HorizontalAlignment="Left" Name="cmbTipoComprobante" VerticalAlignment="Center" Width="160" Background="White" TabIndex="5">
+            <ComboBoxItem>
+                <TextBlock Text="Persona Física"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="Persona Moral"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="Origen"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="Destino"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="01-Operador"/>
+            </ComboBoxItem>
+
+            <ComboBoxItem>
+                <TextBlock Text="02-Propietario"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="03-Arrendador"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="04-Notificado" />
+            </ComboBoxItem>
+        </ComboBox>
+        <TextBlock Grid.Row="7" Grid.Column="0" Height="23" Name="txbCalle" Text="Calle" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox Grid.Column="1" Grid.Row="7" Height="23" HorizontalAlignment="Left" Name="txtCalleReceptor" VerticalAlignment="Center" Width="280" TabIndex="6" />
+        <TextBlock Grid.Row="8" Grid.Column="0" Height="23" Name="txbNoExterior" Text="No. Exterior" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox Grid.Column="1" Grid.Row="8" Height="23" HorizontalAlignment="Left" Name="txtNoExterior" VerticalAlignment="Center" Width="280" TabIndex="7" />
+        <TextBlock Grid.Row="9" Grid.Column="0" Height="23" Name="txbNoInterior" Text="No. Interior" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox Grid.Column="1" Grid.Row="9" Height="23" HorizontalAlignment="Left" Name="txtNoInterior" VerticalAlignment="Center" Width="280" TabIndex="8" />
+        <TextBlock Grid.Row="19" Height="23" Name="txbColonia" Text="Colonia" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox Grid.Column="1" Grid.Row="19" Height="23" HorizontalAlignment="Left" Name="txtColonia" VerticalAlignment="Center" Width="280" TabIndex="9" />
+        <TextBlock Grid.Row="11" Grid.Column="0" Height="23" Name="txbPais" Text="País" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <ComboBox Grid.Column="1" Grid.Row="11" Height="22" HorizontalAlignment="Left" Name="cmbPais" VerticalAlignment="Center" Width="230" Text="Factura" Background="White" TabIndex="10">
+        </ComboBox>
+        <TextBlock Grid.Row="12" Height="23" Name="txbEstado" Text="Estado" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.RowSpan="2" />
+        <TextBlock Grid.Row="14" Grid.Column="0" Height="23" Name="txbMunicipiolist" Text="edite Municipio" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <ComboBox Grid.Column="1" Grid.Row="14" Height="23" HorizontalAlignment="Left" Name="txtMunicipiolst" DropDownClosed="txtMunicipiolst_DropDownClosed" VerticalAlignment="Center" Width="280" TabIndex="12" />
+        <TextBlock Grid.Row="15" Grid.Column="0" Height="23" Name="txbPoblacionlst" Text="edite Población/Localidad" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <ComboBox Grid.Column="1" Grid.Row="15" Height="22" HorizontalAlignment="Left" Name="txtPoblacionlst" DropDownClosed="txtPoblacionlst_DropDownClosed" VerticalAlignment="Center" Width="280" Background="White" Margin="0,2" TabIndex="13" />
+        <TextBlock Grid.Row="16" Grid.Column="0" Height="23" Name="txbColonialt" Text="edite Colonia" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <ComboBox Grid.Column="1" Grid.Row="16" Height="23" HorizontalAlignment="Left" Name="txtColonialst" DropDownClosed="txtColonialst_DropDownClosed" VerticalAlignment="Center" Width="280" TabIndex="9" />
+        <TextBox Grid.Column="1" Grid.Row="17" Height="23" HorizontalAlignment="Left" Name="txtMunicipio" VerticalAlignment="Center" Width="280" TabIndex="12" />
+        <TextBox Grid.Column="1" Grid.Row="18" Height="23" HorizontalAlignment="Left" Name="txtPoblacion" VerticalAlignment="Center" Width="280" TabIndex="13" />
+        <ComboBox Grid.Column="1" Grid.Row="12" Height="22" HorizontalAlignment="Left" Name="cmbEstado" VerticalAlignment="Center" Width="150" Text="Factura" Background="White" DropDownClosed="cmbEstado_DropDownClosed" TabIndex="11" Grid.RowSpan="2">            
+        </ComboBox>
+        <TextBlock Grid.Row="17" Height="23" Name="txbMunicipio" Text="Municipio" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBlock Grid.Row="18" Height="23" Name="txbPoblacion" Text="Población/Localidad" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBlock Grid.Row="10" Grid.Column="0" Height="23" Name="txbCP" Text="Código Postal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox Grid.Column="1" Grid.Row="10" Height="23" HorizontalAlignment="Left" Name="txtCP" TextChanged="txtCP_TextChanged"  VerticalAlignment="Center" Width="280" TabIndex="14" />
+        <TextBlock Grid.Row="20" Height="23" Name="txbTelefono1" Text="Teléfono Casa" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox Grid.Column="1" Grid.Row="20" Height="23" HorizontalAlignment="Left" Name="txtTelefono" VerticalAlignment="Center" Width="280" TabIndex="15" />
+        <TextBlock Grid.Row="21" Height="23" Name="txbTelefono2" Text="Teléfono Oficina" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox Grid.Column="1" Grid.Row="21" Height="23" HorizontalAlignment="Left" Name="txtCelular" VerticalAlignment="Center" Width="280" TabIndex="16" />
+        <TextBox Grid.Column="1" Grid.Row="22" Height="23" HorizontalAlignment="Left" Name="txtEmail1" VerticalAlignment="Center" Width="280" TabIndex="17" />
+        <TextBlock Grid.Row="22" Height="23" Name="txbEmail1" Text="Email" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBlock Grid.Row="23" Height="23" Name="txbContacto" Text="Contacto" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox Grid.Column="1" Grid.Row="23" Height="23" HorizontalAlignment="Left" Name="txtContacto" VerticalAlignment="Center" Width="280" TabIndex="18" />
+        <TextBlock Grid.Row="24" Height="23" Name="txbRetencionIVA" Text="Retención IVA" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBlock Grid.Row="24" Grid.Column="1" Height="23" Name="txbRetencionISR" Text="Retención ISR" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="25" Height="25" Name="txbWebSite" Text="Numero Cuenta (4 Ultimos Digitos)" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBlock Grid.Row="26" Height="23" Name="txbaddenda" Text="Addenda" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox Grid.Column="1" Grid.Row="25" Height="23" HorizontalAlignment="Left" Name="txtWebSite" VerticalAlignment="Center" Width="280" TabIndex="20" />
+        <ComboBox Grid.Column="1" Grid.Row="26" Height="23" HorizontalAlignment="left" Name="cmbAddenda" VerticalAlignment="Center" Width="70" Background="White" TabIndex="19" >
+            <ComboBoxItem Content="Ninguna" IsSelected="True" />
+            <ComboBoxItem Content="Sivesa" />
+        </ComboBox>
+        <!--<Button Click="bttGuardar_Click" Content="Guardar" Grid.Row="22" Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="120,0,0,0" Name="bttGuardar" VerticalAlignment="Top" Width="75"/>
+        <Button Click="bttCancelar_Click" Content="Cancelar" Grid.Row="22" Grid.Column="1" Height="23" HorizontalAlignment="Right" Margin="0,0,17,0" Name="bttCancelar" VerticalAlignment="Top" Width="75" />-->
+        <ComboBox Grid.Column="1" Grid.Row="24" Height="23" HorizontalAlignment="Left" Name="cmbRetencionIVA" VerticalAlignment="Center" Width="70" Background="White" TabIndex="19">
+            <ComboBox.Items>
+                <TextBlock Text="Si"/>
+                <TextBlock Text="No"/>
+            </ComboBox.Items>
+        </ComboBox>
+        <ComboBox Grid.Column="1" Grid.Row="24" Height="23" HorizontalAlignment="Right" Name="cmbRetencionISR" VerticalAlignment="Center" Width="70" Background="White" TabIndex="19">
+            <ComboBox.Items>
+                <TextBlock Text="Si"/>
+                <TextBlock Text="No"/>
+            </ComboBox.Items>
+        </ComboBox>
+        <Label Content="" Grid.Column="1" Grid.Row="1" Height="28" HorizontalAlignment="Left" Name="lblRFC" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="9" />
+        <Label Content="" Grid.Column="1" Grid.Row="3" Height="28" HorizontalAlignment="Left" Name="lblRazonSocial" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="9" />
+        <Button Content="Guardar" Grid.Column="1" Grid.Row="27" Height="23" HorizontalAlignment="Right" Margin="0,0,110,0" Name="bttGuardar" VerticalAlignment="Center" Width="75" Click="bttGuardar_Click" TabIndex="21" />
+        <Button Content="Cancelar" Grid.Column="1" Grid.Row="27" Height="23" HorizontalAlignment="Right" Margin="0,0,20,0" Name="bttCancelar" VerticalAlignment="Center" Width="75" Click="bttCancelar_Click" TabIndex="22" />
+    </Grid>
+</Window>

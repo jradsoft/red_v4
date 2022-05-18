@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd http://www.sat.gob.mx/CartaPorte20 http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte20.xsd" Version="3.3" Serie="A" Folio="18708" Fecha="2021-12-08T11:58:13" Sello="PgrtrxeX3hcnopkt3QyAj2c2EbpLRIbJFz6Yebdv7lPFD6LB0MpHJ4sMHjfj1E+pYplai5yhRg0N+CfqSKaGj3uLpagwuLiRjzptu7WGG1YbH6KgfnS4J/cxdeVkBfLKK9/VrQbrnRABlDvtDadWd3sMj5kZqr4Fr2tfF4L6H0E0se+uRebIpzRyz8KEIVS++h6ycjJf62lEDJVYfZZoyehlTQF/EZmjVL9eRbuJPKbFrkxeuq55/bujoebcSM0ZUgJM/ivRt3Dz1HAFh7Lww1Dkez1Ru10BrvJcGeVzgwdFpD2HZbhhh7L+Z0bxu4upbYY+uH1lfaEVTDovTxZnpA==" FormaPago="99" NoCertificado="00001000000505861583" Certificado="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" SubTotal="2.00" Moneda="MXN" Total="2.24" TipoDeComprobante="I" MetodoPago="PPD" LugarExpedicion="94450">
+  <cfdi:Emisor Rfc="ACG060807RMA" Nombre="AUTOTRANSPORTES DE CARGA EN GENERAL ORIZVER, S.C. DE R.L." RegimenFiscal="624" />
+  <cfdi:Receptor Rfc="CDU820122JFA" Nombre="BIOPAPPEL S.A.B. DE C.V." UsoCFDI="G03" />
+  <cfdi:Conceptos>
+    <cfdi:Concepto ClaveProdServ="78101802" NoIdentificacion="0" Cantidad="1.0000" ClaveUnidad="E48" Unidad="SERV" Descripcion="CARTON CORRUGADO" ValorUnitario="2.000000" Importe="2.000000">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="2.000" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="0.3200" />
+        </cfdi:Traslados>
+        <cfdi:Retenciones>
+          <cfdi:Retencion Base="2.0000" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.040000" Importe="0.080000" />
+        </cfdi:Retenciones>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+  </cfdi:Conceptos>
+  <cfdi:Impuestos TotalImpuestosRetenidos="0.08" TotalImpuestosTrasladados="0.32">
+    <cfdi:Retenciones>
+      <cfdi:Retencion Impuesto="002" Importe="0.08" />
+    </cfdi:Retenciones>
+    <cfdi:Traslados>
+      <cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="0.32" />
+    </cfdi:Traslados>
+  </cfdi:Impuestos>
+  <cfdi:Complemento><tfd:TimbreFiscalDigital xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd" Version="1.1" UUID="E9F8B16F-A67A-4D70-BE07-5EE61B6C519B" FechaTimbrado="2021-12-08T11:58:37" RfcProvCertif="SIF0403229F9" SelloCFD="PgrtrxeX3hcnopkt3QyAj2c2EbpLRIbJFz6Yebdv7lPFD6LB0MpHJ4sMHjfj1E+pYplai5yhRg0N+CfqSKaGj3uLpagwuLiRjzptu7WGG1YbH6KgfnS4J/cxdeVkBfLKK9/VrQbrnRABlDvtDadWd3sMj5kZqr4Fr2tfF4L6H0E0se+uRebIpzRyz8KEIVS++h6ycjJf62lEDJVYfZZoyehlTQF/EZmjVL9eRbuJPKbFrkxeuq55/bujoebcSM0ZUgJM/ivRt3Dz1HAFh7Lww1Dkez1Ru10BrvJcGeVzgwdFpD2HZbhhh7L+Z0bxu4upbYY+uH1lfaEVTDovTxZnpA==" NoCertificadoSAT="00001000000508768672" SelloSAT="fH1B6W5D7M+l7A3/Ih6kUTf5KWdmtt+EDB/FY+7WwTnlXdJIa6frGdRFOS/4TCKzqVWfSDbkje3KV8sPiov1AwWoJaVsxb2wsz3SjE6/FUVTY+o6pHS02izg+9s7znh3k/KFkOUBopnT+5CLCXSun9RSIM3uHjB+NeXLOfILlmpGyYFIrsbawiEZhzeY33wCzLzqpGW50VefeOTd9dYvNBu5tRCm81l7VlPrk0XGvnqG6qch0Z8iPs8rQS9wLkRY7DioDHINYe8d/dPkT4SLDoIN4KgFc42GW9njwZFJ1aPUUI71gfWBMSusTDBVOfCc0cnGDcDFNcV6eIjb1KA/Lw==" />
+    <cartaporte20:CartaPorte xmlns:cartaporte20="http://www.sat.gob.mx/CartaPorte20" Version="2.0" TranspInternac="No" TotalDistRec="695.0">
+      <cartaporte20:Ubicaciones>
+        <cartaporte20:Ubicacion TipoUbicacion="Origen" IDUbicacion="OR000001" RFCRemitenteDestinatario="CDU820122JFA" FechaHoraSalidaLlegada="2021-12-07T00:00:00">
+          <cartaporte20:Domicilio Calle="CARRETERA TAPACHULA-PUERTO MADERO KM 1.2" NumeroExterior="SN" Colonia="1623" Localidad="03" Municipio="089" Estado="CHP" Pais="MEX" CodigoPostal="30700" />
+        </cartaporte20:Ubicacion>
+        <cartaporte20:Ubicacion TipoUbicacion="Destino" IDUbicacion="DE000001" RFCRemitenteDestinatario="HER8301121X4" FechaHoraSalidaLlegada="2021-12-07T00:00:00" DistanciaRecorrida="695.0">
+          <cartaporte20:Domicilio Calle="CARRETERA VILLAHERMOSA-FRONTERA KM 5" NumeroExterior="SN" Colonia="2605" Localidad="02" Municipio="004" Estado="TAB" Pais="MEX" CodigoPostal="86019" />
+        </cartaporte20:Ubicacion>
+      </cartaporte20:Ubicaciones>
+      <cartaporte20:Mercancias PesoBrutoTotal="9082.0" UnidadPeso="XBX" NumTotalMercancias="8">
+        <cartaporte20:Mercancia BienesTransp="14122107" Descripcion="REMISION 3060139162" Cantidad="1600.0" ClaveUnidad="XBX" PesoEnKg="549.0">
+          <cartaporte20:CantidadTransporta Cantidad="1600.0" IDOrigen="OR000001" IDDestino="DE000001" />
+        </cartaporte20:Mercancia>
+        <cartaporte20:Mercancia BienesTransp="14122107" Descripcion="REMISION 3060139163" Cantidad="800.0" ClaveUnidad="XBX" PesoEnKg="272.0">
+          <cartaporte20:CantidadTransporta Cantidad="800.0" IDOrigen="OR000001" IDDestino="DE000001" />
+        </cartaporte20:Mercancia>
+        <cartaporte20:Mercancia BienesTransp="14122107" Descripcion="REMISION 3060139164" Cantidad="4000.0" ClaveUnidad="XBX" PesoEnKg="1712.0">
+          <cartaporte20:CantidadTransporta Cantidad="4000.0" IDOrigen="OR000001" IDDestino="DE000001" />
+        </cartaporte20:Mercancia>
+        <cartaporte20:Mercancia BienesTransp="14122107" Descripcion="REMISION 3060139165" Cantidad="1000.0" ClaveUnidad="XBX" PesoEnKg="991.0">
+          <cartaporte20:CantidadTransporta Cantidad="1000.0" IDOrigen="OR000001" IDDestino="DE000001" />
+        </cartaporte20:Mercancia>
+        <cartaporte20:Mercancia BienesTransp="14122107" Descripcion="REMISION 3060139166" Cantidad="500.0" ClaveUnidad="XBX" PesoEnKg="336.0">
+          <cartaporte20:CantidadTransporta Cantidad="500.0" IDOrigen="OR000001" IDDestino="DE000001" />
+        </cartaporte20:Mercancia>
+        <cartaporte20:Mercancia BienesTransp="14122107" Descripcion="REMISION 3060139167" Cantidad="3200.0" ClaveUnidad="XBX" PesoEnKg="1158.0">
+          <cartaporte20:CantidadTransporta Cantidad="3200.0" IDOrigen="OR000001" IDDestino="DE000001" />
+        </cartaporte20:Mercancia>
+        <cartaporte20:Mercancia BienesTransp="14122107" Descripcion="REMISION 3060139168" Cantidad="1600.0" ClaveUnidad="XBX" PesoEnKg="579.0">
+          <cartaporte20:CantidadTransporta Cantidad="1600.0" IDOrigen="OR000001" IDDestino="DE000001" />
+        </cartaporte20:Mercancia>
+        <cartaporte20:Mercancia BienesTransp="14122107" Descripcion="REMISION 3060139169" Cantidad="14400.0" ClaveUnidad="XBX" PesoEnKg="3485.0">
+          <cartaporte20:CantidadTransporta Cantidad="14400.0" IDOrigen="OR000001" IDDestino="DE000001" />
+        </cartaporte20:Mercancia>
+        <cartaporte20:Autotransporte PermSCT="TPAF01" NumPermisoSCT="654321">
+          <cartaporte20:IdentificacionVehicular ConfigVehicular="C3R2" PlacaVM="XYZ1234" AnioModeloVM="2020" />
+          <cartaporte20:Seguros AseguraRespCivil="QUALITAS" PolizaRespCivil="123456" AseguraCarga="QUALITAS" />
+          <cartaporte20:Remolques>
+            <cartaporte20:Remolque SubTipoRem="CTR004" Placa="001UK20" />
+          </cartaporte20:Remolques>
+        </cartaporte20:Autotransporte>
+      </cartaporte20:Mercancias>
+      <cartaporte20:FiguraTransporte>
+        <cartaporte20:TiposFigura TipoFigura="01" RFCFigura="RALC830605BP6" NumLicencia="987654321" />
+      </cartaporte20:FiguraTransporte>
+    </cartaporte20:CartaPorte>
+  </cfdi:Complemento>
+</cfdi:Comprobante>

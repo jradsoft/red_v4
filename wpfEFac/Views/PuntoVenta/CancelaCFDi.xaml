@@ -1,0 +1,59 @@
+﻿<Window x:Class="wpfEFac.Views.PuntoVenta.CancelaCFDi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ADESOFT:: Servicio CancelaCFDi" Height="300" Width="300"
+        WindowStyle="None">
+    <Grid>
+        <StackPanel>
+            <TextBlock x:Name="lblRFC" HorizontalAlignment="Center" >RFC Emisor:</TextBlock>
+            <TextBox x:Name="txtRFC" ></TextBox>
+            <TextBlock x:Name="lblRFCreceptor" HorizontalAlignment="Center" >RFC Receptor:</TextBlock>
+            <TextBox x:Name="txtRFCreceptor" ></TextBox>
+            <TextBlock x:Name="lblPasswd" HorizontalAlignment="Center" Visibility="Collapsed">Passwd CER:</TextBlock>
+            <TextBox x:Name="txtPasswd" Visibility="Collapsed"></TextBox>
+            <TextBlock VerticalAlignment="Center" x:Name="lblUUID" HorizontalAlignment="Center">UUID:</TextBlock>
+            <TextBox VerticalAlignment="Center" x:Name="txtUUID"></TextBox>
+
+            <TextBlock VerticalAlignment="Center" x:Name="lblTotal" HorizontalAlignment="Center">Monto Factura:</TextBlock>
+
+            <TextBox VerticalAlignment="Center" x:Name="txtTotal2"></TextBox>
+
+            <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center">Motivo de cancelacion:</TextBlock>
+
+            <ComboBox VerticalAlignment="Center" x:Name="cmbMotivoCancelacion" SelectedIndex="0" Width="225">
+                <ComboBoxItem>
+                    <TextBlock>01-Comprobantes emitidos con errores con relación</TextBlock>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock>02-Comprobantes emitidos con errores sin relación.</TextBlock>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock>03-No se llevó a cabo la operación</TextBlock>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock>04-Operación nominativa relacionada en una factura global</TextBlock>
+                </ComboBoxItem>
+               
+            </ComboBox>
+
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Relacion UUID:</TextBlock>
+
+            <TextBox VerticalAlignment="Center" x:Name="txtRelacionUUID"></TextBox>
+
+            <StackPanel Orientation="Horizontal">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Row="1" Grid.Column="0" Click="cmdCancelarCFDi_Click" x:Name="cmdCancelarCFDi" Width="100" Height="25">Cancelar CFDi</Button>
+                <Button Grid.Row="1" Grid.Column="1" x:Name="cmdSalir" Click="cmdSalir_Click" Width="100" Height="25">Salir</Button>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

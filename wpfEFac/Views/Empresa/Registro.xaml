@@ -1,0 +1,207 @@
+﻿<Window x:Class="wpfEFac.Views.Empresa.Registro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Registro" Height="770" Width="550">
+    <Grid>
+        <TabControl HorizontalAlignment="Stretch" Name="tbcRegistros" VerticalAlignment="Stretch">
+            <TabItem Header="Registro de Empresa" Name="tbiRegistroEmpresa">
+                <Grid Height="720">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Height="23" Name="txbRFC" Text="RFC *" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Left" Name="txtRFC" VerticalAlignment="Center" Width="280" TextChanged="txtRFC_TextChanged" />
+                    <TextBlock Grid.Row="3" Grid.Column="0" Height="23" Name="txbRazonSocial" Text="Razón Social * " VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="3" Height="23" HorizontalAlignment="Left" Name="txtRazonSocial" VerticalAlignment="Center" Width="280" />
+                    <TextBlock Grid.Row="5" Grid.Column="0" Height="23" Name="txbNombreComercial" Text="Nombre Comercial *" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="5" Height="23" HorizontalAlignment="Left" Name="txtNombreComercial" VerticalAlignment="Center" Width="280" />
+                    <TextBlock Grid.Row="7" Grid.Column="0" Height="23" Name="txbGiro" Text="Giro *" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="7" Height="23" HorizontalAlignment="Left" Name="txtGiro" VerticalAlignment="Center" Width="280" />
+                    <TextBlock Grid.Row="9" Grid.Column="0" Height="23" Name="txbTipoComprobante" Text="Tipo de Comprobante Fiscal Digital *" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <ComboBox Grid.Column="1" Grid.Row="9" Height="22" HorizontalAlignment="Left" Name="cmbTipoComprobante" VerticalAlignment="Center" Width="160" Text="Factura" Background="White" BorderBrush="#FF707070" SelectedIndex="0">
+                        <ComboBoxItem>
+                            <TextBlock Text="Factura"/>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock Text="Recibo de Honorarios"/>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock Grid.Row="11" Grid.Column="0" Height="23" Name="txbCalleReceptor" Text="Calle del Receptor" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="11" Height="23" HorizontalAlignment="Left" Name="txtCalleReceptor" VerticalAlignment="Center" Width="280" />
+                    <TextBlock Grid.Row="12" Grid.Column="0" Height="23" Name="txbNoExterior" Text="No. Exterior" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="12" Height="23" HorizontalAlignment="Left" Name="txtNoExterior" VerticalAlignment="Center" Width="280" />
+                    <TextBlock Grid.Row="13" Grid.Column="0" Height="23" Name="txbNoInterior" Text="No. Interior" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="13" Height="23" HorizontalAlignment="Left" Name="txtNoInterior" VerticalAlignment="Center" Width="280" />
+                    <TextBlock Grid.Row="14" Grid.Column="0" Height="23" Name="txbColonia" Text="Colonia" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="14" Height="23" HorizontalAlignment="Left" Name="txtColonia" VerticalAlignment="Center" Width="280" />
+                    <TextBlock Grid.Row="15" Grid.Column="0" Height="23" Name="txbPais" Text="País" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <ComboBox Grid.Column="1" Grid.Row="15" Height="22" HorizontalAlignment="Left" Name="cmbPais" VerticalAlignment="Center" Width="230" Background="White">
+                    </ComboBox>
+                    <TextBlock Grid.Row="16" Grid.Column="0" Height="23" Name="txbEstado" Text="Estado" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <ComboBox Grid.Column="1" Grid.Row="16" Height="22" HorizontalAlignment="Left" Name="cmbEstado" VerticalAlignment="Center" Width="150" Text="Aguascalientes" Background="White">
+                    </ComboBox>
+                    <TextBlock Grid.Row="17" Grid.Column="0" Height="23" Name="txbMunicipio" Text="Municipio" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="17" Height="23" HorizontalAlignment="Left" Name="txtMunicipio" VerticalAlignment="Center" Width="280" />
+                    <TextBlock Grid.Row="18" Grid.Column="0" Height="23" Name="txbPoblacion" Text="Población/Localidad" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="18" Height="23" HorizontalAlignment="Left" Name="txtPoblacion" VerticalAlignment="Center" Width="280" />
+                    <TextBlock Grid.Row="19" Grid.Column="0" Height="23" Name="txbCP" Text="Código Postal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="19" Height="23" HorizontalAlignment="Left" Name="txtCP" VerticalAlignment="Center" Width="280" />
+                    <TextBlock Grid.Row="20" Grid.Column="0" Height="23" Name="txbTelefono1" Text="Teléfono 1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="20" Height="23" HorizontalAlignment="Left" Name="txtTelefono" VerticalAlignment="Center" Width="280" />
+                    <TextBlock Grid.Row="21" Grid.Column="0" Height="23" Name="txbTelefono2" Text="Teléfono 2" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="21" Height="23" HorizontalAlignment="Left" Name="txtTelefono1" VerticalAlignment="Center" Width="280" />
+                    <TextBlock Grid.Row="22" Grid.Column="0" Height="23" Name="txbCelular" Text="Celular" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="22" Height="23" HorizontalAlignment="Left" Name="txtCelular" VerticalAlignment="Center" Width="280" />
+                    <TextBlock Grid.Row="23" Grid.Column="0" Height="23" Name="txbEmail1" Text="Email 1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="23" Height="23" HorizontalAlignment="Left" Name="txtEmail1" VerticalAlignment="Center" Width="280" />
+                    <TextBlock Grid.Row="24" Grid.Column="0" Height="23" Name="txbEmail2" Text="Email 2" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="24" Height="23" HorizontalAlignment="Left" Name="txtEmail2" VerticalAlignment="Center" Width="280" />
+                    <TextBlock Grid.Row="25" Grid.Column="0" Height="23" Name="txbWebSite" Text="Regimen Fiscal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="25" Height="23" HorizontalAlignment="Left" Name="txtWebSite" VerticalAlignment="Center" Width="280" />
+                    <TextBlock Grid.Row="26" Grid.Column="0" Height="23" Name="txbLogo" Text="Logo(tamaño Sugerido 193x89Px)" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="26" Height="20" HorizontalAlignment="Left" Name="txtLogo" VerticalAlignment="Center" Width="160" Background="LightGray" />
+                    <TextBlock Grid.Row="27" Grid.Column="0" Height="23" Name="txbCedula" Text="Cedula" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="1" Grid.Row="27" Height="20" HorizontalAlignment="Left" Name="txtCedula" VerticalAlignment="Center" Width="160" Background="LightGray" />
+                    <Button Grid.Row="26" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Name="bttExaminar" Content="Examinar..." Margin="0,0,50,0" Width="100" Height="20" Click="bttExaminar_Click"/>
+                    <Button Grid.Row="27" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Name="bttExaminarCedula" Content="Examinar..." Margin="0,0,50,0" Width="100" Height="20" Click="bttExaminarCedula_Click"/>
+                    <Button Grid.Row="28" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Name="bttGuardar" Content="Guardar" Margin="130,0,0,0" Width="70" Height="23" Click="bttGuardar_Click"/>
+                    <Button Grid.Row="28" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Name="bttcancelar" Content="Cancelar" Margin="0,0,40,0" Width="70" Height="23" Click="bttcancelar_Click"/>
+                </Grid>
+            </TabItem>            
+            <TabItem Header="Registro de Certificados" Name="tbiRegistroCertificados">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="154" />
+                        <ColumnDefinition Width="212" />
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="2" Name="txbCertificadoSelloDigital" Text="Certificado del Sello Digital" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,5" />
+                    <TextBox Grid.Row="2" Name="txtLlaveCertificadoSelloDigital" HorizontalAlignment="Left" Width="200" Background="LightGray" Grid.Column="1"/>
+                    <Button Grid.Column="2" Grid.Row="2" Name="btnExaminar" Content="Examinar..." HorizontalAlignment="Left" Height="23" Width="80" VerticalAlignment="Center" Click="btnExaminar_Click"/>                    
+                    <TextBlock Grid.Row="4" Name="txbLlaveCertificado" Text="Llave del Certificado" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,5" />                    
+                    <TextBox Grid.Row="4" Name="txtLlaveCertificado" HorizontalAlignment="Left" Width="200" Grid.Column="1" />
+                    <TextBlock Grid.Row="6" Name="txbKEY" Text="Llave del Certificado (.KEY)" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,5" />
+                    <TextBox Grid.Row="6" Name="txtKEY" HorizontalAlignment="Left" Width="200" Background="LightGray" Grid.Column="1"/>
+                    <Button Grid.Column="2" Grid.Row="6" Name="btnExaminarKey" Content="Examinar..." HorizontalAlignment="Left" Height="23" Width="80" VerticalAlignment="Center" Click="btnExaminarKey_Click"/>
+                    <TextBlock Grid.Row="8" Name="txbContraseniaSAT" Text="Contraseña del SAT" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,5" />
+                    <PasswordBox Grid.Row="8" Name="pwbContraseniaSAT" HorizontalAlignment="Left" Width="200" Grid.Column="1" />
+                    <TextBlock Grid.Row="10" Name="txbValidoDesde" Text="Valido desde" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,5" />
+                    <DatePicker Grid.Row="10" HorizontalAlignment="Left" Name="dtpDesde" Width="105" Grid.Column="1" />
+                    <TextBlock Grid.Row="12" Name="txbValidoHasta" Text="Valido Hasta" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,5" />
+                    <DatePicker Grid.Row="12" HorizontalAlignment="Left" Name="dtpHasta" Width="105" Margin="0,1,0,9" Grid.Column="1" Grid.RowSpan="2" />
+                    <Button Grid.Column="1" Grid.Row="14" Name="btnGuardarCer" Content="Guardar" HorizontalAlignment="Left" Margin="16,0,0,0" Width="70" Height="20" Click="btnGuardarCer_Click"/>
+                    <Button Grid.Column="1" Grid.Row="14" Name="btnCancelarCer" Content="Cancelar" HorizontalAlignment="Left" Margin="96,0,0,0" Width="70" Height="20" Click="btnCancelarCer_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Registro de Folios" Name="tbiRegistroFolios">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="587" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130" />
+                        <ColumnDefinition Width="390" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="2" Name="txbFolioInicial" Text="Folio Inicial" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="2" Name="txtFolioInicial" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200"/>
+                    <TextBlock Grid.Column="0" Grid.Row="4" Name="txbFolioFinal" Text="Folio Final" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="4" Name="txtFolioFinal" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200"/>
+                    <TextBlock Grid.Column="0" Grid.Row="6" Name="txbNoAprobacion" Text="Numero de Aprobación" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="6" Name="txtNoAprobacion" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200"/>
+                    <TextBlock Grid.Column="0" Grid.Row="8" Name="txbSerie" Text="Serie" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="8" Name="txtSerie" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200"/>
+                    <TextBlock Grid.Column="0" Grid.Row="10" Name="txbAnioAprobacion" Text="Año de Aprobación" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="10" Name="txtAnioAprobacion" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200"/>
+                    <TextBlock Grid.Column="0" Grid.Row="12" Name="txbFolioActual" Text="Folio Actual" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="12" Name="txtFolioActual" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200"/>
+                    <Button Grid.Column="1" Grid.Row="14" Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="30,0,0,0" Width="80" Height="20" Click="btnGuardar_Click"/>
+                    <Button Grid.Column="1" Grid.Row="14" Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="120,0,0,0" Width="80" Height="20" Click="btnCancelar_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

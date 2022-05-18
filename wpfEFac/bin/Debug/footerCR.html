@@ -1,0 +1,85 @@
+<html>
+
+<head>
+
+<script>
+
+function subst() {
+  var vars={};
+  var x=document.location.search.substring(1).split('&');
+  for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+  var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+
+  for(var i in x) {
+    var y = document.getElementsByClassName(x[i]);
+    for(var j=0; j<y.length; ++j){
+         y[j].textContent = vars[x[i]];
+    }
+    /* if this is the first page, just remove the footer element from the Document 
+    if(vars['page'] != vars['topage']){  
+      var elt = document.getElementById("pdfFooter");
+      elt.parentNode.removeChild(elt);
+    }
+	*/	
+  }
+}
+
+</script>
+
+</head>
+
+<body style="border:0; margin: 0;" onload="subst()" bgcolor="white">
+
+
+
+<table width="100%">
+
+<tr>
+<td>
+  <center>
+  <font color="#0B0B6" face="Courier New" size="2">   
+    
+    
+    
+    </font>
+    </center>
+</td>
+</tr>
+
+  <tr>
+
+    <td align="left"> 
+        MAZZ SERVICIOS DE TRANSPORTACIÓN ESTRATÉGICA, S.A. DE C.V.
+    </td>
+    
+    <td style="text-align:right">
+      Página <span class="page"></span> de <span class="topage"></span>
+        
+    </td>
+   
+   
+  </tr>
+  
+  <tr>
+  <td colspan="2"> 
+  <br></br><br></br>
+        <center>
+            
+        </center>
+  </td>
+  </tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

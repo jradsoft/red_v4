@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="eFacDBStoreContainer" CdmEntityContainer="eFacDBEntities">
+    <EntitySetMapping Name="Addendas">
+      <EntityTypeMapping TypeName="eFacDB.Addendas">
+        <MappingFragment StoreEntitySet="Addendas">
+          <ScalarProperty Name="idAddenda" ColumnName="idAddenda" />
+          <ScalarProperty Name="idFactura" ColumnName="idFactura" />
+          <ScalarProperty Name="idPos" ColumnName="idPos" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Default" ColumnName="Default" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatAddendas">
+      <EntityTypeMapping TypeName="eFacDB.CatAddendas">
+        <MappingFragment StoreEntitySet="CatAddendas">
+          <ScalarProperty Name="idAddendas" ColumnName="idAddendas" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categorias">
+      <EntityTypeMapping TypeName="eFacDB.Categorias">
+        <MappingFragment StoreEntitySet="Categorias">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="strNombre" ColumnName="strNombre" />
+          <ScalarProperty Name="intID_Empresa" ColumnName="intID_Empresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Certificates">
+      <EntityTypeMapping TypeName="eFacDB.Certificates">
+        <MappingFragment StoreEntitySet="Certificates">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="strNumeroCertificadoSelloDigital" ColumnName="strNumeroCertificadoSelloDigital" />
+          <ScalarProperty Name="strCertificadoSelloDigitalPath" ColumnName="strCertificadoSelloDigitalPath" />
+          <ScalarProperty Name="strLlaveCertificadoPath" ColumnName="strLlaveCertificadoPath" />
+          <ScalarProperty Name="strContraseñaSAT" ColumnName="strContraseñaSAT" />
+          <ScalarProperty Name="dtmValidoDesde" ColumnName="dtmValidoDesde" />
+          <ScalarProperty Name="dtmValidoHasta" ColumnName="dtmValidoHasta" />
+          <ScalarProperty Name="dtmFechaSubida" ColumnName="dtmFechaSubida" />
+          <ScalarProperty Name="intID_Empresa" ColumnName="intID_Empresa" />
+          <ScalarProperty Name="chrStatus" ColumnName="chrStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CFD">
+      <EntityTypeMapping TypeName="eFacDB.CFD">
+        <MappingFragment StoreEntitySet="CFD">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+          <ScalarProperty Name="strTipoCFD" ColumnName="strTipoCFD" />
+          <ScalarProperty Name="intId_Empresa" ColumnName="intId_Empresa" />
+          <ScalarProperty Name="intIdFolio" ColumnName="intIdFolio" />
+          <ScalarProperty Name="templateReportH" ColumnName="templateReportH" />
+          <ScalarProperty Name="templateReportHdemo" ColumnName="templateReportHdemo" />
+          <ScalarProperty Name="templateReport" ColumnName="templateReport" />
+          <ScalarProperty Name="templateReportDemo" ColumnName="templateReportDemo" />
+          <ScalarProperty Name="iva" ColumnName="iva" />
+          <ScalarProperty Name="retIva" ColumnName="retIva" />
+          <ScalarProperty Name="retIsr" ColumnName="retIsr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="eFacDB.Clientes">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="strRFC" ColumnName="strRFC" />
+          <ScalarProperty Name="strRazonSocial" ColumnName="strRazonSocial" />
+          <ScalarProperty Name="strNombreComercial" ColumnName="strNombreComercial" />
+          <ScalarProperty Name="strGiro" ColumnName="strGiro" />
+          <ScalarProperty Name="strTipodeInscripcion" ColumnName="strTipodeInscripcion" />
+          <ScalarProperty Name="strTelefono" ColumnName="strTelefono" />
+          <ScalarProperty Name="strTelefonoMovil" ColumnName="strTelefonoMovil" />
+          <ScalarProperty Name="strEmail" ColumnName="strEmail" />
+          <ScalarProperty Name="chrRetencionIVA" ColumnName="chrRetencionIVA" />
+          <ScalarProperty Name="chrRetencionISR" ColumnName="chrRetencionISR" />
+          <ScalarProperty Name="strContacto" ColumnName="strContacto" />
+          <ScalarProperty Name="strWebSite" ColumnName="strWebSite" />
+          <ScalarProperty Name="intID_Empresa" ColumnName="intID_Empresa" />
+          <ScalarProperty Name="idAddenda" ColumnName="idAddenda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Colonia">
+      <EntityTypeMapping TypeName="eFacDB.Colonia">
+        <MappingFragment StoreEntitySet="Colonia">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="str_codigo" ColumnName="str_codigo" />
+          <ScalarProperty Name="str_descripcion" ColumnName="str_descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Configuracion_Regional">
+      <EntityTypeMapping TypeName="eFacDB.Configuracion_Regional">
+        <MappingFragment StoreEntitySet="Configuracion_Regional">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="dcmIVAGeneral" ColumnName="dcmIVAGeneral" />
+          <ScalarProperty Name="dcmIVAZonaFronteriza" ColumnName="dcmIVAZonaFronteriza" />
+          <ScalarProperty Name="dcmRetencionIVA" ColumnName="dcmRetencionIVA" />
+          <ScalarProperty Name="dcmRetencionISR" ColumnName="dcmRetencionISR" />
+          <ScalarProperty Name="chrIVAZonaFronteriza" ColumnName="chrIVAZonaFronteriza" />
+          <ScalarProperty Name="intID_Empresa" ColumnName="intID_Empresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Configuracion_Vehicular">
+      <EntityTypeMapping TypeName="eFacDB.Configuracion_Vehicular">
+        <MappingFragment StoreEntitySet="Configuracion_Vehicular">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="str_codigo" ColumnName="str_codigo" />
+          <ScalarProperty Name="str_descripcion" ColumnName="str_descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfiguracionContadorTabla">
+      <EntityTypeMapping TypeName="eFacDB.ConfiguracionContadorTabla">
+        <MappingFragment StoreEntitySet="ConfiguracionContadorTabla">
+          <ScalarProperty Name="intId" ColumnName="intId" />
+          <ScalarProperty Name="intIdEmpresa" ColumnName="intIdEmpresa" />
+          <ScalarProperty Name="strNombreTabla" ColumnName="strNombreTabla" />
+          <ScalarProperty Name="intUltimoRegistro" ColumnName="intUltimoRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfiguracionEmail">
+      <EntityTypeMapping TypeName="eFacDB.ConfiguracionEmail">
+        <MappingFragment StoreEntitySet="ConfiguracionEmail">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="strE_MailRespaldo" ColumnName="strE_MailRespaldo" />
+          <ScalarProperty Name="strE_MailContador" ColumnName="strE_MailContador" />
+          <ScalarProperty Name="intID_Empresa" ColumnName="intID_Empresa" />
+          <ScalarProperty Name="strPasswordEmail" ColumnName="strPasswordEmail" />
+          <ScalarProperty Name="strSMTPHost" ColumnName="strSMTPHost" />
+          <ScalarProperty Name="intPort" ColumnName="intPort" />
+          <ScalarProperty Name="EnableSsl" ColumnName="EnableSsl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consulta">
+      <EntityTypeMapping TypeName="eFacDB.Consulta">
+        <MappingFragment StoreEntitySet="Consulta">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="intID_Tipo_CFD" ColumnName="intID_Tipo_CFD" />
+          <ScalarProperty Name="intID_Empresa" ColumnName="intID_Empresa" />
+          <ScalarProperty Name="strSerie" ColumnName="strSerie" />
+          <ScalarProperty Name="strFolio" ColumnName="strFolio" />
+          <ScalarProperty Name="dtmFecha" ColumnName="dtmFecha" />
+          <ScalarProperty Name="dtmFechaAprovacion" ColumnName="dtmFechaAprovacion" />
+          <ScalarProperty Name="intID_Usuario" ColumnName="intID_Usuario" />
+          <ScalarProperty Name="intID_Cliente" ColumnName="intID_Cliente" />
+          <ScalarProperty Name="strForma_Pago" ColumnName="strForma_Pago" />
+          <ScalarProperty Name="strObervaciones" ColumnName="strObervaciones" />
+          <ScalarProperty Name="dcmSubTotal" ColumnName="dcmSubTotal" />
+          <ScalarProperty Name="dcmIVA" ColumnName="dcmIVA" />
+          <ScalarProperty Name="dcmTotal" ColumnName="dcmTotal" />
+          <ScalarProperty Name="chrStatus" ColumnName="chrStatus" />
+          <ScalarProperty Name="strProveedor" ColumnName="strProveedor" />
+          <ScalarProperty Name="strNumero" ColumnName="strNumero" />
+          <ScalarProperty Name="strNumeroContrato" ColumnName="strNumeroContrato" />
+          <ScalarProperty Name="intEstimacion" ColumnName="intEstimacion" />
+          <ScalarProperty Name="intID_Certificate" ColumnName="intID_Certificate" />
+          <ScalarProperty Name="strCadenaOriginal" ColumnName="strCadenaOriginal" />
+          <ScalarProperty Name="strSelloDigital" ColumnName="strSelloDigital" />
+          <ScalarProperty Name="dcmDescuento" ColumnName="dcmDescuento" />
+          <ScalarProperty Name="dtmFechaCancelacion" ColumnName="dtmFechaCancelacion" />
+          <ScalarProperty Name="dtmFechaEnvio" ColumnName="dtmFechaEnvio" />
+          <ScalarProperty Name="strXMLpath" ColumnName="strXMLpath" />
+          <ScalarProperty Name="strPDFpath" ColumnName="strPDFpath" />
+          <ScalarProperty Name="strPDFdemoPath" ColumnName="strPDFdemoPath" />
+          <ScalarProperty Name="dcmRetIVA" ColumnName="dcmRetIVA" />
+          <ScalarProperty Name="dcmRetISR" ColumnName="dcmRetISR" />
+          <ScalarProperty Name="dcmRetIEPS" ColumnName="dcmRetIEPS" />
+          <ScalarProperty Name="Divisa" ColumnName="Divisa" />
+          <ScalarProperty Name="TipoCambio" ColumnName="TipoCambio" />
+          <ScalarProperty Name="CondPago" ColumnName="CondPago" />
+          <ScalarProperty Name="MetodoPago" ColumnName="MetodoPago" />
+          <ScalarProperty Name="MotivoDesc" ColumnName="MotivoDesc" />
+          <ScalarProperty Name="Origen" ColumnName="Origen" />
+          <ScalarProperty Name="RecogerEn" ColumnName="RecogerEn" />
+          <ScalarProperty Name="Destino" ColumnName="Destino" />
+          <ScalarProperty Name="Destinatario" ColumnName="Destinatario" />
+          <ScalarProperty Name="rfcDestinatario" ColumnName="rfcDestinatario" />
+          <ScalarProperty Name="domicilioDestinatario" ColumnName="domicilioDestinatario" />
+          <ScalarProperty Name="EntregarEn" ColumnName="EntregarEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Detalle_Factura">
+      <EntityTypeMapping TypeName="eFacDB.Detalle_Factura">
+        <MappingFragment StoreEntitySet="Detalle_Factura">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="intID_Factura" ColumnName="intID_Factura" />
+          <ScalarProperty Name="intID_Producto" ColumnName="intID_Producto" />
+          <ScalarProperty Name="dcmCantidad" ColumnName="dcmCantidad" />
+          <ScalarProperty Name="dcmDescuento" ColumnName="dcmDescuento" />
+          <ScalarProperty Name="dcmImporte" ColumnName="dcmImporte" />
+          <ScalarProperty Name="strUnidad" ColumnName="strUnidad" />
+          <ScalarProperty Name="strConcepto" ColumnName="strConcepto" />
+          <ScalarProperty Name="dcmPrecioUnitario" ColumnName="dcmPrecioUnitario" />
+          <ScalarProperty Name="strPatida" ColumnName="strPatida" />
+          <ScalarProperty Name="dcmIVA" ColumnName="dcmIVA" />
+          <ScalarProperty Name="retIVA" ColumnName="retIVA" />
+          <ScalarProperty Name="retISR" ColumnName="retISR" />
+          <ScalarProperty Name="retIEPS" ColumnName="retIEPS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DicAddenda">
+      <EntityTypeMapping TypeName="eFacDB.DicAddenda">
+        <MappingFragment StoreEntitySet="DicAddenda">
+          <ScalarProperty Name="idAddenda" ColumnName="idAddenda" />
+          <ScalarProperty Name="idPos" ColumnName="idPos" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Default" ColumnName="Default" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Direcciones_Fiscales">
+      <EntityTypeMapping TypeName="eFacDB.Direcciones_Fiscales">
+        <MappingFragment StoreEntitySet="Direcciones_Fiscales">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="strTipoEntidad" ColumnName="strTipoEntidad" />
+          <ScalarProperty Name="strIDCliente" ColumnName="strIDCliente" />
+          <ScalarProperty Name="strCalle" ColumnName="strCalle" />
+          <ScalarProperty Name="strColonia" ColumnName="strColonia" />
+          <ScalarProperty Name="strNoInterior" ColumnName="strNoInterior" />
+          <ScalarProperty Name="strNoExterior" ColumnName="strNoExterior" />
+          <ScalarProperty Name="intIDPais" ColumnName="intIDPais" />
+          <ScalarProperty Name="intIDEstado" ColumnName="intIDEstado" />
+          <ScalarProperty Name="strMunicipio" ColumnName="strMunicipio" />
+          <ScalarProperty Name="strPoblacionLocalidad" ColumnName="strPoblacionLocalidad" />
+          <ScalarProperty Name="strCodigoPostal" ColumnName="strCodigoPostal" />
+          <ScalarProperty Name="chrStatus" ColumnName="chrStatus" />
+          <ScalarProperty Name="intID_Empresa" ColumnName="intID_Empresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empresa">
+      <EntityTypeMapping TypeName="eFacDB.Empresa">
+        <MappingFragment StoreEntitySet="Empresa">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="intIDConfiguracionRegional" ColumnName="intIDConfiguracionRegional" />
+          <ScalarProperty Name="strRazonSocial" ColumnName="strRazonSocial" />
+          <ScalarProperty Name="strNombreComercial" ColumnName="strNombreComercial" />
+          <ScalarProperty Name="strGiro" ColumnName="strGiro" />
+          <ScalarProperty Name="strRFC" ColumnName="strRFC" />
+          <ScalarProperty Name="intID_CFD" ColumnName="intID_CFD" />
+          <ScalarProperty Name="strTelefono" ColumnName="strTelefono" />
+          <ScalarProperty Name="strTelefonoMovil" ColumnName="strTelefonoMovil" />
+          <ScalarProperty Name="strEmail" ColumnName="strEmail" />
+          <ScalarProperty Name="strEmail2" ColumnName="strEmail2" />
+          <ScalarProperty Name="strWebSite" ColumnName="strWebSite" />
+          <ScalarProperty Name="strTelefono2" ColumnName="strTelefono2" />
+          <ScalarProperty Name="strLogo" ColumnName="strLogo" />
+          <ScalarProperty Name="strCedula" ColumnName="strCedula" />
+          <ScalarProperty Name="strDirectorioXML" ColumnName="strDirectorioXML" />
+          <ScalarProperty Name="strDirectorioPDF" ColumnName="strDirectorioPDF" />
+          <ScalarProperty Name="strBannerPublicidad" ColumnName="strBannerPublicidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estado">
+      <EntityTypeMapping TypeName="eFacDB.Estado">
+        <MappingFragment StoreEntitySet="Estado">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="strNombreEstado" ColumnName="strNombreEstado" />
+          <ScalarProperty Name="intID_Pais" ColumnName="intID_Pais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Factura">
+      <EntityTypeMapping TypeName="eFacDB.Factura">
+        <MappingFragment StoreEntitySet="Factura">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="intID_Tipo_CFD" ColumnName="intID_Tipo_CFD" />
+          <ScalarProperty Name="intID_Empresa" ColumnName="intID_Empresa" />
+          <ScalarProperty Name="strSerie" ColumnName="strSerie" />
+          <ScalarProperty Name="strFolio" ColumnName="strFolio" />
+          <ScalarProperty Name="dtmFecha" ColumnName="dtmFecha" />
+          <ScalarProperty Name="dtmFechaAprovacion" ColumnName="dtmFechaAprovacion" />
+          <ScalarProperty Name="intID_Usuario" ColumnName="intID_Usuario" />
+          <ScalarProperty Name="intID_Cliente" ColumnName="intID_Cliente" />
+          <ScalarProperty Name="strForma_Pago" ColumnName="strForma_Pago" />
+          <ScalarProperty Name="strObervaciones" ColumnName="strObervaciones" />
+          <ScalarProperty Name="dcmSubTotal" ColumnName="dcmSubTotal" />
+          <ScalarProperty Name="dcmIVA" ColumnName="dcmIVA" />
+          <ScalarProperty Name="dcmTotal" ColumnName="dcmTotal" />
+          <ScalarProperty Name="chrStatus" ColumnName="chrStatus" />
+          <ScalarProperty Name="strProveedor" ColumnName="strProveedor" />
+          <ScalarProperty Name="strNumero" ColumnName="strNumero" />
+          <ScalarProperty Name="strNumeroContrato" ColumnName="strNumeroContrato" />
+          <ScalarProperty Name="intEstimacion" ColumnName="intEstimacion" />
+          <ScalarProperty Name="intID_Certificate" ColumnName="intID_Certificate" />
+          <ScalarProperty Name="strCadenaOriginal" ColumnName="strCadenaOriginal" />
+          <ScalarProperty Name="strSelloDigital" ColumnName="strSelloDigital" />
+          <ScalarProperty Name="dcmDescuento" ColumnName="dcmDescuento" />
+          <ScalarProperty Name="dtmFechaCancelacion" ColumnName="dtmFechaCancelacion" />
+          <ScalarProperty Name="dtmFechaEnvio" ColumnName="dtmFechaEnvio" />
+          <ScalarProperty Name="strXMLpath" ColumnName="strXMLpath" />
+          <ScalarProperty Name="strPDFpath" ColumnName="strPDFpath" />
+          <ScalarProperty Name="strPDFdemoPath" ColumnName="strPDFdemoPath" />
+          <ScalarProperty Name="dcmRetIVA" ColumnName="dcmRetIVA" />
+          <ScalarProperty Name="dcmRetISR" ColumnName="dcmRetISR" />
+          <ScalarProperty Name="dcmRetIEPS" ColumnName="dcmRetIEPS" />
+          <ScalarProperty Name="Divisa" ColumnName="Divisa" />
+          <ScalarProperty Name="TipoCambio" ColumnName="TipoCambio" />
+          <ScalarProperty Name="CondPago" ColumnName="CondPago" />
+          <ScalarProperty Name="MetodoPago" ColumnName="MetodoPago" />
+          <ScalarProperty Name="MotivoDesc" ColumnName="MotivoDesc" />
+          <ScalarProperty Name="Origen" ColumnName="Origen" />
+          <ScalarProperty Name="RecogerEn" ColumnName="RecogerEn" />
+          <ScalarProperty Name="Destino" ColumnName="Destino" />
+          <ScalarProperty Name="Destinatario" ColumnName="Destinatario" />
+          <ScalarProperty Name="rfcDestinatario" ColumnName="rfcDestinatario" />
+          <ScalarProperty Name="domicilioDestinatario" ColumnName="domicilioDestinatario" />
+          <ScalarProperty Name="EntregarEn" ColumnName="EntregarEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Folios">
+      <EntityTypeMapping TypeName="eFacDB.Folios">
+        <MappingFragment StoreEntitySet="Folios">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="intID_Certificate" ColumnName="intID_Certificate" />
+          <ScalarProperty Name="intFolio_Inicial" ColumnName="intFolio_Inicial" />
+          <ScalarProperty Name="intFolio_Final" ColumnName="intFolio_Final" />
+          <ScalarProperty Name="intNumero_Aprovacion" ColumnName="intNumero_Aprovacion" />
+          <ScalarProperty Name="strSerie" ColumnName="strSerie" />
+          <ScalarProperty Name="strAño_Aprovacion" ColumnName="strAño_Aprovacion" />
+          <ScalarProperty Name="intID_Empresa" ColumnName="intID_Empresa" />
+          <ScalarProperty Name="chrStatus" ColumnName="chrStatus" />
+          <ScalarProperty Name="intFolioActual" ColumnName="intFolioActual" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grupos">
+      <EntityTypeMapping TypeName="eFacDB.Grupos">
+        <MappingFragment StoreEntitySet="Grupos">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+          <ScalarProperty Name="dtmFechaCreacion" ColumnName="dtmFechaCreacion" />
+          <ScalarProperty Name="intID_Empresa" ColumnName="intID_Empresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Localidad">
+      <EntityTypeMapping TypeName="eFacDB.Localidad">
+        <MappingFragment StoreEntitySet="Localidad">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="str_codigo" ColumnName="str_codigo" />
+          <ScalarProperty Name="str_descripcion" ColumnName="str_descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Municipio">
+      <EntityTypeMapping TypeName="eFacDB.Municipio">
+        <MappingFragment StoreEntitySet="Municipio">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="str_codigo" ColumnName="str_codigo" />
+          <ScalarProperty Name="str_descripcion" ColumnName="str_descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paises">
+      <EntityTypeMapping TypeName="eFacDB.Paises">
+        <MappingFragment StoreEntitySet="Paises">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="strNombrePais" ColumnName="strNombrePais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productos">
+      <EntityTypeMapping TypeName="eFacDB.Productos">
+        <MappingFragment StoreEntitySet="Productos">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="intID_Categoria" ColumnName="intID_Categoria" />
+          <ScalarProperty Name="strNombre" ColumnName="strNombre" />
+          <ScalarProperty Name="strNombreCorto" ColumnName="strNombreCorto" />
+          <ScalarProperty Name="strCodigo" ColumnName="strCodigo" />
+          <ScalarProperty Name="dcmPrecio1" ColumnName="dcmPrecio1" />
+          <ScalarProperty Name="dcmPrecio2" ColumnName="dcmPrecio2" />
+          <ScalarProperty Name="dcmPrecio3" ColumnName="dcmPrecio3" />
+          <ScalarProperty Name="dcmPrecio4" ColumnName="dcmPrecio4" />
+          <ScalarProperty Name="dcmPrecio5" ColumnName="dcmPrecio5" />
+          <ScalarProperty Name="dcmDescuent" ColumnName="dcmDescuent" />
+          <ScalarProperty Name="intUnidad" ColumnName="intUnidad" />
+          <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+          <ScalarProperty Name="intID_Empresa" ColumnName="intID_Empresa" />
+          <ScalarProperty Name="strCodigoBarras" ColumnName="strCodigoBarras" />
+          <ScalarProperty Name="gravaIva" ColumnName="gravaIva" />
+          <ScalarProperty Name="porcIva" ColumnName="porcIva" />
+          <ScalarProperty Name="gravaIeps" ColumnName="gravaIeps" />
+          <ScalarProperty Name="porcIeps" ColumnName="porcIeps" />
+          <ScalarProperty Name="gravaRetIva" ColumnName="gravaRetIva" />
+          <ScalarProperty Name="porcRetIva" ColumnName="porcRetIva" />
+          <ScalarProperty Name="gravaRetIsr" ColumnName="gravaRetIsr" />
+          <ScalarProperty Name="porcRetIsr" ColumnName="porcRetIsr" />
+          <ScalarProperty Name="existencias" ColumnName="existencias" />
+          <ScalarProperty Name="stockMin" ColumnName="stockMin" />
+          <ScalarProperty Name="stockMax" ColumnName="stockMax" />
+          <ScalarProperty Name="puntoReorden" ColumnName="puntoReorden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="eFacDB.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoRemolque">
+      <EntityTypeMapping TypeName="eFacDB.TipoRemolque">
+        <MappingFragment StoreEntitySet="TipoRemolque">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="str_codigo" ColumnName="str_codigo" />
+          <ScalarProperty Name="str_descripcion" ColumnName="str_descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Traslados">
+      <EntityTypeMapping TypeName="eFacDB.Traslados">
+        <MappingFragment StoreEntitySet="Traslados">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="intID_Factura" ColumnName="intID_Factura" />
+          <ScalarProperty Name="strTipoImpuesto" ColumnName="strTipoImpuesto" />
+          <ScalarProperty Name="dcmTasa" ColumnName="dcmTasa" />
+          <ScalarProperty Name="dcmImporte" ColumnName="dcmImporte" />
+          <ScalarProperty Name="TotalImpuestoTrasladado" ColumnName="TotalImpuestoTrasladado" />
+          <ScalarProperty Name="intID_Empresa" ColumnName="intID_Empresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnidadMedida">
+      <EntityTypeMapping TypeName="eFacDB.UnidadMedida">
+        <MappingFragment StoreEntitySet="UnidadMedida">
+          <ScalarProperty Name="intId" ColumnName="intId" />
+          <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+          <ScalarProperty Name="intID_Empresa" ColumnName="intID_Empresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="eFacDB.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="strNombre" ColumnName="strNombre" />
+          <ScalarProperty Name="strPassword" ColumnName="strPassword" />
+          <ScalarProperty Name="intID_Grupo" ColumnName="intID_Grupo" />
+          <ScalarProperty Name="intID_Empresa" ColumnName="intID_Empresa" />
+          <ScalarProperty Name="strEmail" ColumnName="strEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehiculos">
+      <EntityTypeMapping TypeName="eFacDB.Vehiculos">
+        <MappingFragment StoreEntitySet="Vehiculos">
+          <ScalarProperty Name="strPlaca" ColumnName="strPlaca" />
+          <ScalarProperty Name="strModelo" ColumnName="strModelo" />
+          <ScalarProperty Name="strAno" ColumnName="strAno" />
+          <ScalarProperty Name="strNoPoliza" ColumnName="strNoPoliza" />
+          <ScalarProperty Name="strAseguradoraCarga" ColumnName="strAseguradoraCarga" />
+          <ScalarProperty Name="strAseguradoraRepCivil" ColumnName="strAseguradoraRepCivil" />
+          <ScalarProperty Name="strTipoVehiculo" ColumnName="strTipoVehiculo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

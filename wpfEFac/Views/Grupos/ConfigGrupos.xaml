@@ -1,0 +1,44 @@
+﻿<Page x:Class="wpfEFac.ConfigGrupos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="432" d:DesignWidth="620"
+	Title="ConfigGrupos" Loaded="Page_Loaded">
+
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Row="1" Header="Grupos de Trabajo" Height="410" HorizontalAlignment="Stretch" Name="grbGruposTrabajo" VerticalAlignment="Top">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="27"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0">
+                    <Button Click="bttAgregarGrupo_Click" Name="bttAgregarGrupo" Content="Agregar Nuevo Grupo" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,2,0,0"/>
+                </StackPanel>
+                <DataGrid AutoGenerateColumns="False" Grid.Row="1" Height="357" HorizontalAlignment="Stretch" Name="dtgGruposTrabajo" VerticalAlignment="Top">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn x:Name="strID" Binding="{Binding Path=strID}" Header="Id" Width="35"/>
+                        <DataGridTextColumn x:Name="strNombre" Binding="{Binding Path=strDescripcion}" Header="Nombre" Width="230"/>                        
+                        <DataGridTextColumn x:Name="dtmFechaCreacion" Binding="{Binding Path=dtmFechaCreacion}" Header="Fecha de Creación" Width="180"/>                        
+                        <DataGridTemplateColumn Header="Opciones" Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Name="bttEditar" Click="bttEditar_Click">Editar</Button>
+                                        <Button Name="bttBorrar" Click="bttBorrar_Click">Borrar</Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Page>

@@ -1,0 +1,45 @@
+﻿<Page x:Class="wpfEFac.Views.ReporteMensual.ReporteMensual"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="600"
+	Title="ReporteMensual" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*" />
+            
+            <RowDefinition Height="100*" />
+            <RowDefinition Height="630*" />
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Row="1" Grid.RowSpan="1" Header="" Name="grbReporteMensual">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60*" />
+
+                    <RowDefinition Height="100*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="145*" />
+                    <ColumnDefinition Width="145*" />
+                    <ColumnDefinition Width="145*" /> 
+                    <ColumnDefinition Width="145*" />
+                    <ColumnDefinition Width="145*" />
+                    <ColumnDefinition Width="145*" />
+                </Grid.ColumnDefinitions>
+                
+                <RadioButton Grid.Column="0" x:Name="repMensual" Visibility="Collapsed">Reporte Mensual</RadioButton>
+                <RadioButton Grid.Column="1" x:Name="repVentas" IsChecked="True" Grid.ColumnSpan="2"> Facturas</RadioButton>
+                <RadioButton Grid.Column="2" x:Name="repVentasCancelacion" IsChecked="False"> Cancelaciones</RadioButton>
+                <CheckBox x:Name="chkEnviarMail" Grid.Column="3" IsChecked="False">Enviar e-Mail</CheckBox>
+                <TextBlock Grid.Row="1" Grid.ColumnSpan="1" Name="txbFechaReporte" Text="Fecha Inicio " VerticalAlignment="Center" HorizontalAlignment="Right" />
+                <DatePicker Grid.Row="1" Grid.Column="1" Name="dtpFechaReporte" VerticalAlignment="Center" Loaded="dtpFechaReporte_Loaded" />
+                <TextBlock Grid.Row="1" Grid.ColumnSpan="3" Name="txbFechaReporteFin" Text="Fecha Fin " VerticalAlignment="Center" HorizontalAlignment="Right" />
+                <DatePicker Grid.Row="1" Grid.Column="3" Name="dtpFechaReporteFin" VerticalAlignment="Center" Loaded="dtpFechaReporteFin_Loaded" />
+                <Button Grid.Row="1" Content="Generar" Grid.Column="5" Height="23" Name="bttGenerar" VerticalAlignment="Center" Width="75" Click="bttGenerar_Click" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Page>

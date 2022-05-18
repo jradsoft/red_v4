@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Complemento xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Origen>TIJUANA BCN</Origen>
+  <RecogerEn>BODEGA MARUCHAN TIJUANA</RecogerEn>
+  <Destino>OAXACA OAX.</Destino>
+  <Destinatario>MINI ABASTOS SA DE CV</Destinatario>
+  <RfcDestinatario />
+  <DomicilioDestinatario>MODULO Q ZONA PONIENTE LOC 17 COSIJOEZA, OAXACA DE JUAREZ OAX. CP 68090</DomicilioDestinatario>
+  <EntregarEn>MISMO</EntregarEn>
+  <UUID>00000000-0000-0000-0000-000000000000</UUID>
+  <FechaTimbrado>1900-01-01T00:00:00</FechaTimbrado>
+  <NoCertificadoSAT>000000000000000</NoCertificadoSAT>
+  <SelloCFD>muestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalor</SelloCFD>
+  <SelloSAT>muestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalor</SelloSAT>
+  <CadenaTFD>muestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalor
+muestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalor</CadenaTFD>
+  <TipoComprobante>CARTA PORTE</TipoComprobante>
+  <Cadena>||3.3|A|18774|2022-05-18T13:48:58|99|00001000000408275657|0.00|MXN|0.00|I|PPD|94450|ACG060807RMA|AUTOTRANSPORTES DE CARGA EN GENERAL ORIZVER, S.C. DE R.L.|624|CPI120801GR4|CORPORATIVO PAPELERO INTERLOMAS SA DE CV|G03|002|0.00|0.00||</Cadena>
+  <CantidadLetra>(CERO PESOS 00/100)</CantidadLetra>
+  <Encabezado />
+  <Observaciones>Origen</Observaciones>
+  <ImpuestosAdicionales>CANCELADA</ImpuestosAdicionales>
+</Complemento>

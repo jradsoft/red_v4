@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://tegogolows.cloudapp.net/Services/ServiceSecurity.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://tegogolows.cloudapp.net/Services/ServiceSecurity.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://tegogolows.cloudapp.net/Services/ServiceSecurity.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TegogoloModel.Security" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ServiceSecurity_getUser_InputMessage">
+    <wsdl:part name="parameters" element="getUser" />
+  </wsdl:message>
+  <wsdl:message name="ServiceSecurity_getUser_OutputMessage">
+    <wsdl:part name="parameters" element="getUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceSecurity_getSocialMedia_InputMessage">
+    <wsdl:part name="parameters" element="getSocialMedia" />
+  </wsdl:message>
+  <wsdl:message name="ServiceSecurity_getSocialMedia_OutputMessage">
+    <wsdl:part name="parameters" element="getSocialMediaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceSecurity_verifyUser_InputMessage">
+    <wsdl:part name="parameters" element="verifyUser" />
+  </wsdl:message>
+  <wsdl:message name="ServiceSecurity_verifyUser_OutputMessage">
+    <wsdl:part name="parameters" element="verifyUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSecurity">
+    <wsdl:operation name="getUser">
+      <wsdl:input wsaw:Action="urn:ServiceSecurity/getUser" message="ServiceSecurity_getUser_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ServiceSecurity/getUserResponse" message="ServiceSecurity_getUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSocialMedia">
+      <wsdl:input wsaw:Action="urn:ServiceSecurity/getSocialMedia" message="ServiceSecurity_getSocialMedia_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ServiceSecurity/getSocialMediaResponse" message="ServiceSecurity_getSocialMedia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="verifyUser">
+      <wsdl:input wsaw:Action="urn:ServiceSecurity/verifyUser" message="ServiceSecurity_verifyUser_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ServiceSecurity/verifyUserResponse" message="ServiceSecurity_verifyUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

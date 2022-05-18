@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://tegogolows.cloudapp.net/Services/ServiceSecurity.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TegogoloModel.Security" />
+  <xs:element name="getUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strPasswd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TegogoloModel.Security" minOccurs="0" name="getUserResult" nillable="true" type="q1:SegUserSession" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSocialMedia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intIdEmpresa" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSocialMediaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TegogoloModel.Security" minOccurs="0" name="getSocialMediaResult" nillable="true" type="q2:InfoSocialMedia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verifyUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strRFC" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="passwd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idPac" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verifyUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="verifyUserResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,138 @@
+﻿<Window x:Class="wpfEFac.Views.PuntoVenta.AddProductoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Agregar Producto" Height="370" Width="990" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:my="clr-namespace:wpfEFac.Models" Loaded="Window_Loaded" Icon="/wpfEFac;component/Images/IconoEFacWindow.png" ResizeMode="NoResize" ShowInTaskbar="False" Topmost="False" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="Manual" Left="290" Top="0">
+    <Grid >
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF6693D1" Offset="1" />
+                <GradientStop Color="White" Offset="0.098" />
+                <GradientStop Color="#FFEBF0F7" Offset="0.607" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            
+            <ColumnDefinition Width="497*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*" />
+            <RowDefinition Height="201*" />
+            <RowDefinition Height="75*" />
+            <RowDefinition Height="25*" />
+            <RowDefinition Height="25*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            
+            
+            <TextBlock Text="Buscar por Codigo"></TextBlock>
+            <TextBox Height="23" HorizontalAlignment="Center" Name="txtCodigoProducto" Margin="0,0,0,0"  Width="120" TextChanged="txtCodigoProducto_TextChanged" />
+
+            <TextBlock Text="Buscar por Nombre"></TextBlock>
+            <TextBox Height="23" HorizontalAlignment="Center" Name="txtNombreProducto" Margin="0,0,0,0"  Width="300" TextChanged="txtNombreProducto_TextChanged" />
+
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" EnableRowVirtualization="True" Grid.Column="0" HorizontalAlignment="Stretch" Name="dtgProductos" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Stretch" SelectionChanged="dtgProductos_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="strIDColumn" Binding="{Binding Path=strID}" Header="str ID" Width="*" Visibility="Collapsed" />
+                <DataGridTextColumn x:Name="strCategoriaNombre" Binding="{Binding Path=Categorias.strNombre}" Header="str ID Categoria" Visibility="Collapsed" />
+                <DataGridTextColumn x:Name="strCodigoColumn" Binding="{Binding Path=strCodigo}" Header="Codigo" Width="*" />
+                <DataGridTextColumn x:Name="strNombreColumn" Binding="{Binding Path=strNombre}" Header="Nombre" Width="2*" />
+                <DataGridTextColumn x:Name="strDescripcionColumn" Binding="{Binding Path=strDescripcion}" Header="Descripcion" Width="*" />
+                
+                <DataGridTextColumn x:Name="dcmPrecioColumn1" Binding="{Binding Path=dcmPrecio1}" Header="Precio 1" Width="*" />
+                <DataGridTextColumn x:Name="dcmPrecioColumn2" Binding="{Binding Path=dcmPrecio2}" Header="Precio 2" Width="*" />
+                <DataGridTextColumn x:Name="dcmPrecioColumn3" Binding="{Binding Path=dcmPrecio3}" Header="Precio 3" Width="*" />
+                <DataGridTextColumn x:Name="dcmPrecioColumn4" Binding="{Binding Path=dcmPrecio4}" Header="Precio 4" Width="*" />
+                <DataGridTextColumn x:Name="dcmPrecioColumn5" Binding="{Binding Path=dcmPrecio5}" Header="Precio 5" Width="*" />
+
+                <DataGridTextColumn x:Name="dcmIva" Binding="{Binding Path=porcIva}" Header="Iva" Width="*" />
+                <DataGridTextColumn x:Name="dcmretIva" Binding="{Binding Path=porcRetIva}" Header="Ret IVA" Width="*" />
+                <DataGridTextColumn x:Name="dcmretIsr" Binding="{Binding Path=porcRetIsr}" Header="Ret ISR" Width="*" />
+                <DataGridTextColumn x:Name="dcmretIeps" Binding="{Binding Path=porcIeps}" Header="Ret IEPS" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <Grid Grid.Row="2" >
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Height="23" HorizontalAlignment="Right" Name="txbCantidad" Text="Cantidad: "  />
+            <TextBox x:Name="txtCantidad" Height="23" Width="40"  TextChanged="txtCantidad_TextChanged"></TextBox>
+
+                <TextBlock Height="23"  Text="  Nombre: "   />
+                <TextBox x:Name="txtNombre" Height="75" Width="360" AcceptsReturn="True" TextWrapping="Wrap"  />
+                
+                
+
+            
+            <TextBlock Height="23"   Text=" Precio Unit: "  />
+            <TextBox x:Name="txtPrecioUnitario" Height="23" Width="70"   TextChanged="txtPrecioUnitario_TextChanged"></TextBox>
+
+
+                <TextBlock  VerticalAlignment="Center" Text=" DESC."/>    
+                <TextBox x:Name="txtDescuento" Height="23" TextChanged="txtDescuento_TextChanged" Width="50"></TextBox>    
+                <TextBlock  VerticalAlignment="Center">%</TextBlock>
+
+                <TextBlock  VerticalAlignment="Center" Text="  Imp. DESC."/>
+                <TextBox x:Name="txtImporteDescuento" Height="23" TextChanged="txtDescuento_TextChanged" Width="50"></TextBox>
+
+
+                <TextBlock Text="  Importe: " Height="25" />
+            <TextBox x:Name="txtImporte" Width="100" AcceptsReturn="False" Height="25"></TextBox>
+
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <TextBlock Height="23" Name="txbUnidad"  Text=" Unidad :" />
+            <TextBox x:Name="txtUnidad"  Height="25" Width="50" TextWrapping="Wrap"  />
+
+            <TextBlock Height="23" Name="txbIVA" Text="     IVA :" />
+            <TextBox x:Name="txtIVA" Height="25" Width="50" TextWrapping="Wrap"  />
+
+            <TextBlock Height="23" Name="txbRetIVA"  Text="     RET IVA :" />
+            <TextBox x:Name="txtRetIVA" Height="25" Width="50" TextWrapping="Wrap"  />
+
+            <TextBlock Height="23" Name="txbRetISR"  Text="     RET ISR :" />
+            <TextBox x:Name="txtRetISR" Height="25" Width="50" TextWrapping="Wrap"  />
+
+            <TextBlock Height="23" Name="txbRetIEPS" Text="     RET IEPS :" />
+            <TextBox x:Name="txtRetIEPS" Height="25" Width="50" TextWrapping="Wrap"  />
+            <TextBlock Height="23" x:Name="txbPeso" Text="     PESO KG :" />
+            <TextBox x:Name="txtPesoKg" Height="25" Text="0.0" Width="50" TextWrapping="Wrap"  />
+            <TextBlock x:Name="txbidOrigen" Height="23"  Text="  idOrigen : " />
+            <TextBox x:Name="txtIdOrigen" Height="25" Text="OR000001" Width="50" TextWrapping="Wrap"  />
+            <TextBlock x:Name="txbIdDestino" Height="23"  Text="  idDestino : " />
+            <TextBox x:Name="txtIdDestino" Height="25" Text="DE000001" Width="50" TextWrapping="Wrap"  />
+
+            <TextBlock HorizontalAlignment="Center" Name="txbMP" VerticalAlignment="Top" Text="Material Peligroso:" Width="75" />
+            <ComboBox VerticalAlignment="Center" x:Name="cmbMaterialPeligroso" >
+                <ComboBoxItem>
+                    <TextBlock>No</TextBlock>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock>Si</TextBlock>
+                </ComboBoxItem>
+            </ComboBox>
+
+            <TextBlock x:Name="txbClaveMP" Height="23"  Text="Clave Mat Pel: " />
+            <TextBox x:Name="txtClaveMP" Height="25" Text="" Width="50" TextWrapping="Wrap"  />
+
+            <TextBlock x:Name="txbEmbalaje" Height="23"  Text="Embalaje: " />
+            <TextBox x:Name="txtEmbalaje" Height="25" Text="" Width="50" TextWrapping="Wrap"  />
+        </StackPanel>
+        
+        <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Añadir y Continuar" Grid.Row="6" Height="23" HorizontalAlignment="Left" Margin="20,0,20,0" Name="btnAñadirContinuar" VerticalAlignment="Top" Width="Auto" Click="btnAñadirContinuar_Click" />
+            <Button Content="Añadir y Salir" Grid.Row="6" Height="23" HorizontalAlignment="Left" Margin="20,0,20,0" Name="btnAñadirSalir" VerticalAlignment="Top" Width="Auto" Click="btnAñadirSalir_Click" />
+            <Button Content="Cerrar" Grid.Row="6" Height="23" HorizontalAlignment="Left" Margin="20,0,20,0" Name="btnCerrar" VerticalAlignment="Top" Width="Auto" Click="btnCerrar_Click" />
+            <RadioButton Content="Pesos" Grid.Column="1" Grid.Row="5" Height="16" HorizontalAlignment="Right" Name="rdbPesos" VerticalAlignment="Center" IsChecked="True" Margin="0,0,70,0" GroupName="Divisa" />
+            <RadioButton Content="Dolares" Grid.Column="1" Grid.Row="5" Height="16" HorizontalAlignment="Right" Name="rdbDolares" VerticalAlignment="Center"  Margin="0,0,70,0" GroupName="Divisa" IsEnabled="False" />
+            <CheckBox Content="Mercancia" Grid.Column="1" Grid.Row="5" Height="16" HorizontalAlignment="Right" Name="chkMercancia" Click="chkMercancia_Click" VerticalAlignment="Center" />
+            
+
+
+        </StackPanel>
+        
+    </Grid>
+</Window>

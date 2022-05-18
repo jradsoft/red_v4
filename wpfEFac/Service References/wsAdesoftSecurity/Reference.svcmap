@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a887e43e-7cd3-493b-8ee5-21ef759a1ac8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://tegogoloWs.cloudapp.net/Services/ServiceSecurity.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceSecurity.xsd" MetadataType="Schema" ID="cb63a136-1078-497b-ba07-b761a75cd63e" SourceId="1" SourceUrl="http://tegogolows.cloudapp.net/Services/ServiceSecurity.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceSecurity1.xsd" MetadataType="Schema" ID="5bc37e38-9498-4780-aa07-36442da105cd" SourceId="1" SourceUrl="http://tegogolows.cloudapp.net/Services/ServiceSecurity.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceSecurity.wsdl" MetadataType="Wsdl" ID="6a6e1fa9-1a72-4d68-9906-bdbbf5135059" SourceId="1" SourceUrl="http://tegogolows.cloudapp.net/Services/ServiceSecurity.svc?wsdl" />
+    <MetadataFile FileName="ServiceSecurity.disco" MetadataType="Disco" ID="4ac69613-54af-4eda-ad5b-68c11d7ad401" SourceId="1" SourceUrl="http://tegogolows.cloudapp.net/Services/ServiceSecurity.svc?disco" />
+    <MetadataFile FileName="ServiceSecurity1.wsdl" MetadataType="Wsdl" ID="e4fa8fd6-cb7c-4f22-a246-995d4dd53662" SourceId="1" SourceUrl="http://tegogolows.cloudapp.net/Services/ServiceSecurity.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ServiceSecurity2.xsd" MetadataType="Schema" ID="b0374281-e294-4288-82cc-32bb7cdc0863" SourceId="1" SourceUrl="http://tegogolows.cloudapp.net/Services/ServiceSecurity.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

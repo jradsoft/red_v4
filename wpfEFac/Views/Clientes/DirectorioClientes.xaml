@@ -1,0 +1,47 @@
+﻿<Page x:Class="wpfEFac.DirectorioClientes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="440" d:DesignWidth="620"
+	Title="DirectorioClientes" Loaded="Page_Loaded">
+
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Row="1" Header="Clientes" Height="421" HorizontalAlignment="Stretch" Name="grbClientes" VerticalAlignment="Top" >
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32" />
+                    <RowDefinition Height="21" />
+                    <RowDefinition Height="345" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="1">
+                    <TextBlock Name="txbPrevioSiguiente" Text="Previo 1 2 Siguiente" HorizontalAlignment="Center"></TextBlock>
+                </StackPanel>
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="0,5,0,0" Name="txtBuscar" VerticalAlignment="Top" Width="300" TextChanged="txtBuscar_TextChanged" />
+                <Button Click="bttBuscar_Click" Content="Buscar" Height="23" HorizontalAlignment="Left" Margin="350,5,0,0" Name="bttBuscar" VerticalAlignment="Top" Width="75" />
+                <Button Click="bttNuevoCliente_Click" Content="Nuevo Cliente" Height="23" HorizontalAlignment="Right" Margin="525,5,0,0" Name="bttNuevoCliente" VerticalAlignment="Top" Width="82" Foreground="Blue"/>
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" EnableRowVirtualization="True" Grid.Row="2" Height="339" HorizontalAlignment="Stretch" Name="dtgDirectorio" VerticalAlignment="Top" Margin="0,2,0,0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn x:Name="strNombre" Binding="{Binding Path=strRazonSocial}" Header="NOMBRE" Width="300"/>
+                        <DataGridTextColumn x:Name="strRFC" Binding="{Binding Path=strRFC}" Header="RFC" Width="150"/>
+                        <DataGridTemplateColumn Header="OPCIONES" Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Name="bttEditar" Click="bttEditar_Click">Editar</Button>
+                                        <Button Name="bttBorrar" Click="bttBorrar_Click" Visibility="Collapsed" >Borrar</Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>                    
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Page>

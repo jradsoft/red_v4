@@ -1,0 +1,35 @@
+﻿<Page x:Class="wpfEFac.ConfigParametros"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="308" d:DesignWidth="620"
+	Title="ConfigParametros">
+    
+        <Grid HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Grid.RowSpan="3" Header="Parámetros Generales" Height="310" HorizontalAlignment="Stretch" Name="grbParametrosGenerales" VerticalAlignment="Top">
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="1">
+                    <Button Click="bttEditar_Click" Name="bttEditar" Content="Editar Parámetros Generales" Width="160" HorizontalAlignment="Right" Margin="0,1,0,0"/>
+                </StackPanel>
+                <DataGrid AutoGenerateColumns="False" Grid.Row="2" Height="200" HorizontalAlignment="Stretch" Name="dtgParametros" VerticalAlignment="Top">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Parámetros" Width="450"/>
+                        <DataGridTextColumn Header="Valor" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Page>

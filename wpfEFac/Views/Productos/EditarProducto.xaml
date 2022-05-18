@@ -1,0 +1,156 @@
+﻿<Window x:Class="wpfEFac.Views.Productos.EditarProducto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="EditarProducto" Height="500" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF6693D1" Offset="1" />
+                <GradientStop Color="White" Offset="0.098" />
+                <GradientStop Color="#FFEBF0F7" Offset="0.607" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="25"/>
+
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Height="23" HorizontalAlignment="Left" Name="txbCodigo" Text="Código" VerticalAlignment="Center" />
+        <TextBox Grid.Column="1" Grid.Row="0" Height="23" HorizontalAlignment="Left" Name="txtCodigo" VerticalAlignment="Center" Width="200"  TabIndex="2" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Height="23" HorizontalAlignment="Left" Name="txbCodigoBarras" Text="Codigo SAT" VerticalAlignment="Center" />
+        <TextBox AcceptsReturn="True" Height="23" Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Left" Name="txtCodigoBarras" VerticalAlignment="Center" Width="200"  TabIndex="1" />
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Height="23" HorizontalAlignment="Left" Name="txbNombre" Text="Nombre" VerticalAlignment="Center" />
+        <TextBox AcceptsReturn="True" Height="75" Grid.Column="1" Grid.Row="2"  HorizontalAlignment="Left" Name="txtNombre" VerticalAlignment="Center" Width="300"  TabIndex="1" />
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Height="23" HorizontalAlignment="Left" Name="txbNombreCorto" Text="Nombre Corto" VerticalAlignment="Center" />
+        <TextBox AcceptsReturn="True" Height="25" Grid.Column="1" Grid.Row="3"  HorizontalAlignment="Left" Name="txtNombreCorto" VerticalAlignment="Center" Width="300"  TabIndex="1" />
+
+
+        <TextBlock Grid.Row="7" Grid.Column="0" Height="23" HorizontalAlignment="Left" Name="txbPrecio1" Text="Precio 1" VerticalAlignment="Center" />
+        <TextBox Grid.Column="1" Grid.Row="7" Height="23" HorizontalAlignment="Left" Name="txtPrecio1" VerticalAlignment="Center" Width="240"  TabIndex="3" />
+
+        <TextBlock Grid.Row="8" Grid.Column="0" Height="23" HorizontalAlignment="Left" Name="txbPrecio2" Text="Precio 2" VerticalAlignment="Center" />
+        <TextBox Grid.Column="1" Grid.Row="8" Height="23" HorizontalAlignment="Left" Name="txtPrecio2" VerticalAlignment="Center" Width="240"  TabIndex="3" />
+
+        <TextBlock Grid.Row="9" Grid.Column="0" Height="23" HorizontalAlignment="Left" Name="txbPrecio3" Text="Precio 3" VerticalAlignment="Center" />
+        <TextBox Grid.Column="1" Grid.Row="9" Height="23" HorizontalAlignment="Left" Name="txtPrecio3" VerticalAlignment="Center" Width="240"  TabIndex="3" />
+
+        <TextBlock Grid.Row="10" Grid.Column="0" Height="23" HorizontalAlignment="Left" Name="txbPrecio4" Text="Precio 4" VerticalAlignment="Center" />
+        <TextBox Grid.Column="1" Grid.Row="10" Height="23" HorizontalAlignment="Left" Name="txtPrecio4" VerticalAlignment="Center" Width="240"  TabIndex="3" />
+
+        <TextBlock Grid.Row="11" Grid.Column="0" Height="23" HorizontalAlignment="Left" Name="txbPrecio5" Text="Precio 5" VerticalAlignment="Center" />
+        <TextBox Grid.Column="1" Grid.Row="11" Height="23" HorizontalAlignment="Left" Name="txtPrecio5" VerticalAlignment="Center" Width="240"  TabIndex="3" />
+
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Height="23" HorizontalAlignment="Left" Name="txbDescuento" Text="Descuento" VerticalAlignment="Center" />
+        <TextBox Grid.Column="1" Grid.Row="5" Height="23" HorizontalAlignment="Left" Name="txtDescuento" VerticalAlignment="Center" Width="60" TabIndex="5" />
+
+        <TextBlock Grid.Row="0" Grid.Column="2" Height="23" HorizontalAlignment="Left" Name="txbCategoria" Text="Categoria" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="1" Grid.Column="2" Height="23" HorizontalAlignment="Left" Name="txbUnidad" Text="Unidad" VerticalAlignment="Center" />
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Height="23" HorizontalAlignment="Left" Name="txbDescripcion" Text="Descripción" VerticalAlignment="Top" Margin="0,3,0,0" />
+
+
+
+        <TextBox Grid.Column="1" Grid.Row="4" Height="95" HorizontalAlignment="Left" Name="txtDescripcion" VerticalAlignment="Top" Width="236" TextWrapping="Wrap" AcceptsReturn="True" TabIndex="10" />
+
+        <ComboBox Grid.Column="3" Grid.Row="0" Height="23" HorizontalAlignment="Left" Name="cmbCategoria" VerticalAlignment="Center" Width="136" Background="White" Margin="0,1" TabIndex="6" />
+        <ComboBox Background="White" Grid.Column="3" Grid.Row="1" Height="23" HorizontalAlignment="Left" Name="cmbUnidad" VerticalAlignment="Center" Width="136" Margin="0,1" TabIndex="8" />
+        <TextBlock Grid.Column="1" Grid.Row="5" Height="23" HorizontalAlignment="Left" Margin="64,6,0,0" Name="txbPorciento" Text="%" VerticalAlignment="Center" />
+        <Label Content="" FontSize="9" Grid.Column="1" Grid.Row="1" Height="28" HorizontalAlignment="Right" Name="lblNombreRequerido" VerticalAlignment="Center" />
+        <Label Content="" FontSize="9" Grid.Column="1" Grid.Row="3" Height="28" HorizontalAlignment="Right" Name="lblCodigoRequerido" VerticalAlignment="Center" />
+        <Label Content="" FontSize="9" Grid.Column="1" Grid.Row="7" Height="28" HorizontalAlignment="Right" Name="lblPrecioRequerido" VerticalAlignment="Center" />
+        <Button Content="Nueva Categoria" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Right" Name="btnNuevaCategoria" VerticalAlignment="Center" Click="btnNuevaCategoria_Click" Margin="0,3,12,1" TabIndex="7" />
+        <Button Content="Nueva Unidad" HorizontalAlignment="Right" Margin="0,3,12,1" Name="btnNuevaUnidad" VerticalAlignment="Center" Grid.Column="3" Grid.Row="1" Width="94" Click="btnNuevaUnidad_Click" TabIndex="9" />
+
+        <TextBlock Grid.Row="3" Grid.Column="2" Height="23" HorizontalAlignment="Left" Name="txbIVA" Text="Grava IVA" VerticalAlignment="Center" />
+
+        <StackPanel Grid.Column="3" Grid.Row="3" Orientation="Horizontal">
+            <ComboBox  Height="23" Name="cmbIVA" VerticalAlignment="Top" Width="100" Background="White" TabIndex="4">
+                <ComboBox.Items>
+                    <TextBlock  Text="S"/>
+                    <TextBlock  Text="N"/>
+                </ComboBox.Items>
+            </ComboBox>
+            <TextBox  Width="100" x:Name="txtIva" />
+        </StackPanel>
+
+        <TextBlock Grid.Row="4" Grid.Column="2" Height="23" HorizontalAlignment="Left" Name="txbretIva" Text="Ret IVA" VerticalAlignment="Center" />
+
+        <StackPanel Grid.Column="3" Grid.Row="4" Orientation="Horizontal">
+            <ComboBox  Height="23" HorizontalAlignment="Left" Name="cmbretIva" VerticalAlignment="Top" Width="100" Background="White" TabIndex="4">
+                <ComboBox.Items>
+                    <TextBlock  Text="S"/>
+                    <TextBlock  Text="N"/>
+                </ComboBox.Items>
+
+            </ComboBox>
+            <TextBox  Width="100" x:Name="txtretIva" />
+        </StackPanel>
+
+        <TextBlock Grid.Row="5" Grid.Column="2" Height="23" HorizontalAlignment="Left" Name="txbretISR" Text="Ret ISR" VerticalAlignment="Center" />
+
+        <StackPanel Grid.Column="3" Grid.Row="5" Orientation="Horizontal">
+            <ComboBox Height="23" HorizontalAlignment="Left" Name="cmbretISR" VerticalAlignment="Top" Width="100" Background="White" TabIndex="4">
+                <ComboBox.Items>
+                    <TextBlock  Text="S"/>
+                    <TextBlock  Text="N"/>
+                </ComboBox.Items>
+            </ComboBox>
+            <TextBox  Width="100" x:Name="txtretIsr" />
+        </StackPanel>
+
+        <TextBlock Grid.Row="6" Grid.Column="2" Height="23" HorizontalAlignment="Left" Name="txbretIeps" Text="Ret IEPS" VerticalAlignment="Center" />
+        <StackPanel Grid.Column="3" Grid.Row="6" Orientation="Horizontal">
+            <ComboBox  Height="23" HorizontalAlignment="Left" Name="cmbIeps" VerticalAlignment="Top" Width="100" Background="White" TabIndex="4">
+                <ComboBox.Items>
+                    <TextBlock  Text="S"/>
+                    <TextBlock  Text="N"/>
+                </ComboBox.Items>
+            </ComboBox>
+            <TextBox  Width="100" x:Name="txtretIeps" />
+        </StackPanel>
+
+        <TextBlock Grid.Row="8" Grid.Column="2" Height="23" HorizontalAlignment="Left" Name="txbExistencias" Text="Existencias" VerticalAlignment="Center" />
+        <TextBox Grid.Column="3" Grid.Row="8" Height="23" HorizontalAlignment="Left" Name="txtExistencias" VerticalAlignment="Center" Width="240"  TabIndex="3" />
+
+        <TextBlock Grid.Row="9" Grid.Column="2" Height="23" HorizontalAlignment="Left" Name="txbStockMin" Text="Stock Min" VerticalAlignment="Center" />
+        <TextBox Grid.Column="3" Grid.Row="9" Height="23" HorizontalAlignment="Left" Name="txtStockMin" VerticalAlignment="Center" Width="240"  TabIndex="3" />
+
+        <TextBlock Grid.Row="10" Grid.Column="2" Height="23" HorizontalAlignment="Left" Name="txbStockMax" Text="Stock Max" VerticalAlignment="Center" />
+        <TextBox Grid.Column="3" Grid.Row="10" Height="23" HorizontalAlignment="Left" Name="txtStockMax" VerticalAlignment="Center" Width="240"  TabIndex="3" />
+
+        <TextBlock Grid.Row="11" Grid.Column="2" Height="23" HorizontalAlignment="Left" Name="txbPuntoReorden" Text="Punto Reorden" VerticalAlignment="Center" />
+        <TextBox Grid.Column="3" Grid.Row="11" Height="23" HorizontalAlignment="Left" Name="txtPuntoReorden" VerticalAlignment="Center" Width="240"  TabIndex="3" />
+
+        <Button Click="bttGuardar_Click" Content="Guardar" Grid.Row="13" Grid.Column="3" Margin="80,0,0,0" Height="23" HorizontalAlignment="Left" Name="bttGuardar" VerticalAlignment="Center" Width="75" TabIndex="11" />
+        <Button Click="bttCancelar_Click" Content="Cancelar" Grid.Row="13" Grid.Column="3" Margin="0,0,10,0" Height="23" HorizontalAlignment="Right" Name="bttCancelar" VerticalAlignment="Center" Width="75" TabIndex="12" />
+
+    </Grid>
+</Window>

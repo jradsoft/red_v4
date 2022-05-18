@@ -1,0 +1,1777 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="wpfEFacHelpers">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>d2842ab6-4d04-4ab7-942f-3ea0778c2959</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="CDFDataSource">
+      <Fields>
+        <Field Name="AnoArobacion">
+          <DataField>AnoArobacion</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CadenaOriginal">
+          <DataField>CadenaOriginal</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Cedula">
+          <DataField>Cedula</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DomicilioCliente">
+          <DataField>DomicilioCliente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DomicilioEmisor">
+          <DataField>DomicilioEmisor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Estimacion">
+          <DataField>Estimacion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Fecha">
+          <DataField>Fecha</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Folio">
+          <DataField>Folio</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ImporteLetra">
+          <DataField>ImporteLetra</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IVA">
+          <DataField>IVA</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Logo">
+          <DataField>Logo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NoContrato">
+          <DataField>NoContrato</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NombreCliente">
+          <DataField>NombreCliente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NombreEmisor">
+          <DataField>NombreEmisor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NoPedido">
+          <DataField>NoPedido</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NumeroAprobacion">
+          <DataField>NumeroAprobacion</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="NumeroCertificado">
+          <DataField>NumeroCertificado</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="Observaciones">
+          <DataField>Observaciones</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Proveedor">
+          <DataField>Proveedor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFCCliente">
+          <DataField>RFCCliente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFCEmisor">
+          <DataField>RFCEmisor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SelloDigital">
+          <DataField>SelloDigital</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SubTotal">
+          <DataField>SubTotal</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Telefono">
+          <DataField>Telefono</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Usuario">
+          <DataField>Usuario</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>wpfEFacHelpers</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>wpfEFac.Helpers</rd:DataSetName>
+        <rd:TableName>CFDReporte</rd:TableName>
+        <rd:ObjectDataSourceType>wpfEFac.Helpers.CFDReporte, wpfEFac, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="ConceptosDataSet">
+      <Fields>
+        <Field Name="dcmDescento">
+          <DataField>dcmDescento</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="dcmImporte">
+          <DataField>dcmImporte</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="dcmIIVA">
+          <DataField>dcmIIVA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="dcmPrecioUnitario">
+          <DataField>dcmPrecioUnitario</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="intCantidad">
+          <DataField>intCantidad</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="strPartida">
+          <DataField>strPartida</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="strConcepto">
+          <DataField>strConcepto</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="strUnidad">
+          <DataField>strUnidad</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>wpfEFacHelpers</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>wpfEFac.Helpers</rd:DataSetName>
+        <rd:TableName>Detalle_PreFactura</rd:TableName>
+        <rd:ObjectDataSourceType>wpfEFac.Helpres.Detalle_PreFactura, wpfEFac, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix7">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>0.69722in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.64061in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.78754in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.9585in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.96664in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.20497in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox57">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>CANT.</Value>
+                              <Style>
+                                <FontSize>7pt</FontSize>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox57</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Black</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox59">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>UNIDAD</Value>
+                              <Style>
+                                <FontSize>7pt</FontSize>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox59</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Black</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox61">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>CONCEPTO</Value>
+                              <Style>
+                                <FontSize>7pt</FontSize>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox61</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Black</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox63">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>PRECIO</Value>
+                              <Style>
+                                <FontSize>7pt</FontSize>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox63</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Black</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox67">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>IMPORTE</Value>
+                              <Style>
+                                <FontSize>7pt</FontSize>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox67</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Black</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.20497in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="intCantidad">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!intCantidad.Value</Value>
+                              <Style>
+                                <FontSize>7pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>intCantidad</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="strUnidad">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!strUnidad.Value</Value>
+                              <Style>
+                                <FontSize>7pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>strUnidad</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="strConcepto">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!strConcepto.Value</Value>
+                              <Style>
+                                <FontSize>7pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>strConcepto</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="dcmPrecioUnitario">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!dcmPrecioUnitario.Value</Value>
+                              <Style>
+                                <FontSize>7pt</FontSize>
+                                <Format>#,0.00;(#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>dcmPrecioUnitario</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="dcmImporte">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!dcmImporte.Value</Value>
+                              <Style>
+                                <FontSize>7pt</FontSize>
+                                <Format>#,0.00;(#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>dcmImporte</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Details" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <RepeatColumnHeaders>true</RepeatColumnHeaders>
+        <KeepTogether>true</KeepTogether>
+        <DataSetName>ConceptosDataSet</DataSetName>
+        <Top>0.12371cm</Top>
+        <Left>0.25951cm</Left>
+        <Height>1.04125cm</Height>
+        <Width>15.3683cm</Width>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <FontSize>7pt</FontSize>
+        </Style>
+      </Tablix>
+      <Line Name="Line9">
+        <Top>0.12371cm</Top>
+        <Left>15.62781cm</Left>
+        <Height>13.07979cm</Height>
+        <Width>0cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line10">
+        <Top>13.2035cm</Top>
+        <Left>0.25951cm</Left>
+        <Height>0cm</Height>
+        <Width>15.3683cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line11">
+        <Top>0.12371cm</Top>
+        <Left>0.25951cm</Left>
+        <Height>13.07979cm</Height>
+        <Width>0cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line12">
+        <Top>0.64434cm</Top>
+        <Left>13.13034cm</Left>
+        <Height>12.55916cm</Height>
+        <Width>0cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line13">
+        <Top>0.12371cm</Top>
+        <Left>10.69574cm</Left>
+        <Height>13.07979cm</Height>
+        <Width>0cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line14">
+        <Top>0.64434cm</Top>
+        <Left>3.65759cm</Left>
+        <Height>12.55917cm</Height>
+        <Width>0cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line15">
+        <Top>0.64434cm</Top>
+        <Left>2.01634cm</Left>
+        <Height>12.55917cm</Height>
+        <Width>0cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+    </ReportItems>
+    <Height>5.50726in</Height>
+    <Style />
+  </Body>
+  <Width>6.90737in</Width>
+  <Page>
+    <PageHeader>
+      <Height>6.29271cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Image Name="LogoEmpresa">
+          <Source>External</Source>
+          <Value>=First(Fields!Logo.Value, "CDFDataSource")</Value>
+          <Sizing>Fit</Sizing>
+          <Left>1.33343cm</Left>
+          <Height>3.03503cm</Height>
+          <Width>4.69093cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Textbox Name="txtNombreEmisor">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!NombreEmisor.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontFamily>Century Gothic</FontFamily>
+                    <FontSize>18pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Left>7.0386cm</Left>
+          <Height>0.58834cm</Height>
+          <Width>10.16402cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border />
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="txtDireccionEmisor">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DomicilioEmisor.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>0.72945cm</Top>
+          <Left>8.6261cm</Left>
+          <Height>0.33514cm</Height>
+          <Width>5.69256cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="txtRFCEmisor">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value xml:space="preserve"> </Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>RFC:</Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=First(Fields!RFCEmisor.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <Top>1.51439cm</Top>
+          <Left>10.07192cm</Left>
+          <Height>0.31494cm</Height>
+          <Width>3.92924cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border />
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="txtTelefono">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value> TEL:</Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=First(Fields!Telefono.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <Top>1.14653cm</Top>
+          <Left>10.07192cm</Left>
+          <Height>0.39432cm</Height>
+          <Width>3.92924cm</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border />
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="txtFolio">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!Folio.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <Top>3.17614cm</Top>
+          <Left>9.28973cm</Left>
+          <Height>0.46488cm</Height>
+          <Width>2.30265cm</Width>
+          <ZIndex>5</ZIndex>
+          <Style>
+            <Border />
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="txtFecha">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!Fecha.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <Top>3.17614cm</Top>
+          <Left>11.76877cm</Left>
+          <Height>0.46487cm</Height>
+          <Width>3.83095cm</Width>
+          <ZIndex>6</ZIndex>
+          <Style>
+            <Border />
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="txtNumeroCertificado">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!NumeroCertificado.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <Top>3.74685cm</Top>
+          <Left>9.28973cm</Left>
+          <Height>0.46372cm</Height>
+          <Width>6.30999cm</Width>
+          <ZIndex>7</ZIndex>
+          <Style>
+            <Border />
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="txtNumeroAprobacion">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!NumeroAprobacion.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <Top>4.31755cm</Top>
+          <Left>9.31634cm</Left>
+          <Height>0.42845cm</Height>
+          <Width>2.78278cm</Width>
+          <ZIndex>8</ZIndex>
+          <Style>
+            <Border />
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="txtAnoAprobacion">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!AnoArobacion.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <Top>4.31755cm</Top>
+          <Left>12.27551cm</Left>
+          <Height>0.42845cm</Height>
+          <Width>3.32421cm</Width>
+          <ZIndex>9</ZIndex>
+          <Style>
+            <Border />
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="txtNombreCliente">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value xml:space="preserve"> </Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>CLIENTE</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>:</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=First(Fields!NombreCliente.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <Top>3.17614cm</Top>
+          <Left>0.25951cm</Left>
+          <Height>0.46487cm</Height>
+          <Width>8.46213cm</Width>
+          <ZIndex>10</ZIndex>
+          <Style>
+            <Border />
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="txtDomicilioCliente">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value xml:space="preserve"> </Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>DOMICILIO</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>:</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=First(Fields!DomicilioCliente.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <Top>3.74685cm</Top>
+          <Left>0.25951cm</Left>
+          <Height>0.46487cm</Height>
+          <Width>8.46213cm</Width>
+          <ZIndex>11</ZIndex>
+          <Style>
+            <Border />
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="txtRFCCliente">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value xml:space="preserve"> </Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>RFC</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>:</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=First(Fields!RFCCliente.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <Top>4.31755cm</Top>
+          <Left>0.25951cm</Left>
+          <Height>0.46487cm</Height>
+          <Width>7.50963cm</Width>
+          <ZIndex>12</ZIndex>
+          <Style>
+            <Border />
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value> OBSERVACIONES:</Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=First(Fields!Observaciones.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>4.96506cm</Top>
+          <Left>0.22423cm</Left>
+          <Height>0.84258cm</Height>
+          <Width>15.37549cm</Width>
+          <ZIndex>13</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Line Name="Line1">
+          <Top>3.64101cm</Top>
+          <Left>9.31634cm</Left>
+          <Height>0cm</Height>
+          <Width>2.27604cm</Width>
+          <ZIndex>14</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+        <Line Name="Line2">
+          <Top>3.64102cm</Top>
+          <Left>11.76877cm</Left>
+          <Height>0cm</Height>
+          <Width>3.79567cm</Width>
+          <ZIndex>15</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+        <Line Name="Line3">
+          <Top>4.746cm</Top>
+          <Left>9.31634cm</Left>
+          <Height>0cm</Height>
+          <Width>2.78278cm</Width>
+          <ZIndex>16</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+        <Line Name="Line4">
+          <Top>4.746cm</Top>
+          <Left>12.27551cm</Left>
+          <Height>0cm</Height>
+          <Width>3.38758cm</Width>
+          <ZIndex>17</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+        <Line Name="Line5">
+          <Top>4.21057cm</Top>
+          <Left>9.28973cm</Left>
+          <Height>0cm</Height>
+          <Width>6.37336cm</Width>
+          <ZIndex>18</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+        <Line Name="Line6">
+          <Top>3.67629cm</Top>
+          <Left>1.61397cm</Left>
+          <Height>0cm</Height>
+          <Width>7.10767cm</Width>
+          <ZIndex>19</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+        <Line Name="Line7">
+          <Top>4.247cm</Top>
+          <Left>0.25951cm</Left>
+          <Height>0cm</Height>
+          <Width>8.46213cm</Width>
+          <ZIndex>20</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+        <Line Name="Line8">
+          <Top>4.8177cm</Top>
+          <Left>1.01593cm</Left>
+          <Height>0cm</Height>
+          <Width>3.7996cm</Width>
+          <ZIndex>21</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>5.34536cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="txtImporteLetra">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!ImporteLetra.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <Top>1.8043cm</Top>
+          <Left>0.51937cm</Left>
+          <Height>0.44362cm</Height>
+          <Width>15.04507cm</Width>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox24">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>IMPORTE CON LETRA</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox24</rd:DefaultName>
+          <Top>1.25485cm</Top>
+          <Left>0.51937cm</Left>
+          <Height>0.44362cm</Height>
+          <Width>3.08907cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="txtCadenaOriginal">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!CadenaOriginal.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontSize>6pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <Top>2.42431cm</Top>
+          <Left>2.73414cm</Left>
+          <Height>1.50222cm</Height>
+          <Width>12.8303cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border />
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox103">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Sello Digital</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox102</rd:DefaultName>
+          <Top>4.03237cm</Top>
+          <Left>0.55465cm</Left>
+          <Height>0.46868cm</Height>
+          <Width>2.03838cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border />
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="txtSelloDigital">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!SelloDigital.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontSize>5pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <Top>4.03237cm</Top>
+          <Left>2.76942cm</Left>
+          <Height>0.91611cm</Height>
+          <Width>12.79502cm</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border />
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox104">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Este documento es una impresión de un comprobante fiscal digital</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox102</rd:DefaultName>
+          <Top>0.14111cm</Top>
+          <Left>0.07056cm</Left>
+          <Height>0.42476cm</Height>
+          <Width>11.19962cm</Width>
+          <ZIndex>5</ZIndex>
+          <Style>
+            <Border />
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox102">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Cadena Original</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox102</rd:DefaultName>
+          <Top>2.42431cm</Top>
+          <Left>0.58992cm</Left>
+          <Height>0.44362cm</Height>
+          <Width>2.00311cm</Width>
+          <ZIndex>6</ZIndex>
+          <Style>
+            <Border />
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="txtSubTotal">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!SubTotal.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <Format>#,0.00;(#,0.00)</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>0.14111cm</Top>
+          <Left>13.44925cm</Left>
+          <Height>0.44125cm</Height>
+          <Width>2.17856cm</Width>
+          <ZIndex>7</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="txtIva">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!IVA.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <Format>#,0.00;(#,0.00)</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>0.68819cm</Top>
+          <Left>13.44925cm</Left>
+          <Height>0.44125cm</Height>
+          <Width>2.17856cm</Width>
+          <ZIndex>8</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox25">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>SubTotal</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>White</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox24</rd:DefaultName>
+          <Top>0.17639cm</Top>
+          <Left>11.76877cm</Left>
+          <Height>0.44125cm</Height>
+          <Width>1.50409cm</Width>
+          <ZIndex>9</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <BackgroundColor>Black</BackgroundColor>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox26">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>IVA</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>White</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox24</rd:DefaultName>
+          <Top>0.72347cm</Top>
+          <Left>12.56252cm</Left>
+          <Height>0.40597cm</Height>
+          <Width>0.71034cm</Width>
+          <ZIndex>10</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <BackgroundColor>Black</BackgroundColor>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox27">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Total</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>White</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox24</rd:DefaultName>
+          <Top>1.2cm</Top>
+          <Left>12.27551cm</Left>
+          <Height>0.44125cm</Height>
+          <Width>0.99735cm</Width>
+          <ZIndex>11</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <BackgroundColor>Black</BackgroundColor>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="txtTotal">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!Total.Value, "CDFDataSource")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <Format>#,0.00;(#,0.00)</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>1.20882cm</Top>
+          <Left>13.44925cm</Left>
+          <Height>0.44125cm</Height>
+          <Width>2.17856cm</Width>
+          <ZIndex>12</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>1cm</RightMargin>
+    <TopMargin>1cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <EmbeddedImages>
+    <EmbeddedImage Name="LogoAnunciosGolfo">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>/9j/4AAQSkZJRgABAQEAlQCVAAD/4TIaaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/Pg0KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNC4yLjItYzA2MyA1My4zNTE3MzUsIDIwMDgvMDcvMjItMTg6MTE6MTIgICAgICAgICI+DQoJPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4NCgkJPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIj4NCgkJCTx4bXA6Q3JlYXRvclRvb2w+QWRvYmUgRmlyZXdvcmtzIENTNDwveG1wOkNyZWF0b3JUb29sPg0KCQkJPHhtcDpDcmVhdGVEYXRlPjIwMTAtMTItMDlUMDc6MjU6NDJaPC94bXA6Q3JlYXRlRGF0ZT4NCgkJCTx4bXA6TW9kaWZ5RGF0ZT4yMDEwLTEyLTA5VDE2OjA3OjM5WjwveG1wOk1vZGlmeURhdGU+DQoJCTwvcmRmOkRlc2NyaXB0aW9uPg0KCQk8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iPg0KCQkJPGRjOmZvcm1hdD5pbWFnZS9qcGVnPC9kYzpmb3JtYXQ+DQoJCTwvcmRmOkRlc2NyaXB0aW9uPg0KCTwvcmRmOlJERj4NCjwveDp4bXBtZXRhPg0KICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDw/eHBhY2tldCBlbmQ9J3cnPz7/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAETAK0DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiisXx18RdE+Gujtf65qNrp1qu
+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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportID>c367baf9-b7cb-48fb-b44f-d83666586631</rd:ReportID>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+</Report>

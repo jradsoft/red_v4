@@ -1,0 +1,128 @@
+﻿<Page x:Class="wpfEFac.Views.ImportarDatos.ImportarDatos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="600"
+	Title="CFD">
+
+    <Grid Name="LayoutRoot">
+        
+
+        <StackPanel Orientation="Vertical">
+            <GroupBox Header="Importar Datos de EXCEL (formato CSV)" HorizontalAlignment="Stretch" Name="grbCertificados" VerticalAlignment="Stretch">
+            
+                        
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*" />
+                    <ColumnDefinition Width="400" />
+                    <ColumnDefinition Width="100*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30*" />
+                    
+                    <RowDefinition Height="10*" />
+
+                </Grid.RowDefinitions>
+              
+                <StackPanel Grid.Column="1" Grid.RowSpan="1" >
+                    <TextBlock>Seleccione su Archivo en Excel (.csv)</TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Width="250" Name="txtCsvFilePath" />
+                        <Button Name="btnExaminarCsv" Content="Examinar..." Margin="10,0,0,0" Click="btnExaminarCer_Click" />
+                        
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>Tipo de informacion a importar :  </TextBlock>
+                        <RadioButton Name="rdbProductos" Content="Productos  "></RadioButton>
+                        <RadioButton Name="rdbClientes" Content="Clientes "></RadioButton>
+                    </StackPanel>
+                </StackPanel>
+                
+                <Button Name="cmdGuardar"  Content="Guardar" Grid.Row="3" Grid.Column="1" Width="70" Height="25" Click="cmdGuardar_Click" />
+            </Grid>
+        </GroupBox>
+
+
+        <GroupBox Header="Importar de otros productos comerciales" HorizontalAlignment="Stretch" Name="grdImportarProdComer" VerticalAlignment="Stretch">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*" />
+                    <ColumnDefinition Width="400" />
+                    <ColumnDefinition Width="100*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30*" />
+                    <RowDefinition Height="10*" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Column="1" Grid.RowSpan="1" >
+                    <TextBlock>Ruta de la base de datos </TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Width="250" Name="txtFilePathOther" />
+                        <Button Name="btnExaminarOther" Content="Examinar..." Margin="10,0,0,0" Click="btnExaminarCer_Click" />
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Height="35">Versión </TextBlock>
+                            <RadioButton Name="rdbSAE26" Content="SAE 2.6  "></RadioButton>
+                            <RadioButton Name="rdbSAE30" Content="SAE 3.0  "></RadioButton>
+                            <RadioButton Name="rdbSAE40" Content="SAE 4.0  "></RadioButton>
+                            <RadioButton Name="rdbAdminPack" Content="AdminPack"></RadioButton>
+                        </StackPanel>
+                </StackPanel>
+
+                <Button Name="cmdGuardarOther"  Content="Guardar" Grid.Row="3" Grid.Column="1" Width="70" Height="25" Click="cmdGuardar_Click" />
+            </Grid>
+        </GroupBox>
+
+
+            <GroupBox Header="Importar de otras fuentes de datos" HorizontalAlignment="Stretch" Name="grdImportarOtros" VerticalAlignment="Stretch">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100*" />
+                        <ColumnDefinition Width="400" />
+                        <ColumnDefinition Width="100*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30*" />
+                        <RowDefinition Height="10*" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Column="1" Grid.RowSpan="1" >
+                        
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock>Servidor   :</TextBlock>
+                            <TextBox Width="100" Name="txtServer" />
+                            
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock>Usuario        :</TextBlock>
+                            <TextBox Width="100" Name="txtUsuario" />                            
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock>Password:</TextBlock>
+                            <TextBox Width="100" Name="txtPassword" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Height="35">Servidor de Base de Datos</TextBlock>
+                            <RadioButton Name="rdbSQL" Content="Microsoft SQL Server"></RadioButton>
+                            <RadioButton Name="rdbMySQL" Content="MySQL"></RadioButton>
+                            <RadioButton Name="rdbOracle" Content="Oracle"></RadioButton>                            
+                        </StackPanel>
+                    </StackPanel>
+
+                    <Button Name="cmdGuardarOtherSql"  Content="Guardar" Grid.Row="3" Grid.Column="1" Width="70" Height="25" Click="cmdGuardar_Click" />
+                </Grid>
+            </GroupBox>
+
+        </StackPanel>
+    </Grid>
+</Page>

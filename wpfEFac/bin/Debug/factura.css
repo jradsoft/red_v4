@@ -1,0 +1,12 @@
+﻿BODY {color:black; background-color:}
+
+TABLE {background-color:}
+
+TH {background-color:#abc1ff; color:black}
+TH.h1 {background-color:; color:}
+TH.h2 {background-color:#abc1ff; color:}
+
+TD {background-color:; color:#abc1ff}
+TD.h1 {background-color:; color:}
+
+HR {color:}

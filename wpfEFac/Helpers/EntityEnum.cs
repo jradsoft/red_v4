@@ -1,0 +1,23 @@
+﻿public enum EntityEnum 
+{
+    UnidadMedida,
+    Grupos,
+    Configuracion_Regional,
+    Usuarios,
+    ConfiguracionEmail,
+    Traslados,
+    Retenciones,
+    Productos,
+    Empresa,
+    ConfiguracionContadorTabla,
+    Detalle_Factura,
+    Folios,
+    Clientes,
+    Certificates,
+    Factura,
+    Direcciones_Fiscales,
+    Categorias,
+    CFD,
+    Paises,
+    Estado
+}

@@ -1,0 +1,5 @@
+C:\Proyectos2010\eFac\dllDatos\bin\Debug\dllDatos.dll
+C:\Proyectos2010\eFac\dllDatos\bin\Debug\dllDatos.pdb
+C:\Proyectos2010\eFac\dllDatos\obj\Debug\ResolveAssemblyReference.cache
+C:\Proyectos2010\eFac\dllDatos\obj\Debug\dllDatos.dll
+C:\Proyectos2010\eFac\dllDatos\obj\Debug\dllDatos.pdb

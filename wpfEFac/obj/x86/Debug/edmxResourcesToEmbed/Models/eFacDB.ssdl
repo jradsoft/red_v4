@@ -1,0 +1,1156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eFacDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="eFacDBStoreContainer">
+    <EntitySet Name="Addendas" EntityType="eFacDB.Store.Addendas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CatAddendas" EntityType="eFacDB.Store.CatAddendas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Categorias" EntityType="eFacDB.Store.Categorias" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Certificates" EntityType="eFacDB.Store.Certificates" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CFD" EntityType="eFacDB.Store.CFD" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clientes" EntityType="eFacDB.Store.Clientes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Colonia" EntityType="eFacDB.Store.Colonia" store:Type="Tables" store:Schema="dbo" store:Name="Colonia">
+      <DefiningQuery>SELECT 
+      [Colonia].[id] AS [id], 
+      [Colonia].[str_codigo] AS [str_codigo], 
+      [Colonia].[str_descripcion] AS [str_descripcion]
+      FROM [dbo].[Colonia] AS [Colonia]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Configuracion_Regional" EntityType="eFacDB.Store.Configuracion_Regional" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Configuracion_Vehicular" EntityType="eFacDB.Store.Configuracion_Vehicular" store:Type="Tables" store:Schema="dbo" store:Name="Configuracion_Vehicular">
+      <DefiningQuery>SELECT 
+      [Configuracion_Vehicular].[id] AS [id], 
+      [Configuracion_Vehicular].[str_codigo] AS [str_codigo], 
+      [Configuracion_Vehicular].[str_descripcion] AS [str_descripcion]
+      FROM [dbo].[Configuracion_Vehicular] AS [Configuracion_Vehicular]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ConfiguracionContadorTabla" EntityType="eFacDB.Store.ConfiguracionContadorTabla" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ConfiguracionEmail" EntityType="eFacDB.Store.ConfiguracionEmail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Consulta" EntityType="eFacDB.Store.Consulta" store:Type="Tables" store:Schema="dbo" store:Name="Consulta">
+      <DefiningQuery>SELECT 
+      [Consulta].[intID] AS [intID], 
+      [Consulta].[intID_Tipo_CFD] AS [intID_Tipo_CFD], 
+      [Consulta].[intID_Empresa] AS [intID_Empresa], 
+      [Consulta].[strSerie] AS [strSerie], 
+      [Consulta].[strFolio] AS [strFolio], 
+      [Consulta].[dtmFecha] AS [dtmFecha], 
+      [Consulta].[dtmFechaAprovacion] AS [dtmFechaAprovacion], 
+      [Consulta].[intID_Usuario] AS [intID_Usuario], 
+      [Consulta].[intID_Cliente] AS [intID_Cliente], 
+      [Consulta].[strForma_Pago] AS [strForma_Pago], 
+      [Consulta].[strObervaciones] AS [strObervaciones], 
+      [Consulta].[dcmSubTotal] AS [dcmSubTotal], 
+      [Consulta].[dcmIVA] AS [dcmIVA], 
+      [Consulta].[dcmTotal] AS [dcmTotal], 
+      [Consulta].[chrStatus] AS [chrStatus], 
+      [Consulta].[strProveedor] AS [strProveedor], 
+      [Consulta].[strNumero] AS [strNumero], 
+      [Consulta].[strNumeroContrato] AS [strNumeroContrato], 
+      [Consulta].[intEstimacion] AS [intEstimacion], 
+      [Consulta].[intID_Certificate] AS [intID_Certificate], 
+      [Consulta].[strCadenaOriginal] AS [strCadenaOriginal], 
+      [Consulta].[strSelloDigital] AS [strSelloDigital], 
+      [Consulta].[dcmDescuento] AS [dcmDescuento], 
+      [Consulta].[dtmFechaCancelacion] AS [dtmFechaCancelacion], 
+      [Consulta].[dtmFechaEnvio] AS [dtmFechaEnvio], 
+      [Consulta].[strXMLpath] AS [strXMLpath], 
+      [Consulta].[strPDFpath] AS [strPDFpath], 
+      [Consulta].[strPDFdemoPath] AS [strPDFdemoPath], 
+      [Consulta].[dcmRetIVA] AS [dcmRetIVA], 
+      [Consulta].[dcmRetISR] AS [dcmRetISR], 
+      [Consulta].[dcmRetIEPS] AS [dcmRetIEPS], 
+      [Consulta].[Divisa] AS [Divisa], 
+      [Consulta].[TipoCambio] AS [TipoCambio], 
+      [Consulta].[CondPago] AS [CondPago], 
+      [Consulta].[MetodoPago] AS [MetodoPago], 
+      [Consulta].[MotivoDesc] AS [MotivoDesc], 
+      [Consulta].[Origen] AS [Origen], 
+      [Consulta].[RecogerEn] AS [RecogerEn], 
+      [Consulta].[Destino] AS [Destino], 
+      [Consulta].[Destinatario] AS [Destinatario], 
+      [Consulta].[rfcDestinatario] AS [rfcDestinatario], 
+      [Consulta].[domicilioDestinatario] AS [domicilioDestinatario], 
+      [Consulta].[EntregarEn] AS [EntregarEn]
+      FROM [dbo].[Consulta] AS [Consulta]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Detalle_Factura" EntityType="eFacDB.Store.Detalle_Factura" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DicAddenda" EntityType="eFacDB.Store.DicAddenda" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Direcciones_Fiscales" EntityType="eFacDB.Store.Direcciones_Fiscales" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Empresa" EntityType="eFacDB.Store.Empresa" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Estado" EntityType="eFacDB.Store.Estado" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Factura" EntityType="eFacDB.Store.Factura" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Folios" EntityType="eFacDB.Store.Folios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Grupos" EntityType="eFacDB.Store.Grupos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Localidad" EntityType="eFacDB.Store.Localidad" store:Type="Tables" store:Schema="dbo" store:Name="Localidad">
+      <DefiningQuery>SELECT 
+      [Localidad].[id] AS [id], 
+      [Localidad].[str_codigo] AS [str_codigo], 
+      [Localidad].[str_descripcion] AS [str_descripcion]
+      FROM [dbo].[Localidad] AS [Localidad]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Municipio" EntityType="eFacDB.Store.Municipio" store:Type="Tables" store:Schema="dbo" store:Name="Municipio">
+      <DefiningQuery>SELECT 
+      [Municipio].[id] AS [id], 
+      [Municipio].[str_codigo] AS [str_codigo], 
+      [Municipio].[str_descripcion] AS [str_descripcion]
+      FROM [dbo].[Municipio] AS [Municipio]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Paises" EntityType="eFacDB.Store.Paises" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Productos" EntityType="eFacDB.Store.Productos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="eFacDB.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoRemolque" EntityType="eFacDB.Store.TipoRemolque" store:Type="Tables" store:Schema="dbo" store:Name="TipoRemolque">
+      <DefiningQuery>SELECT 
+      [TipoRemolque].[id] AS [id], 
+      [TipoRemolque].[str_codigo] AS [str_codigo], 
+      [TipoRemolque].[str_descripcion] AS [str_descripcion]
+      FROM [dbo].[TipoRemolque] AS [TipoRemolque]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Traslados" EntityType="eFacDB.Store.Traslados" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UnidadMedida" EntityType="eFacDB.Store.UnidadMedida" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuarios" EntityType="eFacDB.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vehiculos" EntityType="eFacDB.Store.Vehiculos" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Addendas_DicAddendas" Association="eFacDB.Store.FK_Addendas_DicAddendas">
+      <End Role="DicAddenda" EntitySet="DicAddenda" />
+      <End Role="Addendas" EntitySet="Addendas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Addendas_Factura" Association="eFacDB.Store.FK_Addendas_Factura">
+      <End Role="Factura" EntitySet="Factura" />
+      <End Role="Addendas" EntitySet="Addendas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Categorias_0" Association="eFacDB.Store.FK_Categorias_0">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Categorias" EntitySet="Categorias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Certificates_0" Association="eFacDB.Store.FK_Certificates_0">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Certificates" EntitySet="Certificates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CFD_Empresa" Association="eFacDB.Store.FK_CFD_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="CFD" EntitySet="CFD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CFD_Folios" Association="eFacDB.Store.FK_CFD_Folios">
+      <End Role="Folios" EntitySet="Folios" />
+      <End Role="CFD" EntitySet="CFD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clientes_0" Association="eFacDB.Store.FK_Clientes_0">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clientes_CatAddendas" Association="eFacDB.Store.FK_Clientes_CatAddendas">
+      <End Role="CatAddendas" EntitySet="CatAddendas" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConfiguracionContadorTabla_0" Association="eFacDB.Store.FK_ConfiguracionContadorTabla_0">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="ConfiguracionContadorTabla" EntitySet="ConfiguracionContadorTabla" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConfiguracionEmail_intID_Empresa_Empresa_intID" Association="eFacDB.Store.FK_ConfiguracionEmail_intID_Empresa_Empresa_intID">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="ConfiguracionEmail" EntitySet="ConfiguracionEmail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detalle_Factura_0" Association="eFacDB.Store.FK_Detalle_Factura_0">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="Detalle_Factura" EntitySet="Detalle_Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detalle_Factura_1" Association="eFacDB.Store.FK_Detalle_Factura_1">
+      <End Role="Factura" EntitySet="Factura" />
+      <End Role="Detalle_Factura" EntitySet="Detalle_Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Direcciones_Fiscales_0" Association="eFacDB.Store.FK_Direcciones_Fiscales_0">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="Direcciones_Fiscales" EntitySet="Direcciones_Fiscales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Direcciones_Fiscales_1" Association="eFacDB.Store.FK_Direcciones_Fiscales_1">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Direcciones_Fiscales" EntitySet="Direcciones_Fiscales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Direcciones_Fiscales_2" Association="eFacDB.Store.FK_Direcciones_Fiscales_2">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Direcciones_Fiscales" EntitySet="Direcciones_Fiscales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Direcciones_Fiscales_3" Association="eFacDB.Store.FK_Direcciones_Fiscales_3">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Direcciones_Fiscales" EntitySet="Direcciones_Fiscales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empresa_0" Association="eFacDB.Store.FK_Empresa_0">
+      <End Role="CFD" EntitySet="CFD" />
+      <End Role="Empresa" EntitySet="Empresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empresa_1" Association="eFacDB.Store.FK_Empresa_1">
+      <End Role="Configuracion_Regional" EntitySet="Configuracion_Regional" />
+      <End Role="Empresa" EntitySet="Empresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Estado_0" Association="eFacDB.Store.FK_Estado_0">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="Estado" EntitySet="Estado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Factura_0" Association="eFacDB.Store.FK_Factura_0">
+      <End Role="Certificates" EntitySet="Certificates" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Factura_1" Association="eFacDB.Store.FK_Factura_1">
+      <End Role="CFD" EntitySet="CFD" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Factura_2" Association="eFacDB.Store.FK_Factura_2">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Factura_3" Association="eFacDB.Store.FK_Factura_3">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Factura_4" Association="eFacDB.Store.FK_Factura_4">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Folios_0" Association="eFacDB.Store.FK_Folios_0">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Folios" EntitySet="Folios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Folios_1" Association="eFacDB.Store.FK_Folios_1">
+      <End Role="Certificates" EntitySet="Certificates" />
+      <End Role="Folios" EntitySet="Folios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Grupos_0" Association="eFacDB.Store.FK_Grupos_0">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Grupos" EntitySet="Grupos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_0" Association="eFacDB.Store.FK_Productos_0">
+      <End Role="Categorias" EntitySet="Categorias" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_1" Association="eFacDB.Store.FK_Productos_1">
+      <End Role="UnidadMedida" EntitySet="UnidadMedida" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_2" Association="eFacDB.Store.FK_Productos_2">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Traslados_0" Association="eFacDB.Store.FK_Traslados_0">
+      <End Role="Factura" EntitySet="Factura" />
+      <End Role="Traslados" EntitySet="Traslados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Traslados_intID_Empresa_Empresa_intID" Association="eFacDB.Store.FK_Traslados_intID_Empresa_Empresa_intID">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Traslados" EntitySet="Traslados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UnidadMedida_intID_Empresa_Empresa_intID" Association="eFacDB.Store.FK_UnidadMedida_intID_Empresa_Empresa_intID">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="UnidadMedida" EntitySet="UnidadMedida" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_0" Association="eFacDB.Store.FK_Usuarios_0">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_1" Association="eFacDB.Store.FK_Usuarios_1">
+      <End Role="Grupos" EntitySet="Grupos" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Addendas">
+    <Key>
+      <PropertyRef Name="idAddenda" />
+      <PropertyRef Name="idFactura" />
+      <PropertyRef Name="idPos" />
+    </Key>
+    <Property Name="idAddenda" Type="int" Nullable="false" />
+    <Property Name="idFactura" Type="int" Nullable="false" />
+    <Property Name="idPos" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="500" />
+    <Property Name="Default" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="CatAddendas">
+    <Key>
+      <PropertyRef Name="idAddendas" />
+    </Key>
+    <Property Name="idAddendas" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="intID" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="strNombre" Type="nvarchar" Nullable="false" MaxLength="75" />
+    <Property Name="intID_Empresa" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Certificates">
+    <Key>
+      <PropertyRef Name="intID" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="strNumeroCertificadoSelloDigital" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="strCertificadoSelloDigitalPath" Type="nvarchar" MaxLength="500" />
+    <Property Name="strLlaveCertificadoPath" Type="nvarchar" MaxLength="500" />
+    <Property Name="strContraseñaSAT" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="dtmValidoDesde" Type="datetime" Nullable="false" />
+    <Property Name="dtmValidoHasta" Type="datetime" Nullable="false" />
+    <Property Name="dtmFechaSubida" Type="datetime" Nullable="false" />
+    <Property Name="intID_Empresa" Type="int" Nullable="false" />
+    <Property Name="chrStatus" Type="char" Nullable="false" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="CFD">
+    <Key>
+      <PropertyRef Name="intID" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="strDescripcion" Type="nvarchar" Nullable="false" MaxLength="70" />
+    <Property Name="strTipoCFD" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="intId_Empresa" Type="int" Nullable="false" />
+    <Property Name="intIdFolio" Type="int" />
+    <Property Name="templateReportH" Type="nvarchar" MaxLength="50" />
+    <Property Name="templateReportHdemo" Type="nvarchar" MaxLength="50" />
+    <Property Name="templateReport" Type="nvarchar" MaxLength="50" />
+    <Property Name="templateReportDemo" Type="nvarchar" MaxLength="50" />
+    <Property Name="iva" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="retIva" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="retIsr" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="intID" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="strRFC" Type="nvarchar" Nullable="false" MaxLength="13" />
+    <Property Name="strRazonSocial" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="strNombreComercial" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="strGiro" Type="nvarchar" Nullable="false" MaxLength="70" />
+    <Property Name="strTipodeInscripcion" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="strTelefono" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="strTelefonoMovil" Type="nvarchar" MaxLength="20" />
+    <Property Name="strEmail" Type="nvarchar" Nullable="false" MaxLength="400" />
+    <Property Name="chrRetencionIVA" Type="nvarchar" Nullable="false" MaxLength="2" />
+    <Property Name="chrRetencionISR" Type="nvarchar" MaxLength="2" />
+    <Property Name="strContacto" Type="nvarchar" MaxLength="200" />
+    <Property Name="strWebSite" Type="nvarchar" MaxLength="400" />
+    <Property Name="intID_Empresa" Type="int" Nullable="false" />
+    <Property Name="idAddenda" Type="int" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'orizverRecovery.dbo.Colonia' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="Colonia">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="str_codigo" />
+      <PropertyRef Name="str_descripcion" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="str_codigo" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="str_descripcion" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Configuracion_Regional">
+    <Key>
+      <PropertyRef Name="intID" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="dcmIVAGeneral" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="dcmIVAZonaFronteriza" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="dcmRetencionIVA" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="dcmRetencionISR" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="chrIVAZonaFronteriza" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="intID_Empresa" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'orizverRecovery.dbo.Configuracion_Vehicular' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="Configuracion_Vehicular">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="str_codigo" />
+      <PropertyRef Name="str_descripcion" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="str_codigo" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="str_descripcion" Type="nvarchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ConfiguracionContadorTabla">
+    <Key>
+      <PropertyRef Name="intId" />
+    </Key>
+    <Property Name="intId" Type="int" Nullable="false" />
+    <Property Name="intIdEmpresa" Type="int" Nullable="false" />
+    <Property Name="strNombreTabla" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="intUltimoRegistro" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConfiguracionEmail">
+    <Key>
+      <PropertyRef Name="intID" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="strE_MailRespaldo" Type="nvarchar" Nullable="false" MaxLength="400" />
+    <Property Name="strE_MailContador" Type="nvarchar" Nullable="false" MaxLength="400" />
+    <Property Name="intID_Empresa" Type="int" Nullable="false" />
+    <Property Name="strPasswordEmail" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="strSMTPHost" Type="nvarchar" Nullable="false" MaxLength="400" />
+    <Property Name="intPort" Type="int" Nullable="false" />
+    <Property Name="EnableSsl" Type="bit" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'orizverRecovery.dbo.Consulta' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="Consulta">
+    <Key>
+      <PropertyRef Name="intID" />
+      <PropertyRef Name="intID_Tipo_CFD" />
+      <PropertyRef Name="intID_Empresa" />
+      <PropertyRef Name="strSerie" />
+      <PropertyRef Name="strFolio" />
+      <PropertyRef Name="dtmFecha" />
+      <PropertyRef Name="intID_Usuario" />
+      <PropertyRef Name="intID_Cliente" />
+      <PropertyRef Name="strForma_Pago" />
+      <PropertyRef Name="dcmSubTotal" />
+      <PropertyRef Name="dcmIVA" />
+      <PropertyRef Name="dcmTotal" />
+      <PropertyRef Name="chrStatus" />
+      <PropertyRef Name="intID_Certificate" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="intID_Tipo_CFD" Type="int" Nullable="false" />
+    <Property Name="intID_Empresa" Type="int" Nullable="false" />
+    <Property Name="strSerie" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="strFolio" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="dtmFecha" Type="datetime2" Nullable="false" Precision="3" />
+    <Property Name="dtmFechaAprovacion" Type="datetime2" Precision="3" />
+    <Property Name="intID_Usuario" Type="int" Nullable="false" />
+    <Property Name="intID_Cliente" Type="int" Nullable="false" />
+    <Property Name="strForma_Pago" Type="nvarchar" Nullable="false" MaxLength="75" />
+    <Property Name="strObervaciones" Type="nvarchar" MaxLength="200" />
+    <Property Name="dcmSubTotal" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="dcmIVA" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="dcmTotal" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="chrStatus" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="strProveedor" Type="nvarchar" MaxLength="50" />
+    <Property Name="strNumero" Type="nvarchar" MaxLength="500" />
+    <Property Name="strNumeroContrato" Type="nvarchar" MaxLength="500" />
+    <Property Name="intEstimacion" Type="varchar" MaxLength="50" />
+    <Property Name="intID_Certificate" Type="int" Nullable="false" />
+    <Property Name="strCadenaOriginal" Type="text" />
+    <Property Name="strSelloDigital" Type="text" />
+    <Property Name="dcmDescuento" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="dtmFechaCancelacion" Type="datetime2" Precision="3" />
+    <Property Name="dtmFechaEnvio" Type="datetime2" Precision="3" />
+    <Property Name="strXMLpath" Type="nvarchar" MaxLength="500" />
+    <Property Name="strPDFpath" Type="nvarchar" MaxLength="500" />
+    <Property Name="strPDFdemoPath" Type="nvarchar" MaxLength="500" />
+    <Property Name="dcmRetIVA" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="dcmRetISR" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="dcmRetIEPS" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="Divisa" Type="nvarchar" MaxLength="50" />
+    <Property Name="TipoCambio" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="CondPago" Type="nvarchar" MaxLength="100" />
+    <Property Name="MetodoPago" Type="nvarchar" MaxLength="100" />
+    <Property Name="MotivoDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="Origen" Type="text" />
+    <Property Name="RecogerEn" Type="nvarchar" MaxLength="400" />
+    <Property Name="Destino" Type="nvarchar" MaxLength="400" />
+    <Property Name="Destinatario" Type="nvarchar" MaxLength="400" />
+    <Property Name="rfcDestinatario" Type="nvarchar" MaxLength="400" />
+    <Property Name="domicilioDestinatario" Type="nvarchar" MaxLength="400" />
+    <Property Name="EntregarEn" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="Detalle_Factura">
+    <Key>
+      <PropertyRef Name="intID" />
+      <PropertyRef Name="intID_Factura" />
+      <PropertyRef Name="intID_Producto" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="intID_Factura" Type="int" Nullable="false" />
+    <Property Name="intID_Producto" Type="int" Nullable="false" />
+    <Property Name="dcmCantidad" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="dcmDescuento" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="dcmImporte" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="strUnidad" Type="varchar" Nullable="false" />
+    <Property Name="strConcepto" Type="varchar" Nullable="false" />
+    <Property Name="dcmPrecioUnitario" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="strPatida" Type="varchar" />
+    <Property Name="dcmIVA" Type="decimal" Nullable="false" Precision="14" Scale="6" />
+    <Property Name="retIVA" Type="decimal" Precision="14" Scale="6" />
+    <Property Name="retISR" Type="decimal" Precision="14" Scale="6" />
+    <Property Name="retIEPS" Type="decimal" Precision="14" Scale="6" />
+  </EntityType>
+  <EntityType Name="DicAddenda">
+    <Key>
+      <PropertyRef Name="idAddenda" />
+      <PropertyRef Name="idPos" />
+    </Key>
+    <Property Name="idAddenda" Type="int" Nullable="false" />
+    <Property Name="idPos" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="500" />
+    <Property Name="Default" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Direcciones_Fiscales">
+    <Key>
+      <PropertyRef Name="intID" />
+      <PropertyRef Name="strTipoEntidad" />
+      <PropertyRef Name="strIDCliente" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="strTipoEntidad" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="strIDCliente" Type="int" Nullable="false" />
+    <Property Name="strCalle" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="strColonia" Type="nvarchar" MaxLength="75" />
+    <Property Name="strNoInterior" Type="nvarchar" MaxLength="50" />
+    <Property Name="strNoExterior" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="intIDPais" Type="int" Nullable="false" />
+    <Property Name="intIDEstado" Type="int" Nullable="false" />
+    <Property Name="strMunicipio" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="strPoblacionLocalidad" Type="nvarchar" MaxLength="50" />
+    <Property Name="strCodigoPostal" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="chrStatus" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="intID_Empresa" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="intID" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="intIDConfiguracionRegional" Type="int" />
+    <Property Name="strRazonSocial" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="strNombreComercial" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="strGiro" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="strRFC" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="intID_CFD" Type="int" Nullable="false" />
+    <Property Name="strTelefono" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="strTelefonoMovil" Type="nvarchar" MaxLength="200" />
+    <Property Name="strEmail" Type="nvarchar" Nullable="false" MaxLength="400" />
+    <Property Name="strEmail2" Type="nvarchar" MaxLength="400" />
+    <Property Name="strWebSite" Type="nvarchar" MaxLength="400" />
+    <Property Name="strTelefono2" Type="nvarchar" MaxLength="20" />
+    <Property Name="strLogo" Type="nvarchar" MaxLength="500" />
+    <Property Name="strCedula" Type="nvarchar" MaxLength="500" />
+    <Property Name="strDirectorioXML" Type="nvarchar" MaxLength="200" />
+    <Property Name="strDirectorioPDF" Type="nvarchar" MaxLength="200" />
+    <Property Name="strBannerPublicidad" Type="nchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="intID" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="strNombreEstado" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="intID_Pais" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="intID" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="intID_Tipo_CFD" Type="int" Nullable="false" />
+    <Property Name="intID_Empresa" Type="int" Nullable="false" />
+    <Property Name="strSerie" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="strFolio" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="dtmFecha" Type="datetime" Nullable="false" />
+    <Property Name="dtmFechaAprovacion" Type="datetime" />
+    <Property Name="intID_Usuario" Type="int" Nullable="false" />
+    <Property Name="intID_Cliente" Type="int" Nullable="false" />
+    <Property Name="strForma_Pago" Type="nvarchar" Nullable="false" MaxLength="75" />
+    <Property Name="strObervaciones" Type="nvarchar" MaxLength="200" />
+    <Property Name="dcmSubTotal" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="dcmIVA" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="dcmTotal" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="chrStatus" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="strProveedor" Type="text" />
+    <Property Name="strNumero" Type="nvarchar" MaxLength="500" />
+    <Property Name="strNumeroContrato" Type="nvarchar" MaxLength="500" />
+    <Property Name="intEstimacion" Type="varchar" MaxLength="50" />
+    <Property Name="intID_Certificate" Type="int" Nullable="false" />
+    <Property Name="strCadenaOriginal" Type="text" />
+    <Property Name="strSelloDigital" Type="text" />
+    <Property Name="dcmDescuento" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="dtmFechaCancelacion" Type="datetime" />
+    <Property Name="dtmFechaEnvio" Type="datetime" />
+    <Property Name="strXMLpath" Type="nvarchar" MaxLength="500" />
+    <Property Name="strPDFpath" Type="nvarchar" MaxLength="500" />
+    <Property Name="strPDFdemoPath" Type="nvarchar" MaxLength="500" />
+    <Property Name="dcmRetIVA" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="dcmRetISR" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="dcmRetIEPS" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="Divisa" Type="nvarchar" MaxLength="50" />
+    <Property Name="TipoCambio" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="CondPago" Type="nvarchar" MaxLength="100" />
+    <Property Name="MetodoPago" Type="nvarchar" MaxLength="100" />
+    <Property Name="MotivoDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="Origen" Type="text" />
+    <Property Name="RecogerEn" Type="nvarchar" MaxLength="400" />
+    <Property Name="Destino" Type="nvarchar" MaxLength="400" />
+    <Property Name="Destinatario" Type="nvarchar" MaxLength="400" />
+    <Property Name="rfcDestinatario" Type="nvarchar" MaxLength="400" />
+    <Property Name="domicilioDestinatario" Type="nvarchar" MaxLength="400" />
+    <Property Name="EntregarEn" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="Folios">
+    <Key>
+      <PropertyRef Name="intID" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="intID_Certificate" Type="int" Nullable="false" />
+    <Property Name="intFolio_Inicial" Type="int" Nullable="false" />
+    <Property Name="intFolio_Final" Type="int" Nullable="false" />
+    <Property Name="intNumero_Aprovacion" Type="int" Nullable="false" />
+    <Property Name="strSerie" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="strAño_Aprovacion" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="intID_Empresa" Type="int" Nullable="false" />
+    <Property Name="chrStatus" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="intFolioActual" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Grupos">
+    <Key>
+      <PropertyRef Name="intID" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="strDescripcion" Type="nvarchar" Nullable="false" MaxLength="75" />
+    <Property Name="dtmFechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="intID_Empresa" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'orizverRecovery.dbo.Localidad' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="Localidad">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="str_codigo" Type="nvarchar" MaxLength="50" />
+    <Property Name="str_descripcion" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'orizverRecovery.dbo.Municipio' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="Municipio">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="str_codigo" Type="nvarchar" MaxLength="50" />
+    <Property Name="str_descripcion" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Paises">
+    <Key>
+      <PropertyRef Name="intID" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="strNombrePais" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="intID" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="intID_Categoria" Type="int" Nullable="false" />
+    <Property Name="strNombre" Type="varchar" Nullable="false" />
+    <Property Name="strNombreCorto" Type="nvarchar" MaxLength="1000" />
+    <Property Name="strCodigo" Type="nvarchar" MaxLength="1000" />
+    <Property Name="dcmPrecio1" Type="decimal" Nullable="false" Precision="12" Scale="6" />
+    <Property Name="dcmPrecio2" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="dcmPrecio3" Type="decimal" Nullable="false" Precision="12" Scale="6" />
+    <Property Name="dcmPrecio4" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="dcmPrecio5" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="dcmDescuent" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="intUnidad" Type="int" Nullable="false" />
+    <Property Name="strDescripcion" Type="nvarchar" Nullable="false" MaxLength="2000" />
+    <Property Name="intID_Empresa" Type="int" Nullable="false" />
+    <Property Name="strCodigoBarras" Type="nvarchar" MaxLength="50" />
+    <Property Name="gravaIva" Type="char" MaxLength="1" />
+    <Property Name="porcIva" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="gravaIeps" Type="char" MaxLength="1" />
+    <Property Name="porcIeps" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="gravaRetIva" Type="char" MaxLength="1" />
+    <Property Name="porcRetIva" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="gravaRetIsr" Type="char" MaxLength="1" />
+    <Property Name="porcRetIsr" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="existencias" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="stockMin" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="stockMax" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="puntoReorden" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'orizverRecovery.dbo.TipoRemolque' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="TipoRemolque">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="str_codigo" Type="nvarchar" MaxLength="50" />
+    <Property Name="str_descripcion" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Traslados">
+    <Key>
+      <PropertyRef Name="intID" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="intID_Factura" Type="int" Nullable="false" />
+    <Property Name="strTipoImpuesto" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="dcmTasa" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="dcmImporte" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="TotalImpuestoTrasladado" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="intID_Empresa" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UnidadMedida">
+    <Key>
+      <PropertyRef Name="intId" />
+    </Key>
+    <Property Name="intId" Type="int" Nullable="false" />
+    <Property Name="strDescripcion" Type="nvarchar" MaxLength="2000" />
+    <Property Name="intID_Empresa" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="intID" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="strNombre" Type="nvarchar" Nullable="false" MaxLength="70" />
+    <Property Name="strPassword" Type="nvarchar" MaxLength="15" />
+    <Property Name="intID_Grupo" Type="int" Nullable="false" />
+    <Property Name="intID_Empresa" Type="int" Nullable="false" />
+    <Property Name="strEmail" Type="nvarchar" MaxLength="450" />
+  </EntityType>
+  <EntityType Name="Vehiculos">
+    <Key>
+      <PropertyRef Name="strPlaca" />
+    </Key>
+    <Property Name="strPlaca" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="strModelo" Type="nvarchar" MaxLength="50" />
+    <Property Name="strAno" Type="nvarchar" MaxLength="50" />
+    <Property Name="strNoPoliza" Type="nvarchar" MaxLength="50" />
+    <Property Name="strAseguradoraCarga" Type="nvarchar" MaxLength="50" />
+    <Property Name="strAseguradoraRepCivil" Type="nvarchar" MaxLength="50" />
+    <Property Name="strTipoVehiculo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Addendas_DicAddendas">
+    <End Role="DicAddenda" Type="eFacDB.Store.DicAddenda" Multiplicity="1" />
+    <End Role="Addendas" Type="eFacDB.Store.Addendas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DicAddenda">
+        <PropertyRef Name="idAddenda" />
+        <PropertyRef Name="idPos" />
+      </Principal>
+      <Dependent Role="Addendas">
+        <PropertyRef Name="idAddenda" />
+        <PropertyRef Name="idPos" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Addendas_Factura">
+    <End Role="Factura" Type="eFacDB.Store.Factura" Multiplicity="1" />
+    <End Role="Addendas" Type="eFacDB.Store.Addendas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Factura">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Addendas">
+        <PropertyRef Name="idFactura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Categorias_0">
+    <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="1" />
+    <End Role="Categorias" Type="eFacDB.Store.Categorias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Categorias">
+        <PropertyRef Name="intID_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Certificates_0">
+    <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="1" />
+    <End Role="Certificates" Type="eFacDB.Store.Certificates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Certificates">
+        <PropertyRef Name="intID_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CFD_Empresa">
+    <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="1" />
+    <End Role="CFD" Type="eFacDB.Store.CFD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="CFD">
+        <PropertyRef Name="intId_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CFD_Folios">
+    <End Role="Folios" Type="eFacDB.Store.Folios" Multiplicity="0..1" />
+    <End Role="CFD" Type="eFacDB.Store.CFD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Folios">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="CFD">
+        <PropertyRef Name="intIdFolio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clientes_0">
+    <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="1" />
+    <End Role="Clientes" Type="eFacDB.Store.Clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="intID_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clientes_CatAddendas">
+    <End Role="CatAddendas" Type="eFacDB.Store.CatAddendas" Multiplicity="0..1" />
+    <End Role="Clientes" Type="eFacDB.Store.Clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatAddendas">
+        <PropertyRef Name="idAddendas" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="idAddenda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConfiguracionContadorTabla_0">
+    <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="1" />
+    <End Role="ConfiguracionContadorTabla" Type="eFacDB.Store.ConfiguracionContadorTabla" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="ConfiguracionContadorTabla">
+        <PropertyRef Name="intIdEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConfiguracionEmail_intID_Empresa_Empresa_intID">
+    <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="1" />
+    <End Role="ConfiguracionEmail" Type="eFacDB.Store.ConfiguracionEmail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="ConfiguracionEmail">
+        <PropertyRef Name="intID_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detalle_Factura_0">
+    <End Role="Productos" Type="eFacDB.Store.Productos" Multiplicity="1" />
+    <End Role="Detalle_Factura" Type="eFacDB.Store.Detalle_Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Detalle_Factura">
+        <PropertyRef Name="intID_Producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detalle_Factura_1">
+    <End Role="Factura" Type="eFacDB.Store.Factura" Multiplicity="1" />
+    <End Role="Detalle_Factura" Type="eFacDB.Store.Detalle_Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Factura">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Detalle_Factura">
+        <PropertyRef Name="intID_Factura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Direcciones_Fiscales_0">
+    <End Role="Paises" Type="eFacDB.Store.Paises" Multiplicity="1" />
+    <End Role="Direcciones_Fiscales" Type="eFacDB.Store.Direcciones_Fiscales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Direcciones_Fiscales">
+        <PropertyRef Name="intIDPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Direcciones_Fiscales_1">
+    <End Role="Estado" Type="eFacDB.Store.Estado" Multiplicity="1" />
+    <End Role="Direcciones_Fiscales" Type="eFacDB.Store.Direcciones_Fiscales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Direcciones_Fiscales">
+        <PropertyRef Name="intIDEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Direcciones_Fiscales_2">
+    <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="1" />
+    <End Role="Direcciones_Fiscales" Type="eFacDB.Store.Direcciones_Fiscales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Direcciones_Fiscales">
+        <PropertyRef Name="intID_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Direcciones_Fiscales_3">
+    <End Role="Clientes" Type="eFacDB.Store.Clientes" Multiplicity="1" />
+    <End Role="Direcciones_Fiscales" Type="eFacDB.Store.Direcciones_Fiscales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Direcciones_Fiscales">
+        <PropertyRef Name="strIDCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empresa_0">
+    <End Role="CFD" Type="eFacDB.Store.CFD" Multiplicity="1" />
+    <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="CFD">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Empresa">
+        <PropertyRef Name="intID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empresa_1">
+    <End Role="Configuracion_Regional" Type="eFacDB.Store.Configuracion_Regional" Multiplicity="0..1" />
+    <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Configuracion_Regional">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Empresa">
+        <PropertyRef Name="intIDConfiguracionRegional" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Estado_0">
+    <End Role="Paises" Type="eFacDB.Store.Paises" Multiplicity="1" />
+    <End Role="Estado" Type="eFacDB.Store.Estado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Estado">
+        <PropertyRef Name="intID_Pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Factura_0">
+    <End Role="Certificates" Type="eFacDB.Store.Certificates" Multiplicity="1" />
+    <End Role="Factura" Type="eFacDB.Store.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Certificates">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="intID_Certificate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Factura_1">
+    <End Role="CFD" Type="eFacDB.Store.CFD" Multiplicity="1" />
+    <End Role="Factura" Type="eFacDB.Store.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CFD">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="intID_Tipo_CFD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Factura_2">
+    <End Role="Clientes" Type="eFacDB.Store.Clientes" Multiplicity="1" />
+    <End Role="Factura" Type="eFacDB.Store.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="intID_Cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Factura_3">
+    <End Role="Usuarios" Type="eFacDB.Store.Usuarios" Multiplicity="1" />
+    <End Role="Factura" Type="eFacDB.Store.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="intID_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Factura_4">
+    <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="1" />
+    <End Role="Factura" Type="eFacDB.Store.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="intID_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Folios_0">
+    <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="1" />
+    <End Role="Folios" Type="eFacDB.Store.Folios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Folios">
+        <PropertyRef Name="intID_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Folios_1">
+    <End Role="Certificates" Type="eFacDB.Store.Certificates" Multiplicity="1" />
+    <End Role="Folios" Type="eFacDB.Store.Folios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Certificates">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Folios">
+        <PropertyRef Name="intID_Certificate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Grupos_0">
+    <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="1" />
+    <End Role="Grupos" Type="eFacDB.Store.Grupos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Grupos">
+        <PropertyRef Name="intID_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_0">
+    <End Role="Categorias" Type="eFacDB.Store.Categorias" Multiplicity="1" />
+    <End Role="Productos" Type="eFacDB.Store.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorias">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="intID_Categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_1">
+    <End Role="UnidadMedida" Type="eFacDB.Store.UnidadMedida" Multiplicity="1" />
+    <End Role="Productos" Type="eFacDB.Store.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnidadMedida">
+        <PropertyRef Name="intId" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="intUnidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_2">
+    <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="1" />
+    <End Role="Productos" Type="eFacDB.Store.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="intID_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Traslados_0">
+    <End Role="Factura" Type="eFacDB.Store.Factura" Multiplicity="1" />
+    <End Role="Traslados" Type="eFacDB.Store.Traslados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Factura">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Traslados">
+        <PropertyRef Name="intID_Factura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Traslados_intID_Empresa_Empresa_intID">
+    <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="1" />
+    <End Role="Traslados" Type="eFacDB.Store.Traslados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Traslados">
+        <PropertyRef Name="intID_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UnidadMedida_intID_Empresa_Empresa_intID">
+    <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="1" />
+    <End Role="UnidadMedida" Type="eFacDB.Store.UnidadMedida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="UnidadMedida">
+        <PropertyRef Name="intID_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_0">
+    <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="1" />
+    <End Role="Usuarios" Type="eFacDB.Store.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="intID_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_1">
+    <End Role="Grupos" Type="eFacDB.Store.Grupos" Multiplicity="1" />
+    <End Role="Usuarios" Type="eFacDB.Store.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grupos">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="intID_Grupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

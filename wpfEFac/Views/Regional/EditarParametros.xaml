@@ -1,0 +1,31 @@
+﻿<Window x:Class="wpfEFac.Views.Regional.EditarParametros"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="EditarParametros" Height="200" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Height="23" HorizontalAlignment="Left" Margin="5,0,0,0" Name="txbTasa" Text="Tasa a IVA zona Fronteriza" VerticalAlignment="Center" />
+        <CheckBox Grid.Row="0" Grid.Column="1" Height="16" HorizontalAlignment="Left" Name="chbTasa" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="1" Grid.Column="0" Height="23" HorizontalAlignment="Left" Margin="5,0,0,0" Name="txbIVAGeneral" Text="% IVA General" VerticalAlignment="Center" />
+        <TextBox Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Left" Name="txtIVAGeneral" VerticalAlignment="Center" Width="45" Text="16.00" />
+        <TextBlock Grid.Row="2" Grid.Column="0" Height="23" HorizontalAlignment="Left" Margin="5,0,0,0" Name="txbIVAFronteriza" Text="% IVA Zona Fronteriza" VerticalAlignment="Center" />
+        <TextBox Grid.Column="1" Grid.Row="2" Height="23" HorizontalAlignment="Left" Name="txtIVAFronteriza" VerticalAlignment="Center" Width="45" Text="11.00" />
+        <TextBlock Grid.Row="3" Grid.Column="0" Height="23" HorizontalAlignment="Left" Margin="5,0,0,0" Name="txbRetencion" Text="% Retención IVA" VerticalAlignment="Center" />
+        <TextBox Grid.Column="1" Grid.Row="3" Height="23" HorizontalAlignment="Left" Name="txtRetencion" VerticalAlignment="Center" Width="45" Text="10.00" />
+        <TextBlock Grid.Row="4" Grid.Column="0" Height="23" HorizontalAlignment="Left" Margin="5,0,0,0" Name="txbRetencionISR" Text="% Retención ISR(Recibo de Honorarios)" VerticalAlignment="Center" />
+        <TextBox Grid.Column="1" Grid.Row="4" Height="23" HorizontalAlignment="Left" Name="txtRetencionISR" VerticalAlignment="Center" Width="45" Text="10.00" />
+        <Button Content="Guardar" Grid.Row="5" Grid.ColumnSpan="1" Height="23" HorizontalAlignment="Left" Margin="110,3,0,0" Name="bttGuardar" VerticalAlignment="Top" Width="75" />
+        <Button Content="Guardar" Grid.Row="5" Grid.ColumnSpan="2" Height="23" HorizontalAlignment="Right" Margin="0,3,12,0" Name="bttCancelar" VerticalAlignment="Top" Width="75" />
+    </Grid>
+</Window>

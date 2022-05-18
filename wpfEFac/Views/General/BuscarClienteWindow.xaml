@@ -1,0 +1,90 @@
+﻿<Window x:Class="wpfEFac.Views.General.BuscarClienteWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Buscar Cliente" Height="500" Width="750" mc:Ignorable="d" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:my="clr-namespace:wpfEFac.Models" Loaded="Window_Loaded">
+    <Grid x:Name="LayoutRoot" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120*" />
+            <RowDefinition Height="300*" />
+            <RowDefinition Height="50*" />
+        </Grid.RowDefinitions>
+
+        <GroupBox Grid.RowSpan="1" Header="Filtros de Busqueda"  HorizontalAlignment="Stretch" Name="grbFiltrosBusqueda" VerticalAlignment="Stretch">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*" />
+                    <ColumnDefinition Width="100*" />
+                    <ColumnDefinition Width="100*" />
+                    <ColumnDefinition Width="100*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="23*" />
+                    <RowDefinition Height="23*" />
+                </Grid.RowDefinitions>
+                
+                <!--
+                Filtros de busqueda
+                strRFC
+                strRazonSocial
+                strNombreComercial
+                strTipodeInscripcion
+                -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="/wpfEFac;component/Images/Icons/search.ico" Height="25"></Image>
+                    <TextBlock >
+                    Buscar RFC
+                    </TextBlock>
+                </StackPanel>
+
+                <TextBox Grid.Row="1" Height="25" Name="txtRFC" Width="100" TextChanged="txtRFC_TextChanged" />
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">
+                    <Image Source="/wpfEFac;component/Images/Icons/search.ico" Height="25"></Image>
+                    <TextBlock >
+                    Buscar Razon Social
+                    </TextBlock>
+                </StackPanel>
+
+                <TextBox Grid.Row="1" Height="25" Width="100" Grid.Column="1" Name="txtRazonSocial" TextChanged="txtRazonSocial_TextChanged" />
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2">
+                    <Image Source="/wpfEFac;component/Images/Icons/search.ico" Height="25"></Image>
+                    <TextBlock  >
+                    Buscar Nombre Comercial
+                    </TextBlock>
+                </StackPanel>
+                
+
+                <TextBox Grid.Row="1" Height="25" Width="100" Grid.Column="2" Name="txtNombreComercial" TextChanged="txtNombreComercial_TextChanged" />
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3">
+                    <Image Source="/wpfEFac;component/Images/CursorIcon.png" Height="40" Width="40"></Image>
+                    <TextBlock TextWrapping="Wrap" Width="70">
+                    Seleccione Tipo de Inscripción
+                    </TextBlock>
+                </StackPanel>
+                
+                <ComboBox Grid.Column="3" Grid.Row="1" Height="25" Name="cmbTipoInscripcion" SelectionChanged="cmbTipoInscripcion_SelectionChanged" />
+
+            </Grid>
+        </GroupBox>
+
+        <DataGrid IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="1" HorizontalAlignment="Stretch" Name="dtgClientes" VerticalAlignment="Stretch" Grid.RowSpan="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="strIDColumn" Binding="{Binding Path=strID}" Header="ID" Width="SizeToHeader" Visibility="Hidden" />
+                <DataGridTextColumn x:Name="strRFCColumn" Binding="{Binding Path=strRFC}" Header="RFC" Width="*" />
+                <DataGridTextColumn x:Name="strRazonSocialColumn" Binding="{Binding Path=strRazonSocial}" Header="Razon Social" Width="*" />
+                <DataGridTextColumn x:Name="strNombreComercialColumn" Binding="{Binding Path=strNombreComercial}" Header="Nombre Comercial" Width="*" />
+                <DataGridTextColumn x:Name="strGiroColumn" Binding="{Binding Path=strGiro}" Header="Giro" Width="*" />
+                <DataGridTextColumn x:Name="strTipodeInscripcionColumn" Binding="{Binding Path=strTipodeInscripcion}" Header="Tipode Inscripcion" Width="*" />
+                <DataGridTextColumn x:Name="strContactoColumn" Binding="{Binding Path=strContacto}" Header="Contacto" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <Button Content="Seleccionar" Grid.Row="2" Height="Auto" HorizontalAlignment="Right" Name="btnSeleccionar" VerticalAlignment="Center" Width="75" Margin="0,0,82,0" Click="btnSeleccionar_Click" />
+        <Button Content="Cancelar" Grid.Row="2" Height="23" HorizontalAlignment="Right"  Name="btnCancelar" VerticalAlignment="Center" Width="75" Click="btnCancelar_Click" />
+    </Grid>
+</Window>

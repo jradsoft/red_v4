@@ -1,0 +1,43 @@
+﻿<Page x:Class="wpfEFac.ConfigCatalogo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="460" d:DesignWidth="620"
+	Title="ConfigCatalogo" Loaded="Page_Loaded">
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Row="1" Header="Productos" Height="437" HorizontalAlignment="Stretch" Name="grbProdcutos" VerticalAlignment="Top">            
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="27" />
+                    <RowDefinition Height="387" />
+                </Grid.RowDefinitions>
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="0,5,0,0" Name="txtBuscar" VerticalAlignment="Top" Width="300" TextChanged="txtBuscar_TextChanged" />
+                
+                <Button Click="bttNuevoProducto_Click" Content="Nuevo Producto" Grid.RowSpan="2" Height="23" HorizontalAlignment="Right" Margin="0,2,5,0" Name="bttNuevoProducto" VerticalAlignment="Top" Width="95" />
+                <DataGrid AutoGenerateColumns="False" IsReadOnly="True" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" Grid.Row="1" Height="378" HorizontalAlignment="Stretch" Name="dtgProductos" VerticalAlignment="Top" SelectionChanged="dtgProductos_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn x:Name="strCodigo" Binding="{Binding Path=strCodigo}" Header="CODIGO" Width="10*" />
+                        <DataGridTextColumn x:Name="strNombre" Binding="{Binding Path=strNombre}" Header="NOMBRE" Width="15*" />
+                        <DataGridTextColumn x:Name="dcmPrecio" Binding="{Binding Path=dcmPrecio}" Header="PRECIO" Width="10*" />
+                        <DataGridTemplateColumn Header="OPCIONES" Width="5*" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Name="bttEditar" Click="bttEditar_Click">Editar</Button>
+                                        <Button Name="bttEliminarProducto" Click="bttEliminarProducto_Click" Visibility="Collapsed">Borrar</Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>                        
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Page>

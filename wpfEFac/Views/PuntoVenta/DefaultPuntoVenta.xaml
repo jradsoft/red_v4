@@ -1,0 +1,339 @@
+﻿<Page x:Class="wpfEFac.Views.DefaultPuntoVenta"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:helpers="clr-namespace:wpfEFac.Helpers"
+      xmlns:toolkit="http://schemas.microsoft.com/wpf/2008/toolkit"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="700"
+	  Title="Punto de Venta">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90" />
+            <RowDefinition Height="140" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <GroupBox Grid.RowSpan="1" HorizontalAlignment="Stretch" Header="Menu" Name="grpMenuPuntoVenta" Margin="0,0,0,0" >
+            <Grid >
+                <Menu x:Name="MenuPuntoVenta" Background="Transparent" >
+                    <MenuItem x:Name="mniNueva">
+                        <MenuItem.Header>
+                            <StackPanel>
+                                <Image Source="/wpfEFac;component/Images/Icons/addCFD.ico" Width="42" ToolTip="Nueva" />
+                                <TextBlock HorizontalAlignment="Center">Nueva</TextBlock>
+                            </StackPanel>
+                        </MenuItem.Header>
+                        <MenuItem Header="Factura" Click="hplNuevaFactura_Click" Visibility="Visible"></MenuItem>
+                        <MenuItem Header="Carta Porte" Click="hplNuevaCartaPorte_Click" Visibility="Visible"/>
+                        <MenuItem Header="Nota de Crédito" Click="hplNuevaNotaCredito_Clik" Visibility="Visible"/>
+                        <MenuItem Header="Arrendamiento" Click="cmdReciboArr_Click" Visibility="Visible" />
+                        <MenuItem Header="Honorarios" Click="hplNuevoReciboHonorarios_Click" Visibility="Collapsed"/>
+                        
+                        <Separator></Separator>
+                        <MenuItem Header="Complemento Carta porte" Click="hplComplementoPago_Click" Visibility="Visible"/>
+                        <MenuItem Header="Remisión" Click="hplRemision_Click" Visibility="Collapsed"/>
+                        
+                    </MenuItem>
+                    
+                    <MenuItem x:Name="mniAprovar" IsEnabled="False" Click="mniAprovar_Click">
+                        <MenuItem.Header>
+                            <StackPanel>
+                                <Image Source="/wpfEFac;component/Images/Icons/approveCFD.ico" Width="42" ToolTip="Aprovar"/>
+                                <TextBlock HorizontalAlignment="Center">Aprobar</TextBlock>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+
+                    <MenuItem x:Name="miniOption"  >
+                        <MenuItem.Header>
+                            <StackPanel>
+                                <RadioButton Content="Opcion 1"  Height="16" HorizontalAlignment="Left" Margin="0,0,0,0" Name="radOption1"  IsChecked="True"  Click="radOption1_Click" Visibility="Visible"/>
+                                <RadioButton Content="Opcion 2"  Height="16" HorizontalAlignment="Left" Margin="0,0,0,0" Name="radOption2"  IsChecked="False"  Click="radOption2_Click" Visibility="Visible"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+
+                    <MenuItem x:Name="mniCancelar" IsEnabled="False" Click="mniCancelar_Click">
+                        <MenuItem.Header>
+                            <StackPanel>
+                                <Image Source="/wpfEFac;component/Images/Icons/cancelCFD.ico" Width="42" ToolTip="Cancelar"/>
+                                <TextBlock HorizontalAlignment="Center">Cancelar</TextBlock>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+
+                    <MenuItem x:Name="mniImprimir" IsEnabled="False" Click="mniImprimir_Click">
+                        <MenuItem.Header>
+                            <StackPanel>
+                                <Image Source="/wpfEFac;component/Images/Icons/printCFD.ico" Width="42" ToolTip="Imprimir" />
+                                <TextBlock HorizontalAlignment="Center">Imprimir</TextBlock>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+
+                    <MenuItem x:Name="mniXML" IsEnabled="False" Click="mniXML_Click">
+                        <MenuItem.Header>
+                            <StackPanel>
+                                <Image Width="42" ToolTip="XML" Source="/wpfEFac;component/Images/Icons/doc_xml_icon.png" />
+                                <TextBlock HorizontalAlignment="Center">Xml</TextBlock>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+
+                    <MenuItem x:Name="mniPDF" IsEnabled="False" Click="mniPDF_Click">
+                        <MenuItem.Header>
+                            <StackPanel>
+                                <Image Width="42" ToolTip="PDF" Source="/wpfEFac;component/Images/Icons/pdfIcon.png" />
+                                <TextBlock HorizontalAlignment="Center">PDF</TextBlock>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+
+                    <MenuItem x:Name="mniPayment" IsEnabled="true" Click="mniPayment_Click">
+                        <MenuItem.Header>
+                            <StackPanel>
+                                <Image Width="42" ToolTip="PDF" Source="/wpfEFac;component/Images/Icons/calendar.ico" />
+                                <TextBlock HorizontalAlignment="Center">Fecha Pago</TextBlock>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+
+                    <MenuItem x:Name="mniEmail" IsEnabled="False" Click="mniEmail_Click">
+                        <MenuItem.Header>
+                            <StackPanel>
+                                <Image Width="42" ToolTip="PDF" Source="/wpfEFac;component/Images/Icons/emailCFD.ico" />
+                                <TextBlock HorizontalAlignment="Center">E-Mail</TextBlock>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+
+                    <MenuItem x:Name="mniComntario" IsEnabled="False" Click="mniComntario_Click">
+                        <MenuItem.Header>
+                            <StackPanel>
+                                <Image Width="42" ToolTip="XML" Source="/wpfEFac;component/Images/Icons/editCFD.ico" />
+                                <TextBlock HorizontalAlignment="Center">Comentario</TextBlock>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+
+                </Menu>
+            </Grid>
+        </GroupBox>
+        
+        <!--Historia de facturas-->
+        <GroupBox Grid.Row="1" Header="Historia de Facturas" Height="Auto" HorizontalAlignment="Stretch" Name="grbHistoria" VerticalAlignment="Stretch">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="90" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="60*" />
+                    <ColumnDefinition Width="60*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45" />
+                    <RowDefinition Height="33" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!--Folio-->
+                <TextBlock Grid.RowSpan="1" Grid.Row="0" Height="Auto" HorizontalAlignment="Right" Name="txbTipoDoc" Text="Tipo: " VerticalAlignment="Center" />
+                <!--Fecha-->
+
+
+
+
+
+
+
+
+                <!--Status-->
+                <!--Usuario-->
+                <!--Grupo-->
+                <!--Documento-->
+
+                <TextBlock Height="Auto" HorizontalAlignment="Right" Name="txbFolio" Text="Folio: " VerticalAlignment="Center" Grid.Row="2" Margin="0,0,5,17" />
+                <TextBox Height="23" HorizontalAlignment="Stretch" Margin="0,0,0,0" Name="txtFolio" VerticalAlignment="Top" Width="90" Grid.Column="1" Grid.Row="2" Text="" TextChanged="textBox1_TextChanged" />
+
+                <TextBlock Height="Auto" HorizontalAlignment="Right" Name="txbCliente" Text="Cliente: " VerticalAlignment="Top" Grid.Row="2"  Grid.Column="2" Margin="0,0,5,17" />
+                <TextBox Height="23" HorizontalAlignment="Stretch" Margin="0,0,0,0" Name="txtCliente" VerticalAlignment="Top" Width="180" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" Text="" TextChanged="txtCliente_TextChanged" />
+
+
+                <Button Content="Buscar" Grid.Column="5" Grid.Row="2" Height="23" HorizontalAlignment="Left" Name="bttBuscar" VerticalAlignment="Top" Width="75"  Click="bttBuscar_Click" Grid.ColumnSpan="2" />
+
+                <StackPanel Grid.Column="1" Grid.RowSpan="2" Orientation="Vertical">
+                    <RadioButton Content="Todos"  Height="16" HorizontalAlignment="Left" Margin="0,0,0,0" Name="radTodos" VerticalAlignment="Top" IsChecked="True"  Click="radTodos_Click" Visibility="Collapsed"/>
+                    <RadioButton Content="Facturas"  Height="16" HorizontalAlignment="Left" Margin="0,0,0,0" Name="radFacturas" VerticalAlignment="Top" Click="radFacturas_Click" Visibility="Collapsed" />
+                    <RadioButton Content="Cotizaciones"  Height="16" HorizontalAlignment="Left" Margin="0,0,0,0" Name="radCotizaciones" VerticalAlignment="Top"  Visibility="Collapsed" />
+                    <RadioButton Content="Remisiones"  Height="16" HorizontalAlignment="Left" Margin="0,0,0,0" Name="radRemisiones" VerticalAlignment="Top"  Visibility="Collapsed" />
+                </StackPanel>
+
+
+
+
+
+
+
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="4">
+                    <TextBlock Height="Auto" HorizontalAlignment="Right" Name="txbMes" Text="Fecha: " VerticalAlignment="Top" Grid.Row="0"  Grid.Column="2" Margin="0,0,5,17" />
+                    <RadioButton Content="Todos                "  Height="16" HorizontalAlignment="Left" Margin="0,0,0,0" Name="radFecha" VerticalAlignment="Top" IsChecked="True" Click="radFecha_Click"/>
+                    <RadioButton Content="Mes"  Height="16" HorizontalAlignment="Left" Margin="0,0,0,0" Name="radMes" VerticalAlignment="Top" Click="radMes_Click" />
+                    <ComboBox x:Name="cmbMes" SelectionChanged="cmbMes_SelectionChanged">
+                        <ComboBoxItem Content="Enero" />
+                        <ComboBoxItem Content="Febrero" />
+                        <ComboBoxItem Content="Marzo" />
+                        <ComboBoxItem Content="Abril" />
+                        <ComboBoxItem Content="Mayo" />
+                        <ComboBoxItem Content="Junio" />
+                        <ComboBoxItem Content="Julio" />
+                        <ComboBoxItem Content="Agosto" />
+                        <ComboBoxItem Content="Septiembre" />
+                        <ComboBoxItem Content="Octubre" />
+                        <ComboBoxItem Content="Noviembre" />
+                        <ComboBoxItem Content="Diciembre" />
+                    </ComboBox>
+                    <TextBlock Height="Auto" HorizontalAlignment="Right" Name="txbAaaa" Text="Año: " VerticalAlignment="Top" Grid.Row="0"  Grid.Column="2" Margin="0,0,5,17" />
+                    <TextBox Height="23" HorizontalAlignment="Stretch" Margin="0,0,0,0" Name="txtAaaa" VerticalAlignment="Top" Width="60" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" Text="" TextChanged="txtCliente_TextChanged" />
+                </StackPanel>
+
+
+
+
+
+
+            </Grid>
+        </GroupBox>
+
+
+
+
+
+
+        <StackPanel Grid.Row="2" Height="Auto" HorizontalAlignment="Stretch" Name="dataPager" VerticalAlignment="Stretch" Orientation="Horizontal" Visibility="Collapsed">
+            <Button               
+                Margin="4,0"
+                Content="&lt;&lt;"
+                Command="{Binding FirstCommand}"/>
+            <Button
+                Margin="4,0"
+                Content="&lt;"
+                Command="{Binding PreviousCommand}"/>
+            <StackPanel
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <TextBlock
+                    Text="{Binding Start}"/>
+                <TextBlock
+                    Text=" a "/>
+                <TextBlock
+                    Text="{Binding End}"/>
+                <TextBlock
+                    Text=" de "/>
+                <TextBlock
+                    Text="{Binding TotalItems}"/>
+            </StackPanel>
+            <Button
+                Margin="4,0"
+                Content="&gt;"
+                Command="{Binding NextCommand}"/>
+            <Button
+                Margin="4,0"
+                Content="&gt;&gt;"
+                Command="{Binding LastCommand}"/>
+            
+        </StackPanel>
+        
+        <DataGrid AutoGenerateColumns="False" Grid.Row="3" HorizontalAlignment="Stretch" 
+                  Name="dtgFacturasHistorico" VerticalAlignment="Stretch" 
+                   Margin="0,1,0,-1" SelectionChanged="dtgFacturasHistorico_SelectionChanged" Background="{x:Null}" Foreground="Black"
+            IsReadOnly="True" ItemsSource="{Binding Facturas}"  Loaded="dtgFacturasHistorico_Loaded"  TargetUpdated="dtgFacturasHistorico_TargetUpdated" >
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="ID"
+                    Binding="{Binding intID}"
+                    Visibility="Collapsed"
+                    />
+                <DataGridTextColumn
+                    Header="Folio"
+                    Binding="{Binding strFolio}"
+                    Width="*"
+                    />
+                <DataGridTextColumn
+                    Header="Tipo"
+                    Binding="{Binding CFD.strDescripcion}"
+                    Width="*" />
+                <DataGridTextColumn
+                    Header="Status"
+                    Binding="{Binding chrStatus}"
+                    Width="*" />
+                <!--<DataGridTextColumn
+                    Header="Folio"
+                    Width="*" />-->
+                <DataGridTextColumn
+                    Header="Serie"
+                    Binding="{Binding strSerie}"
+                    Width="*" />
+                <DataGridTextColumn
+                    Header="ClienteID"
+                    Binding="{Binding intID_Cliente}"
+                    Visibility="Collapsed" />
+                <DataGridTextColumn
+                    Header="Cliente"
+                    Binding="{Binding Clientes.strNombreComercial}"
+                    Width="*" />
+                <DataGridTextColumn
+                    Header="Fecha"
+                    Binding="{Binding dtmFecha}"
+                    Width="*"
+                    SortDirection="Descending" />
+               
+                <!--<DataGridTextColumn
+                    Header="Aprobación"
+                    Width="*" />-->
+                <DataGridTextColumn
+                    Header="Importe"
+                    Binding="{Binding dcmTotal}"
+                    Width="*" />
+
+                <DataGridTextColumn
+                    Header="Fecha Pago"
+                    Binding="{Binding dtmFechaEnvio}"
+                    Width="*"
+                    SortDirection="Descending" />
+
+                <DataGridTextColumn
+                    Header="Status Pago"
+                    Binding="{Binding strNumero}"
+                    Width="*"
+                    SortDirection="Descending" />
+
+                <DataGridTemplateColumn Header="Accion" x:Name="dtcAccionColumn" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel x:Name="cmdAccion" Orientation="Horizontal">
+                                <Button x:Name="bttEditarPreFactura" Click="bttEditarPreFactura_Click">Editar</Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Eliminar" x:Name="dtDeleteColumn" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel x:Name="cmdEliminar" Orientation="Horizontal">
+                                <Button x:Name="bttEliminarPreFactura" Click="bttEliminarPreFactura_Click">Borrar</Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+                
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
