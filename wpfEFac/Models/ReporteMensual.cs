@@ -32,12 +32,12 @@ namespace wpfEFac.Models
             var query = from r in db.Factura
                         where
                         r.intID_Empresa == idEmpresa &&
-                        (r.dtmFecha.Year >= 2022 &&
-                        r.dtmFecha.Month >= 01 &&
-                        r.dtmFecha.Day >= 01 &&
-                        r.dtmFecha.Year <= 2022 &&
-                        r.dtmFecha.Month <= 02 &&
-                        r.dtmFecha.Day <= 28
+                        (r.dtmFecha.Year >= date.Year &&
+                        r.dtmFecha.Month >= date.Month &&
+                        r.dtmFecha.Day >= date.Day &&
+                        r.dtmFecha.Year <= dateFin.Year &&
+                        r.dtmFecha.Month <= dateFin.Month &&
+                        r.dtmFecha.Day <= dateFin.Day
                         ) &&
                         r.chrStatus == strStatus &&
                         r.chrStatus != "P" ||
@@ -80,12 +80,12 @@ namespace wpfEFac.Models
             var query = from r in db.Factura
                         where
                         r.intID_Empresa == idEmpresa &&
-                        (r.dtmFecha.Year >= 2022 &&
-                        r.dtmFecha.Month >= 01 &&
-                        r.dtmFecha.Day >= 01 &&
-                        r.dtmFecha.Year <= 2022 &&
-                        r.dtmFecha.Month <= 02 &&
-                        r.dtmFecha.Day <= 28
+                        (r.dtmFecha.Year >= date.Year &&
+                        r.dtmFecha.Month >= date.Month &&
+                        r.dtmFecha.Day >= date.Day &&
+                        r.dtmFecha.Year <= dateFin.Year &&
+                        r.dtmFecha.Month <= dateFin.Month &&
+                        r.dtmFecha.Day <= dateFin.Day
                         ) &&
                         r.chrStatus == strStatus &&
                         r.chrStatus != "P" ||

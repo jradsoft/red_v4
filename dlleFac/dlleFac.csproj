@@ -57,10 +57,10 @@
     <Compile Include="Adenda.cs" />
     <Compile Include="Cancelacion.cs" />
     <Compile Include="CartaPorte20.cs" />
-    <Compile Include="cfd33.cs" />
     <Compile Include="CFDiService.cs">
       <SubType>code</SubType>
     </Compile>
+    <Compile Include="cfdv40.cs" />
     <Compile Include="Complemento.cs" />
     <Compile Include="ComplementoConcepto.cs" />
     <Compile Include="ComprobanteFiscalDigital.cs" />
@@ -69,18 +69,17 @@
     <Compile Include="DomicilioFiscal.cs" />
     <Compile Include="Emisor.cs" />
     <Compile Include="Factura.cs" />
+    <Compile Include="FacturaloService.cs" />
     <Compile Include="Impuestos.cs" />
     <Compile Include="InformacionAduanera.cs" />
     <Compile Include="MyFactE.cs" />
-    <Compile Include="FacturaloService.cs" />
-    <Compile Include="Pagos10.cs" />
+    <Compile Include="Pagos20.cs" />
     <Compile Include="Parte.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Receptor.cs" />
     <Compile Include="Retencion.cs" />
     <Compile Include="servicioparcialconstruccion.cs" />
     <Compile Include="Traslado.cs" />
-    <Compile Include="SIFEIService.cs" />
     <Compile Include="XMLValidator.cs" />
   </ItemGroup>
   <ItemGroup>

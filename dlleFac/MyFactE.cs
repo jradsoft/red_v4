@@ -8,7 +8,6 @@ using System.Xml.Serialization;
 using System.IO;
 using System.Xml.Linq;
 using Ionic.Zip;
-using WService;
 using System.Web.Services.Protocols;
 
 
@@ -111,8 +110,8 @@ namespace dlleFac
             ExecuteCommandSync("xsltproc deleteNull.xslt " + fileNameXMLtemp + " > " + fileNameOK);
             //ExecuteCommandSync("xsltproc cadenaoriginal_3_0.xslt " + fileNameOK + " > cadena.txt");
             //ExecuteCommandSync("xsltproc cadenaoriginal_3_0.xslt " + fileNameOK + " | openssl dgst -sha1 -sign " + strFileKEYPEM + " | openssl enc -base64 -A > sello.txt");
-            ExecuteCommandSync("xsltproc cadenaoriginal33.xslt " + fileNameOK + " > cadena.txt");
-            ExecuteCommandSync("xsltproc cadenaoriginal33.xslt " + fileNameOK + " | openssl dgst -sha256 -sign " + strFileKEYPEM + " | openssl enc -base64 -A > sello.txt");
+            ExecuteCommandSync("xsltproc cadenaoriginal40.xslt " + fileNameOK + " > cadena.txt");
+            ExecuteCommandSync("xsltproc cadenaoriginal40.xslt " + fileNameOK + " | openssl dgst -sha256 -sign " + strFileKEYPEM + " | openssl enc -base64 -A > sello.txt");
 
             strCadenaOriginal = System.IO.File.ReadAllText("cadena.txt", UTF8Encoding.UTF8);
 
@@ -190,8 +189,9 @@ namespace dlleFac
                         ExecuteCommandSync("delete timbreCFDi.xml");
                         
 
-                        //MyCfdiTimbrado = myService.timbrar("0955d485e26c486392909ee79f5ad5c3", XmlString);  //getCFDI(strUs, strValue, rawData, "", idEquipo);
-                        MyCfdiTimbrado = myService.timbrar(idEquipo, XmlString); 
+                       
+                        //MyCfdiTimbrado = myService.timbrar(idEquipo, XmlString);   /* Produccion*/
+                        MyCfdiTimbrado = myService.timbrar("0955d485e26c486392909ee79f5ad5c3", XmlString);  //test
 
 
                         // valor para deserializar complemento
@@ -479,13 +479,13 @@ namespace dlleFac
                     if ((intTipoComprobante == 1) || (intTipoComprobante == 2) || (intTipoComprobante == 3) || (intTipoComprobante == 4) || (intTipoComprobante == 5) || (intTipoComprobante == 7))
                     {
 
-                        newAttr.Value = "http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd http://www.sat.gob.mx/CartaPorte20 http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte20.xsd http://www.sat.gob.mx/servicioparcialconstruccion http://www.sat.gob.mx/sitio_internet/cfd/servicioparcialconstruccion/servicioparcialconstruccion.xsd";
+                        newAttr.Value = "http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd http://www.sat.gob.mx/CartaPorte20 http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte20.xsd http://www.sat.gob.mx/servicioparcialconstruccion http://www.sat.gob.mx/sitio_internet/cfd/servicioparcialconstruccion/servicioparcialconstruccion.xsd";
                     }
 
                     if (intTipoComprobante == 6)
                     {
 
-                        newAttr.Value = "http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd http://www.sat.gob.mx/Pagos http://www.sat.gob.mx/sitio_internet/cfd/Pagos/Pagos10.xsd ";
+                        newAttr.Value = "http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd http://www.sat.gob.mx/Pagos20 http://www.sat.gob.mx/sitio_internet/cfd/Pagos/Pagos20.xsd ";
                     }
 
                     //if (intTipoComprobante == 7)
@@ -650,14 +650,14 @@ namespace dlleFac
             
             
             
-            xmlNameSpace.Add("cfdi", "http://www.sat.gob.mx/cfd/3");
+            xmlNameSpace.Add("cfdi", "http://www.sat.gob.mx/cfd/4");
             xmlNameSpace.Add("cartaporte20", "http://www.sat.gob.mx/CartaPorte20");
             xmlNameSpace.Add("servicioparcial", "http://www.sat.gob.mx/servicioparcialconstruccion");
 
 
             if (idComprobante == 6)
             {
-                xmlNameSpace.Add("pago10", "http://www.sat.gob.mx/Pagos");
+                xmlNameSpace.Add("pago20", "http://www.sat.gob.mx/Pagos20");
             }
 
             

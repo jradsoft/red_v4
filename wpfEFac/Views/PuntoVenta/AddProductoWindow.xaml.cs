@@ -322,14 +322,28 @@ namespace wpfEFac.Views.PuntoVenta
 
         }
 
-        public void CalcularImporte()
+        public void CalcularImporte(int value)
         {
+            decimal resultado = 0;
             if (dtgProductos.SelectedItem!= null)
             {
                 if (ValoresValidos())
                 {
-                    decimal resultado = decimal.Parse(txtCantidad.Text) * decimal.Parse(txtPrecioUnitario.Text);
+                    if (value == 0 )
+                    {
+                         resultado= decimal.Parse(txtCantidad.Text) * decimal.Parse(txtPrecioUnitario.Text);
+                    }
+                    
+                        else {
 
+                        decimal dcmPrecioUnitario = decimal.Parse(txtPrecioUnitario.Text)/decimal.Parse("1.16");
+
+                        txtPrecioUnitario.Text = dcmPrecioUnitario.ToString("#0.0000"); 
+
+
+                        resultado = decimal.Parse(txtCantidad.Text) * dcmPrecioUnitario;
+                    
+                    }
                     decimal porcentaje = decimal.Parse(txtDescuento.Text != string.Empty ? txtDescuento.Text : "0") / 100;
 
                     decimal descuento = resultado * porcentaje;
@@ -402,17 +416,17 @@ namespace wpfEFac.Views.PuntoVenta
 
         private void txtCantidad_TextChanged(object sender, TextChangedEventArgs e)
         {
-            CalcularImporte();
+            CalcularImporte(0);
         }
 
         private void txtDescuento_TextChanged(object sender, TextChangedEventArgs e)
         {
-            CalcularImporte();
+            CalcularImporte(0);
         }
 
         private void txtPrecioUnitario_TextChanged(object sender, TextChangedEventArgs e)
         {
-            CalcularImporte();
+            CalcularImporte(0);
         }
 
         public bool IsEditMode { get; set; }
@@ -469,6 +483,11 @@ namespace wpfEFac.Views.PuntoVenta
                 txbMP.Visibility = Visibility.Collapsed;
             
             }
+        }
+
+        private void chkSinIva_Click(object sender, RoutedEventArgs e)
+        {
+            CalcularImporte(1);
         }
 
        

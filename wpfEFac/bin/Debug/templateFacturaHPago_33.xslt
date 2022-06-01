@@ -1,6 +1,6 @@
 ﻿<xsl:stylesheet version = '1.0'
     xmlns:xsl='http://www.w3.org/1999/XSL/Transform'
-    xmlns:cfdi='http://www.sat.gob.mx/cfd/3'
+    xmlns:cfdi='http://www.sat.gob.mx/cfd/4'
     xmlns:tfd='http://www.sat.gob.mx/sitio_internet/TimbreFiscalDigital/TimbreFiscalDigital.xsd'
                 >
 
@@ -244,6 +244,15 @@
                             </xsl:if>
                             <xsl:if test="(cfdi:Receptor/@UsoCFDI='P01')">
                               <xsl:value-of select="cfdi:Receptor/@UsoCFDI"/>-Por definir
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@UsoCFDI='CP01')">
+                              <xsl:value-of select="cfdi:Receptor/@UsoCFDI"/>-Pagos
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@UsoCFDI='S01')">
+                              <xsl:value-of select="cfdi:Receptor/@UsoCFDI"/>-Sin efectos fiscales
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@UsoCFDI='CN01')">
+                              <xsl:value-of select="cfdi:Receptor/@UsoCFDI"/>-Nómina
                             </xsl:if>
 
                           </b>

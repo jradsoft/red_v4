@@ -42,6 +42,7 @@ namespace wpfEFac.Views.Login
                 }
                 getCFD();
                 getFolios();
+                getProduct();
             }
             catch (Exception ex)
             {
@@ -288,6 +289,105 @@ namespace wpfEFac.Views.Login
                 F.intFolioActual = 1;
 
                 db.Folios.AddObject(F);
+                db.SaveChanges();
+
+
+
+            }
+
+            //   Factura factura = db.Factura.SingleOrDefault(fac => fac.intID == f.intID);// busca y edita status de comprobante
+
+            //    factura.chrStatus = "C";
+            //   factura.dtmFechaCancelacion = DateTime.Now;
+            //  factura.strNumero = "CANCELADA";
+            //  factura.dtmFechaEnvio = DateTime.Now; 
+
+        }
+
+        private void getProduct()
+        {
+
+            try
+            {
+                var myPro = db.Productos.SingleOrDefault(c => c.strCodigoBarras.Equals("84111506") && c.strNombre.Contains("Pago"));
+                myPro.intID_Categoria = 1;
+                myPro.strNombre = "Pago";
+                myPro.strNombreCorto = "";
+                myPro.strCodigo = "84111506";
+                myPro.dcmPrecio1 = decimal.Parse("0.00");
+                myPro.dcmPrecio2 = decimal.Parse("0.00");
+                myPro.dcmPrecio3 = decimal.Parse("0.00");
+                myPro.dcmPrecio4 = decimal.Parse("0.00");
+                myPro.dcmPrecio5 = decimal.Parse("0.00");
+                myPro.dcmDescuent = decimal.Parse("0.00");
+                myPro.intUnidad = 1;
+                myPro.strDescripcion = "Pago";
+                myPro.intID_Empresa = 1;
+                myPro.strCodigoBarras = "84111506";
+                myPro.gravaIva = "N";
+                myPro.porcIva = decimal.Parse("0.00");
+                myPro.gravaIeps = "N";
+                myPro.porcIeps = decimal.Parse("0.00");
+                myPro.gravaRetIsr = "N";
+                myPro.porcRetIsr = decimal.Parse("0.00");
+                myPro.gravaRetIva = "N";
+                myPro.porcRetIva = decimal.Parse("0.00");
+                myPro.existencias = 0;
+                myPro.stockMin = 0;
+                myPro.stockMax = 0;
+                myPro.puntoReorden = 0;
+
+                db.SaveChanges();
+
+
+            }
+            catch (Exception ex)
+            {
+                Models.Productos gtp = db.Productos.OrderByDescending(p => p.intID).FirstOrDefault();
+                wpfEFac.Models.Productos pro = new wpfEFac.Models.Productos();
+                int intGet = 0;
+                if (gtp != null)
+                {
+
+
+                    intGet = gtp.intID + 1;
+                }
+                else
+                {
+                    intGet = 1;
+
+                }
+
+                pro.intID = intGet;
+                pro.intID_Categoria = 1;
+                pro.strNombre = "Pago";
+                pro.strNombreCorto = "";
+                pro.strCodigo = "84111506";
+                pro.dcmPrecio1 = decimal.Parse("0.00");
+                pro.dcmPrecio2 = decimal.Parse("0.00");
+                pro.dcmPrecio3 = decimal.Parse("0.00");
+                pro.dcmPrecio4 = decimal.Parse("0.00");
+                pro.dcmPrecio5 = decimal.Parse("0.00");
+                pro.dcmDescuent = decimal.Parse("0.00");
+                pro.intUnidad = 1;
+                pro.strDescripcion = "Pago";
+                pro.intID_Empresa = 1;
+                pro.strCodigoBarras = "84111506";
+                pro.gravaIva = "N";
+                pro.porcIva = decimal.Parse("0.00");
+                pro.gravaIeps = "N";
+                pro.porcIeps = decimal.Parse("0.00");
+                pro.gravaRetIsr = "N";
+                pro.porcRetIsr = decimal.Parse("0.00");
+                pro.gravaRetIva = "N";
+                pro.porcRetIva = decimal.Parse("0.00");
+                pro.existencias = 0;
+                pro.stockMin = 0;
+                pro.stockMax = 0;
+                pro.puntoReorden = 0;
+
+
+                db.Productos.AddObject(pro);
                 db.SaveChanges();
 
 

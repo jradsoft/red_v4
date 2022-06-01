@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using wpfEFac.Models;
 using System.IO;
-using WService;
+
 using cancelacion;
 using System.Xml.Serialization;
 using System.Xml;
@@ -208,7 +208,7 @@ namespace wpfEFac.Views.PuntoVenta
 
 
 
-                    //RespuestaCancelar acuseCancelacion = myService.cancelar2(strEquipo, keyB64, cerB64, strPasswd, strUUID, rfc, strRfcReceptor, dcmTotal,strMotivo,uuidRelacion);
+                    RespuestaCancelar acuseCancelacion = myService.cancelar2(strEquipo, keyB64, cerB64, strPasswd, strUUID, rfc, strRfcReceptor, dcmTotal,strMotivo,uuidRelacion);
 
                 
 

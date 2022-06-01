@@ -565,7 +565,7 @@ namespace wpfEFac.Views.PuntoVenta
                     decimal.Parse("0.000000"),
                     txtParcialidad.Text,//txtCondicionesPago.Text,
                     "PPD",//cmbMetodoPago.Text.Substring(0, 3),
-                    "P01",//cmbUsoCfdi.Text.Substring(0, 3),
+                    "CP01",//cmbUsoCfdi.Text.Substring(0, 3),
                     "XXX",//txtDivisa.Text,
                     decimal.Parse("0.000000"),
                     rfcOrde,//txtProveeedor.Text,

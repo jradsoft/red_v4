@@ -28,6 +28,11 @@ namespace wpfEFac.Views.Clientes
             entidad = new eFacDBEntities();
             data = new EditarClienteViewModel();
 
+
+            txtGiro.Items.Clear();
+            txtGiro.ItemsSource = FactCat.getListRegimen();
+            txtGiro.DisplayMemberPath = "descripcion";
+            txtGiro.SelectedValuePath = "clave";
            
         }
 
@@ -63,7 +68,7 @@ namespace wpfEFac.Views.Clientes
                     string rfc = txtRFC.Text;
                     string Razon = txtRazonSocial.Text;
                     string Nombre = txtNombreComercial.Text;
-                    string Giro = txtGiro.Text;
+                    string Giro = txtGiro.SelectedValue.ToString();
                     string Tipo = cmbTipoComprobante.Text;
                     string Telefono = txtTelefono.Text;
                     string Movil = txtCelular.Text;

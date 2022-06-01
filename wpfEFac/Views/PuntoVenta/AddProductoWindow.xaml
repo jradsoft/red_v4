@@ -129,7 +129,7 @@
             <RadioButton Content="Pesos" Grid.Column="1" Grid.Row="5" Height="16" HorizontalAlignment="Right" Name="rdbPesos" VerticalAlignment="Center" IsChecked="True" Margin="0,0,70,0" GroupName="Divisa" />
             <RadioButton Content="Dolares" Grid.Column="1" Grid.Row="5" Height="16" HorizontalAlignment="Right" Name="rdbDolares" VerticalAlignment="Center"  Margin="0,0,70,0" GroupName="Divisa" IsEnabled="False" />
             <CheckBox Content="Mercancia" Grid.Column="1" Grid.Row="5" Height="16" HorizontalAlignment="Right" Name="chkMercancia" Click="chkMercancia_Click" VerticalAlignment="Center" />
-            
+            <CheckBox Content="Sin IVA" Grid.Column="1" Grid.Row="5" Height="16" HorizontalAlignment="Right" Name="chkSinIva" Click="chkSinIva_Click" VerticalAlignment="Center" />
 
 
         </StackPanel>

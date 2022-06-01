@@ -392,6 +392,11 @@ namespace wpfEFac.Views.PuntoVenta
 
             txtCondicionesPago.Text = f.CondPago;
 
+            string DataPublicoGeneral = f.Destino;
+
+            cmbPeriocidad.Text =  DataPublicoGeneral.Split('/')[0];
+            txtMes.Text = DataPublicoGeneral.Split('/')[1];
+            txtAno.Text = DataPublicoGeneral.Split('/')[2];
             
             
             
@@ -1303,7 +1308,7 @@ namespace wpfEFac.Views.PuntoVenta
                             decimal.Parse(txtTipoCambio.Text),
                             txtOrigen.Text,//txtProveeedor.Text,
                             txtRecogerEn.Text,//txtPedido.Text,
-                            txtDestino.Text,//txtCC.Text,
+                            cmbPeriocidad.Text + "/" + txtMes.Text + "/" + txtAno.Text,//txtCC.Text,
                             txtDestinatario.Text,
                             txtRfcDestinatario.Text,
                             txtDomicilioDestinatario.Text,
@@ -1410,7 +1415,7 @@ namespace wpfEFac.Views.PuntoVenta
                             decimal.Parse(txtTipoCambio.Text),
                             txtOrigen.Text,//txtProveeedor.Text,
                             txtPedido.Text,
-                            txtCC.Text,
+                            cmbPeriocidad.Text + "/" + txtMes.Text + "/" + txtAno.Text,
                             txtDestinatario.Text,
                             txtRfcDestinatario.Text,
                             txtDomicilioDestinatario.Text,
@@ -1905,6 +1910,33 @@ namespace wpfEFac.Views.PuntoVenta
                 
                 this.strRetencionIva = myc.chrRetencionIVA;
                 this.strRetencionIsr = myc.chrRetencionISR;
+
+                if (myc.strRFC == "XAXX010101000")
+                {
+
+                    txtPeriocidad.Visibility = System.Windows.Visibility.Visible;
+                    cmbPeriocidad.Visibility = System.Windows.Visibility.Visible;
+                    txbMes.Visibility = System.Windows.Visibility.Visible;
+                    txtMes.Visibility = System.Windows.Visibility.Visible;
+                    txbAno.Visibility = System.Windows.Visibility.Visible;
+                    txtAno.Visibility = System.Windows.Visibility.Visible;
+                    if (!IsEditMode)
+                    {
+                        txtMes.Text = DateTime.Now.Month.ToString("00");
+                        txtAno.Text = DateTime.Now.Year.ToString();
+                    }
+                    
+                }
+                else {
+
+                    txtPeriocidad.Visibility = System.Windows.Visibility.Collapsed;
+                    cmbPeriocidad.Visibility = System.Windows.Visibility.Collapsed;
+                    txbMes.Visibility = System.Windows.Visibility.Collapsed;
+                    txtMes.Visibility = System.Windows.Visibility.Collapsed;
+                    txbAno.Visibility = System.Windows.Visibility.Collapsed;
+                    txtAno.Visibility = System.Windows.Visibility.Collapsed;
+                
+                }
 
                 ShowAdds();
 

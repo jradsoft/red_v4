@@ -46,8 +46,9 @@
         <TextBox Grid.Column="1" Grid.Row="2" Height="23" HorizontalAlignment="Left" Name="txtRazonSocial" VerticalAlignment="Center" Width="280" TabIndex="2" />
         <TextBlock Grid.Row="4" Grid.Column="0" Height="23" Name="txbNombreComercial" Text="Nombre Comercial" VerticalAlignment="Center" HorizontalAlignment="Left"/>
         <TextBox Grid.Column="1" Grid.Row="4" Height="23" HorizontalAlignment="Left" Name="txtNombreComercial" VerticalAlignment="Center" Width="280" TabIndex="3" />
-        <TextBlock Grid.Row="5" Grid.Column="0" Height="23" Name="txbGiro" Text="Giro" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-        <TextBox Grid.Column="1" Grid.Row="5" Height="23" HorizontalAlignment="Left" Name="txtGiro" VerticalAlignment="Center" Width="280" TabIndex="4" />
+        <TextBlock Grid.Row="5" Grid.Column="0" Height="23" Name="txbGiro" Text="Regimen Fiscal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <ComboBox Grid.Column="1" Grid.Row="5" Height="22" HorizontalAlignment="Left" Name="txtGiro" VerticalAlignment="Center" Width="230" Background="White" Margin="0,2">
+        </ComboBox>
         <TextBlock Grid.Row="6" Grid.Column="0" Height="23" Name="txbTipoInscripcion" Text="Tipo de Inscripción" VerticalAlignment="Center" HorizontalAlignment="Left"/>
         <ComboBox Grid.Column="1" Grid.Row="6" Height="22" HorizontalAlignment="Left" Name="cmbTipoComprobante" VerticalAlignment="Center" Width="160" Background="White" TabIndex="5">
             <ComboBoxItem>

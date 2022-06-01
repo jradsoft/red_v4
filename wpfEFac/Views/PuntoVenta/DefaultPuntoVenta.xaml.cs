@@ -1366,6 +1366,8 @@ namespace wpfEFac.Views
             decimal sumaSubtotal = 0;
             decimal sumaIva = 0;
             decimal totalRet = 0;
+            decimal sumaBaseIva16 = 0;
+            decimal sumaBaseIva0 = 0;
             Boolean isIva0 = false;
             Boolean isRet = false;
             Boolean isIva16 = false;
@@ -1424,7 +1426,7 @@ namespace wpfEFac.Views
 
             if (!string.IsNullOrEmpty(f.strNumeroContrato))
             {
-                dlleFac.ComprobanteCfdiRelacionados myRelacion = new dlleFac.ComprobanteCfdiRelacionados();
+                List <dlleFac.ComprobanteCfdiRelacionados> myRelacion = new List<dlleFac.ComprobanteCfdiRelacionados>();
                 {
                     List<dlleFac.ComprobanteCfdiRelacionadosCfdiRelacionado> myUUID = new List<dlleFac.ComprobanteCfdiRelacionadosCfdiRelacionado>();
                     List<string> uuids2 = new List<string>();
@@ -1462,12 +1464,22 @@ namespace wpfEFac.Views
 
 
 
+                    myRelacion.Add(new dlleFac.ComprobanteCfdiRelacionados
+                    {
 
-                    MyCFD20.CfdiRelacionados = new dlleFac.ComprobanteCfdiRelacionados();
+                        TipoRelacion = f.intEstimacion,
+                        CfdiRelacionado = myUUID.ToArray()
 
-                    MyCFD20.CfdiRelacionados.TipoRelacion = f.intEstimacion;
 
-                    MyCFD20.CfdiRelacionados.CfdiRelacionado = myUUID.ToArray();
+
+                    });
+                    
+
+
+
+                    
+
+                    MyCFD20.CfdiRelacionados = myRelacion.ToArray();
                 }
             }
 
@@ -1512,7 +1524,9 @@ namespace wpfEFac.Views
             {
                 Rfc = f.Clientes.strRFC,
                 Nombre = f.Clientes.strRazonSocial,
-                UsoCFDI = f.MotivoDesc
+                UsoCFDI = f.MotivoDesc,
+                RegimenFiscalReceptor = f.Clientes.strGiro,
+                DomicilioFiscalReceptor = direccionReceptor.strCodigoPostal
 
 
                 //ResidenciaFiscal = dlleFac.c_Pais.MEX,
@@ -1557,10 +1571,12 @@ namespace wpfEFac.Views
                 if (item.dcmIVA > 0)
                 {
                     isIva16 = true;
+                    sumaBaseIva16 += item.dcmImporte;
                 }
                 if (item.dcmIVA == 0)
                 {
                     isIva0 = true;
+                    sumaBaseIva0 += item.dcmImporte;
                 }
 
                 decimal BaseTraslado = item.dcmPrecioUnitario * item.dcmCantidad - item.dcmDescuento;
@@ -1677,6 +1693,24 @@ namespace wpfEFac.Views
                 }
 
 
+                if (f.Clientes.strRFC == "XAXX010101000")
+                {
+
+                    /* PARA GLOBAL*/
+                    dlleFac.ComprobanteInformacionGlobal myGlobal = new dlleFac.ComprobanteInformacionGlobal();
+
+                    string[] arrayInfoGlobal = f.Destino.Split('/');
+                    string strPeriocidad = arrayInfoGlobal[0].Split('-')[0];
+                    string strMes = arrayInfoGlobal[1];
+                    string strAno = arrayInfoGlobal[2];
+                    myGlobal.Periodicidad = strPeriocidad;
+                    myGlobal.Meses = strMes;
+                    myGlobal.Año = short.Parse(strAno);
+                
+                
+                }
+
+
 
 
                 decimal ImporteTotal = BaseTraslado + item.dcmDescuento;
@@ -1684,7 +1718,7 @@ namespace wpfEFac.Views
                 myConceptos.Add(new dlleFac.ComprobanteConcepto
                 {
 
-
+                    ObjetoImp = dlleFac.c_ObjetoImp.Item02,
                     Cantidad = decimal.Parse(item.dcmCantidad.ToString("#0.0000")),
                     ClaveProdServ = item.Productos.strCodigoBarras,
                     Unidad = myuni,
@@ -2176,9 +2210,13 @@ namespace wpfEFac.Views
             {
                 dlleFac.ComprobanteImpuestosTraslado MyIvaT = new dlleFac.ComprobanteImpuestosTraslado()
                     {
+                        Base =sumaBaseIva16,
                         Importe = decimal.Parse(sumaIva.ToString("#0.00")),
+                        ImporteSpecified = true,
                         Impuesto = dlleFac.c_Impuesto.Item002,
+                        TipoFactor = dlleFac.c_TipoFactor.Tasa,
                         TasaOCuota = decimal.Parse("0.160000"),
+                        TasaOCuotaSpecified = true
 
 
 
@@ -2193,11 +2231,13 @@ namespace wpfEFac.Views
 
                 dlleFac.ComprobanteImpuestosTraslado MyIvaT0 = new dlleFac.ComprobanteImpuestosTraslado()
                 {
+                    Base = sumaBaseIva0,
                     Importe = decimal.Parse("0.00"),
+                    ImporteSpecified = true,
                     Impuesto = dlleFac.c_Impuesto.Item002,
                     TipoFactor = dlleFac.c_TipoFactor.Tasa,
-                    TasaOCuota = decimal.Parse("0.000000")//dlleFac.c_TasaOCuota.Item0160000    
-
+                    TasaOCuota = decimal.Parse("0.000000"),//dlleFac.c_TasaOCuota.Item0160000    
+                    TasaOCuotaSpecified = true
                 };
                 Mytraslado.Add(MyIvaT0);
 
@@ -2376,8 +2416,10 @@ namespace wpfEFac.Views
             {
                 Rfc = f.Clientes.strRFC,
                 Nombre = f.Clientes.strRazonSocial,
-                UsoCFDI = f.MotivoDesc
-
+                UsoCFDI = f.MotivoDesc,
+                RegimenFiscalReceptor = f.Clientes.strGiro,
+                DomicilioFiscalReceptor = direccionReceptor.strCodigoPostal
+                
 
 
             };
@@ -2395,9 +2437,9 @@ namespace wpfEFac.Views
                 ClaveProdServ = "84111506", //producPago.strCodigoBarras,
                 ClaveUnidad = "ACT",
                 Descripcion = "Pago",//producPago.strNombre,
-                ValorUnitario = decimal.Parse("0.000000"),
-                Importe = decimal.Parse("0.000000"),
-
+                ValorUnitario = decimal.Parse("0"),
+                Importe = decimal.Parse("0"),
+                ObjetoImp = dlleFac.c_ObjetoImp.Item01
 
 
             });
@@ -2406,6 +2448,7 @@ namespace wpfEFac.Views
 
 
             dllPag.Pagos Pago = new dllPag.Pagos();
+            dllPag.PagosTotales totalesPago = new dllPag.PagosTotales();
 
             List<dllPag.PagosPago> myPagos = new List<dllPag.PagosPago>();
 
@@ -2439,14 +2482,14 @@ namespace wpfEFac.Views
                         Serie = mySer,
                         Folio = myFol,
                         MonedaDR = "MXN",
-                        MetodoDePagoDR = "PPD",
+                        //MetodoDePagoDR = "PPD",
                         NumParcialidad = f.CondPago,
                         ImpSaldoAnt = decimal.Parse(item.dcmPrecioUnitario.ToString("#0.00")),
-                        ImpSaldoAntSpecified = true,
+                       // ImpSaldoAntSpecified = true,
                         ImpPagado = decimal.Parse(item.dcmImporte.ToString("#0.00")),
-                        ImpPagadoSpecified = true,
+                        //ImpPagadoSpecified = true,
                         ImpSaldoInsoluto = decimal.Parse(item.dcmDescuento.ToString("#0.00")),
-                        ImpSaldoInsolutoSpecified = true,
+                        //ImpSaldoInsolutoSpecified = true,
 
 
 
@@ -2464,6 +2507,7 @@ namespace wpfEFac.Views
                         Monto = decimal.Parse(item.dcmImporte.ToString("#0.00")),
                         MonedaP = "MXN",
                         FormaDePagoP = myFormaPago.Substring(0, 2),
+                        
                         FechaPago = f.dtmFecha,
                         DoctoRelacionado = myPagoRel.ToArray()
                        
@@ -2472,6 +2516,8 @@ namespace wpfEFac.Views
 
 
                 }
+
+                totalesPago.MontoTotalPagos = decimal.Parse(f.dcmTotal.ToString("#0.00"));
 
             }
 
@@ -2484,7 +2530,7 @@ namespace wpfEFac.Views
                 myPagoRel = new List<dllPag.PagosPagoDoctoRelacionado>();
                 string strMoneda = "";
                 string tipoCambio = "";
-                Boolean valueTC = false;
+                //Boolean valueTC = false;
                 foreach (var item in f.Detalle_Factura)
                 {
 
@@ -2498,9 +2544,9 @@ namespace wpfEFac.Views
                     strMoneda = words[5].Split('-')[0];
                      tipoCambio = words[6]; 
                    
-                    if (strMoneda == "USD") {
-                         valueTC = true;             
-                    }
+                    //if (strMoneda == "USD") {
+                    //     valueTC = true;             
+                    //}
 
 
                     myPagoRel.Add(new dllPag.PagosPagoDoctoRelacionado
@@ -2512,15 +2558,18 @@ namespace wpfEFac.Views
                         Serie = mySer,
                         Folio = myFol,
                         MonedaDR = strMoneda,
-                        MetodoDePagoDR = "PPD",
+                       // MetodoDePagoDR = "PPD",
                         NumParcialidad = f.CondPago,
                         ImpSaldoAnt = decimal.Parse(item.dcmPrecioUnitario.ToString("#0.00")),
-                        ImpSaldoAntSpecified = true,
+                      //  ImpSaldoAntSpecified = true,
                         ImpPagado = decimal.Parse(item.dcmImporte.ToString("#0.00")),
-                        ImpPagadoSpecified = true,
+                     //   ImpPagadoSpecified = true,
                         ImpSaldoInsoluto = decimal.Parse(item.dcmDescuento.ToString("#0.00")),
-                        ImpSaldoInsolutoSpecified = true,
+                     //   ImpSaldoInsolutoSpecified = true,
+                        ObjetoImpDR = dllPag.c_ObjetoImp.Item01,
                         
+                        EquivalenciaDR=1,
+                        EquivalenciaDRSpecified=true
 
 
                     });
@@ -2536,13 +2585,19 @@ namespace wpfEFac.Views
                     NumOperacion = f.RecogerEn,
                     Monto = decimal.Parse(f.dcmTotal.ToString("#0.00")),
                     MonedaP = strMoneda,
+                    
                     FormaDePagoP = myFormaPago.Substring(0, 2),
                     FechaPago = f.dtmFecha,
                     DoctoRelacionado = myPagoRel.ToArray(),
                     TipoCambioP = decimal.Parse(tipoCambio),
-                    TipoCambioPSpecified = valueTC
-
+                    TipoCambioPSpecified = true,
+                    
                 });
+
+
+                totalesPago.MontoTotalPagos = decimal.Parse(f.dcmTotal.ToString("#0.00"));
+
+                
 
 
 
@@ -2552,8 +2607,9 @@ namespace wpfEFac.Views
 
             }
 
-            Pago.Version = "1.0";
+            Pago.Version = "2.0";
             Pago.Pago = myPagos.ToArray();
+            Pago.Totales = totalesPago;
 
            
            // MyCFD20.Complemento = new dlleFac.ComprobanteComplemento[1];
@@ -2561,7 +2617,7 @@ namespace wpfEFac.Views
 
             XmlDocument docPago = new XmlDocument();
             XmlSerializerNamespaces xmlNameSpcePago = new XmlSerializerNamespaces();
-            xmlNameSpcePago.Add("pago10", "http://www.sat.gob.mx/Pagos");
+            xmlNameSpcePago.Add("pago20", "http://www.sat.gob.mx/Pagos20");
             using(XmlWriter writer = docPago.CreateNavigator().AppendChild())
             {
                 new XmlSerializer(Pago.GetType()).Serialize(writer, Pago, xmlNameSpcePago);
@@ -2601,6 +2657,8 @@ namespace wpfEFac.Views
             decimal sumaSubtotal = 0;
             decimal sumaIva = 0;
             decimal totalRet = 0;
+            decimal sumaBaseIva16 = 0;
+            decimal sumaBaseIva0 = 0;
             Boolean isIva0 = false;
             Boolean isRet = false;
             Boolean isIva16 = false;
@@ -2659,7 +2717,7 @@ namespace wpfEFac.Views
 
             if (!string.IsNullOrEmpty(f.strNumeroContrato))
             {
-                dlleFac.ComprobanteCfdiRelacionados myRelacion = new dlleFac.ComprobanteCfdiRelacionados();
+                List<dlleFac.ComprobanteCfdiRelacionados> myRelacion = new List<dlleFac.ComprobanteCfdiRelacionados>();
                 {
                     List<dlleFac.ComprobanteCfdiRelacionadosCfdiRelacionado> myUUID = new List<dlleFac.ComprobanteCfdiRelacionadosCfdiRelacionado>();
                     List<string> uuids2 = new List<string>();
@@ -2695,14 +2753,19 @@ namespace wpfEFac.Views
 
                     }
 
+                    myRelacion.Add(new dlleFac.ComprobanteCfdiRelacionados
+                    {
+                        TipoRelacion = f.CondPago,
+                        CfdiRelacionado = myUUID.ToArray()
+
+
+                    });
 
 
 
-                    MyCFD20.CfdiRelacionados = new dlleFac.ComprobanteCfdiRelacionados();
 
-                    MyCFD20.CfdiRelacionados.TipoRelacion = f.intEstimacion;
 
-                    MyCFD20.CfdiRelacionados.CfdiRelacionado = myUUID.ToArray();
+                    MyCFD20.CfdiRelacionados = myRelacion.ToArray();
                 }
             }
 
@@ -2793,10 +2856,12 @@ namespace wpfEFac.Views
                     if (item.dcmIVA > 0)
                     {
                         isIva16 = true;
+                        sumaBaseIva16 += item.dcmImporte;
                     }
                     if (item.dcmIVA == 0)
                     {
                         isIva0 = true;
+                        sumaBaseIva0 += item.dcmImporte;
                     }
 
                     decimal BaseTraslado = item.dcmPrecioUnitario * item.dcmCantidad - item.dcmDescuento;
@@ -3394,9 +3459,14 @@ namespace wpfEFac.Views
             {
                 dlleFac.ComprobanteImpuestosTraslado MyIvaT = new dlleFac.ComprobanteImpuestosTraslado()
                 {
+                    Base = sumaBaseIva16,
                     Importe = decimal.Parse(sumaIva.ToString("#0.00")),
+                    ImporteSpecified = true,
                     Impuesto = dlleFac.c_Impuesto.Item002,
+                    TipoFactor = dlleFac.c_TipoFactor.Tasa,
                     TasaOCuota = decimal.Parse("0.160000"),
+                    TasaOCuotaSpecified = true
+
 
 
 
@@ -3411,10 +3481,13 @@ namespace wpfEFac.Views
 
                 dlleFac.ComprobanteImpuestosTraslado MyIvaT0 = new dlleFac.ComprobanteImpuestosTraslado()
                 {
+                    Base = sumaBaseIva0,
                     Importe = decimal.Parse("0.00"),
+                    ImporteSpecified = true,
                     Impuesto = dlleFac.c_Impuesto.Item002,
                     TipoFactor = dlleFac.c_TipoFactor.Tasa,
-                    TasaOCuota = decimal.Parse("0.000000")//dlleFac.c_TasaOCuota.Item0160000    
+                    TasaOCuota = decimal.Parse("0.000000"),//dlleFac.c_TasaOCuota.Item0160000    
+                    TasaOCuotaSpecified = true
 
                 };
                 Mytraslado.Add(MyIvaT0);

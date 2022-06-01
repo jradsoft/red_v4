@@ -26,11 +26,25 @@ namespace wpfEFac.Views.Clientes
 
         public EditarCliente(int id)
         {
+            
+
             InitializeComponent();
             this.id = id;
             entidad = new eFacDBEntities();
             cliente = new Models.EditarClienteViewModel();
             this.Loaded += EditarCliente_Loaded;
+
+            try
+            {
+                txtGiro.Items.Clear();
+                txtGiro.ItemsSource = FactCat.getListRegimen();
+                txtGiro.DisplayMemberPath = "descripcion";
+                txtGiro.SelectedValuePath = "clave";
+            }
+            catch (Exception ex) { }
+     
+
+
 
             var cli = cliente.GetCliente(id);
             //var RFC = cliente.GetRFC(cli.strRFC);
@@ -49,7 +63,7 @@ namespace wpfEFac.Views.Clientes
             txtRFC.Text = cli.strRFC;
             txtRazonSocial.Text = cli.strRazonSocial;
             txtNombreComercial.Text = cli.strNombreComercial;
-            txtGiro.Text = cli.strGiro;
+            
             if (cli.strTipodeInscripcion == "Persona Física")
             {
                 cmbTipoComprobante.SelectedIndex = 0;}
@@ -130,7 +144,7 @@ namespace wpfEFac.Views.Clientes
             txtRFC.Text = cli.strRFC;
             txtRazonSocial.Text = cli.strRazonSocial;
             txtNombreComercial.Text = cli.strNombreComercial;
-            txtGiro.Text = cli.strGiro;
+            txtGiro.SelectedValue = cli.strGiro;
             //if (cli.strTipodeInscripcion == "Persona Moral")
             //    cmbTipoComprobante.SelectedIndex = 1;
             //else
@@ -177,7 +191,7 @@ namespace wpfEFac.Views.Clientes
             string RFC = txtRFC.Text;
             string Razon = txtRazonSocial.Text;
             string Comercial = txtNombreComercial.Text;
-            string Giro = txtGiro.Text;
+            string Giro = txtGiro.SelectedValue.ToString();
             string Tipo = cmbTipoComprobante.Text;
             string Calle = txtCalleReceptor.Text;
             string Exterior = txtNoExterior.Text;

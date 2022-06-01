@@ -1,7 +1,7 @@
 ﻿<xsl:stylesheet version = '1.0'
     xmlns:xsl='http://www.w3.org/1999/XSL/Transform'
-    xmlns:cfdi='http://www.sat.gob.mx/cfd/3'
-    xmlns:pago10='http://www.sat.gob.mx/Pagos'>
+    xmlns:cfdi='http://www.sat.gob.mx/cfd/4'
+    xmlns:pago10='http://www.sat.gob.mx/Pagos20'>
 
   <xsl:output method = "html" />
   <xsl:param name="id" select="."/>

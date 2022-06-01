@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Complemento xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Origen>TIJUANA BCN</Origen>
-  <RecogerEn>BODEGA MARUCHAN TIJUANA</RecogerEn>
-  <Destino>OAXACA OAX.</Destino>
-  <Destinatario>MINI ABASTOS SA DE CV</Destinatario>
-  <RfcDestinatario />
-  <DomicilioDestinatario>MODULO Q ZONA PONIENTE LOC 17 COSIJOEZA, OAXACA DE JUAREZ OAX. CP 68090</DomicilioDestinatario>
-  <EntregarEn>MISMO</EntregarEn>
+  <Origen>AVENIDA SAN JUAN   No. 49-A JUNTO A PUERTA 3 KIMBERLY COL. UNION Y PROGRESO 94450  ESCAMELA, IXTACZOQUITLAN VER-Veracruz MEXICO</Origen>
+  <RecogerEn />
+  <Destino>02-Semanal/04/2000</Destino>
+  <Destinatario />
+  <RfcDestinatario>XAXX010101000</RfcDestinatario>
+  <DomicilioDestinatario>      VER-Veracruz C.P.94740 MEXICO</DomicilioDestinatario>
+  <EntregarEn />
   <UUID>00000000-0000-0000-0000-000000000000</UUID>
   <FechaTimbrado>1900-01-01T00:00:00</FechaTimbrado>
   <NoCertificadoSAT>000000000000000</NoCertificadoSAT>
@@ -15,9 +15,9 @@
   <CadenaTFD>muestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalor
 muestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalormuestrafiscalsinvalor</CadenaTFD>
   <TipoComprobante>CARTA PORTE</TipoComprobante>
-  <Cadena>||3.3|A|18774|2022-05-18T13:48:58|99|00001000000408275657|0.00|MXN|0.00|I|PPD|94450|ACG060807RMA|AUTOTRANSPORTES DE CARGA EN GENERAL ORIZVER, S.C. DE R.L.|624|CPI120801GR4|CORPORATIVO PAPELERO INTERLOMAS SA DE CV|G03|002|0.00|0.00||</Cadena>
-  <CantidadLetra>(CERO PESOS 00/100)</CantidadLetra>
+  <Cadena>||4.0|A|18778|2022-06-01T16:50:31|01|00001000000506738842|80.00|MXN|92.80|I|01|PUE|94450|REFA860424NP1|JOSE ALEJANDRO REYES FIERRO|612|XAXX010101000|PUBLICO EN GENERAL|94740|616|G03|78101800|0|1.0000|E48|AUTOP|prueba|80.000000|80.000000|02|80.000|002|Tasa|0.160000|12.800|80.00|002|Tasa|0.160000|12.80|12.80||</Cadena>
+  <CantidadLetra>(NOVENTA Y DOS PESOS 80/100)</CantidadLetra>
   <Encabezado />
-  <Observaciones>Origen</Observaciones>
-  <ImpuestosAdicionales>CANCELADA</ImpuestosAdicionales>
+  <Observaciones />
+  <ImpuestosAdicionales>PENDIENTE</ImpuestosAdicionales>
 </Complemento>

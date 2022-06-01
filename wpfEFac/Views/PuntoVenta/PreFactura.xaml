@@ -74,9 +74,6 @@
                         <TextBlock HorizontalAlignment="Center" Visibility="Collapsed" x:Name="txbBusarPDF" VerticalAlignment="Top" Text="Buscar PDF:" Width="70"/>
                         <Button  VerticalAlignment="Center" Name="bttBuscarPDF" Visibility="Collapsed" Content="Buscar..." Width="50" Height="30" Click="bttBuscarPDF_Click"/>
                     </StackPanel>
-
-                   
-                    
                     <StackPanel Orientation="Horizontal" Grid.Row="1">
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Metodo pago:" Width="75" />
                         <ComboBox VerticalAlignment="Center" x:Name="cmbMetodoPago" SelectedIndex="0" Width="225">
@@ -89,6 +86,30 @@
                     </ComboBox>
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Cond. pago:" Width="100"/>
                         <TextBox x:Name="txtCondicionesPago" HorizontalAlignment="Center" VerticalAlignment="Top" Text="" Height="23"  Width="200" />
+                        <TextBox x:Name="txtPeriocidad" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Periocidad:" Height="23"  Width="65" Visibility="Collapsed" />
+                        <ComboBox VerticalAlignment="Center" x:Name="cmbPeriocidad" SelectedIndex="0" Width="80" Visibility="Collapsed">
+                            <ComboBoxItem>
+                                <TextBlock>01-Diario</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>02-Semanal</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>03-Quincenal</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>04-Mensual</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <TextBlock>05-Bimestral</TextBlock>
+                            </ComboBoxItem>
+                        </ComboBox>
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="txbMes" Text="Mes:" Width="30" Visibility="Collapsed"/>
+                        <TextBox x:Name="txtMes" HorizontalAlignment="Center" VerticalAlignment="Top" Text="" Height="23"  Width="40" Visibility="Collapsed" />
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Año:" x:Name="txbAno" Width="30" Visibility="Collapsed"/>
+                        <TextBox x:Name="txtAno" HorizontalAlignment="Center" VerticalAlignment="Top" Text="" Height="23"  Width="40" Visibility="Collapsed" />
+                        
+
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="2">
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Forma Pago:" Width="75" />
@@ -287,7 +308,6 @@
                             </ComboBoxItem>
                         </ComboBox>
                     </StackPanel>
-
                     <StackPanel Orientation="Horizontal" Grid.Row="3">
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Divisa:" Width="50" />
                         <TextBox x:Name="txtDivisa" Width="50"/>
@@ -305,8 +325,6 @@
 
 
                     </StackPanel>
-
-
                     <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Left" x:Name="spPermisos" Visibility="Collapsed">
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Permiso SCT:"  />
                         <ComboBox x:Name="txtPermisoSCT" SelectedIndex="0" Width="50" >
