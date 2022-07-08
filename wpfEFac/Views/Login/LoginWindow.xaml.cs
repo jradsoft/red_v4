@@ -40,8 +40,9 @@ namespace wpfEFac.Views.Login
                 {
                     cmbEmpresa.SelectedIndex = 0;
                 }
-                getCFD();
+                
                 getFolios();
+                getCFD();
                 getProduct();
             }
             catch (Exception ex)

@@ -190,8 +190,8 @@ namespace dlleFac
                         
 
                        
-                        //MyCfdiTimbrado = myService.timbrar(idEquipo, XmlString);   /* Produccion*/
-                        MyCfdiTimbrado = myService.timbrar("0955d485e26c486392909ee79f5ad5c3", XmlString);  //test
+                        MyCfdiTimbrado = myService.timbrar(idEquipo, XmlString);   /* Produccion*/
+                      //  MyCfdiTimbrado = myService.timbrar("0955d485e26c486392909ee79f5ad5c3", XmlString);  //test
 
 
                         // valor para deserializar complemento

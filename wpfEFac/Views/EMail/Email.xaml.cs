@@ -179,6 +179,10 @@ namespace wpfEFac.Views.EMail
              * Attachments
              */
 
+
+            try
+            {
+
             mail.Attachments.Add(new Attachment(pdfPath));
             mail.Attachments.Add(new Attachment(xmlPath));
 
@@ -190,8 +194,20 @@ namespace wpfEFac.Views.EMail
             mail.Subject = Asunto;
 
             mail.From = new System.Net.Mail.MailAddress(emailRespaldo);
-            mail.IsBodyHtml = true;
-            mail.Body = "Servicio proporcionado por ADESOFT" + "";
+           //mail.IsBodyHtml = true;
+
+            mail.Body =  txtMensaje.Text +"\n"+"\n"+
+                        "Servicio proporcionado por ADESOFT";
+                
+                
+                //txtMensaje.Text + "\r\n Servicio proporcionado por ADESOFT";
+               
+
+
+                
+            
+            
+
 
             System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com");
             smtp.UseDefaultCredentials = false;
@@ -199,8 +215,7 @@ namespace wpfEFac.Views.EMail
             smtp.Credentials = cred;
             smtp.Port = 587;
             //smtp.Port = 25;
-            try
-            {
+           
                 smtp.Send(mail);
                 MessageBox.Show("Envio con exito", "Correo", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Close();

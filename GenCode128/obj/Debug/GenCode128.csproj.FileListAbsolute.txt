@@ -98,3 +98,4 @@ C:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\GenCode128\bin\Debug\Newtonsoft.
 C:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\GenCode128\bin\Debug\Newtonsoft.Json.xml
 C:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\GenCode128\obj\Debug\GenCode128.dll
 C:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\GenCode128\obj\Debug\GenCode128.pdb
+C:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\GenCode128\obj\Debug\GenCode128.csprojResolveAssemblyReference.cache

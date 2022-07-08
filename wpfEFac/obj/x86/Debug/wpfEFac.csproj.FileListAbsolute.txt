@@ -4711,3 +4711,4 @@ C:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\wpfEFac\obj\x86\Debug\RdlCompile
 C:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\wpfEFac\obj\x86\Debug\RdlCompile.compiled
 C:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\wpfEFac\obj\x86\Debug\wpfEFac.exe
 C:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\wpfEFac\obj\x86\Debug\wpfEFac.pdb
+C:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\wpfEFac\bin\Debug\BouncyCastle.Crypto.dll

@@ -454,6 +454,20 @@
                         </font>
                       </td>
 
+ <td>
+                        <font color="#000000" face="Courier New" size="3">
+                         Versión de CFDi:
+                        </font>
+                      </td>
+                      <td>
+                        <font color="#000000" face="Courier New" size="3">
+                          <b>
+                            <xsl:value-of select="@Version"/>
+                          </b>
+                        </font>
+                      </td>
+
+
                     </tr>
 
 
@@ -698,6 +712,79 @@
                       <b> <xsl:apply-templates select="//cfdi:Domicilio"/>
                         </b>
                     </font>
+
+
+<td width="75%">
+                        <font color="#000000" face="Courier New" size="3">
+                         Regimen Fiscal: <b>
+                           <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='601')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-General de Ley Personas Morales
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='603')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-Personas Morales con Fines no Lucrativos
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='605')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-Sueldos y Salarios e Ingresos Asimilados a Salarios
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='606')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-Arrendamiento
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='608')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-Demás ingresos
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='609')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-Consolidación
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='610')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-Residentes en el Extranjero sin Establecimiento Permanente en México
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='611')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-Ingresos por Dividendos (socios y accionistas)
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='612')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-Personas Físicas con Actividades Empresariales y Profesionales
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='614')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-Ingresos por intereses
+                            </xsl:if>
+	        <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='615')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-Régimen de los ingresos por obtención de premios
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='616')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-Sin obligaciones fiscales
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='620')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-Sociedades Cooperativas de Producción que optan por diferir sus ingresos
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='621')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-Incorporación Fiscal
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='622')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-Actividades Agrícolas, Ganaderas, Silvícolas y Pesqueras
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='623')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-Opcional para Grupos de Sociedades
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='624')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-Coordinados
+                            </xsl:if>
+                            <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='625')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-Régimen de las Actividades Empresariales con ingresos a través de Plataformas Tecnológicas
+                            </xsl:if>
+	        <xsl:if test="(cfdi:Receptor/@RegimenFiscalReceptor='626')">
+                              <xsl:value-of select="cfdi:Receptor/@RegimenFiscalReceptor"/>-Régimen Simplificado de Confianza
+                            </xsl:if>
+
+                        </b>
+                        </font>
+                      </td>
+
+
+
+
+
+
+
 
                   </table>
                 </fieldset>

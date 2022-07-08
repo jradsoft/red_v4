@@ -911,7 +911,7 @@
 
         <font color="#000000" face="Courier New" size="3">
           <b>
-          <xsl:value-of select='format-number(@Cantidad,"###,###,###")'/>
+          <xsl:value-of select='format-number(@Cantidad,"###,###,###0.000")'/>
           </b>
           
         </font>

@@ -76,9 +76,9 @@
             </StackPanel>
         </StackPanel>
 
-        <TextBox Grid.Row="4" Grid.ColumnSpan="7" Margin="5" TextWrapping="Wrap" 
+        <TextBox x:Name="txtMensaje" Grid.Row="4" Grid.ColumnSpan="7" Margin="5" TextWrapping="Wrap" 
                  AcceptsTab="True" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
-                 Text="{Binding Path=Message}"
+                 Text=""
                  ToolTip="Escriba el mensaje del correo electronico" />
 
         <Button Content="Enviar" Grid.Row="5" Grid.Column="4" VerticalAlignment="Center" Visibility="Collapsed"

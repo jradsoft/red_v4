@@ -807,7 +807,7 @@ namespace wpfEFac.Views.PuntoVenta
                 entry.PrecioUnitario = item.dcmPrecioUnitario;
                 entry.FormatPrecioUnitario = item.dcmPrecioUnitario.ToString("N");
                 entry.isMercancia = item.strPatida;
-                entry.IVA = item.dcmIVA;
+                entry.IVA = item.dcmIVA.Value;
                 entry.retIVA = item.retIVA.Value;
                 entry.retISR = item.retISR.Value;
                 entry.retIEPS = item.retIEPS.Value;

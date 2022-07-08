@@ -298,7 +298,7 @@ namespace wpfEFac.Views.PuntoVenta
                 entry.retIEPS = p.porcIeps.Value;
 
                 entry.Nombre = p.strNombre;
-                entry.PrecioUnitario = p.dcmPrecio1;
+                entry.PrecioUnitario = p.dcmPrecio1.Value;
                 entry.Descuento = p.dcmDescuent;
                 entry.claveSat = p.strCodigoBarras;
                 

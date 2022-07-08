@@ -208,44 +208,46 @@ namespace wpfEFac.Views.PuntoVenta
 
 
 
-                    RespuestaCancelar acuseCancelacion = myService.cancelar2(strEquipo, keyB64, cerB64, strPasswd, strUUID, rfc, strRfcReceptor, dcmTotal,strMotivo,uuidRelacion);
-
-                
-
-                    
-                    //if (acuseCancelacion.code=="201")
-                    //{
-
-                    //    MessageBox.Show("UUID Cancelado...");
-
-                    //    sendMail(
-                    //                  myfi.Empresa.strTelefono,
-                    //                  myfi.Empresa.strTelefono2,
-                    //                   uuid[0],
-                    //                   myfi.Empresa.strNombreComercial,
-                    //                   myfi.strSerie,
-                    //                   myfi.strFolio,
-                    //                   myfi.Clientes.strEmail,
-                    //                   myfi.Empresa.strEmail,
-                    //                   myfi.Empresa.strEmail2,
-                    //                   acuseCancelacion.message,
-                    //                   cmbMotivoCancelacion.Text,
-                    //                   txtRelacionUUID.Text
-                    //                   );
-                        
-                    //    DialogResult = true;
+                    RespuestaCancelar acuseCancelacion = myService.cancelar2(strEquipo, keyB64, cerB64, strPasswd, strUUID, rfc, strRfcReceptor, dcmTotal, strMotivo, uuidRelacion);
 
 
 
-                    //}
-                    //else
-                    //{
 
-                    //    MessageBox.Show("Verifique codigo de error..." + acuseCancelacion.message);
+                    if (acuseCancelacion.code == "201")
+                    {
 
-                    //}
+                        MessageBox.Show("UUID Cancelado...");
 
-                    DialogResult = true;
+                        sendMail(
+                                      myfi.Empresa.strTelefono,
+                                      myfi.Empresa.strTelefono2,
+                                       uuid[0],
+                                       myfi.Empresa.strNombreComercial,
+                                       myfi.strSerie,
+                                       myfi.strFolio,
+                                       myfi.Clientes.strEmail,
+                                       myfi.Empresa.strEmail,
+                                       myfi.Empresa.strEmail2,
+                                       acuseCancelacion.message,
+                                       cmbMotivoCancelacion.Text,
+                                       txtRelacionUUID.Text
+                                       );
+
+                        DialogResult = true;
+
+
+
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Verifique codigo de error..." + acuseCancelacion.message);
+
+                    }
+
+                  
+
+                  
 
                 }
                 catch (Exception exc)

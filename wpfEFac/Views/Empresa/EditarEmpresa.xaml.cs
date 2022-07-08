@@ -90,7 +90,7 @@ namespace wpfEFac.Views.Empresa
                 pswPasswordCorreo.Password = emp.ConfiguracionEmail.Single(ce => ce.intID_Empresa == emp.intID).strPasswordEmail;
                 txtPuerto.Text = emp.ConfiguracionEmail.Single(ce => ce.intID_Empresa == emp.intID).intPort.ToString();
                 txtHost.Text = emp.ConfiguracionEmail.Single(ce => ce.intID_Empresa == emp.intID).strSMTPHost;
-                rdbEnableSSL.IsChecked = emp.ConfiguracionEmail.Single(ce => ce.intID_Empresa == emp.intID).EnableSsl;
+                //rdbEnableSSL.IsChecked = emp.ConfiguracionEmail.Single(ce => ce.intID_Empresa == emp.intID).;
             }
             catch (Exception)
             {

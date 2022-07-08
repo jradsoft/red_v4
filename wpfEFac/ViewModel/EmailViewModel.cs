@@ -380,7 +380,7 @@ namespace wpfEFac.ViewModel
                     strConcepto = item.strConcepto,
                     dcmPrecioUnitario = item.dcmPrecioUnitario.ToString("N"),
                     strPartida = item.strPatida, //Thest
-                    dcmIIVA = item.dcmIVA.ToString("F")
+                    dcmIIVA = item.dcmIVA.Value.ToString("F")
                 });
             }
 
