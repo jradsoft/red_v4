@@ -208,7 +208,8 @@ namespace wpfEFac.Views.PuntoVenta
 
 
 
-                    RespuestaCancelar acuseCancelacion = myService.cancelar2(strEquipo, keyB64, cerB64, strPasswd, strUUID, rfc, strRfcReceptor, dcmTotal, strMotivo, uuidRelacion);
+                    RespuestaCancelar acuseCancelacion = myService.cancelar2(strEquipo, keyB64, cerB64, strPasswd, strUUID, rfc, strRfcReceptor, dcmTotal, strMotivo, uuidRelacion); /*Produccion*/
+                    //RespuestaCancelar acuseCancelacion = myService.cancelar2("0955d485e26c486392909ee79f5ad5c3", keyB64, cerB64, strPasswd, strUUID, rfc, strRfcReceptor, dcmTotal, strMotivo, uuidRelacion); /*Test*/
 
 
 

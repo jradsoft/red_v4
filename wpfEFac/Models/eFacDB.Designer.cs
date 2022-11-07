@@ -23,7 +23,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_Productos_2", "Categorias", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Categorias), "Productos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Productos), true)]
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_Certificates_0", "Empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Empresa), "Certificates", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Certificates), true)]
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_Factura_4", "Certificates", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Certificates), "Factura", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Factura), true)]
-[assembly: EdmRelationshipAttribute("eFacDB", "FK_Folios_0", "Certificates", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Certificates), "Folios", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Folios), true)]
+[assembly: EdmRelationshipAttribute("eFacDB", "FK_Folios_1", "Certificates", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Certificates), "Folios", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Folios), true)]
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_CFD_0", "Empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Empresa), "CFD", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.CFD), true)]
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_CFD_1", "Folios", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(wpfEFac.Models.Folios), "CFD", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.CFD), true)]
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_Empresa_1", "CFD", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.CFD), "Empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(wpfEFac.Models.Empresa), true)]
@@ -35,21 +35,18 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_Empresa_0", "Configuracion_Regional", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(wpfEFac.Models.Configuracion_Regional), "Empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Empresa), true)]
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_ConfiguracionContadorTabla_0", "Empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Empresa), "ConfiguracionContadorTabla", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.ConfiguracionContadorTabla), true)]
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_ConfiguracionEmail_0", "Empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Empresa), "ConfiguracionEmail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.ConfiguracionEmail), true)]
-[assembly: EdmRelationshipAttribute("eFacDB", "FK_Detalle_Factura_0", "Productos", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Productos), "Detalle_Factura", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Detalle_Factura), true)]
-[assembly: EdmRelationshipAttribute("eFacDB", "FK_Detalle_Factura_1", "Factura", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Factura), "Detalle_Factura", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Detalle_Factura), true)]
+[assembly: EdmRelationshipAttribute("eFacDB", "FK_Detalle_Factura_0", "Factura", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Factura), "Detalle_Factura", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Detalle_Factura), true)]
+[assembly: EdmRelationshipAttribute("eFacDB", "FK_Detalle_Factura_1", "Productos", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Productos), "Detalle_Factura", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Detalle_Factura), true)]
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_Direcciones_Fiscales_2", "Estado", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Estado), "Direcciones_Fiscales", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Direcciones_Fiscales), true)]
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_Direcciones_Fiscales_3", "Paises", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Paises), "Direcciones_Fiscales", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Direcciones_Fiscales), true)]
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_Factura_0", "Empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Empresa), "Factura", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Factura), true)]
-[assembly: EdmRelationshipAttribute("eFacDB", "FK_Folios_1", "Empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Empresa), "Folios", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Folios), true)]
+[assembly: EdmRelationshipAttribute("eFacDB", "FK_Folios_0", "Empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Empresa), "Folios", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Folios), true)]
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_Grupos_0", "Empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Empresa), "Grupos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Grupos), true)]
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_Productos_0", "Empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Empresa), "Productos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Productos), true)]
-[assembly: EdmRelationshipAttribute("eFacDB", "FK_Traslados_0", "Empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Empresa), "Traslados", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Traslados), true)]
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_UnidadMedida_0", "Empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Empresa), "UnidadMedida", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.UnidadMedida), true)]
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_Usuarios_1", "Empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Empresa), "Usuarios", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Usuarios), true)]
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_Estado_0", "Paises", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Paises), "Estado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Estado), true)]
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_Factura_1", "Usuarios", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Usuarios), "Factura", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Factura), true)]
-[assembly: EdmRelationshipAttribute("eFacDB", "FK_Retenciones_0", "Factura", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Factura), "Retenciones", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Retenciones), true)]
-[assembly: EdmRelationshipAttribute("eFacDB", "FK_Traslados_1", "Factura", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Factura), "Traslados", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Traslados), true)]
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_Usuarios_0", "Grupos", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.Grupos), "Usuarios", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Usuarios), true)]
 [assembly: EdmRelationshipAttribute("eFacDB", "FK_Productos_1", "UnidadMedida", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(wpfEFac.Models.UnidadMedida), "Productos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(wpfEFac.Models.Productos), true)]
 
@@ -426,22 +423,6 @@ namespace wpfEFac.Models
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<Retenciones> Retenciones
-        {
-            get
-            {
-                if ((_Retenciones == null))
-                {
-                    _Retenciones = base.CreateObjectSet<Retenciones>("Retenciones");
-                }
-                return _Retenciones;
-            }
-        }
-        private ObjectSet<Retenciones> _Retenciones;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
         public ObjectSet<TipoRemolque> TipoRemolque
         {
             get
@@ -454,22 +435,6 @@ namespace wpfEFac.Models
             }
         }
         private ObjectSet<TipoRemolque> _TipoRemolque;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Traslados> Traslados
-        {
-            get
-            {
-                if ((_Traslados == null))
-                {
-                    _Traslados = base.CreateObjectSet<Traslados>("Traslados");
-                }
-                return _Traslados;
-            }
-        }
-        private ObjectSet<Traslados> _Traslados;
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -684,27 +649,11 @@ namespace wpfEFac.Models
         }
     
         /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Retenciones. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToRetenciones(Retenciones retenciones)
-        {
-            base.AddObject("Retenciones", retenciones);
-        }
-    
-        /// <summary>
         /// Método desusado para agregar un nuevo objeto al EntitySet TipoRemolque. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
         public void AddToTipoRemolque(TipoRemolque tipoRemolque)
         {
             base.AddObject("TipoRemolque", tipoRemolque);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Traslados. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToTraslados(Traslados traslados)
-        {
-            base.AddObject("Traslados", traslados);
         }
     
         /// <summary>
@@ -1269,18 +1218,18 @@ namespace wpfEFac.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Folios_0", "Folios")]
+        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Folios_1", "Folios")]
         public EntityCollection<Folios> Folios
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Folios>("eFacDB.FK_Folios_0", "Folios");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Folios>("eFacDB.FK_Folios_1", "Folios");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Folios>("eFacDB.FK_Folios_0", "Folios", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Folios>("eFacDB.FK_Folios_1", "Folios", value);
                 }
             }
         }
@@ -2243,10 +2192,14 @@ namespace wpfEFac.Models
         /// Crear un nuevo objeto Colonia.
         /// </summary>
         /// <param name="id">Valor inicial de la propiedad id.</param>
-        public static Colonia CreateColonia(global::System.Int64 id)
+        /// <param name="str_codigo">Valor inicial de la propiedad str_codigo.</param>
+        /// <param name="str_descripcion">Valor inicial de la propiedad str_descripcion.</param>
+        public static Colonia CreateColonia(global::System.Int32 id, global::System.String str_codigo, global::System.String str_descripcion)
         {
             Colonia colonia = new Colonia();
             colonia.id = id;
+            colonia.str_codigo = str_codigo;
+            colonia.str_descripcion = str_descripcion;
             return colonia;
         }
 
@@ -2259,7 +2212,7 @@ namespace wpfEFac.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int64 id
+        public global::System.Int32 id
         {
             get
             {
@@ -2277,14 +2230,14 @@ namespace wpfEFac.Models
                 }
             }
         }
-        private global::System.Int64 _id;
-        partial void OnidChanging(global::System.Int64 value);
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
         partial void OnidChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String str_codigo
         {
@@ -2296,7 +2249,7 @@ namespace wpfEFac.Models
             {
                 Onstr_codigoChanging(value);
                 ReportPropertyChanging("str_codigo");
-                _str_codigo = StructuralObject.SetValidValue(value, true);
+                _str_codigo = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("str_codigo");
                 Onstr_codigoChanged();
             }
@@ -2308,7 +2261,7 @@ namespace wpfEFac.Models
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String str_descripcion
         {
@@ -2320,7 +2273,7 @@ namespace wpfEFac.Models
             {
                 Onstr_descripcionChanging(value);
                 ReportPropertyChanging("str_descripcion");
-                _str_descripcion = StructuralObject.SetValidValue(value, true);
+                _str_descripcion = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("str_descripcion");
                 Onstr_descripcionChanged();
             }
@@ -2625,10 +2578,14 @@ namespace wpfEFac.Models
         /// Crear un nuevo objeto Configuracion_Vehicular.
         /// </summary>
         /// <param name="id">Valor inicial de la propiedad id.</param>
-        public static Configuracion_Vehicular CreateConfiguracion_Vehicular(global::System.Int64 id)
+        /// <param name="str_codigo">Valor inicial de la propiedad str_codigo.</param>
+        /// <param name="str_descripcion">Valor inicial de la propiedad str_descripcion.</param>
+        public static Configuracion_Vehicular CreateConfiguracion_Vehicular(global::System.Int32 id, global::System.String str_codigo, global::System.String str_descripcion)
         {
             Configuracion_Vehicular configuracion_Vehicular = new Configuracion_Vehicular();
             configuracion_Vehicular.id = id;
+            configuracion_Vehicular.str_codigo = str_codigo;
+            configuracion_Vehicular.str_descripcion = str_descripcion;
             return configuracion_Vehicular;
         }
 
@@ -2641,7 +2598,7 @@ namespace wpfEFac.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int64 id
+        public global::System.Int32 id
         {
             get
             {
@@ -2659,14 +2616,14 @@ namespace wpfEFac.Models
                 }
             }
         }
-        private global::System.Int64 _id;
-        partial void OnidChanging(global::System.Int64 value);
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
         partial void OnidChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String str_codigo
         {
@@ -2678,7 +2635,7 @@ namespace wpfEFac.Models
             {
                 Onstr_codigoChanging(value);
                 ReportPropertyChanging("str_codigo");
-                _str_codigo = StructuralObject.SetValidValue(value, true);
+                _str_codigo = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("str_codigo");
                 Onstr_codigoChanged();
             }
@@ -2690,7 +2647,7 @@ namespace wpfEFac.Models
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String str_descripcion
         {
@@ -2702,7 +2659,7 @@ namespace wpfEFac.Models
             {
                 Onstr_descripcionChanging(value);
                 ReportPropertyChanging("str_descripcion");
-                _str_descripcion = StructuralObject.SetValidValue(value, true);
+                _str_descripcion = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("str_descripcion");
                 Onstr_descripcionChanged();
             }
@@ -3569,54 +3526,16 @@ namespace wpfEFac.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Detalle_Factura_0", "Productos")]
-        public Productos Productos
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Productos>("eFacDB.FK_Detalle_Factura_0", "Productos").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Productos>("eFacDB.FK_Detalle_Factura_0", "Productos").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Productos> ProductosReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Productos>("eFacDB.FK_Detalle_Factura_0", "Productos");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Productos>("eFacDB.FK_Detalle_Factura_0", "Productos", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Detalle_Factura_1", "Factura")]
+        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Detalle_Factura_0", "Factura")]
         public Factura Factura
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Factura>("eFacDB.FK_Detalle_Factura_1", "Factura").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Factura>("eFacDB.FK_Detalle_Factura_0", "Factura").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Factura>("eFacDB.FK_Detalle_Factura_1", "Factura").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Factura>("eFacDB.FK_Detalle_Factura_0", "Factura").Value = value;
             }
         }
         /// <summary>
@@ -3628,13 +3547,51 @@ namespace wpfEFac.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Factura>("eFacDB.FK_Detalle_Factura_1", "Factura");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Factura>("eFacDB.FK_Detalle_Factura_0", "Factura");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Factura>("eFacDB.FK_Detalle_Factura_1", "Factura", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Factura>("eFacDB.FK_Detalle_Factura_0", "Factura", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Detalle_Factura_1", "Productos")]
+        public Productos Productos
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Productos>("eFacDB.FK_Detalle_Factura_1", "Productos").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Productos>("eFacDB.FK_Detalle_Factura_1", "Productos").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Productos> ProductosReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Productos>("eFacDB.FK_Detalle_Factura_1", "Productos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Productos>("eFacDB.FK_Detalle_Factura_1", "Productos", value);
                 }
             }
         }
@@ -4869,18 +4826,18 @@ namespace wpfEFac.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Folios_1", "Folios")]
+        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Folios_0", "Folios")]
         public EntityCollection<Folios> Folios
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Folios>("eFacDB.FK_Folios_1", "Folios");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Folios>("eFacDB.FK_Folios_0", "Folios");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Folios>("eFacDB.FK_Folios_1", "Folios", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Folios>("eFacDB.FK_Folios_0", "Folios", value);
                 }
             }
         }
@@ -4925,28 +4882,6 @@ namespace wpfEFac.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Productos>("eFacDB.FK_Productos_0", "Productos", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Traslados_0", "Traslados")]
-        public EntityCollection<Traslados> Traslados
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Traslados>("eFacDB.FK_Traslados_0", "Traslados");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Traslados>("eFacDB.FK_Traslados_0", "Traslados", value);
                 }
             }
         }
@@ -6383,18 +6318,18 @@ namespace wpfEFac.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Detalle_Factura_1", "Detalle_Factura")]
+        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Detalle_Factura_0", "Detalle_Factura")]
         public EntityCollection<Detalle_Factura> Detalle_Factura
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Detalle_Factura>("eFacDB.FK_Detalle_Factura_1", "Detalle_Factura");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Detalle_Factura>("eFacDB.FK_Detalle_Factura_0", "Detalle_Factura");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Detalle_Factura>("eFacDB.FK_Detalle_Factura_1", "Detalle_Factura", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Detalle_Factura>("eFacDB.FK_Detalle_Factura_0", "Detalle_Factura", value);
                 }
             }
         }
@@ -6471,50 +6406,6 @@ namespace wpfEFac.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuarios>("eFacDB.FK_Factura_1", "Usuarios", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Retenciones_0", "Retenciones")]
-        public EntityCollection<Retenciones> Retenciones
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Retenciones>("eFacDB.FK_Retenciones_0", "Retenciones");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Retenciones>("eFacDB.FK_Retenciones_0", "Retenciones", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Traslados_1", "Traslados")]
-        public EntityCollection<Traslados> Traslados
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Traslados>("eFacDB.FK_Traslados_1", "Traslados");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Traslados>("eFacDB.FK_Traslados_1", "Traslados", value);
                 }
             }
         }
@@ -6820,16 +6711,16 @@ namespace wpfEFac.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Folios_0", "Certificates")]
+        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Folios_1", "Certificates")]
         public Certificates Certificates
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Certificates>("eFacDB.FK_Folios_0", "Certificates").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Certificates>("eFacDB.FK_Folios_1", "Certificates").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Certificates>("eFacDB.FK_Folios_0", "Certificates").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Certificates>("eFacDB.FK_Folios_1", "Certificates").Value = value;
             }
         }
         /// <summary>
@@ -6841,13 +6732,13 @@ namespace wpfEFac.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Certificates>("eFacDB.FK_Folios_0", "Certificates");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Certificates>("eFacDB.FK_Folios_1", "Certificates");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Certificates>("eFacDB.FK_Folios_0", "Certificates", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Certificates>("eFacDB.FK_Folios_1", "Certificates", value);
                 }
             }
         }
@@ -6880,16 +6771,16 @@ namespace wpfEFac.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Folios_1", "Empresa")]
+        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Folios_0", "Empresa")]
         public Empresa Empresa
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empresa>("eFacDB.FK_Folios_1", "Empresa").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empresa>("eFacDB.FK_Folios_0", "Empresa").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empresa>("eFacDB.FK_Folios_1", "Empresa").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empresa>("eFacDB.FK_Folios_0", "Empresa").Value = value;
             }
         }
         /// <summary>
@@ -6901,13 +6792,13 @@ namespace wpfEFac.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empresa>("eFacDB.FK_Folios_1", "Empresa");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empresa>("eFacDB.FK_Folios_0", "Empresa");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Empresa>("eFacDB.FK_Folios_1", "Empresa", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Empresa>("eFacDB.FK_Folios_0", "Empresa", value);
                 }
             }
         }
@@ -7129,10 +7020,14 @@ namespace wpfEFac.Models
         /// Crear un nuevo objeto Localidad.
         /// </summary>
         /// <param name="id">Valor inicial de la propiedad id.</param>
-        public static Localidad CreateLocalidad(global::System.Int64 id)
+        /// <param name="str_codigo">Valor inicial de la propiedad str_codigo.</param>
+        /// <param name="str_descripcion">Valor inicial de la propiedad str_descripcion.</param>
+        public static Localidad CreateLocalidad(global::System.Int32 id, global::System.String str_codigo, global::System.String str_descripcion)
         {
             Localidad localidad = new Localidad();
             localidad.id = id;
+            localidad.str_codigo = str_codigo;
+            localidad.str_descripcion = str_descripcion;
             return localidad;
         }
 
@@ -7145,7 +7040,7 @@ namespace wpfEFac.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int64 id
+        public global::System.Int32 id
         {
             get
             {
@@ -7163,14 +7058,14 @@ namespace wpfEFac.Models
                 }
             }
         }
-        private global::System.Int64 _id;
-        partial void OnidChanging(global::System.Int64 value);
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
         partial void OnidChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String str_codigo
         {
@@ -7182,7 +7077,7 @@ namespace wpfEFac.Models
             {
                 Onstr_codigoChanging(value);
                 ReportPropertyChanging("str_codigo");
-                _str_codigo = StructuralObject.SetValidValue(value, true);
+                _str_codigo = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("str_codigo");
                 Onstr_codigoChanged();
             }
@@ -7194,7 +7089,7 @@ namespace wpfEFac.Models
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String str_descripcion
         {
@@ -7206,7 +7101,7 @@ namespace wpfEFac.Models
             {
                 Onstr_descripcionChanging(value);
                 ReportPropertyChanging("str_descripcion");
-                _str_descripcion = StructuralObject.SetValidValue(value, true);
+                _str_descripcion = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("str_descripcion");
                 Onstr_descripcionChanged();
             }
@@ -7234,10 +7129,14 @@ namespace wpfEFac.Models
         /// Crear un nuevo objeto Municipio.
         /// </summary>
         /// <param name="id">Valor inicial de la propiedad id.</param>
-        public static Municipio CreateMunicipio(global::System.Int64 id)
+        /// <param name="str_codigo">Valor inicial de la propiedad str_codigo.</param>
+        /// <param name="str_descripcion">Valor inicial de la propiedad str_descripcion.</param>
+        public static Municipio CreateMunicipio(global::System.Int32 id, global::System.String str_codigo, global::System.String str_descripcion)
         {
             Municipio municipio = new Municipio();
             municipio.id = id;
+            municipio.str_codigo = str_codigo;
+            municipio.str_descripcion = str_descripcion;
             return municipio;
         }
 
@@ -7250,7 +7149,7 @@ namespace wpfEFac.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int64 id
+        public global::System.Int32 id
         {
             get
             {
@@ -7268,14 +7167,14 @@ namespace wpfEFac.Models
                 }
             }
         }
-        private global::System.Int64 _id;
-        partial void OnidChanging(global::System.Int64 value);
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
         partial void OnidChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String str_codigo
         {
@@ -7287,7 +7186,7 @@ namespace wpfEFac.Models
             {
                 Onstr_codigoChanging(value);
                 ReportPropertyChanging("str_codigo");
-                _str_codigo = StructuralObject.SetValidValue(value, true);
+                _str_codigo = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("str_codigo");
                 Onstr_codigoChanged();
             }
@@ -7299,7 +7198,7 @@ namespace wpfEFac.Models
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String str_descripcion
         {
@@ -7311,7 +7210,7 @@ namespace wpfEFac.Models
             {
                 Onstr_descripcionChanging(value);
                 ReportPropertyChanging("str_descripcion");
-                _str_descripcion = StructuralObject.SetValidValue(value, true);
+                _str_descripcion = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("str_descripcion");
                 Onstr_descripcionChanged();
             }
@@ -8195,18 +8094,18 @@ namespace wpfEFac.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Detalle_Factura_0", "Detalle_Factura")]
+        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Detalle_Factura_1", "Detalle_Factura")]
         public EntityCollection<Detalle_Factura> Detalle_Factura
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Detalle_Factura>("eFacDB.FK_Detalle_Factura_0", "Detalle_Factura");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Detalle_Factura>("eFacDB.FK_Detalle_Factura_1", "Detalle_Factura");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Detalle_Factura>("eFacDB.FK_Detalle_Factura_0", "Detalle_Factura", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Detalle_Factura>("eFacDB.FK_Detalle_Factura_1", "Detalle_Factura", value);
                 }
             }
         }
@@ -8294,209 +8193,6 @@ namespace wpfEFac.Models
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="eFacDB", Name="Retenciones")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Retenciones : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Retenciones.
-        /// </summary>
-        /// <param name="intId">Valor inicial de la propiedad intId.</param>
-        /// <param name="idFactura">Valor inicial de la propiedad IdFactura.</param>
-        /// <param name="strTipoIva">Valor inicial de la propiedad strTipoIva.</param>
-        /// <param name="decImporte">Valor inicial de la propiedad decImporte.</param>
-        /// <param name="intIdEmpresa">Valor inicial de la propiedad intIdEmpresa.</param>
-        public static Retenciones CreateRetenciones(global::System.Int64 intId, global::System.Int32 idFactura, global::System.String strTipoIva, global::System.Decimal decImporte, global::System.Int64 intIdEmpresa)
-        {
-            Retenciones retenciones = new Retenciones();
-            retenciones.intId = intId;
-            retenciones.IdFactura = idFactura;
-            retenciones.strTipoIva = strTipoIva;
-            retenciones.decImporte = decImporte;
-            retenciones.intIdEmpresa = intIdEmpresa;
-            return retenciones;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 intId
-        {
-            get
-            {
-                return _intId;
-            }
-            set
-            {
-                if (_intId != value)
-                {
-                    OnintIdChanging(value);
-                    ReportPropertyChanging("intId");
-                    _intId = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("intId");
-                    OnintIdChanged();
-                }
-            }
-        }
-        private global::System.Int64 _intId;
-        partial void OnintIdChanging(global::System.Int64 value);
-        partial void OnintIdChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdFactura
-        {
-            get
-            {
-                return _IdFactura;
-            }
-            set
-            {
-                OnIdFacturaChanging(value);
-                ReportPropertyChanging("IdFactura");
-                _IdFactura = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdFactura");
-                OnIdFacturaChanged();
-            }
-        }
-        private global::System.Int32 _IdFactura;
-        partial void OnIdFacturaChanging(global::System.Int32 value);
-        partial void OnIdFacturaChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String strTipoIva
-        {
-            get
-            {
-                return _strTipoIva;
-            }
-            set
-            {
-                OnstrTipoIvaChanging(value);
-                ReportPropertyChanging("strTipoIva");
-                _strTipoIva = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("strTipoIva");
-                OnstrTipoIvaChanged();
-            }
-        }
-        private global::System.String _strTipoIva;
-        partial void OnstrTipoIvaChanging(global::System.String value);
-        partial void OnstrTipoIvaChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal decImporte
-        {
-            get
-            {
-                return _decImporte;
-            }
-            set
-            {
-                OndecImporteChanging(value);
-                ReportPropertyChanging("decImporte");
-                _decImporte = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("decImporte");
-                OndecImporteChanged();
-            }
-        }
-        private global::System.Decimal _decImporte;
-        partial void OndecImporteChanging(global::System.Decimal value);
-        partial void OndecImporteChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 intIdEmpresa
-        {
-            get
-            {
-                return _intIdEmpresa;
-            }
-            set
-            {
-                OnintIdEmpresaChanging(value);
-                ReportPropertyChanging("intIdEmpresa");
-                _intIdEmpresa = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("intIdEmpresa");
-                OnintIdEmpresaChanged();
-            }
-        }
-        private global::System.Int64 _intIdEmpresa;
-        partial void OnintIdEmpresaChanging(global::System.Int64 value);
-        partial void OnintIdEmpresaChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Retenciones_0", "Factura")]
-        public Factura Factura
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Factura>("eFacDB.FK_Retenciones_0", "Factura").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Factura>("eFacDB.FK_Retenciones_0", "Factura").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Factura> FacturaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Factura>("eFacDB.FK_Retenciones_0", "Factura");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Factura>("eFacDB.FK_Retenciones_0", "Factura", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="eFacDB", Name="TipoRemolque")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -8508,10 +8204,14 @@ namespace wpfEFac.Models
         /// Crear un nuevo objeto TipoRemolque.
         /// </summary>
         /// <param name="id">Valor inicial de la propiedad id.</param>
-        public static TipoRemolque CreateTipoRemolque(global::System.Int64 id)
+        /// <param name="str_codigo">Valor inicial de la propiedad str_codigo.</param>
+        /// <param name="str_descripcion">Valor inicial de la propiedad str_descripcion.</param>
+        public static TipoRemolque CreateTipoRemolque(global::System.Int32 id, global::System.String str_codigo, global::System.String str_descripcion)
         {
             TipoRemolque tipoRemolque = new TipoRemolque();
             tipoRemolque.id = id;
+            tipoRemolque.str_codigo = str_codigo;
+            tipoRemolque.str_descripcion = str_descripcion;
             return tipoRemolque;
         }
 
@@ -8524,7 +8224,7 @@ namespace wpfEFac.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int64 id
+        public global::System.Int32 id
         {
             get
             {
@@ -8542,14 +8242,14 @@ namespace wpfEFac.Models
                 }
             }
         }
-        private global::System.Int64 _id;
-        partial void OnidChanging(global::System.Int64 value);
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
         partial void OnidChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String str_codigo
         {
@@ -8561,7 +8261,7 @@ namespace wpfEFac.Models
             {
                 Onstr_codigoChanging(value);
                 ReportPropertyChanging("str_codigo");
-                _str_codigo = StructuralObject.SetValidValue(value, true);
+                _str_codigo = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("str_codigo");
                 Onstr_codigoChanged();
             }
@@ -8573,7 +8273,7 @@ namespace wpfEFac.Models
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String str_descripcion
         {
@@ -8585,7 +8285,7 @@ namespace wpfEFac.Models
             {
                 Onstr_descripcionChanging(value);
                 ReportPropertyChanging("str_descripcion");
-                _str_descripcion = StructuralObject.SetValidValue(value, true);
+                _str_descripcion = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("str_descripcion");
                 Onstr_descripcionChanged();
             }
@@ -8597,299 +8297,6 @@ namespace wpfEFac.Models
         #endregion
 
     
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="eFacDB", Name="Traslados")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Traslados : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Traslados.
-        /// </summary>
-        /// <param name="intID">Valor inicial de la propiedad intID.</param>
-        /// <param name="intID_Factura">Valor inicial de la propiedad intID_Factura.</param>
-        /// <param name="strTipoImpuesto">Valor inicial de la propiedad strTipoImpuesto.</param>
-        /// <param name="dcmTasa">Valor inicial de la propiedad dcmTasa.</param>
-        /// <param name="dcmImporte">Valor inicial de la propiedad dcmImporte.</param>
-        /// <param name="totalImpuestoTrasladado">Valor inicial de la propiedad TotalImpuestoTrasladado.</param>
-        /// <param name="intID_Empresa">Valor inicial de la propiedad intID_Empresa.</param>
-        public static Traslados CreateTraslados(global::System.Int32 intID, global::System.Int32 intID_Factura, global::System.String strTipoImpuesto, global::System.Decimal dcmTasa, global::System.Decimal dcmImporte, global::System.Decimal totalImpuestoTrasladado, global::System.Int32 intID_Empresa)
-        {
-            Traslados traslados = new Traslados();
-            traslados.intID = intID;
-            traslados.intID_Factura = intID_Factura;
-            traslados.strTipoImpuesto = strTipoImpuesto;
-            traslados.dcmTasa = dcmTasa;
-            traslados.dcmImporte = dcmImporte;
-            traslados.TotalImpuestoTrasladado = totalImpuestoTrasladado;
-            traslados.intID_Empresa = intID_Empresa;
-            return traslados;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 intID
-        {
-            get
-            {
-                return _intID;
-            }
-            set
-            {
-                if (_intID != value)
-                {
-                    OnintIDChanging(value);
-                    ReportPropertyChanging("intID");
-                    _intID = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("intID");
-                    OnintIDChanged();
-                }
-            }
-        }
-        private global::System.Int32 _intID;
-        partial void OnintIDChanging(global::System.Int32 value);
-        partial void OnintIDChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 intID_Factura
-        {
-            get
-            {
-                return _intID_Factura;
-            }
-            set
-            {
-                OnintID_FacturaChanging(value);
-                ReportPropertyChanging("intID_Factura");
-                _intID_Factura = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("intID_Factura");
-                OnintID_FacturaChanged();
-            }
-        }
-        private global::System.Int32 _intID_Factura;
-        partial void OnintID_FacturaChanging(global::System.Int32 value);
-        partial void OnintID_FacturaChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String strTipoImpuesto
-        {
-            get
-            {
-                return _strTipoImpuesto;
-            }
-            set
-            {
-                OnstrTipoImpuestoChanging(value);
-                ReportPropertyChanging("strTipoImpuesto");
-                _strTipoImpuesto = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("strTipoImpuesto");
-                OnstrTipoImpuestoChanged();
-            }
-        }
-        private global::System.String _strTipoImpuesto;
-        partial void OnstrTipoImpuestoChanging(global::System.String value);
-        partial void OnstrTipoImpuestoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal dcmTasa
-        {
-            get
-            {
-                return _dcmTasa;
-            }
-            set
-            {
-                OndcmTasaChanging(value);
-                ReportPropertyChanging("dcmTasa");
-                _dcmTasa = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("dcmTasa");
-                OndcmTasaChanged();
-            }
-        }
-        private global::System.Decimal _dcmTasa;
-        partial void OndcmTasaChanging(global::System.Decimal value);
-        partial void OndcmTasaChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal dcmImporte
-        {
-            get
-            {
-                return _dcmImporte;
-            }
-            set
-            {
-                OndcmImporteChanging(value);
-                ReportPropertyChanging("dcmImporte");
-                _dcmImporte = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("dcmImporte");
-                OndcmImporteChanged();
-            }
-        }
-        private global::System.Decimal _dcmImporte;
-        partial void OndcmImporteChanging(global::System.Decimal value);
-        partial void OndcmImporteChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal TotalImpuestoTrasladado
-        {
-            get
-            {
-                return _TotalImpuestoTrasladado;
-            }
-            set
-            {
-                OnTotalImpuestoTrasladadoChanging(value);
-                ReportPropertyChanging("TotalImpuestoTrasladado");
-                _TotalImpuestoTrasladado = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("TotalImpuestoTrasladado");
-                OnTotalImpuestoTrasladadoChanged();
-            }
-        }
-        private global::System.Decimal _TotalImpuestoTrasladado;
-        partial void OnTotalImpuestoTrasladadoChanging(global::System.Decimal value);
-        partial void OnTotalImpuestoTrasladadoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 intID_Empresa
-        {
-            get
-            {
-                return _intID_Empresa;
-            }
-            set
-            {
-                OnintID_EmpresaChanging(value);
-                ReportPropertyChanging("intID_Empresa");
-                _intID_Empresa = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("intID_Empresa");
-                OnintID_EmpresaChanged();
-            }
-        }
-        private global::System.Int32 _intID_Empresa;
-        partial void OnintID_EmpresaChanging(global::System.Int32 value);
-        partial void OnintID_EmpresaChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Traslados_0", "Empresa")]
-        public Empresa Empresa
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empresa>("eFacDB.FK_Traslados_0", "Empresa").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empresa>("eFacDB.FK_Traslados_0", "Empresa").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Empresa> EmpresaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Empresa>("eFacDB.FK_Traslados_0", "Empresa");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Empresa>("eFacDB.FK_Traslados_0", "Empresa", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("eFacDB", "FK_Traslados_1", "Factura")]
-        public Factura Factura
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Factura>("eFacDB.FK_Traslados_1", "Factura").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Factura>("eFacDB.FK_Traslados_1", "Factura").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Factura> FacturaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Factura>("eFacDB.FK_Traslados_1", "Factura");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Factura>("eFacDB.FK_Traslados_1", "Factura", value);
-                }
-            }
-        }
-
-        #endregion
-
     }
     
     /// <summary>
@@ -9547,6 +8954,54 @@ namespace wpfEFac.Models
         private global::System.String _strTipoVehiculo;
         partial void OnstrTipoVehiculoChanging(global::System.String value);
         partial void OnstrTipoVehiculoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String strConfigVehicular
+        {
+            get
+            {
+                return _strConfigVehicular;
+            }
+            set
+            {
+                OnstrConfigVehicularChanging(value);
+                ReportPropertyChanging("strConfigVehicular");
+                _strConfigVehicular = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("strConfigVehicular");
+                OnstrConfigVehicularChanged();
+            }
+        }
+        private global::System.String _strConfigVehicular;
+        partial void OnstrConfigVehicularChanging(global::System.String value);
+        partial void OnstrConfigVehicularChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String NoEconomico
+        {
+            get
+            {
+                return _NoEconomico;
+            }
+            set
+            {
+                OnNoEconomicoChanging(value);
+                ReportPropertyChanging("NoEconomico");
+                _NoEconomico = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("NoEconomico");
+                OnNoEconomicoChanged();
+            }
+        }
+        private global::System.String _NoEconomico;
+        partial void OnNoEconomicoChanging(global::System.String value);
+        partial void OnNoEconomicoChanged();
 
         #endregion
 

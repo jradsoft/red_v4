@@ -15,6 +15,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,7 +28,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -200,11 +200,17 @@
     <Compile Include="Views\EMail\Email.xaml.cs">
       <DependentUpon>Email.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Empresa\AgregarSerieFolio.xaml.cs">
+      <DependentUpon>AgregarSerieFolio.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Empresa\ConfigEmpresa.xaml.cs">
       <DependentUpon>ConfigEmpresa.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Empresa\EditarEmpresa.xaml.cs">
       <DependentUpon>EditarEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Empresa\NuevaDireccion.xaml.cs">
+      <DependentUpon>NuevaDireccion.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Empresa\Registro.xaml.cs">
       <DependentUpon>Registro.xaml</DependentUpon>
@@ -271,6 +277,9 @@
     </Compile>
     <Compile Include="Views\PuntoVenta\PreFactura.xaml.cs">
       <DependentUpon>PreFactura.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PuntoVenta\SolicitudesCancelacion.xaml.cs">
+      <DependentUpon>SolicitudesCancelacion.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Regional\ConfigParametros.xaml.cs">
       <DependentUpon>ConfigParametros.xaml</DependentUpon>
@@ -346,6 +355,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Empresa\AgregarSerieFolio.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Empresa\ConfigEmpresa.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -353,6 +366,10 @@
     <Page Include="Views\Empresa\EditarEmpresa.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Empresa\NuevaDireccion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Empresa\Registro.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -439,6 +456,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PuntoVenta\PreFactura.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PuntoVenta\SolicitudesCancelacion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -650,7 +671,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -695,6 +716,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\camion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\solcal.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

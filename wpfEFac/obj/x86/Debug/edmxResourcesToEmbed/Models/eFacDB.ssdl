@@ -21,9 +21,7 @@
     <EntitySet Name="Municipio" EntityType="eFacDB.Store.Municipio" store:Type="Tables" />
     <EntitySet Name="Paises" EntityType="eFacDB.Store.Paises" store:Type="Tables" />
     <EntitySet Name="Productos" EntityType="eFacDB.Store.Productos" store:Type="Tables" />
-    <EntitySet Name="Retenciones" EntityType="eFacDB.Store.Retenciones" store:Type="Tables" />
     <EntitySet Name="TipoRemolque" EntityType="eFacDB.Store.TipoRemolque" store:Type="Tables" />
-    <EntitySet Name="Traslados" EntityType="eFacDB.Store.Traslados" store:Type="Tables" />
     <EntitySet Name="UnidadMedida" EntityType="eFacDB.Store.UnidadMedida" store:Type="Tables" />
     <EntitySet Name="Usuarios" EntityType="eFacDB.Store.Usuarios" store:Type="Tables" />
     <EntitySet Name="Vehiculos" EntityType="eFacDB.Store.Vehiculos" store:Type="Tables" />
@@ -60,11 +58,11 @@
       <End Role="ConfiguracionEmail" EntitySet="ConfiguracionEmail" />
     </AssociationSet>
     <AssociationSet Name="FK_Detalle_Factura_0" Association="eFacDB.Store.FK_Detalle_Factura_0">
-      <End Role="Productos" EntitySet="Productos" />
+      <End Role="Factura" EntitySet="Factura" />
       <End Role="Detalle_Factura" EntitySet="Detalle_Factura" />
     </AssociationSet>
     <AssociationSet Name="FK_Detalle_Factura_1" Association="eFacDB.Store.FK_Detalle_Factura_1">
-      <End Role="Factura" EntitySet="Factura" />
+      <End Role="Productos" EntitySet="Productos" />
       <End Role="Detalle_Factura" EntitySet="Detalle_Factura" />
     </AssociationSet>
     <AssociationSet Name="FK_Direcciones_Fiscales_0" Association="eFacDB.Store.FK_Direcciones_Fiscales_0">
@@ -112,11 +110,11 @@
       <End Role="Factura" EntitySet="Factura" />
     </AssociationSet>
     <AssociationSet Name="FK_Folios_0" Association="eFacDB.Store.FK_Folios_0">
-      <End Role="Certificates" EntitySet="Certificates" />
+      <End Role="Empresa" EntitySet="Empresa" />
       <End Role="Folios" EntitySet="Folios" />
     </AssociationSet>
     <AssociationSet Name="FK_Folios_1" Association="eFacDB.Store.FK_Folios_1">
-      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Certificates" EntitySet="Certificates" />
       <End Role="Folios" EntitySet="Folios" />
     </AssociationSet>
     <AssociationSet Name="FK_Grupos_0" Association="eFacDB.Store.FK_Grupos_0">
@@ -134,18 +132,6 @@
     <AssociationSet Name="FK_Productos_2" Association="eFacDB.Store.FK_Productos_2">
       <End Role="Categorias" EntitySet="Categorias" />
       <End Role="Productos" EntitySet="Productos" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Retenciones_0" Association="eFacDB.Store.FK_Retenciones_0">
-      <End Role="Factura" EntitySet="Factura" />
-      <End Role="Retenciones" EntitySet="Retenciones" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Traslados_0" Association="eFacDB.Store.FK_Traslados_0">
-      <End Role="Empresa" EntitySet="Empresa" />
-      <End Role="Traslados" EntitySet="Traslados" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Traslados_1" Association="eFacDB.Store.FK_Traslados_1">
-      <End Role="Factura" EntitySet="Factura" />
-      <End Role="Traslados" EntitySet="Traslados" />
     </AssociationSet>
     <AssociationSet Name="FK_UnidadMedida_0" Association="eFacDB.Store.FK_UnidadMedida_0">
       <End Role="Empresa" EntitySet="Empresa" />
@@ -223,9 +209,9 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="integer" Nullable="false" />
-    <Property Name="str_codigo" Type="nvarchar" />
-    <Property Name="str_descripcion" Type="nvarchar" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="str_codigo" Type="nvarchar" Nullable="false" MaxLength="80" />
+    <Property Name="str_descripcion" Type="nvarchar" Nullable="false" MaxLength="80" />
   </EntityType>
   <EntityType Name="Configuracion_Regional">
     <Key>
@@ -243,9 +229,9 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="integer" Nullable="false" />
-    <Property Name="str_codigo" Type="nvarchar" MaxLength="50" />
-    <Property Name="str_descripcion" Type="nvarchar" MaxLength="100" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="str_codigo" Type="nvarchar" Nullable="false" MaxLength="80" />
+    <Property Name="str_descripcion" Type="nvarchar" Nullable="false" MaxLength="80" />
   </EntityType>
   <EntityType Name="ConfiguracionContadorTabla">
     <Key>
@@ -278,17 +264,17 @@
     <Property Name="intID" Type="int" Nullable="false" />
     <Property Name="intID_Factura" Type="int" Nullable="false" />
     <Property Name="intID_Producto" Type="int" Nullable="false" />
-    <Property Name="dcmCantidad" Type="decimal" Nullable="false" Precision="10" Scale="2" />
-    <Property Name="dcmDescuento" Type="decimal" Nullable="false" Precision="10" Scale="2" />
-    <Property Name="dcmImporte" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="dcmCantidad" Type="decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="dcmDescuento" Type="decimal" Nullable="false" Precision="14" Scale="6" />
+    <Property Name="dcmImporte" Type="decimal" Nullable="false" Precision="14" Scale="6" />
     <Property Name="strUnidad" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="strConcepto" Type="nvarchar" Nullable="false" MaxLength="400" />
-    <Property Name="dcmPrecioUnitario" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="dcmPrecioUnitario" Type="decimal" Nullable="false" Precision="14" Scale="6" />
     <Property Name="strPatida" Type="nvarchar" MaxLength="50" />
-    <Property Name="dcmIVA" Type="decimal" Precision="10" Scale="2" />
-    <Property Name="retIVA" Type="decimal" Precision="10" Scale="2" />
-    <Property Name="retISR" Type="decimal" Precision="10" Scale="2" />
-    <Property Name="retIEPS" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="dcmIVA" Type="decimal" Precision="14" Scale="6" />
+    <Property Name="retIVA" Type="decimal" Precision="14" Scale="6" />
+    <Property Name="retISR" Type="decimal" Precision="14" Scale="6" />
+    <Property Name="retIEPS" Type="decimal" Precision="14" Scale="6" />
   </EntityType>
   <EntityType Name="Direcciones_Fiscales">
     <Key>
@@ -356,9 +342,9 @@
     <Property Name="intID_Cliente" Type="int" Nullable="false" />
     <Property Name="strForma_Pago" Type="nvarchar" Nullable="false" MaxLength="75" />
     <Property Name="strObervaciones" Type="nvarchar" MaxLength="200" />
-    <Property Name="dcmSubTotal" Type="decimal" Nullable="false" Precision="10" Scale="2" />
-    <Property Name="dcmIVA" Type="decimal" Nullable="false" Precision="10" Scale="2" />
-    <Property Name="dcmTotal" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="dcmSubTotal" Type="decimal" Nullable="false" Precision="14" Scale="6" />
+    <Property Name="dcmIVA" Type="decimal" Nullable="false" Precision="14" Scale="6" />
+    <Property Name="dcmTotal" Type="decimal" Nullable="false" Precision="14" Scale="6" />
     <Property Name="chrStatus" Type="nvarchar" Nullable="false" MaxLength="1" />
     <Property Name="strProveedor" Type="nvarchar" MaxLength="50" />
     <Property Name="strNumero" Type="nvarchar" MaxLength="50" />
@@ -367,15 +353,15 @@
     <Property Name="intID_Certificate" Type="int" Nullable="false" />
     <Property Name="strCadenaOriginal" Type="nvarchar" />
     <Property Name="strSelloDigital" Type="nvarchar" />
-    <Property Name="dcmDescuento" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="dcmDescuento" Type="decimal" Precision="14" Scale="6" />
     <Property Name="dtmFechaCancelacion" Type="datetime" />
     <Property Name="dtmFechaEnvio" Type="datetime" />
     <Property Name="strXMLpath" Type="nvarchar" MaxLength="500" />
     <Property Name="strPDFpath" Type="nvarchar" MaxLength="500" />
     <Property Name="strPDFdemoPath" Type="nvarchar" MaxLength="500" />
-    <Property Name="dcmRetIVA" Type="decimal" Precision="10" Scale="2" />
-    <Property Name="dcmRetISR" Type="decimal" Precision="10" Scale="2" />
-    <Property Name="dcmRetIEPS" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="dcmRetIVA" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="dcmRetISR" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="dcmRetIEPS" Type="decimal" Precision="12" Scale="6" />
     <Property Name="Divisa" Type="nvarchar" MaxLength="50" />
     <Property Name="TipoCambio" Type="decimal" Precision="12" Scale="6" />
     <Property Name="CondPago" Type="nvarchar" MaxLength="100" />
@@ -417,17 +403,17 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="integer" Nullable="false" />
-    <Property Name="str_codigo" Type="nvarchar" MaxLength="50" />
-    <Property Name="str_descripcion" Type="nvarchar" MaxLength="100" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="str_codigo" Type="nvarchar" Nullable="false" MaxLength="80" />
+    <Property Name="str_descripcion" Type="nvarchar" Nullable="false" MaxLength="80" />
   </EntityType>
   <EntityType Name="Municipio">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="integer" Nullable="false" />
-    <Property Name="str_codigo" Type="nvarchar" MaxLength="50" />
-    <Property Name="str_descripcion" Type="nvarchar" MaxLength="100" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="str_codigo" Type="nvarchar" Nullable="false" MaxLength="80" />
+    <Property Name="str_descripcion" Type="nvarchar" Nullable="false" MaxLength="80" />
   </EntityType>
   <EntityType Name="Paises">
     <Key>
@@ -442,15 +428,15 @@
     </Key>
     <Property Name="intID" Type="int" Nullable="false" />
     <Property Name="intID_Categoria" Type="int" Nullable="false" />
-    <Property Name="strNombre" Type="nvarchar" Nullable="false" MaxLength="75" />
+    <Property Name="strNombre" Type="nvarchar" Nullable="false" MaxLength="1000" />
     <Property Name="strNombreCorto" Type="nvarchar" MaxLength="100" />
     <Property Name="strCodigo" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="dcmPrecio1" Type="decimal" Precision="10" Scale="2" />
-    <Property Name="dcmPrecio2" Type="decimal" Precision="10" Scale="2" />
-    <Property Name="dcmPrecio3" Type="decimal" Precision="10" Scale="2" />
-    <Property Name="dcmPrecio4" Type="decimal" Precision="10" Scale="2" />
-    <Property Name="dcmPrecio5" Type="decimal" Precision="10" Scale="2" />
-    <Property Name="dcmDescuent" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="dcmPrecio1" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="dcmPrecio2" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="dcmPrecio3" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="dcmPrecio4" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="dcmPrecio5" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="dcmDescuent" Type="decimal" Nullable="false" Precision="10" Scale="6" />
     <Property Name="intUnidad" Type="int" Nullable="false" />
     <Property Name="strDescripcion" Type="nvarchar" Nullable="false" MaxLength="200" />
     <Property Name="intID_Empresa" Type="int" Nullable="false" />
@@ -463,40 +449,18 @@
     <Property Name="porcRetIva" Type="decimal" Precision="10" Scale="4" />
     <Property Name="gravaRetIsr" Type="nvarchar" MaxLength="1" />
     <Property Name="porcRetIsr" Type="decimal" Precision="10" Scale="4" />
-    <Property Name="existencias" Type="decimal" Precision="10" Scale="4" />
-    <Property Name="stockMin" Type="decimal" Precision="10" Scale="4" />
-    <Property Name="stockMax" Type="decimal" Precision="10" Scale="4" />
-    <Property Name="puntoReorden" Type="decimal" Precision="10" Scale="4" />
-  </EntityType>
-  <EntityType Name="Retenciones">
-    <Key>
-      <PropertyRef Name="intId" />
-    </Key>
-    <Property Name="intId" Type="integer" Nullable="false" />
-    <Property Name="IdFactura" Type="int" Nullable="false" />
-    <Property Name="strTipoIva" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="decImporte" Type="decimal" Nullable="false" Precision="53" />
-    <Property Name="intIdEmpresa" Type="integer" Nullable="false" />
+    <Property Name="existencias" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="stockMin" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="stockMax" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="puntoReorden" Type="decimal" Precision="10" Scale="2" />
   </EntityType>
   <EntityType Name="TipoRemolque">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="integer" Nullable="false" />
-    <Property Name="str_codigo" Type="nvarchar" MaxLength="50" />
-    <Property Name="str_descripcion" Type="nvarchar" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="Traslados">
-    <Key>
-      <PropertyRef Name="intID" />
-    </Key>
-    <Property Name="intID" Type="int" Nullable="false" />
-    <Property Name="intID_Factura" Type="int" Nullable="false" />
-    <Property Name="strTipoImpuesto" Type="nvarchar" Nullable="false" MaxLength="20" />
-    <Property Name="dcmTasa" Type="decimal" Nullable="false" Precision="10" Scale="2" />
-    <Property Name="dcmImporte" Type="decimal" Nullable="false" Precision="10" Scale="2" />
-    <Property Name="TotalImpuestoTrasladado" Type="decimal" Nullable="false" Precision="10" Scale="2" />
-    <Property Name="intID_Empresa" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="str_codigo" Type="nvarchar" Nullable="false" MaxLength="80" />
+    <Property Name="str_descripcion" Type="nvarchar" Nullable="false" MaxLength="80" />
   </EntityType>
   <EntityType Name="UnidadMedida">
     <Key>
@@ -528,6 +492,8 @@
     <Property Name="strAseguradoraCarga" Type="nvarchar" MaxLength="50" />
     <Property Name="strAseguradoraRepCivil" Type="nvarchar" MaxLength="50" />
     <Property Name="strTipoVehiculo" Type="nvarchar" MaxLength="50" />
+    <Property Name="strConfigVehicular" Type="nvarchar" MaxLength="150" />
+    <Property Name="NoEconomico" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK_Categorias_0">
     <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="1" />
@@ -626,18 +592,6 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Detalle_Factura_0">
-    <End Role="Productos" Type="eFacDB.Store.Productos" Multiplicity="1" />
-    <End Role="Detalle_Factura" Type="eFacDB.Store.Detalle_Factura" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Productos">
-        <PropertyRef Name="intID" />
-      </Principal>
-      <Dependent Role="Detalle_Factura">
-        <PropertyRef Name="intID_Producto" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Detalle_Factura_1">
     <End Role="Factura" Type="eFacDB.Store.Factura" Multiplicity="1" />
     <End Role="Detalle_Factura" Type="eFacDB.Store.Detalle_Factura" Multiplicity="*" />
     <ReferentialConstraint>
@@ -646,6 +600,18 @@
       </Principal>
       <Dependent Role="Detalle_Factura">
         <PropertyRef Name="intID_Factura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detalle_Factura_1">
+    <End Role="Productos" Type="eFacDB.Store.Productos" Multiplicity="1" />
+    <End Role="Detalle_Factura" Type="eFacDB.Store.Detalle_Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Detalle_Factura">
+        <PropertyRef Name="intID_Producto" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -782,18 +748,6 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Folios_0">
-    <End Role="Certificates" Type="eFacDB.Store.Certificates" Multiplicity="1" />
-    <End Role="Folios" Type="eFacDB.Store.Folios" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Certificates">
-        <PropertyRef Name="intID" />
-      </Principal>
-      <Dependent Role="Folios">
-        <PropertyRef Name="intID_Certificate" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Folios_1">
     <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="1" />
     <End Role="Folios" Type="eFacDB.Store.Folios" Multiplicity="*" />
     <ReferentialConstraint>
@@ -802,6 +756,18 @@
       </Principal>
       <Dependent Role="Folios">
         <PropertyRef Name="intID_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Folios_1">
+    <End Role="Certificates" Type="eFacDB.Store.Certificates" Multiplicity="1" />
+    <End Role="Folios" Type="eFacDB.Store.Folios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Certificates">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Folios">
+        <PropertyRef Name="intID_Certificate" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -850,42 +816,6 @@
       </Principal>
       <Dependent Role="Productos">
         <PropertyRef Name="intID_Categoria" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Retenciones_0">
-    <End Role="Factura" Type="eFacDB.Store.Factura" Multiplicity="1" />
-    <End Role="Retenciones" Type="eFacDB.Store.Retenciones" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Factura">
-        <PropertyRef Name="intID" />
-      </Principal>
-      <Dependent Role="Retenciones">
-        <PropertyRef Name="IdFactura" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Traslados_0">
-    <End Role="Empresa" Type="eFacDB.Store.Empresa" Multiplicity="1" />
-    <End Role="Traslados" Type="eFacDB.Store.Traslados" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Empresa">
-        <PropertyRef Name="intID" />
-      </Principal>
-      <Dependent Role="Traslados">
-        <PropertyRef Name="intID_Empresa" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Traslados_1">
-    <End Role="Factura" Type="eFacDB.Store.Factura" Multiplicity="1" />
-    <End Role="Traslados" Type="eFacDB.Store.Traslados" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Factura">
-        <PropertyRef Name="intID" />
-      </Principal>
-      <Dependent Role="Traslados">
-        <PropertyRef Name="intID_Factura" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

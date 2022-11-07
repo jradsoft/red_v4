@@ -212,7 +212,7 @@ namespace wpfEFac.Views.Clientes
             int Addenda = cmbAddenda.SelectedIndex;
 
             BusClientes bus = new BusClientes();
-            if (bus.EditarCliente(id,RFC, Razon, Comercial, Giro, Tipo, Calle, Exterior, Interior, Colonia, Pais, Estado,
+            if (bus.EditarCliente(id,RFC.Trim(), Razon.Trim(), Comercial, Giro, Tipo, Calle, Exterior, Interior, Colonia, Pais, Estado,
                 Municipio, Poblacion, Codigo, Casa, Oficina, Email, Contacto, IVA, ISR, Web, Addenda))
             {
                 MessageBox.Show("El Cliente se Edito Correctamente", "Editado", MessageBoxButton.OK, MessageBoxImage.Information);

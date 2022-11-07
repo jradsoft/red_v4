@@ -159,3 +159,12 @@ C:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\QRCodeLib\ThoughtWorks.QRCode.pd
 C:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\QRCodeLib\Newtonsoft.Json.dll
 C:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\QRCodeLib\Newtonsoft.Json.xml
 C:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\QRCodeLib\obj\Debug\QRCodeLib.csprojResolveAssemblyReference.cache
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\QRCodeLib\obj\Debug\ThoughtWorks.QRCode.Properties.Resources.resources
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\QRCodeLib\obj\Debug\QRCodeLib.csproj.GenerateResource.Cache
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\QRCodeLib\obj\Debug\ThoughtWorks.QRCode.dll
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\QRCodeLib\obj\Debug\ThoughtWorks.QRCode.pdb
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\QRCodeLib\ThoughtWorks.QRCode.dll
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\QRCodeLib\ThoughtWorks.QRCode.pdb
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\QRCodeLib\Newtonsoft.Json.dll
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\QRCodeLib\Newtonsoft.Json.xml
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\QRCodeLib\obj\Debug\QRCodeLib.csprojResolveAssemblyReference.cache

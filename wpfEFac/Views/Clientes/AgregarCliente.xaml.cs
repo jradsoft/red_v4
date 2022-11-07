@@ -92,7 +92,7 @@ namespace wpfEFac.Views.Clientes
                     string Poblacion = strLocalidad; ;
                     string Codigo = txtCP.Text.Trim();
                     BusClientes clientes = new BusClientes();
-                    if (clientes.AgregarCliente(rfc, Razon, Nombre, Giro, Tipo, Telefono, Movil, Email, Convert.ToString(Retencion), Convert.ToString(RetencionISR), Contacto, Web,
+                    if (clientes.AgregarCliente(rfc.Trim(), Razon.Trim(), Nombre, Giro, Tipo, Telefono, Movil, Email, Convert.ToString(Retencion), Convert.ToString(RetencionISR), Contacto, Web,
                         Calle, NoExterior, NoInterior, Colonia, Pais, Estado, Municipio, Poblacion, Codigo, Convert.ToInt32(App.Current.Properties["idEmpresa"]), addendda))
                     {
                         MessageBox.Show("\"El Cliente ha sido Registrado Exitosamente\"", "Guardado", MessageBoxButton.OK, MessageBoxImage.Information);

@@ -666,23 +666,23 @@ namespace wpfEFac.Views.PuntoVenta
 
             decimal subtotal1 = importe + descuento;
 
-            txtImporte.Text = subtotal1.ToString("N"); //importe.ToString("N");
-            txtDescuento.Text = descuento.ToString("N");
+            txtImporte.Text = subtotal1.ToString("#0.000000"); //importe.ToString("#0.000000");
+            txtDescuento.Text = descuento.ToString("#0.000000");
             
-            txtSubtotal.Text = subtotal.ToString("N");
-            txtIva.Text = iva.ToString("N");
-            txtTotal.Text = total.ToString("N");
-
-            
-            txtRetIva.Text = retIva.ToString("N");
-            txtRetIsr.Text = retIsr.ToString("N");
-            txtRetIeps.Text = retIeps.ToString("N");
-
-            txtGranTotal.Text = granTotal.ToString("N");
+            txtSubtotal.Text = subtotal.ToString("#0.000000");
+            txtIva.Text = iva.ToString("#0.000000");
+            txtTotal.Text = total.ToString("#0.000000");
 
             
+            txtRetIva.Text = retIva.ToString("#0.000000");
+            txtRetIsr.Text = retIsr.ToString("#0.000000");
+            txtRetIeps.Text = retIeps.ToString("#0.000000");
 
-            //txtTotal.Text =total.ToString("N");
+            txtGranTotal.Text = granTotal.ToString("#0.000000");
+
+            
+
+            //txtTotal.Text =total.ToString("#0.000000");
 
             ShowImporteConLetra(txtTotal.Text, "PESOS");
         }
@@ -730,16 +730,16 @@ namespace wpfEFac.Views.PuntoVenta
            // total = subtotal;
 
 
-            txtSubtotal.Text = importe.ToString("N");
-            txtIva.Text = iva.ToString("N");
-            txtIva.Text = subtotal.ToString("N");
+            txtSubtotal.Text = importe.ToString("#0.000000");
+            txtIva.Text = iva.ToString("#0.000000");
+            txtIva.Text = subtotal.ToString("#0.000000");
 
-            txtRetIva.Text = retIva.ToString("N");
-            txtRetIsr.Text = retIsr.ToString("N");
+            txtRetIva.Text = retIva.ToString("#0.000000");
+            txtRetIsr.Text = retIsr.ToString("#0.000000");
             
             
 
-            txtTotal.Text = total.ToString("N");
+            txtTotal.Text = total.ToString("#0.000000");
 
             ShowImporteConLetra(txtTotal.Text, "PESOS");
         }
@@ -805,7 +805,7 @@ namespace wpfEFac.Views.PuntoVenta
                 entry.intID = item.Productos.intID;
                 entry.Nombre = item.strConcepto;
                 entry.PrecioUnitario = item.dcmPrecioUnitario;
-                entry.FormatPrecioUnitario = item.dcmPrecioUnitario.ToString("N");
+                entry.FormatPrecioUnitario = item.dcmPrecioUnitario.ToString("#0.000000");
                 entry.isMercancia = item.strPatida;
                 entry.IVA = item.dcmIVA.Value;
                 entry.retIVA = item.retIVA.Value;
@@ -814,7 +814,7 @@ namespace wpfEFac.Views.PuntoVenta
                 entry.Descuento = item.dcmDescuento;
                 entry.FormatDescuento = item.dcmDescuento + " %";
                 entry.Importe = item.dcmImporte;
-                entry.FormatImporte = item.dcmImporte.ToString("N");
+                entry.FormatImporte = item.dcmImporte.ToString("#0.000000");
 
                 conceptos.Add(entry);
             }
@@ -2906,7 +2906,7 @@ namespace wpfEFac.Views.PuntoVenta
                 //                pesoKg = decimal.Parse("0.001"),
                 //                Nombre = item.Descripcion,
                 //                PrecioUnitario = decimal.Parse("0.00"),
-                //                FormatPrecioUnitario = item.ValorUnitario.ToString("N"),
+                //                FormatPrecioUnitario = item.ValorUnitario.ToString("#0.000000"),
                 //                FormatImporte = "0.00",
                 //                Descuento = decimal.Parse("0.00"),
                 //                IVA = decimal.Parse("0.00"),

@@ -258,3 +258,13 @@ C:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\dlleFac\bin\Debug\Newtonsoft.Jso
 C:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\dlleFac\obj\Debug\dlleFac.dll
 C:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\dlleFac\obj\Debug\dlleFac.pdb
 C:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\dlleFac\obj\Debug\dlleFac.csprojResolveAssemblyReference.cache
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\dlleFac\bin\Debug\dlleFac.dll.config
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\dlleFac\bin\Debug\dlleFac.dll
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\dlleFac\bin\Debug\dlleFac.pdb
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\dlleFac\bin\Debug\Ionic.Zip.CF.dll
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\dlleFac\bin\Debug\Newtonsoft.Json.dll
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\dlleFac\bin\Debug\System.Net.Http.dll
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\dlleFac\bin\Debug\Newtonsoft.Json.xml
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\dlleFac\obj\Debug\dlleFac.dll
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\dlleFac\obj\Debug\dlleFac.pdb
+L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\dlleFac\obj\Debug\dlleFac.csprojResolveAssemblyReference.cache

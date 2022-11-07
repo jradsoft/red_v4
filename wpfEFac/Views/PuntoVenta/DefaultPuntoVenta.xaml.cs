@@ -41,6 +41,7 @@ namespace wpfEFac.Views
     {
         private DataGridColumn currentSortColumn;
         private PreFacturaViewModel pfvm;
+        private eFacDBEntities db;
 
         private ListSortDirection currentSortDirection;
 
@@ -55,157 +56,35 @@ namespace wpfEFac.Views
             pfvm = new PreFacturaViewModel();
 
 
-            radMes.IsChecked = true;
-            cmbMes.SelectedIndex = DateTime.Now.Month - 1;
-            txtAaaa.Text = DateTime.Now.Year.ToString();
+            db = new eFacDBEntities();
+
+            wpfEFac.Models.CFD myCfd = new Models.CFD();
+            cmbTipoComprobante.ItemsSource = db.CFD;
+            cmbTipoComprobante.DisplayMemberPath = "strDescripcion";
+            cmbTipoComprobante.SelectedValuePath = "intID";
+            cmbTipoComprobante.SelectedValue = myCfd.intID;
+            cmbTipoComprobante.SelectedIndex = 0;
+
+            dtpFechaFGInicio.SelectedDate = DateTime.Now;
+            dtpFechaFGFin.SelectedDate = DateTime.Now;
+
+
             buscar();
         }
 
         private void dtpInicio_Loaded(object sender, RoutedEventArgs e)
         {
-            eFacDBEntities db = new eFacDBEntities();
-            List<Factura> fact = db.Factura.OrderByDescending(p => p.dtmFecha).ToList();
+            //eFacDBEntities db = new eFacDBEntities();
+            //List<Factura> fact = db.Factura.OrderByDescending(p => p.dtmFecha).ToList();
 
-            ICollectionView facturas = CollectionViewSource.GetDefaultView(fact);
-            dtgFacturasHistorico.ItemsSource = facturas;
-            facturas.Filter = TextFilter;
+            //ICollectionView facturas = CollectionViewSource.GetDefaultView(fact);
+            //dtgFacturasHistorico.ItemsSource = facturas;
+            //facturas.Filter = TextFilter;
         }
-        /*
-        private void buscar()
-        {
-            eFacDBEntities db = new eFacDBEntities();
-            List<Factura> fact = db.Factura.ToList();
-
-            ICollectionView facturas = CollectionViewSource.GetDefaultView(fact);
-            dtgFacturasHistorico.ItemsSource = facturas;
-            facturas.Filter = TextFilter;
-
-        }*/
-
-        public bool TextFilter(object o)
-        {
-            bool retValue = false;
-
-            Factura p = (o as Factura);
-
-            int AAA = p.dtmFecha.Year;
-
-            int AAtx = int.Parse(txtAaaa.Text = DateTime.Now.Year.ToString());
+      
 
 
-            if (p == null)
-                retValue = false;
 
-            if (radTodos.IsChecked == true)
-            {
-                if (radFecha.IsChecked == true)
-                {
-                    if ((radTodos.IsChecked == true) && p.chrStatus != "E" && p.strFolio.Contains(txtFolio.Text) && p.Clientes.strNombreComercial.ToUpper().Contains(txtCliente.Text.ToUpper()))
-                        retValue = true;
-                }
-
-                if (radMes.IsChecked == true)
-                {
-                    if ((radTodos.IsChecked == true) && p.chrStatus != "E" && p.dtmFecha.Year == AAtx && (p.dtmFecha.Month == cmbMes.SelectedIndex + 1 && p.strFolio.Contains(txtFolio.Text) && p.Clientes.strNombreComercial.ToUpper().Contains(txtCliente.Text.ToUpper())))
-                        retValue = true;
-                }
-
-
-            }
-            else
-            {
-
-                if (radFecha.IsChecked == true)
-                {
-
-
-                    if (radFacturas.IsChecked == true)
-                    {
-                        if ((p.intID_Tipo_CFD == 1) && p.chrStatus != "E" && p.dtmFecha.Year == AAtx && (p.strFolio.Contains(txtFolio.Text) && p.Clientes.strNombreComercial.ToUpper().Contains(txtCliente.Text.ToUpper())))
-                            retValue = true;
-                        else
-                            retValue = false;
-                    }
-
-
-                    if (radCotizaciones.IsChecked == true)
-                    {
-                        if ((p.intID_Tipo_CFD == 2) && p.chrStatus != "E" && p.dtmFecha.Year == AAtx && (p.strFolio.Contains(txtFolio.Text) && p.Clientes.strNombreComercial.ToUpper().Contains(txtCliente.Text.ToUpper())))
-                            retValue = true;
-                        else
-                            retValue = false;
-                    }
-
-                    if (radRemisiones.IsChecked == true)
-                    {
-                        if ((p.intID_Tipo_CFD == 3) && p.chrStatus != "E" && p.dtmFecha.Year == AAtx && (p.strFolio.Contains(txtFolio.Text) && p.Clientes.strNombreComercial.ToUpper().Contains(txtCliente.Text.ToUpper())))
-                            retValue = true;
-                        else
-                            retValue = false;
-                    }
-                }
-                else
-                {
-                    if (radFacturas.IsChecked == true)
-                    {
-                        if ((p.intID_Tipo_CFD == 1) && p.chrStatus != "E" && p.dtmFecha.Year == AAtx && (p.dtmFecha.Month == cmbMes.SelectedIndex + 1 && p.strFolio.Contains(txtFolio.Text) && p.Clientes.strNombreComercial.ToUpper().Contains(txtCliente.Text.ToUpper())))
-                            retValue = true;
-                        else
-                            retValue = false;
-                    }
-
-
-                    if (radCotizaciones.IsChecked == true)
-                    {
-                        if ((p.intID_Tipo_CFD == 2) && p.chrStatus != "E" && p.dtmFecha.Year == AAtx && (p.dtmFecha.Month == cmbMes.SelectedIndex + 1 && p.strFolio.Contains(txtFolio.Text) && p.Clientes.strNombreComercial.ToUpper().Contains(txtCliente.Text.ToUpper())))
-                            retValue = true;
-                        else
-                            retValue = false;
-                    }
-
-                    if (radRemisiones.IsChecked == true)
-                    {
-                        if ((p.intID_Tipo_CFD == 3) && p.chrStatus != "E" && p.dtmFecha.Year == AAtx && (p.dtmFecha.Month == cmbMes.SelectedIndex + 1 && p.strFolio.Contains(txtFolio.Text) && p.Clientes.strNombreComercial.ToUpper().Contains(txtCliente.Text.ToUpper())))
-                            retValue = true;
-                        else
-                            retValue = false;
-                    }
-
-                }
-            }
-
-            return retValue;
-        }
-
-        /*
-        private List<wpfEFac.Models.CFD> getListaCfd()
-        {
-            List<wpfEFac.Models.CFD> myCfd = new List<wpfEFac.Models.CFD>();
-            eFacDBEntities db = new eFacDBEntities();
-            myCfd.Add(new wpfEFac.Models.CFD()
-            {
-                intID = 0,
-                strDescripcion = "T O D O S"
-            });
-
-            foreach (wpfEFac.Models.CFD item in db.CFD)
-                myCfd.Add(item);
-
-            return myCfd;
-        }
-         */ 
-
-
-    /*
-        private void dtgFacturasHistorico_Loaded(object sender, RoutedEventArgs e)
-        {
-            //DataGrid dataGrid = (DataGrid)sender;
-
-            // The current sorted column must be specified in XAML.
-          //  currentSortColumn = dataGrid.Columns.Where(c => c.SortDirection.HasValue).Single();
-           // currentSortDirection = currentSortColumn.SortDirection.Value;
-        }
-        */
         private void CheckCFDStatus(DataGrid dataGrid)
         {
             Factura f = (Factura)dataGrid.SelectedItem;
@@ -270,82 +149,7 @@ namespace wpfEFac.Views
             }
         }
 
-        //private void dtgFacturasHistorico_Sorting(object sender, DataGridSortingEventArgs e)
-        //{
-        //    e.Handled = true;
-
-        //    PuntoVentaViewModel mainViewModel = (PuntoVentaViewModel)DataContext;
-
-        //    string sortField = String.Empty;
-
-        //    // Use a switch statement to check the SortMemberPath
-        //    // and set the sort column to the actual column name. In this case,
-        //    // the SortMemberPath and column names match.
-        //    switch (e.Column.SortMemberPath)
-        //    {
-        //        case ("intID"):
-        //            sortField = "intID";
-        //            break;
-
-        //        case ("Clientes.strNombreComercial"):
-        //            sortField = "Clientes.strNombreComercial";
-        //            break;
-        //        case ("strTipoDocumento"):
-        //            sortField = "strTipoDocumento";
-        //            break;
-        //        case ("intID_Empresa"):
-        //            sortField = "intID_Empresa";
-        //            break;
-        //        case ("strSerie"):
-        //            sortField = "strSerie";
-        //            break;
-        //        case ("strFolio"):
-        //            sortField = "strFolio";
-        //            break;
-        //        case ("dtmFecha"):
-        //            sortField = "dtmFecha";
-        //            break;
-        //        case ("dtmFechaAprovacion"):
-        //            sortField = "dtmFechaAprovacion";
-        //            break;
-        //        case ("intID_Cliente"):
-        //            sortField = "intID_Cliente";
-        //            break;
-        //        case ("strID_Cliente"):
-        //            sortField = "strID_Cliente";
-        //            break;
-        //        case ("strForma_Pago"):
-        //            sortField = "strForma_Pago";
-        //            break;
-        //        case ("strObervaciones"):
-        //            sortField = "strObervaciones";
-        //            break;
-        //        case ("dcmSubTotal"):
-        //            sortField = "dcmSubTotal";
-        //            break;
-        //        case ("dcmIVA"):
-        //            sortField = "dcmIVA";
-        //            break;
-        //        case ("dcmTotal"):
-        //            sortField = "dcmTotal";
-        //            break;
-        //    }
-
-        //    ListSortDirection direction = (e.Column.SortDirection != ListSortDirection.Ascending) ?
-        //        ListSortDirection.Ascending : ListSortDirection.Descending;
-
-        //    bool sortAscending = direction == ListSortDirection.Ascending;
-
-        //    mainViewModel.Sort(sortField, sortAscending);
-
-        //    currentSortColumn.SortDirection = null;
-
-        //    e.Column.SortDirection = direction;
-
-        //    currentSortColumn = e.Column;
-        //    currentSortDirection = direction;
-        //}
-
+     
         private void hplNuevaFactura_Click(object sender, RoutedEventArgs e)
         {
 
@@ -638,13 +442,14 @@ namespace wpfEFac.Views
 
                         if (Aprobado)
                         {
+                            //MessageBox.Show("Test");
                             MessageBox.Show("Se creo el archivo xml y PDF", objFac.filePath);
                             db.AcceptAllChanges();
 
                             pfvm.UpdateFolioActual(f.intID_Certificate, f.intID_Tipo_CFD);
 
-                            cmbMes.SelectedIndex = DateTime.Now.Month - 1;
-                            txtAaaa.Text = DateTime.Now.Year.ToString();
+                           // cmbMes.SelectedIndex = DateTime.Now.Month - 1;
+                            //txtAaaa.Text = DateTime.Now.Year.ToString();
                             buscar();
 
                             try
@@ -860,8 +665,8 @@ namespace wpfEFac.Views
 
                             pfvm.UpdateFolioActual(f.intID_Certificate, f.intID_Tipo_CFD);
 
-                            cmbMes.SelectedIndex = DateTime.Now.Month - 1;
-                            txtAaaa.Text = DateTime.Now.Year.ToString();
+                           // cmbMes.SelectedIndex = DateTime.Now.Month - 1;
+                            //txtAaaa.Text = DateTime.Now.Year.ToString();
                             buscar();
                             try
                             {
@@ -1075,8 +880,8 @@ namespace wpfEFac.Views
 
                             pfvm.UpdateFolioActual(f.intID_Certificate, f.intID_Tipo_CFD);
 
-                            cmbMes.SelectedIndex = DateTime.Now.Month - 1;
-                            txtAaaa.Text = DateTime.Now.Year.ToString();
+                          //  cmbMes.SelectedIndex = DateTime.Now.Month - 1;
+                         //   txtAaaa.Text = DateTime.Now.Year.ToString();
                             buscar();
 
 
@@ -1568,11 +1373,11 @@ namespace wpfEFac.Views
                 myConceptoTranslado.TasaOCuota = decimal.Parse(item.dcmIVA.Value.ToString("#0.000000")); //item.dcmIVA.Value;
                 myConceptoTranslado.TasaOCuotaSpecified = true;
 
-                
 
-                decimal BaseTraslado = item.dcmPrecioUnitario * item.dcmCantidad - item.dcmDescuento;
 
-                myConceptoTranslado.Base = decimal.Parse(BaseTraslado.ToString("#0.000"));
+                decimal BaseTraslado = decimal.Parse(item.dcmPrecioUnitario.ToString("#0.000000")) * item.dcmCantidad - item.dcmDescuento;
+
+                myConceptoTranslado.Base = decimal.Parse(BaseTraslado.ToString("#0.000000"));
 
                 if (item.dcmIVA > 0)
                 {
@@ -1587,7 +1392,7 @@ namespace wpfEFac.Views
 
                 decimal impuesto = myConceptoTranslado.Base * item.dcmIVA.Value;
 
-                myConceptoTranslado.Importe = decimal.Parse(impuesto.ToString("#0.000")); ;
+                myConceptoTranslado.Importe = decimal.Parse(impuesto.ToString("#0.000000")); ;
                 myConceptoTranslado.ImporteSpecified = true;
 
 
@@ -1697,8 +1502,8 @@ namespace wpfEFac.Views
 
                 string[] arrayInfoGlobal = f.Destino.Split('/');
                 string strPeriocidad = arrayInfoGlobal[0].Split('-')[0];
-                string strMes = arrayInfoGlobal[1];
-                string strAno = arrayInfoGlobal[2];
+                string strMes = String.IsNullOrEmpty(arrayInfoGlobal[1]) ? "0" : arrayInfoGlobal[1];
+                string strAno = String.IsNullOrEmpty(arrayInfoGlobal[1]) ? "0" : arrayInfoGlobal[2];
 
 
                 try
@@ -2431,12 +2236,12 @@ namespace wpfEFac.Views
 
             MyCFD20.SubTotal = decimal.Parse("0");
             MyCFD20.Total = decimal.Parse("0");
-            
+
 
 
             MyCFD20.Emisor = new dlleFac.ComprobanteEmisor
             {
-                RegimenFiscal = f.Empresa.strWebSite,
+                RegimenFiscal = f.Empresa.strWebSite.Split('-')[0],
                 Rfc = f.Empresa.strRFC,
                 Nombre = f.Empresa.strRazonSocial
 
@@ -2451,16 +2256,16 @@ namespace wpfEFac.Views
                 UsoCFDI = f.MotivoDesc,
                 RegimenFiscalReceptor = f.Clientes.strGiro,
                 DomicilioFiscalReceptor = direccionReceptor.strCodigoPostal
-                
+
 
 
             };
             eFacDBEntities db = new eFacDBEntities();
-          //  var producPago = db.Productos.Where(p => p.strCodigo.Equals("84111506")&& p.strNombre.Contains("Pago")).FirstOrDefault();
+            //  var producPago = db.Productos.Where(p => p.strCodigo.Equals("84111506")&& p.strNombre.Contains("Pago")).FirstOrDefault();
 
 
 
-            
+
             myConceptos.Add(new dlleFac.ComprobanteConcepto
             {
 
@@ -2481,13 +2286,33 @@ namespace wpfEFac.Views
 
             dllPag.Pagos Pago = new dllPag.Pagos();
             dllPag.PagosTotales totalesPago = new dllPag.PagosTotales();
-
+            dllPag.PagosPagoDoctoRelacionadoImpuestosDR myPagoImp = null;//new dllPag.PagosPagoDoctoRelacionadoImpuestosDR();
+            //dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR myPagoImpTras = new dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR();
+            //dllPag.PagosPagoDoctoRelacionadoImpuestosDRRetencionDR myPagoImpRet = new dllPag.PagosPagoDoctoRelacionadoImpuestosDRRetencionDR();
             List<dllPag.PagosPago> myPagos = new List<dllPag.PagosPago>();
 
+
+
+
+
             List<dllPag.PagosPagoDoctoRelacionado> myPagoRel = null;
+            dllPag.PagosPagoImpuestosP myImpuestosP = null;
+            List<dllPag.PagosPagoImpuestosPTrasladoP> myPagoImpTrasP = new List<dllPag.PagosPagoImpuestosPTrasladoP>();
+            List<dllPag.PagosPagoImpuestosPRetencionP> myPagoImpRetP = new List<dllPag.PagosPagoImpuestosPRetencionP>();
+            List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRRetencionDR> myPagoListImpRet = new List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRRetencionDR>();
+            List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR> myPagoListTrasl = new List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR>();
             string myFormaPago = "";
-            string strMoneda = "";
-            string tipoCambio = "";
+            decimal NodototalIva = 0;
+            decimal NodototalBaseIva = 0;
+            Boolean isIva = false;
+            decimal NodototalRetIva = 0;
+            Boolean isRetIva = false;
+            decimal NodototalRetIsr = 0;
+            Boolean isRetIsr = false;
+            decimal NodototaRetIeps = 0;
+            Boolean isRetIeps = false;
+
+            DataCompPago.DataComplementoPago dataJson = JsonConvert.DeserializeObject<DataCompPago.DataComplementoPago>(f.strCadenaOriginal);
 
             if (f.strObervaciones == "FACTORAJE")
             {
@@ -2496,38 +2321,42 @@ namespace wpfEFac.Views
                 /***metodo 1***/
 
 
-                foreach (var item in f.Detalle_Factura)
+
+
+
+
+
+
+                foreach (var item in dataJson.fillData)  //f.Detalle_Factura)
                 {
-                   myPagoRel = new List<dllPag.PagosPagoDoctoRelacionado>();
+                    myPagoRel = new List<dllPag.PagosPagoDoctoRelacionado>();
+                    //List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRRetencionDR> myPagoListImpRet = new List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRRetencionDR>();
+                    // List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR> myPagoListTrasl = new List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR>();
 
-
-                    string[] words = item.strPatida.Split('|');
-                    string myUUID = words[0];
-                    string myFol = words[1];
-                    string mySer = words[2];
-                    myFormaPago = words[3];
-                    strMoneda = words[5].Split('-')[0];
-                    tipoCambio = words[6]; 
+                    //   string[] words = item.strPatida.Split('|');
+                    //    string myUUID = words[0];
+                    //    string myFol = words[1];
+                    //    string mySer = words[2];
+                    myFormaPago = item.strFormaPago.Split('-')[0];
 
                     myPagoRel.Add(new dllPag.PagosPagoDoctoRelacionado
                     {
 
 
 
-                        IdDocumento = myUUID,
-                        Serie = mySer,
-                        Folio = myFol,
-                        MonedaDR = strMoneda,
+                        IdDocumento = item.strUUID,// myUUID,
+                        Serie = item.strSerie,//mySer,
+                        Folio = item.strFolio,// myFol,
+                        MonedaDR = item.strMoneda,//"MXN",
                         //MetodoDePagoDR = "PPD",
                         NumParcialidad = f.CondPago,
-                        ImpSaldoAnt = decimal.Parse(item.dcmPrecioUnitario.ToString("#0.00")),
-                       // ImpSaldoAntSpecified = true,
-                        ImpPagado = decimal.Parse(item.dcmImporte.ToString("#0.00")),
+                        ImpSaldoAnt = decimal.Parse(item.dcmImporte.ToString("#0.00")),
+                        // ImpSaldoAntSpecified = true,
+                        ImpPagado = decimal.Parse(item.dcmPagado.ToString("#0.00")),
                         //ImpPagadoSpecified = true,
-                        ImpSaldoInsoluto = decimal.Parse(item.dcmDescuento.ToString("#0.00")),
+                        ImpSaldoInsoluto = decimal.Parse(item.dcmPendiente.ToString("#0.00")),
                         //ImpSaldoInsolutoSpecified = true,
-                        EquivalenciaDR = 1,
-                        EquivalenciaDRSpecified = true
+
 
 
                     });
@@ -2537,19 +2366,17 @@ namespace wpfEFac.Views
                     {
 
                         CtaBeneficiario = f.Empresa.strCedula,
+
                         CtaOrdenante = f.Clientes.strWebSite,
                         RfcEmisorCtaBen = f.Destino,
                         RfcEmisorCtaOrd = f.Origen,
                         NumOperacion = f.RecogerEn,
-                        Monto = decimal.Parse(item.dcmImporte.ToString("#0.00")),
-                        MonedaP = f.Divisa.Split('-')[0],
-                        TipoCambioP = f.TipoCambio.Value,
-                        TipoCambioPSpecified = true,
-                        FormaDePagoP = myFormaPago.Substring(0, 2),
-                        
+                        Monto = decimal.Parse(dataJson.dcmTotal.ToString("#0.00")),
+                        MonedaP = dataJson.strMoneda,//"MXN",
+                        FormaDePagoP = myFormaPago, //myFormaPago.Substring(0, 2),
                         FechaPago = f.dtmFecha,
                         DoctoRelacionado = myPagoRel.ToArray()
-                       
+
 
                     });
 
@@ -2563,28 +2390,100 @@ namespace wpfEFac.Views
 
             /*** Metodo 2 ***/
             // List<dllPag.PagosPagoDoctoRelacionado> myPagoRel = new List<dllPag.PagosPagoDoctoRelacionado>();
+
+
+
             else
             {
 
                 myPagoRel = new List<dllPag.PagosPagoDoctoRelacionado>();
-                
-                //Boolean valueTC = false;
-                foreach (var item in f.Detalle_Factura)
+                myImpuestosP = new dllPag.PagosPagoImpuestosP();
+
+
+
+                string strMoneda = "";
+                string tipoCambio = "";
+                Boolean valueTC = true;
+
+
+                foreach (var item in dataJson.fillData)  //f.Detalle_Factura)
                 {
+                    myPagoImp = new dllPag.PagosPagoDoctoRelacionadoImpuestosDR();
+                    myPagoListTrasl = new List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR>();
+                    myPagoListImpRet = new List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRRetencionDR>();
+                    myFormaPago = item.strFormaPago.Split('-')[0];
 
 
 
-                    string[] words = item.strPatida.Split('|');
-                    string myUUID = words[0];
-                    string myFol = words[1];
-                    string mySer = words[2];
-                    myFormaPago = words[3];
-                    strMoneda = words[5].Split('-')[0];
-                     tipoCambio = words[6]; 
-                   
-                    //if (strMoneda == "USD") {
+                    strMoneda = item.strMoneda;
+                    tipoCambio = dataJson.strTipoCambio;
+
+                    //if (dataJson.strMoneda == "USD") {
                     //     valueTC = true;             
                     //}
+
+
+
+
+                    foreach (var i in item.fillDataImpuestosDR)
+                    {
+
+
+                        if (i.boolTraslado == true)
+                        {
+                            // myPagoListTrasl = new List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR>();
+
+                            myPagoListTrasl.Add(new dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR
+                            {
+                                TipoFactorDR = dllPag.c_TipoFactor.Tasa,
+                                TasaOCuotaDR = decimal.Parse(i.dcmTasaOCuotaDR.ToString("#0.000000")),
+                                TasaOCuotaDRSpecified = true,
+                                ImpuestoDR = i.strImpuestoDR,//dllPag.c_Impuesto.Item002,
+                                ImporteDR = i.dcmImporteDR,
+                                ImporteDRSpecified = true,
+                                BaseDR = i.dcmBaseDR
+
+
+
+
+                            });
+
+
+                        }
+
+                        if (i.boolRetencion == true)
+                        {
+                            //  myPagoListImpRet = new List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRRetencionDR>();
+
+                            myPagoListImpRet.Add(new dllPag.PagosPagoDoctoRelacionadoImpuestosDRRetencionDR
+                            {
+                                TipoFactorDR = dllPag.c_TipoFactor.Tasa,
+                                TasaOCuotaDR = decimal.Parse(i.dcmTasaOCuotaDR.ToString("#0.000000")),
+                                //TasaOCuotaDRSpecified = true,
+                                ImpuestoDR = i.strImpuestoDR,//dllPag.c_Impuesto.Item002,
+                                ImporteDR = i.dcmImporteDR,
+                                //  ImporteDRSpecified = true,
+                                BaseDR = i.dcmBaseDR
+
+
+
+
+                            });
+
+
+
+
+                        }
+
+                    }
+
+
+
+                    myPagoImp.TrasladosDR = myPagoListTrasl.ToArray();
+                    myPagoImp.RetencionesDR = myPagoListImpRet.ToArray();
+
+
+
 
 
                     myPagoRel.Add(new dllPag.PagosPagoDoctoRelacionado
@@ -2592,54 +2491,167 @@ namespace wpfEFac.Views
 
 
 
-                        IdDocumento = myUUID,
-                        Serie = mySer,
-                        Folio = myFol,
+                        IdDocumento = item.strUUID,//myUUID,
+                        Serie = item.strSerie,
+                        Folio = item.strFolio,
                         MonedaDR = strMoneda,
-                       // MetodoDePagoDR = "PPD",
+                        // MetodoDePagoDR = "PPD",
                         NumParcialidad = f.CondPago,
-                        ImpSaldoAnt = decimal.Parse(item.dcmPrecioUnitario.ToString("#0.00")),
-                      //  ImpSaldoAntSpecified = true,
-                        ImpPagado = decimal.Parse(item.dcmImporte.ToString("#0.00")),
-                     //   ImpPagadoSpecified = true,
-                        ImpSaldoInsoluto = decimal.Parse(item.dcmDescuento.ToString("#0.00")),
-                     //   ImpSaldoInsolutoSpecified = true,
-                        ObjetoImpDR = dllPag.c_ObjetoImp.Item01,
-                        
-                        EquivalenciaDR=1,
-                        EquivalenciaDRSpecified=true
+                        ImpSaldoAnt = decimal.Parse(item.dcmImporte.ToString("#0.00")),
+                        //  ImpSaldoAntSpecified = true,
+                        ImpPagado = decimal.Parse(item.dcmPagado.ToString("#0.00")),
+                        //   ImpPagadoSpecified = true,
+                        ImpSaldoInsoluto = decimal.Parse(item.dcmPendiente.ToString("#0.00")),
+                        //   ImpSaldoInsolutoSpecified = true,
+                        ObjetoImpDR = dllPag.c_ObjetoImp.Item02,
+
+                        EquivalenciaDR = 1,
+                        EquivalenciaDRSpecified = true,
+                        ImpuestosDR = myPagoImp
 
 
                     });
                 }
 
+
+                string CtaBeneficiario = f.Empresa.strCedula;
+                string CtaOrdenante = f.Clientes.strWebSite;
+
+                if (myFormaPago == "01")
+                {
+                    CtaBeneficiario = "";
+                    CtaOrdenante = "";
+
+                }
+
+
+                foreach (var i in dataJson.fillDataImpuestosP)
+                {
+
+                    if (i.boolTraslado)
+                    {
+
+                        myPagoImpTrasP.Add(new dllPag.PagosPagoImpuestosPTrasladoP
+                        {
+                            BaseP = i.dcmBaseP,
+                            ImporteP = i.dcmImporteP,
+                            ImportePSpecified = true,
+                            ImpuestoP = dllPag.c_Impuesto.Item002,//"002",
+                            TipoFactorP = dllPag.c_TipoFactor.Tasa,
+                            TasaOCuotaP = decimal.Parse("0.160000"),
+                            TasaOCuotaPSpecified = true
+                        });
+
+                        NodototalIva = i.dcmImporteP;
+                        NodototalBaseIva = i.dcmBaseP;
+                        isIva = true;
+
+
+
+                    }
+
+                    if (i.boolRetencion)
+                    {
+                        if (i.strImpuestoP == "001")
+                        {
+                            myPagoImpRetP.Add(new dllPag.PagosPagoImpuestosPRetencionP
+                            {
+
+                                ImporteP = i.dcmImporteP,
+                                ImpuestoP = dllPag.c_Impuesto.Item001,
+
+                            });
+
+                            NodototalRetIsr = i.dcmImporteP;
+                            isRetIsr = true;
+                        }
+
+                        if (i.strImpuestoP == "002")
+                        {
+                            myPagoImpRetP.Add(new dllPag.PagosPagoImpuestosPRetencionP
+                            {
+
+                                ImporteP = i.dcmImporteP,
+                                ImpuestoP = dllPag.c_Impuesto.Item002,
+
+                            });
+
+                            NodototalRetIva = i.dcmImporteP;
+                            isRetIva = true;
+                        }
+                        if (i.strImpuestoP == "003")
+                        {
+                            myPagoImpRetP.Add(new dllPag.PagosPagoImpuestosPRetencionP
+                            {
+
+                                ImporteP = i.dcmImporteP,
+                                ImpuestoP = dllPag.c_Impuesto.Item003,
+
+                            });
+
+                            NodototaRetIeps = i.dcmImporteP;
+                            isRetIeps = true;
+                        }
+
+                    }
+
+
+
+
+                }
+
+
+
+
+                myImpuestosP.TrasladosP = myPagoImpTrasP.ToArray();
+                myImpuestosP.RetencionesP = myPagoImpRetP.ToArray();
+
                 myPagos.Add(new dllPag.PagosPago
                 {
 
-                    CtaBeneficiario = f.Empresa.strCedula,
-                    CtaOrdenante = f.Clientes.strWebSite,
+                    CtaBeneficiario = CtaBeneficiario,
+                    CtaOrdenante = CtaOrdenante,
                     RfcEmisorCtaBen = f.Destino,
                     RfcEmisorCtaOrd = f.Origen,
                     NumOperacion = f.RecogerEn,
                     Monto = decimal.Parse(f.dcmTotal.ToString("#0.00")),
-                    MonedaP = f.Divisa.Split('-')[0],
-                    TipoCambioP = f.TipoCambio.Value,
-                    FormaDePagoP = myFormaPago.Substring(0, 2),
+                    MonedaP = strMoneda,
+                    FormaDePagoP = myFormaPago,
                     FechaPago = f.dtmFecha,
                     DoctoRelacionado = myPagoRel.ToArray(),
-                    TipoCambioPSpecified = true,
-                    
+                    TipoCambioP = decimal.Parse(tipoCambio),
+                    TipoCambioPSpecified = valueTC,
+                    ImpuestosP = myImpuestosP
+
                 });
 
 
                 totalesPago.MontoTotalPagos = decimal.Parse(f.dcmTotal.ToString("#0.00"));
 
-                
-
-
-
-
-
+                if (isIva)
+                {
+                    totalesPago.TotalTrasladosImpuestoIVA16 = NodototalIva;
+                    totalesPago.TotalTrasladosImpuestoIVA16Specified = isIva;
+                    totalesPago.TotalTrasladosBaseIVA16 = NodototalBaseIva;
+                    totalesPago.TotalTrasladosBaseIVA16Specified = isIva;
+                }
+                //totalesPago.TotalTrasladosBaseIVA16 = 0;
+                //totalesPago.TotalTrasladosBaseIVA16Specified = true;
+                if (isRetIva)
+                {
+                    totalesPago.TotalRetencionesIVA = NodototalRetIva;
+                    totalesPago.TotalRetencionesIVASpecified = isRetIva;
+                }
+                if (isRetIsr)
+                {
+                    totalesPago.TotalRetencionesISR = NodototalRetIsr;
+                    totalesPago.TotalRetencionesISRSpecified = isRetIsr;
+                }
+                if (isRetIeps)
+                {
+                    totalesPago.TotalRetencionesIEPS = NodototaRetIeps;
+                    totalesPago.TotalRetencionesIEPSSpecified = isRetIeps;
+                }
 
 
             }
@@ -2648,37 +2660,38 @@ namespace wpfEFac.Views
             Pago.Pago = myPagos.ToArray();
             Pago.Totales = totalesPago;
 
-           
-           // MyCFD20.Complemento = new dlleFac.ComprobanteComplemento[1];
+
+
+            // MyCFD20.Complemento = new dlleFac.ComprobanteComplemento[1];
             MyCFD20.Complemento = new dlleFac.ComprobanteComplemento();
 
             XmlDocument docPago = new XmlDocument();
             XmlSerializerNamespaces xmlNameSpcePago = new XmlSerializerNamespaces();
             xmlNameSpcePago.Add("pago20", "http://www.sat.gob.mx/Pagos20");
-            using(XmlWriter writer = docPago.CreateNavigator().AppendChild())
+            using (XmlWriter writer = docPago.CreateNavigator().AppendChild())
             {
                 new XmlSerializer(Pago.GetType()).Serialize(writer, Pago, xmlNameSpcePago);
-            
+
             }
 
 
-            MyCFD20.Complemento.Any = new XmlElement [1];
+            MyCFD20.Complemento.Any = new XmlElement[1];
             MyCFD20.Complemento.Any[0] = docPago.DocumentElement;
 
 
 
 
-           //  myComplemento.Pago = Pago;
-           // MyCFD20.Complemento = new dlleFac.ComprobanteComplemento();
-          //  MyCFD20.Complemento.Pago = Pago;
+            //  myComplemento.Pago = Pago;
+            // MyCFD20.Complemento = new dlleFac.ComprobanteComplemento();
+            //  MyCFD20.Complemento.Pago = Pago;
 
 
 
-       //     dlleFac.ComprobanteComplemento myComplemento = new dlleFac.ComprobanteComplemento();
-       //     myComplemento.Pago = Pago;
-       //     MyCFD20.Complemento = myComplemento;
+            //     dlleFac.ComprobanteComplemento myComplemento = new dlleFac.ComprobanteComplemento();
+            //     myComplemento.Pago = Pago;
+            //     MyCFD20.Complemento = myComplemento;
 
-           
+
 
 
         }
@@ -3782,6 +3795,7 @@ namespace wpfEFac.Views
                     {
                         try
                         {
+                            //MessageBox.Show("Cancelación Test");
 
                             string urlSalida = PdfStampInExistingFile(f.strPDFpath);
                             eFacDBEntities db = new eFacDBEntities();
@@ -3829,9 +3843,9 @@ namespace wpfEFac.Views
                             }
 
                              db.SaveChanges();
-                            radMes.IsChecked = true;
-                            cmbMes.SelectedIndex = DateTime.Now.Month - 1;
-                            txtAaaa.Text = DateTime.Now.Year.ToString();
+                           // radMes.IsChecked = true;
+                           // cmbMes.SelectedIndex = DateTime.Now.Month - 1;
+                            //txtAaaa.Text = DateTime.Now.Year.ToString();
                             buscar();
 
 
@@ -4326,21 +4340,100 @@ namespace wpfEFac.Views
 
         private void radMes_Click(object sender, RoutedEventArgs e)
         {
-            cmbMes.SelectedIndex = DateTime.Now.Month - 1;
-            txtAaaa.Text = DateTime.Now.Year.ToString();
-            buscar();
+            //cmbMes.SelectedIndex = DateTime.Now.Month - 1;
+            //txtAaaa.Text = DateTime.Now.Year.ToString();
+            //buscar();
 
         }
+
+
         private void buscar()
         {
+
             eFacDBEntities db = new eFacDBEntities();
-            List<Factura> fact = db.Factura.OrderByDescending(p=>p.dtmFecha).ToList();
+            List<Factura> fact = null;
+
+            DateTime fechaInicio = DateTime.Parse(dtpFechaFGInicio.SelectedDate.Value.ToString("yyyy-MM-dd") + "T" + dtpFechaFGInicio.SelectedDate.Value.ToString("00:00:00"));
+            DateTime fechaFin = DateTime.Parse(dtpFechaFGFin.SelectedDate.Value.ToString("yyyy-MM-dd") + "T" + dtpFechaFGFin.SelectedDate.Value.ToString("23:59:59"));
+
+
+
+
+
+
+            /**Verificar status de cancelacion**/
+
+            //foreach (var i in fact) {
+            //    try
+            //    {
+            //        if (i.chrStatus == "C")
+            //        {
+
+
+
+
+            //            RespuestaEstatusSAT response = myService.consultarEstadoSAT(UserPac.idEquipo, i.strSelloDigital, UserPac.rfc, i.Clientes.strRFC, i.dcmTotal.ToString());
+
+            //            string estatus = response.Estado+"/" +response.EstatusCancelacion;
+
+            //            if (!string.IsNullOrEmpty(estatus))
+            //            {
+            //                i.strNumero = estatus;
+            //                db.SaveChanges();
+            //            }
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+
+            //    }
+
+            //  }
+
+
+
+
+            if (radRango.IsChecked == true)
+            {
+
+                int intCFD = int.Parse(cmbTipoComprobante.SelectedValue.ToString());
+                if (string.IsNullOrEmpty(txtFolio.Text) && string.IsNullOrEmpty(txtCliente.Text))
+                {
+
+
+                    fact = db.Factura.Where(x => x.dtmFecha >= fechaInicio && x.dtmFecha <= fechaFin && x.chrStatus != "E" && x.intID_Tipo_CFD == intCFD).OrderByDescending(p => p.dtmFecha).ToList();
+                }
+
+                if (!string.IsNullOrEmpty(txtFolio.Text))
+                {
+                    //fact = db.Factura.Where(x => x.chrStatus != "E" && x.strFolio == strFolio.Trim()).OrderByDescending(p => p.dtmFecha).ToList();
+                    fact = db.Factura.Where(x => x.dtmFecha >= fechaInicio && x.dtmFecha <= fechaFin && x.chrStatus != "E" && x.intID_Tipo_CFD == intCFD && x.strFolio == txtFolio.Text.Trim()).OrderByDescending(p => p.dtmFecha).ToList();
+                }
+
+
+                if (!string.IsNullOrEmpty(txtCliente.Text))
+                {
+                    //fact = db.Factura.Where(x => x.chrStatus != "E" && x.Clientes.strNombreComercial.Contains(strNombre)).OrderByDescending(p => p.dtmFecha).ToList();
+                    fact = db.Factura.Where(x => x.dtmFecha >= fechaInicio && x.dtmFecha <= fechaFin && x.chrStatus != "E" && x.intID_Tipo_CFD == intCFD && x.Clientes.strNombreComercial.Contains(txtCliente.Text.Trim())).OrderByDescending(p => p.dtmFecha).ToList();
+                }
+            }
+
+            if (radTodos.IsChecked == true)
+            {
+
+                fact = db.Factura.Where(x => x.dtmFecha >= fechaInicio && x.dtmFecha <= fechaFin && x.chrStatus != "E").OrderByDescending(p => p.dtmFecha).ToList();
+
+
+            }
+
+
 
             ICollectionView facturas = CollectionViewSource.GetDefaultView(fact);
             dtgFacturasHistorico.ItemsSource = facturas;
-            facturas.Filter = TextFilter;
+            //facturas.Filter = TextFilter;
 
         }
+       
 
         /*
         public bool TextFilter(object o)
@@ -4492,8 +4585,8 @@ namespace wpfEFac.Views
 
 
                     // dtgFacturasHistorico.ItemsSource = db.Factura.Where(mf => mf.chrStatus != "E").OrderByDescending(d => d.dtmFecha);
-                    cmbMes.SelectedIndex = DateTime.Now.Month - 1;
-                    txtAaaa.Text = DateTime.Now.Year.ToString();
+                    //cmbMes.SelectedIndex = DateTime.Now.Month - 1;
+                    //txtAaaa.Text = DateTime.Now.Year.ToString();
                     buscar();
 
 
@@ -4519,11 +4612,9 @@ namespace wpfEFac.Views
                 try
                 {
 
-                    radMes.IsChecked = true;
-                    cmbMes.SelectedIndex = DateTime.Now.Month - 1;
-                    txtAaaa.Text = DateTime.Now.Year.ToString();
+                    cmbTipoComprobante.Text = "PAGO";
                     buscar();
-
+                    
 
                 }
                 catch (Exception error)
@@ -4618,7 +4709,7 @@ namespace wpfEFac.Views
                 if (myAddComentario.ShowDialog().Value == true)
                 {
 
-                    radTodos.IsChecked = true;
+                    //radTodos.IsChecked = true;
                    
                     buscar();
                 
@@ -4655,6 +4746,17 @@ namespace wpfEFac.Views
             return urlSalida;
 
 
+        }
+
+        private void radRango_Click(object sender, RoutedEventArgs e)
+        {
+            buscar();
+        }
+
+        private void mniSolicitudesCancelacion_Click(object sender, RoutedEventArgs e)
+        {
+            SolicitudesCancelacion mySolicitudes = new SolicitudesCancelacion();
+            mySolicitudes.Show();
         }
     }
 }

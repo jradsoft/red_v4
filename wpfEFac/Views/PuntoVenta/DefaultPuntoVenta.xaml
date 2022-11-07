@@ -6,12 +6,12 @@
       xmlns:helpers="clr-namespace:wpfEFac.Helpers"
       xmlns:toolkit="http://schemas.microsoft.com/wpf/2008/toolkit"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="700"
+      d:DesignHeight="600" d:DesignWidth="900"
 	  Title="Punto de Venta">
     
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="90" />
+            <RowDefinition Height="100" />
             <RowDefinition Height="140" />
             <RowDefinition Height="30" />
             <RowDefinition Height="*" />
@@ -96,7 +96,9 @@
                         <MenuItem.Header>
                             <StackPanel>
                                 <Image Width="42" ToolTip="PDF" Source="/wpfEFac;component/Images/Icons/calendar.ico" />
-                                <TextBlock HorizontalAlignment="Center">Fecha Pago</TextBlock>
+
+                                <TextBlock HorizontalAlignment="Center" > Complemento<LineBreak />de pago</TextBlock>
+                              
                             </StackPanel>
                         </MenuItem.Header>
                     </MenuItem>
@@ -105,7 +107,7 @@
                         <MenuItem.Header>
                             <StackPanel>
                                 <Image Width="42" ToolTip="PDF" Source="/wpfEFac;component/Images/Icons/emailCFD.ico" />
-                                <TextBlock HorizontalAlignment="Center">E-Mail</TextBlock>
+                                <TextBlock HorizontalAlignment="Center">Reenvío de <LineBreak />correo</TextBlock>
                             </StackPanel>
                         </MenuItem.Header>
                     </MenuItem>
@@ -115,6 +117,15 @@
                             <StackPanel>
                                 <Image Width="42" ToolTip="XML" Source="/wpfEFac;component/Images/Icons/editCFD.ico" />
                                 <TextBlock HorizontalAlignment="Center">Comentario</TextBlock>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+
+                    <MenuItem x:Name="mniSolicitudesCancelacion" IsEnabled="True" Click="mniSolicitudesCancelacion_Click">
+                        <MenuItem.Header>
+                            <StackPanel>
+                                <Image Width="42" ToolTip="Solicitudes" Source="/wpfEFac;component/Images/Icons/solcal.ico" />
+                                <TextBlock HorizontalAlignment="Center">Solcitudes de <LineBreak/> cancelacion</TextBlock>
                             </StackPanel>
                         </MenuItem.Header>
                     </MenuItem>
@@ -132,8 +143,8 @@
                     <ColumnDefinition Width="50" />
                     <ColumnDefinition Width="100" />
                     <ColumnDefinition Width="100" />
-                    <ColumnDefinition Width="60*" />
-                    <ColumnDefinition Width="60*" />
+                    <ColumnDefinition Width="200" />
+
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="45" />
@@ -142,7 +153,7 @@
                 </Grid.RowDefinitions>
 
                 <!--Folio-->
-                <TextBlock Grid.RowSpan="1" Grid.Row="0" Height="Auto" HorizontalAlignment="Right" Name="txbTipoDoc" Text="Tipo: " VerticalAlignment="Center" />
+                <TextBlock Grid.RowSpan="1" Grid.Row="0" Height="Auto" HorizontalAlignment="Right" Name="txbTipoDoc" Text="Tipo:  " VerticalAlignment="Center" />
                 <!--Fecha-->
 
 
@@ -158,7 +169,7 @@
                 <!--Documento-->
 
                 <TextBlock Height="Auto" HorizontalAlignment="Right" Name="txbFolio" Text="Folio: " VerticalAlignment="Center" Grid.Row="2" Margin="0,0,5,17" />
-                <TextBox Height="23" HorizontalAlignment="Stretch" Margin="0,0,0,0" Name="txtFolio" VerticalAlignment="Top" Width="90" Grid.Column="1" Grid.Row="2" Text="" TextChanged="textBox1_TextChanged" />
+                <TextBox Height="23" HorizontalAlignment="Stretch" Margin="0,0,0,0" Name="txtFolio" VerticalAlignment="Top" Width="90" Grid.Column="1" Grid.Row="2" Text=""  />
 
                 <TextBlock Height="Auto" HorizontalAlignment="Right" Name="txbCliente" Text="Cliente: " VerticalAlignment="Top" Grid.Row="2"  Grid.Column="2" Margin="0,0,5,17" />
                 <TextBox Height="23" HorizontalAlignment="Stretch" Margin="0,0,0,0" Name="txtCliente" VerticalAlignment="Top" Width="180" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" Text="" TextChanged="txtCliente_TextChanged" />
@@ -166,11 +177,16 @@
 
                 <Button Content="Buscar" Grid.Column="5" Grid.Row="2" Height="23" HorizontalAlignment="Left" Name="bttBuscar" VerticalAlignment="Top" Width="75"  Click="bttBuscar_Click" Grid.ColumnSpan="2" />
 
-                <StackPanel Grid.Column="1" Grid.RowSpan="2" Orientation="Vertical">
-                    <RadioButton Content="Todos"  Height="16" HorizontalAlignment="Left" Margin="0,0,0,0" Name="radTodos" VerticalAlignment="Top" IsChecked="True"  Click="radTodos_Click" Visibility="Collapsed"/>
+                <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
+                    <ComboBox x:Name="cmbTipoComprobante" VerticalAlignment="Center"  SelectedIndex="0"/>
+
+
+                    <RadioButton Content="Todos"  Height="16" HorizontalAlignment="Left" Margin="0,0,0,0" Name="radTodos" VerticalAlignment="Top"   Click="radTodos_Click" />
+                    <RadioButton Content="Filtrar"  Height="16" HorizontalAlignment="Left" Margin="0,0,0,0" Name="radRango" VerticalAlignment="Top" IsChecked="True"  Click="radRango_Click" />
+                    <!--
                     <RadioButton Content="Facturas"  Height="16" HorizontalAlignment="Left" Margin="0,0,0,0" Name="radFacturas" VerticalAlignment="Top" Click="radFacturas_Click" Visibility="Collapsed" />
                     <RadioButton Content="Cotizaciones"  Height="16" HorizontalAlignment="Left" Margin="0,0,0,0" Name="radCotizaciones" VerticalAlignment="Top"  Visibility="Collapsed" />
-                    <RadioButton Content="Remisiones"  Height="16" HorizontalAlignment="Left" Margin="0,0,0,0" Name="radRemisiones" VerticalAlignment="Top"  Visibility="Collapsed" />
+                    <RadioButton Content="Remisiones"  Height="16" HorizontalAlignment="Left" Margin="0,0,0,0" Name="radRemisiones" VerticalAlignment="Top"  Visibility="Collapsed" />-->
                 </StackPanel>
 
 
@@ -181,9 +197,16 @@
 
                 <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="4">
                     <TextBlock Height="Auto" HorizontalAlignment="Right" Name="txbMes" Text="Fecha: " VerticalAlignment="Top" Grid.Row="0"  Grid.Column="2" Margin="0,0,5,17" />
+                    <TextBlock Grid.Row="1" Grid.ColumnSpan="1" Name="txbFechaReporteInicio" Text="   Desde " VerticalAlignment="Center" HorizontalAlignment="Right" />
+                    <DatePicker Grid.Row="1" Grid.Column="1" Name="dtpFechaFGInicio" VerticalAlignment="Center" />
+
+                    <TextBlock Grid.Row="1" Grid.ColumnSpan="1" Name="txbFechaReporteFin" Text="   Hasta " VerticalAlignment="Center" HorizontalAlignment="Right" />
+                    <DatePicker Grid.Row="1" Grid.Column="1" Name="dtpFechaFGFin" VerticalAlignment="Center"  />
+
+                    <!--<TextBlock Height="Auto" HorizontalAlignment="Right" Name="txbMes" Text="Fecha: " VerticalAlignment="Top" Grid.Row="0"  Grid.Column="2" Margin="0,0,5,17" />
                     <RadioButton Content="Todos                "  Height="16" HorizontalAlignment="Left" Margin="0,0,0,0" Name="radFecha" VerticalAlignment="Top" IsChecked="True" Click="radFecha_Click"/>
                     <RadioButton Content="Mes"  Height="16" HorizontalAlignment="Left" Margin="0,0,0,0" Name="radMes" VerticalAlignment="Top" Click="radMes_Click" />
-                    <ComboBox x:Name="cmbMes" SelectionChanged="cmbMes_SelectionChanged">
+                    <ComboBox x:Name="cmbMes" SelectionChanged="cmbMes_SelectionChanged" DropDownClosed="cmbMes_DropDownClosed">
                         <ComboBoxItem Content="Enero" />
                         <ComboBoxItem Content="Febrero" />
                         <ComboBoxItem Content="Marzo" />
@@ -197,8 +220,14 @@
                         <ComboBoxItem Content="Noviembre" />
                         <ComboBoxItem Content="Diciembre" />
                     </ComboBox>
+                    <TextBlock Height="Auto" HorizontalAlignment="Right"  Text="Status: " VerticalAlignment="Top" Grid.Row="0"  Grid.Column="2" Margin="0,0,5,17" />
+                    <ComboBox x:Name="cmbStatus"  DropDownClosed="cmbStatus_DropDownClosed" SelectedIndex="0">
+                        <ComboBoxItem Content="A" />
+                        <ComboBoxItem Content="C" />
+
+                    </ComboBox>
                     <TextBlock Height="Auto" HorizontalAlignment="Right" Name="txbAaaa" Text="Año: " VerticalAlignment="Top" Grid.Row="0"  Grid.Column="2" Margin="0,0,5,17" />
-                    <TextBox Height="23" HorizontalAlignment="Stretch" Margin="0,0,0,0" Name="txtAaaa" VerticalAlignment="Top" Width="60" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" Text="" TextChanged="txtCliente_TextChanged" />
+                    <TextBox Height="23" HorizontalAlignment="Stretch" Margin="0,0,0,0" Name="txtAaaa" VerticalAlignment="Top" Width="60" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" Text="" TextChanged="txtCliente_TextChanged" />-->
                 </StackPanel>
 
 

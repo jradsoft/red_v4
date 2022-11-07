@@ -479,7 +479,7 @@
         </th>
 
 
-        <th width="30%">
+        <th width="10%">
           <font color="#00000" face="Century Gothic" size="2">
             Forma Pago
           </font>
@@ -487,10 +487,10 @@
         </th>
       </tr>
       <tr>
-        <td align="center" width="10%">
+        <td align="center" width="40%">
 
 
-          <font color="#00000"  size="3">
+          <font color="#00000"  size="4">
             <b>
               <xsl:value-of select='@FechaPago'/>
             </b>
@@ -501,7 +501,7 @@
         <td align="center" width="10%">
 
 
-          <font color="#00000"  size="3">
+          <font color="#00000"  size="4">
             <b>
               <xsl:value-of select='@NumOperacion'/>
             </b>
@@ -512,7 +512,7 @@
         <td align="center" width="10%">
 
 
-          <font color="#00000"  size="3">
+          <font color="#00000"  size="4">
             <b>
               <xsl:value-of select='@MonedaP'/>
             </b>
@@ -521,7 +521,7 @@
         </td>
 
         <td>
-          <font color="#00000"  size="3">
+          <font color="#00000"  size="4">
             <b>
               <xsl:if test="(@FormaDePagoP='01')">
                 <xsl:value-of select="@FormaDePagoP"/>-Efectivo
@@ -601,21 +601,21 @@
         <tr>
 
           <th width="10%">
-            <font color="#00000" face="Century Gothic" size="3">
+            <font color="#00000" face="Century Gothic" size="4">
               UUID
             </font>
 
           </th>
 
           <th width="10%">
-            <font color="#00000" face="Century Gothic" size="3">
+            <font color="#00000" face="Century Gothic" size="4">
               Serie
             </font>
 
           </th>
 
           <th width="10%">
-            <font color="#00000" face="Century Gothic" size="3">
+            <font color="#00000" face="Century Gothic" size="4">
               Folio
             </font>
 
@@ -624,42 +624,42 @@
 
 
           <th width="10%">
-            <font color="#00000" face="Century Gothic" size="3">
+            <font color="#00000" face="Century Gothic" size="4">
               Parcialidad
             </font>
 
           </th>
 
 
-          <th width="10%">
-            <font color="#00000" face="Century Gothic" size="3">
+          <!--<th width="10%">
+            <font color="#00000" face="Century Gothic" size="4">
               Metodo Pago
             </font>
 
-          </th>
+          </th>-->
 
 
 
           <th width="10%">
-            <font color="#00000" face="Century Gothic" size="3">
+            <font color="#00000" face="Century Gothic" size="4">
               Total
             </font>
 
           </th>
 
           <th width="10%">
-            <font color="#00000" face="Century Gothic" size="3">
+            <font color="#00000" face="Century Gothic" size="4">
               Saldo anterior
             </font>
 
           </th>
           <th width="10%">
-            <font color="#00000" face="Century Gothic" size="3">
+            <font color="#00000" face="Century Gothic" size="4">
               Saldo Pendiente
             </font>
           </th>
           <th width="10%">
-            <font color="#00000" face="Century Gothic" size="3">
+            <font color="#00000" face="Century Gothic" size="4">
               Monto pagado
             </font>
           </th>
@@ -667,12 +667,69 @@
         </tr>
         <tr>
 
-          <td align="center" width="30%">
+          <td align="left" width="30%">
 
 
-            <font color="#00000"  size="3">
+            <font color="#00000"  size="4">
               <b>
                 <xsl:value-of select='@IdDocumento'/>
+                <br></br>
+
+                <table  align="left" >
+                <font color="#000000" face="Courier New" size="4">
+
+                  <xsl:apply-templates select="pago10:ImpuestosDR/pago10:TrasladosDR/pago10:TrasladoDR"/>
+                  <br></br>
+                  <xsl:apply-templates select="pago10:ImpuestosDR/pago10:RetencionesDR/pago10:RetencionDR"/>
+
+
+                  <!--<xsl:if test="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:TrasladosDR/pago10:TrasladoDR/@ImpuestoDR='002' ">
+
+                    <b>
+                      Traslados   Tasa <xsl:value-of select="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:TrasladosDR/pago10:TrasladoDR/@TasaOCuotaDR "/>
+                      Impuesto <xsl:value-of select="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:TrasladosDR/pago10:TrasladoDR/@ImpuestoDR "/>
+                      Base <xsl:value-of select="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:TrasladosDR/pago10:TrasladoDR/@BaseDR "/>
+                      Importe <xsl:value-of select="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:TrasladosDR/pago10:TrasladoDR/@ImporteDR "/>
+                    </b>
+
+                  </xsl:if>
+                  <br></br>
+
+                  <xsl:if test="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:RetencionesDR/pago10:RetencionDR/@ImpuestoDR='001' ">
+
+                    <b>
+                      Retenciones   Tasa <xsl:value-of select="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:RetencionesDR/pago10:RetencionDR/@TasaOCuotaDR "/>
+                      Impuesto <xsl:value-of select="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:RetencionesDR/pago10:RetencionDR/@ImpuestoDR "/>
+                      Base <xsl:value-of select="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:RetencionesDR/pago10:RetencionDR/@BaseDR "/>
+                      Importe <xsl:value-of select="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:RetencionesDR/pago10:RetencionDR/@ImporteDR "/>
+                    </b>
+
+                  </xsl:if>
+                  <br></br>
+                  <xsl:if test="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:RetencionesDR/pago10:RetencionDR/@ImpuestoDR='002' ">
+
+                    <b>
+                      Retenciones   Tasa <xsl:value-of select="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:RetencionesDR/pago10:RetencionDR/@TasaOCuotaDR "/>
+                      Impuesto <xsl:value-of select="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:RetencionesDR/pago10:RetencionDR/@ImpuestoDR "/>
+                      Base <xsl:value-of select="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:RetencionesDR/pago10:RetencionDR/@BaseDR "/>
+                      Importe <xsl:value-of select="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:RetencionesDR/pago10:RetencionDR/@ImporteDR "/>
+                    </b>
+
+                  </xsl:if>
+                  <br></br>
+                  <xsl:if test="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:RetencionesDR/pago10:RetencionDR/@ImpuestoDR='003' ">
+
+                    <b>
+                      Retenciones   Tasa <xsl:value-of select="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:RetencionesDR/pago10:RetencionDR/@TasaOCuotaDR "/>
+                      Impuesto <xsl:value-of select="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:RetencionesDR/pago10:RetencionDR/@ImpuestoDR "/>
+                      Base <xsl:value-of select="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:RetencionesDR/pago10:RetencionDR/@BaseDR "/>
+                      Importe <xsl:value-of select="//cfdi:Complemento/pago10:Pagos/pago10:Pago/pago10:DoctoRelacionado/pago10:ImpuestosDR/pago10:RetencionesDR/pago10:RetencionDR/@ImporteDR "/>
+                    </b>
+
+                  </xsl:if>-->
+
+                </font>
+                </table>
               </b>
 
             </font>
@@ -681,7 +738,7 @@
           <td align="center" width="10%">
 
 
-            <font color="#00000"  size="3">
+            <font color="#00000"  size="4">
               <b>
                 <xsl:value-of select='@Serie'/>
               </b>
@@ -691,7 +748,7 @@
           <td align="center" width="10%">
 
 
-            <font color="#00000"  size="3">
+            <font color="#00000"  size="4">
               <b>
                 <xsl:value-of select='@Folio'/>
               </b>
@@ -701,7 +758,7 @@
           <td align="center" width="10%">
 
 
-            <font color="#00000"  size="3">
+            <font color="#00000"  size="4">
               <b>
                 <xsl:value-of select='@NumParcialidad'/>
               </b>
@@ -709,18 +766,18 @@
           </td>
           
 
-          <td width="10%">
-            <font color="#00000"  size="3">
+          <!--<td width="10%">
+            <font color="#00000"  size="4">
               <pre>
                 <b>
                   <xsl:value-of select='@MetodoDePagoDR'/>-Pago en parcialidades o diferido
                 </b>
               </pre>
             </font>
-          </td>
+          </td>-->
 
           <td align="center" width="10%">
-            <font color="#00000"  size="3">
+            <font color="#00000"  size="4">
               <b>
                 <xsl:value-of select='format-number(@ImpPagado,"$###,###,###.00")'/>
 
@@ -730,7 +787,7 @@
           </td>
 
           <td align="right" width="10%">
-            <font color="#00000"  size="3">
+            <font color="#00000"  size="4">
 
               <b>
                 <xsl:value-of select='format-number(@ImpSaldoAnt,"$###,###,###.00")'/>
@@ -741,7 +798,7 @@
 
 
           <td align="right" width="10%">
-            <font color="#00000"  size="3">
+            <font color="#00000"  size="4">
 
               <b>
 
@@ -753,7 +810,7 @@
 
 
           <td align="right" width="10%">
-            <font color="#00000"  size="3">
+            <font color="#00000"  size="4">
 
               <b>
                 <xsl:value-of select='format-number(@ImpPagado,"$###,###,###.00")'/>
@@ -761,12 +818,12 @@
               </b>
 
 
-              <br></br>
-              <br></br>
+            
               
             </font>
           </td>
 
+        
 
         </tr>
 
@@ -991,6 +1048,32 @@
   </tr>
   --><!--
   </xsl:template>-->
+
+  <xsl:template match="//pago10:ImpuestosDR/pago10:TrasladosDR/pago10:TrasladoDR">
+
+    <b>
+      Traslados   Tasa <xsl:value-of select="@TasaOCuotaDR "/>
+      Impuesto <xsl:value-of select="@ImpuestoDR "/>
+      Base <xsl:value-of select="@BaseDR "/>
+      Importe <xsl:value-of select="@ImporteDR "/>
+    </b>
+    <br></br>
+    
+    
+  </xsl:template>
+
+
+  <xsl:template match="//pago10:ImpuestosDR/pago10:RetencionesDR/pago10:RetencionDR">
+
+    <b>
+      Retenciones   Tasa <xsl:value-of select="@TasaOCuotaDR "/>
+      Impuesto <xsl:value-of select="@ImpuestoDR "/>
+      Base <xsl:value-of select="@BaseDR "/>
+      Importe <xsl:value-of select="@ImporteDR "/>
+    </b>
+
+
+  </xsl:template>
 
 
   <xsl:template match="//cfdi:Concepto">

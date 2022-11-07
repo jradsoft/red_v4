@@ -82,6 +82,56 @@ namespace wpfEFac.Models
             }
         }
 
+
+
+        public bool AgregarDireccionFiscal(string Calle, string Exterior, string Interior, string Colonia, int Pais,
+           int Estado, string Municipio, string Poblacion, string CP, int IDE)
+        {
+            try
+            {
+               
+                    Direcciones_Fiscales df = new Direcciones_Fiscales();
+                    df.intID = Identifier.GetID(typeof(Direcciones_Fiscales).Name, IDE, df, EntityEnum.Direcciones_Fiscales, entidad);
+                    df.strTipoEntidad = "D";
+                    df.strIDCliente = 1;
+                    df.strCalle = Calle;
+                    df.strNoExterior = Exterior;
+                    df.strNoInterior = Interior;
+                    df.intIDPais = Pais;
+                    df.intIDEstado = Estado;
+                    df.strMunicipio = Municipio;
+                    df.strPoblacionLocalidad = Poblacion;
+                    df.strCodigoPostal = CP;
+                    df.chrStatus = "1";
+                    df.strColonia = Colonia;
+                    df.intID_Empresa = 1;
+
+
+                    entidad.Direcciones_Fiscales.AddObject(df);
+
+                    entidad.SaveChanges();
+                    
+                    entidad.AcceptAllChanges();
+
+                    entidad.Connection.Close();
+
+                    Identifier.IsUsing = false;
+
+                    return true;
+                
+
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+
+
+        }
+
+
+
         public bool AgregarProducto(/*int ID,*/ 
                 string Codigo,
                 string CodigoBarras,
@@ -277,24 +327,26 @@ namespace wpfEFac.Models
         }
 
 
-         
 
-        public bool AgregarVehiculo( string placa, string modelo,string ano, string poliza, string aseguradoraCarga,
-            string aseguradoraRespCiv,string tipo)
+
+        public bool AgregarVehiculo(string placa, string modelo, string ano, string poliza, string aseguradoraCarga,
+           string aseguradoraRespCiv, string tipo, string confVehicular, string strNoEconomico)
         {
             try
             {
                 Vehiculos v = new Vehiculos()
                 {
                     //intID = ID,
-                    strPlaca = placa,
-                    strModelo = modelo,
-                    strAno = ano,
-                    strNoPoliza = poliza,
-                    strAseguradoraCarga = aseguradoraCarga,
-                    strAseguradoraRepCivil = aseguradoraRespCiv,
-                    strTipoVehiculo = tipo
-                    
+                    strPlaca = placa.Trim(),
+                    strModelo = modelo.Trim(),
+                    strAno = ano.Trim(),
+                    strNoPoliza = poliza.Trim(),
+                    strAseguradoraCarga = aseguradoraCarga.Trim(),
+                    strAseguradoraRepCivil = aseguradoraRespCiv.Trim(),
+                    strTipoVehiculo = tipo.Trim(),
+                    strConfigVehicular = confVehicular.Trim(),
+                    NoEconomico = strNoEconomico.Trim(),
+
 
                 };
 
@@ -304,44 +356,47 @@ namespace wpfEFac.Models
 
                 return true;
             }
-            catch (Exception)
+            catch (Exception x)
             {
-                return false;
+                return true;
                 throw;
             }
         }
 
-        public bool EditarVehiculo(string id,string placa, string modelo, string ano, string poliza, string aseguradoraCarga,
-            string aseguradoraRespCiv, string tipo) {
+        public bool EditarVehiculo(string id, string placa, string modelo, string ano, string poliza, string aseguradoraCarga,
+            string aseguradoraRespCiv, string tipo, string strConfigVehicular, string NoEconomico)
+        {
 
-                try
+            try
+            {
+                Vehiculos v = entidad.Vehiculos.First(x => x.strPlaca == id);
                 {
-                    Vehiculos v = entidad.Vehiculos.First(x =>x.strPlaca ==id);
-                    {
-                    
-                       // v.strPlaca = placa;
-                        v.strModelo = modelo;
-                        v.strAno = ano;
-                        v.strNoPoliza = poliza;
-                        v.strAseguradoraCarga = aseguradoraCarga;
-                        v.strAseguradoraRepCivil = aseguradoraRespCiv;
-                        v.strTipoVehiculo = tipo;
+
+                    // v.strPlaca = placa;
+                    v.strModelo = modelo;
+                    v.strAno = ano;
+                    v.strNoPoliza = poliza;
+                    v.strAseguradoraCarga = aseguradoraCarga;
+                    v.strAseguradoraRepCivil = aseguradoraRespCiv;
+                    v.strTipoVehiculo = tipo;
+                    v.strConfigVehicular = strConfigVehicular;
+                    v.NoEconomico = NoEconomico;
 
 
-                    };
+                };
 
-                    
 
-                    entidad.SaveChanges();
 
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    return false;
-                    throw;
-                }
-        
+                entidad.SaveChanges();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+                throw;
+            }
+
         }
 
 
@@ -701,6 +756,10 @@ namespace wpfEFac.Models
             }
         }
 
+
+
+       
+
         public bool AgregarCertificados(/*int ID,*/ string CertificadoSelloDigital, string LlaveCertificado,
             string CSD, string Key, string Password, string Desde, string Hasta, string FechaSubida, int ID_Empresa)
         {
@@ -732,27 +791,64 @@ namespace wpfEFac.Models
             }
         }
 
-        public bool AgregarFolios(/*int ID,*/ int ID_Certificado, string FolioInical, string FolioFinal,
-            string NoAprobacion, string Serie, string AnioAprobacion, int IDEmpresa, string FolioActual)
+        public bool AgregarFolios(int ID_Certificado, string FolioInical, string FolioFinal,
+            string NoAprobacion, string Serie, string AnioAprobacion, int IDEmpresa, string FolioActual,string strTipoComprobante, string strDescripcion)
         {
+            
+
             try
             {
-                Folios f = new Folios()
-                {
-                    //intID = ID,
-                    intID_Certificate = ID_Certificado,
-                    intFolio_Inicial = int.Parse(FolioInical),
-                    intFolio_Final = int.Parse(FolioInical),
-                    intNumero_Aprovacion = int.Parse(NoAprobacion),
-                    strSerie = Serie,
-                    strAño_Aprovacion = AnioAprobacion,
-                    intID_Empresa = IDEmpresa,
-                    chrStatus = "A",
-                    intFolioActual = int.Parse(FolioActual)
-                };
 
-                entidad.Folios.AddObject(f);
-                entidad.SaveChanges();
+                entidad.Connection.Open();
+
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    Folios f = new Folios();
+
+                    f.intID = Identifier.GetID(typeof(Folios).Name, 1, f, EntityEnum.Folios, entidad);
+                    f.intID_Certificate = ID_Certificado;
+                    f.intFolio_Inicial = int.Parse(FolioInical);
+                    f.intFolio_Final = int.Parse(FolioInical);
+                    f.intNumero_Aprovacion = int.Parse(NoAprobacion);
+                    f.strSerie = Serie;
+                    f.strAño_Aprovacion = AnioAprobacion;
+                    f.intID_Empresa = IDEmpresa;
+                    f.chrStatus = "A";
+                    f.intFolioActual = int.Parse(FolioActual);
+
+
+
+                    CFD myCFD = new CFD();
+
+
+                    myCFD.intID = Identifier.GetID(typeof(CFD).Name, 1, myCFD, EntityEnum.CFD, entidad);
+                    myCFD.strDescripcion = strDescripcion;
+                    myCFD.strTipoCFD = strTipoComprobante;
+                    myCFD.intId_Empresa = 1;
+                    myCFD.intIdFolio = f.intID;
+                    myCFD.templateReportH = "templateFacturaH_33.xslt";
+                    myCFD.templateReportHdemo = "templateFacturaH_33.xslt";
+                    myCFD.templateReport = "templateFacturaConceptos_33.xslt";
+                    myCFD.templateReportDemo = "templateFacturaConceptos_33.xslt";
+                    myCFD.iva = 0;
+                    myCFD.retIva = 0;
+                    myCFD.retIsr = 0;
+
+
+                    entidad.Folios.AddObject(f);
+                    entidad.CFD.AddObject(myCFD);
+                    entidad.SaveChanges();
+
+                    scope.Complete();
+
+                    entidad.AcceptAllChanges();
+
+                    entidad.Connection.Close();
+
+                    Identifier.IsUsing = false;
+                }
+
+
                 return true;
             }
             catch (Exception)

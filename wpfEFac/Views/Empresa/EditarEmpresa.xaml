@@ -47,7 +47,9 @@
                         <RowDefinition Height="25"/>
                         <RowDefinition Height="6*" />
                     </Grid.RowDefinitions>
-                    <TextBlock Height="23" Name="txbNumCuenta" Text="Su número de Cuenta" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                    <TextBlock Height="23" Name="txbDirecccion" Text="Direcciones" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                    <ComboBox Grid.Column="1" Grid.Row="0" Height="23" HorizontalAlignment="Left" Name="cmbDirecciones" VerticalAlignment="Center" Width="200" />
+                    <Button Grid.Row="0" Grid.Column="1"  Name="bttAddDireccion" Content="Agregar Domicilio" HorizontalAlignment="Right" Width="100" Height="23" Click="bttAddDireccion_Click"/>
                     <TextBlock Grid.Row="1" Grid.Column="0" Height="23" Name="txbRFC" Text="RFC" VerticalAlignment="Center" HorizontalAlignment="Right"/>
                     <TextBox Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Left" Name="txtRFC" VerticalAlignment="Center" Width="280" />
                     <TextBlock Grid.Row="2" Grid.Column="0" Height="23" Name="txbRazonSocial" Text="Razón Social" VerticalAlignment="Center" HorizontalAlignment="Right"/>
@@ -246,8 +248,11 @@
                     <TextBlock Grid.Row="4" Height="23" HorizontalAlignment="Right" Name="textBlock5" Text="Fecha de Validacion:" VerticalAlignment="Top" />
                     <DatePicker Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" Height="25" HorizontalAlignment="Left" Margin="0,45,0,0" Name="dtpFechaValidacion" VerticalAlignment="Top" Width="234" />
                     <Button Content="Guardar Certificado" Grid.Column="1" Grid.Row="5" Height="23" HorizontalAlignment="Left" Margin="0,14,0,0" Name="bttGuardarCertificado" VerticalAlignment="Top" Width="124" Click="bttGuardarCertificado_Click" />
-                    <ComboBox Grid.Column="1" Grid.Row="6" Height="23" HorizontalAlignment="Left" Margin="0,12,0,0" Name="cmbCertificado" VerticalAlignment="Top" Width="234" Visibility="Collapsed" />
-                    <TextBlock Grid.Row="6" Height="23" HorizontalAlignment="Right" Margin="0,12,2,0" Name="textBlock6" Text="Certificado:" VerticalAlignment="Top" Visibility="Collapsed" />
+                    
+                    <TextBlock Grid.Row="6" Height="23" HorizontalAlignment="Right" Margin="0,12,2,0" Name="textBlock6" Text="Seleccionar Serie:" VerticalAlignment="Top"  />
+                    <ComboBox Grid.Column="1" Grid.Row="6" Height="23" HorizontalAlignment="Left" Margin="4,10,0,0"  Name="cmbSerie" DropDownClosed="cmbSerie_DropDownClosed" Width="230" Background="White">
+                    </ComboBox>
+                    <TextBox Grid.Column="1" Grid.Row="7" Height="23" HorizontalAlignment="Left" Margin="4,10,0,0" Name="txtIdFolio" VerticalAlignment="Top" Width="230" Visibility="Collapsed" />
                     <TextBlock Grid.Row="7" Height="23" HorizontalAlignment="Left" Margin="71,10,0,0" Name="textBlock7" Text="Numero aprobacion:" VerticalAlignment="Top" />
                     <TextBox Grid.Column="1" Grid.Row="7" Height="23" HorizontalAlignment="Left" Margin="4,10,0,0" Name="txtNumeroAprobacion" VerticalAlignment="Top" Width="230" />
                     <TextBlock Grid.Row="8" Height="23" HorizontalAlignment="Left" Margin="151,10,0,0" Name="textBlock8" Text="Serie:" VerticalAlignment="Top" />
@@ -263,7 +268,8 @@
 
                     <TextBlock Grid.Row="12" Height="23" HorizontalAlignment="Left" Margin="114,10,0,0" Name="textBlock10" Text="Folio actual:" VerticalAlignment="Top" />
                     <TextBox Grid.Column="1" Grid.Row="12" Height="23" HorizontalAlignment="Left" Margin="4,10,0,0" Name="txtFolioActual" VerticalAlignment="Top" Width="234" />
-                    <Button Content="Guardar Folio" Grid.Column="1" Grid.Row="13" Height="23" HorizontalAlignment="Left" Margin="4,15,0,0" Name="bttGuardarFolio" VerticalAlignment="Top" Width="135" Click="bttGuardarFolio_Click" />
+                    <Button Content="Actualizar Folio" Grid.Column="1" Grid.Row="13" Height="23" HorizontalAlignment="Left" Margin="4,15,0,0" Name="bttGuardarFolio" VerticalAlignment="Top" Width="135" Click="bttGuardarFolio_Click" />
+                    <Button Grid.Column="1" Grid.Row="13" Name="btnAgregarFolios" Content="Agregar Serie" HorizontalAlignment="Left" Margin="224,14,0,22" Width="80" Height="23" Click="btnAgregarFolios_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Datos Comerciales" Name="tbcDatosComerciales" Visibility="Collapsed">

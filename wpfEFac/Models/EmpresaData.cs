@@ -75,6 +75,11 @@ namespace wpfEFac.Models
             return new ObservableCollection<CFD>(db.CFD);
         }
 
+        public ObservableCollection<Folios> GetFolios()
+        {
+            return new ObservableCollection<Folios>(db.Folios);
+        }
+
         
     }
 }

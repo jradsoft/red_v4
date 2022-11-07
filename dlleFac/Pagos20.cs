@@ -992,7 +992,7 @@ namespace dllPag
 
         private decimal baseDRField;
 
-        private c_Impuesto impuestoDRField;
+        private string impuestoDRField;
 
         private c_TipoFactor tipoFactorDRField;
 
@@ -1016,7 +1016,7 @@ namespace dllPag
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public c_Impuesto ImpuestoDR
+        public string ImpuestoDR
         {
             get
             {
@@ -1119,7 +1119,7 @@ namespace dllPag
 
         private decimal baseDRField;
 
-        private c_Impuesto impuestoDRField;
+        private string impuestoDRField;
 
         private c_TipoFactor tipoFactorDRField;
 
@@ -1147,7 +1147,7 @@ namespace dllPag
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public c_Impuesto ImpuestoDR
+        public string ImpuestoDR
         {
             get
             {

@@ -22,10 +22,10 @@
                 <Button Click="bttNuevoVehiculo_Click" Content="Nuevo Vehiculo" Grid.RowSpan="2" Height="23" HorizontalAlignment="Right" Margin="0,2,5,0" Name="bttNuevoVehiculo" VerticalAlignment="Top" Width="95" />
                 <DataGrid AutoGenerateColumns="False" IsReadOnly="True" EnableRowVirtualization="True" RowDetailsVisibilityMode="VisibleWhenSelected" Grid.Row="1" Height="378" HorizontalAlignment="Stretch" Name="dtgVehiculos" VerticalAlignment="Top" SelectionChanged="dtgVehiculos_SelectionChanged">
                     <DataGrid.Columns>
-                        <DataGridTextColumn x:Name="strPlaca" Binding="{Binding Path=strPlaca}" Header="Placa" Width="10*" />
-                        <DataGridTextColumn x:Name="strAno" Binding="{Binding Path=strAno}" Header="Año" Width="15*" />
-                        <DataGridTextColumn x:Name="strModelo" Binding="{Binding Path=strModelo}" Header="Modelo" Width="10*" />
-                        <DataGridTemplateColumn Header="OPCIONES" Width="5*" >
+                        <DataGridTextColumn x:Name="strPlaca" Binding="{Binding Path=strPlaca}" Header="Placa" Width="3*" />
+                        <DataGridTextColumn x:Name="strConfigVehicular" Binding="{Binding Path=strConfigVehicular}" Header="Configuracion vehicular" Width="10*" />
+                        <DataGridTextColumn x:Name="strNoPoliza" Binding="{Binding Path=strNoPoliza}" Header="No Poliza" Width="10*" />
+                        <DataGridTemplateColumn Header="Opciones" Width="5*" >
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">

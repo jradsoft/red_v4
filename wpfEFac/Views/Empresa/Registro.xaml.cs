@@ -170,14 +170,14 @@ namespace wpfEFac.Views.Empresa
                 string FolioActual = txtFolioActual.Text;
 
                 BusClientes bus = new BusClientes();
-                if (bus.AgregarFolios(/*ID,*/ ID_Certificado, Inicial, Final, NoAprobacion, Serie, AnioAprobacion, ID_Empresa, FolioActual))
-                {
-                    MessageBox.Show("Los Folios han sido Registrados Exitosamente", "Registrados", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Ocurrio un Error durante el Registro, por favor vuelva a intentarlo", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+                //if (bus.AgregarFolios(/*ID,*/ ID_Certificado, Inicial, Final, NoAprobacion, Serie, AnioAprobacion, ID_Empresa, FolioActual))
+                //{
+                //    MessageBox.Show("Los Folios han sido Registrados Exitosamente", "Registrados", MessageBoxButton.OK, MessageBoxImage.Information);
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Ocurrio un Error durante el Registro, por favor vuelva a intentarlo", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                //}
                 this.Close();
             }
         }

@@ -325,36 +325,12 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Retenciones">
-      <EntityTypeMapping TypeName="eFacDB.Retenciones">
-        <MappingFragment StoreEntitySet="Retenciones">
-          <ScalarProperty Name="intId" ColumnName="intId" />
-          <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
-          <ScalarProperty Name="strTipoIva" ColumnName="strTipoIva" />
-          <ScalarProperty Name="decImporte" ColumnName="decImporte" />
-          <ScalarProperty Name="intIdEmpresa" ColumnName="intIdEmpresa" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TipoRemolque">
       <EntityTypeMapping TypeName="eFacDB.TipoRemolque">
         <MappingFragment StoreEntitySet="TipoRemolque">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="str_codigo" ColumnName="str_codigo" />
           <ScalarProperty Name="str_descripcion" ColumnName="str_descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Traslados">
-      <EntityTypeMapping TypeName="eFacDB.Traslados">
-        <MappingFragment StoreEntitySet="Traslados">
-          <ScalarProperty Name="intID" ColumnName="intID" />
-          <ScalarProperty Name="intID_Factura" ColumnName="intID_Factura" />
-          <ScalarProperty Name="strTipoImpuesto" ColumnName="strTipoImpuesto" />
-          <ScalarProperty Name="dcmTasa" ColumnName="dcmTasa" />
-          <ScalarProperty Name="dcmImporte" ColumnName="dcmImporte" />
-          <ScalarProperty Name="TotalImpuestoTrasladado" ColumnName="TotalImpuestoTrasladado" />
-          <ScalarProperty Name="intID_Empresa" ColumnName="intID_Empresa" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -389,6 +365,8 @@
           <ScalarProperty Name="strAseguradoraCarga" ColumnName="strAseguradoraCarga" />
           <ScalarProperty Name="strAseguradoraRepCivil" ColumnName="strAseguradoraRepCivil" />
           <ScalarProperty Name="strTipoVehiculo" ColumnName="strTipoVehiculo" />
+          <ScalarProperty Name="strConfigVehicular" ColumnName="strConfigVehicular" />
+          <ScalarProperty Name="NoEconomico" ColumnName="NoEconomico" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

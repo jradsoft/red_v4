@@ -213,7 +213,7 @@ namespace wpfEFac.Views.PuntoVenta
             entry.Unidad = p.UnidadMedida.strDescripcion;
             entry.Nombre = txtNombre.Text;
             entry.PrecioUnitario = decimal.Parse(txtPrecioUnitario.Text);
-            entry.FormatPrecioUnitario = decimal.Parse(txtPrecioUnitario.Text).ToString("N");
+            entry.FormatPrecioUnitario = decimal.Parse(txtPrecioUnitario.Text).ToString("#0.0000");
             entry.IVA = decimal.Parse(txtIVA.Text);
             entry.retIVA = decimal.Parse(txtRetIVA.Text);
             entry.retISR = decimal.Parse(txtRetISR.Text);
@@ -236,7 +236,7 @@ namespace wpfEFac.Views.PuntoVenta
             entry.Descuento = decimal.Parse(txtImporteDescuento.Text);
             entry.FormatDescuento = txtDescuento.Text + " %";
             entry.Importe = decimal.Parse(txtImporte.Text);
-            entry.FormatImporte = (decimal.Parse(txtImporte.Text)).ToString("N");
+            entry.FormatImporte = (decimal.Parse(txtImporte.Text)).ToString("#0.000000");
             entry.Divisa = GetDivisa();
         }
 
@@ -265,7 +265,7 @@ namespace wpfEFac.Views.PuntoVenta
             entry.pesoKg = decimal.Parse(txtPesoKg.Text);
             entry.IdOrigen = txtIdOrigen.Text;
             entry.IdDestino = txtIdDestino.Text;
-            entry.FormatPrecioUnitario = decimal.Parse(txtPrecioUnitario.Text).ToString("N");
+            entry.FormatPrecioUnitario = decimal.Parse(txtPrecioUnitario.Text).ToString("#0.000000");
             entry.IVA = decimal.Parse(txtIVA.Text);
             entry.retIVA = decimal.Parse(txtRetIVA.Text);
             entry.retISR = decimal.Parse(txtRetISR.Text);
@@ -273,7 +273,7 @@ namespace wpfEFac.Views.PuntoVenta
             entry.Descuento = decimal.Parse(txtImporteDescuento.Text);
             entry.FormatDescuento = txtDescuento.Text + " %";
             entry.Importe = decimal.Parse(txtImporte.Text);
-            entry.FormatImporte = (decimal.Parse(txtImporte.Text)).ToString("N");
+            entry.FormatImporte = (decimal.Parse(txtImporte.Text)).ToString("#0.000000");
         }
 
         private void btnCerrar_Click(object sender, RoutedEventArgs e)
@@ -309,7 +309,7 @@ namespace wpfEFac.Views.PuntoVenta
                  */
                 txtCantidad.Text = "1";
                 txtNombre.Text = entry.Nombre.ToString();
-                txtPrecioUnitario.Text = entry.PrecioUnitario.ToString("N");
+                txtPrecioUnitario.Text = entry.PrecioUnitario.ToString("#0.000000");
                 txtUnidad.Text = entry.Unidad;
                 txtIVA.Text = entry.IVA.ToString();
                 txtRetIVA.Text = entry.retIVA.ToString();
@@ -338,7 +338,7 @@ namespace wpfEFac.Views.PuntoVenta
 
                         decimal dcmPrecioUnitario = decimal.Parse(txtPrecioUnitario.Text)/decimal.Parse("1.16");
 
-                        txtPrecioUnitario.Text = dcmPrecioUnitario.ToString("#0.0000"); 
+                        txtPrecioUnitario.Text = dcmPrecioUnitario.ToString("#0.000000"); 
 
 
                         resultado = decimal.Parse(txtCantidad.Text) * dcmPrecioUnitario;
@@ -351,8 +351,8 @@ namespace wpfEFac.Views.PuntoVenta
                     decimal importe = resultado - descuento;
 
                     entry.Importe = importe;
-                    txtImporteDescuento.Text = descuento.ToString("N");
-                    txtImporte.Text = importe.ToString("N");
+                    txtImporteDescuento.Text = descuento.ToString("#0.000000");
+                    txtImporte.Text = importe.ToString("#0.000000");
                 }    
             }
             else

@@ -46,6 +46,11 @@ namespace wpfEFac.Models
             return empdb.GetCFD();
         }
 
+        public ObservableCollection<Folios> GetFolios()
+        {
+            return empdb.GetFolios();
+        }
+
         public ObservableCollection<Paises> GetPais()
         {
             return empdb.GetPais();

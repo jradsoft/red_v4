@@ -1,7 +1,7 @@
 ﻿<Window x:Class="wpfEFac.Views.Vehiculos.AgregarVehiculo"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Agregar Vehiculo" Height="300" Width="500">
+        Title="Agregar Vehiculo" Height="350" Width="600">
     <Grid>
 
         <Grid.Background>
@@ -43,7 +43,7 @@
         <TextBlock Grid.Row="0" Grid.Column="1" Height="23" HorizontalAlignment="Left" Name="txbPlaca" Text="Placa" VerticalAlignment="Center" />
         <TextBox Grid.Column="2" Grid.Row="0" Height="23" HorizontalAlignment="Left" Name="txtPlaca" VerticalAlignment="Center" Width="180"  TabIndex="2" />
 
-        <TextBlock Grid.Row="1" Grid.Column="1" Height="23" HorizontalAlignment="Left" Name="txbModelo" Text="Modelo" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="1" Grid.Column="1" Height="23" HorizontalAlignment="Left" Name="txbModelo" Text="Permiso SCT:" VerticalAlignment="Center" />
         <TextBox AcceptsReturn="True" Height="23" Grid.Column="2" Grid.Row="1"  HorizontalAlignment="Left" Name="txtModelo" VerticalAlignment="Center" Width="180" TabIndex="1" />
 
         <TextBlock Grid.Row="2" Grid.Column="1" Height="23" HorizontalAlignment="Left" Name="txbAno" Text="Año" VerticalAlignment="Center" />
@@ -60,15 +60,23 @@
         <TextBox Grid.Column="2" Grid.Row="5" Height="23" HorizontalAlignment="Left" Name="txtAeguradoraRepCiv" VerticalAlignment="Center" Width="180"  TabIndex="3" />
 
         <TextBlock Grid.Row="6" Grid.Column="1" Height="23" HorizontalAlignment="Left" Name="txbTipoVehiculo" Text="Tipo vehiculo" VerticalAlignment="Center" />
-        <ComboBox Grid.Row="6" Grid.Column="2" SelectedIndex="0"  Height="23" Name="cmbTipo" VerticalAlignment="Top" Width="180" Background="White" TabIndex="4">
+        <ComboBox Grid.Row="6" Grid.Column="2" SelectedIndex="0"  Height="23" Name="cmbTipo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180" DropDownClosed="cmbTipo_DropDownClosed" SelectionChanged="cmbTipo_SelectionChanged" Background="White" TabIndex="4">
             <ComboBox.Items>
                 <TextBlock  Text="Tracto"/>
                 <TextBlock  Text="Remolque"/>
             </ComboBox.Items>
         </ComboBox>
 
-        <Button Click="bttGuardar_Click" Content="Guardar" Grid.Row="9" Grid.Column="2" Margin="80,0,0,0" Height="23" HorizontalAlignment="Left" Name="bttGuardar" VerticalAlignment="Center" Width="75" TabIndex="11" />
-        <Button Click="bttCancelar_Click" Content="Cancelar" Grid.Row="9" Grid.Column="3" Margin="0,0,10,0" Height="23" HorizontalAlignment="Right" Name="bttCancelar" VerticalAlignment="Center" Width="75" TabIndex="12" />
+        <TextBlock Grid.Row="7" Grid.Column="1" Height="23" HorizontalAlignment="Left" Name="txbConfVehicular"  Text="Configuracion Vehicular" VerticalAlignment="Center" />
+        <ComboBox Grid.Row="7" Grid.Column="2" SelectedIndex="0"  HorizontalAlignment="Left" Height="23" Name="cmbConfVehicular" VerticalAlignment="Top" SelectedItem="0"  Width="180" Background="White" TabIndex="4"/>
+        <ComboBox Grid.Row="7" Grid.Column="2" SelectedIndex="0"  Height="23" Name="cmbConfRemolque" VerticalAlignment="Top" SelectedItem="0"  Width="180" Background="White" TabIndex="4" Visibility="Collapsed"/>
+
+        <TextBlock Grid.Row="8" Grid.Column="1" Height="23" HorizontalAlignment="Left" Name="txbNoEconomico"  Text="No Economico" VerticalAlignment="Center" />
+        <TextBox Grid.Column="2" Grid.Row="8" Height="23" HorizontalAlignment="Left" Name="txtNoEconomico" VerticalAlignment="Center" Width="180"  TabIndex="3" />
+
+
+        <Button Click="bttGuardar_Click" Content="Guardar" Grid.Row="10" Grid.Column="2" Margin="80,0,0,0" Height="23" HorizontalAlignment="Left" Name="bttGuardar" VerticalAlignment="Center" Width="75" TabIndex="11" />
+        <Button Click="bttCancelar_Click" Content="Cancelar" Grid.Row="10" Grid.Column="3" Margin="0,0,10,0" Height="23" HorizontalAlignment="Right" Name="bttCancelar" VerticalAlignment="Center" Width="75" TabIndex="12" />
 
 
 

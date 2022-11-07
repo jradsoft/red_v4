@@ -31,7 +31,19 @@ namespace wpfEFac.Views.Vehiculos
             entidad = new eFacDBEntities();
             epvm = new EditarVehiculoViewModels();
             this.placa = placa;
-            this.Loaded += EditarVehiculo_Loaded;  
+            this.Loaded += EditarVehiculo_Loaded;
+            wpfEFac.Models.Configuracion_Vehicular conf = new Models.Configuracion_Vehicular();
+            wpfEFac.Models.TipoRemolque confRemolque = new Models.TipoRemolque();
+
+            cmbConfVehicular.ItemsSource = entidad.Configuracion_Vehicular.OrderBy(x => x.str_descripcion);
+            cmbConfVehicular.DisplayMemberPath = "str_descripcion";
+            cmbConfVehicular.SelectedValuePath = "str_codigo";
+            cmbConfVehicular.SelectedValue = conf.id;
+
+            cmbConfRemolque.ItemsSource = entidad.TipoRemolque.OrderBy(x => x.str_descripcion);
+            cmbConfRemolque.DisplayMemberPath = "str_descripcion";
+            cmbConfRemolque.SelectedValuePath = "str_codigo";
+            cmbConfRemolque.SelectedValue = confRemolque.id;
         }
 
         protected void EditarVehiculo_Loaded(object sender, RoutedEventArgs e)
@@ -46,6 +58,19 @@ namespace wpfEFac.Views.Vehiculos
                 txtAseguradoraCarga.Text = pro.strAseguradoraCarga;
                 txtAseguradoraRepCiv.Text = pro.strAseguradoraRepCivil;
                 cmbTipo.Text = pro.strTipoVehiculo;
+                txtNoEconomico.Text = pro.NoEconomico;
+                if (cmbTipo.Text =="Tracto")
+                {
+                    cmbConfVehicular.Text = pro.strConfigVehicular;
+                }
+                else {
+                    cmbConfVehicular.Visibility = System.Windows.Visibility.Collapsed;
+                    cmbConfRemolque.Visibility = System.Windows.Visibility.Visible;
+                    cmbConfRemolque.Text = pro.strConfigVehicular;
+
+                
+                }
+
             }
             catch (Exception ex) {
 
@@ -62,6 +87,20 @@ namespace wpfEFac.Views.Vehiculos
         private void bttGuardar_Click(object sender, RoutedEventArgs e)
         {
             try {
+
+                string strConfigVehicular ="";
+
+                if (cmbTipo.SelectedIndex == 0)
+                {
+                    strConfigVehicular = cmbConfVehicular.Text;
+                }
+                else
+                {
+                    strConfigVehicular = cmbConfRemolque.Text;
+
+                }
+
+
                 BusClientes bus = new BusClientes();
                 if (bus.EditarVehiculo(placa,
                     txtPlaca.Text,
@@ -70,7 +109,9 @@ namespace wpfEFac.Views.Vehiculos
                     txtPoliza.Text,
                     txtAseguradoraCarga.Text,
                     txtAseguradoraRepCiv.Text,
-                    cmbTipo.Text
+                    cmbTipo.Text,
+                    strConfigVehicular,
+                    txtNoEconomico.Text
 
                     )) {
                         MessageBox.Show("El Vehiculo se ha Editado Corrrectamente", "Editado", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -93,6 +134,37 @@ namespace wpfEFac.Views.Vehiculos
         private void bttCancelar_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
+        }
+
+        private void cmbTipo_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmbTipo.SelectedIndex == 0)
+            {
+
+                cmbConfVehicular.Visibility = System.Windows.Visibility.Visible;
+                cmbConfRemolque.Visibility = System.Windows.Visibility.Collapsed;
+            }
+            else {
+                cmbConfVehicular.Visibility = System.Windows.Visibility.Collapsed;
+                cmbConfRemolque.Visibility = System.Windows.Visibility.Visible;
+            
+            }
+        }
+
+        private void cmbTipo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmbTipo.SelectedIndex == 0)
+            {
+
+             //   cmbConfVehicular.Visibility = System.Windows.Visibility.Visible;
+             //   cmbConfRemolque.Visibility = System.Windows.Visibility.Collapsed;
+            }
+            else
+            {
+              //  cmbConfVehicular.Visibility = System.Windows.Visibility.Collapsed;
+              //  cmbConfRemolque.Visibility = System.Windows.Visibility.Visible;
+
+            }
         }
     }
 }

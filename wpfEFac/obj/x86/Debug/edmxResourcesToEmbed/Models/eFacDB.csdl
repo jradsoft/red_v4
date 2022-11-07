@@ -21,9 +21,7 @@
     <EntitySet Name="Municipio" EntityType="eFacDB.Municipio" />
     <EntitySet Name="Paises" EntityType="eFacDB.Paises" />
     <EntitySet Name="Productos" EntityType="eFacDB.Productos" />
-    <EntitySet Name="Retenciones" EntityType="eFacDB.Retenciones" />
     <EntitySet Name="TipoRemolque" EntityType="eFacDB.TipoRemolque" />
-    <EntitySet Name="Traslados" EntityType="eFacDB.Traslados" />
     <EntitySet Name="UnidadMedida" EntityType="eFacDB.UnidadMedida" />
     <EntitySet Name="Usuarios" EntityType="eFacDB.Usuarios" />
     <EntitySet Name="Vehiculos" EntityType="eFacDB.Vehiculos" />
@@ -43,7 +41,7 @@
       <End Role="Certificates" EntitySet="Certificates" />
       <End Role="Factura" EntitySet="Factura" />
     </AssociationSet>
-    <AssociationSet Name="FK_Folios_0" Association="eFacDB.FK_Folios_0">
+    <AssociationSet Name="FK_Folios_1" Association="eFacDB.FK_Folios_1">
       <End Role="Certificates" EntitySet="Certificates" />
       <End Role="Folios" EntitySet="Folios" />
     </AssociationSet>
@@ -92,11 +90,11 @@
       <End Role="ConfiguracionEmail" EntitySet="ConfiguracionEmail" />
     </AssociationSet>
     <AssociationSet Name="FK_Detalle_Factura_0" Association="eFacDB.FK_Detalle_Factura_0">
-      <End Role="Productos" EntitySet="Productos" />
+      <End Role="Factura" EntitySet="Factura" />
       <End Role="Detalle_Factura" EntitySet="Detalle_Factura" />
     </AssociationSet>
     <AssociationSet Name="FK_Detalle_Factura_1" Association="eFacDB.FK_Detalle_Factura_1">
-      <End Role="Factura" EntitySet="Factura" />
+      <End Role="Productos" EntitySet="Productos" />
       <End Role="Detalle_Factura" EntitySet="Detalle_Factura" />
     </AssociationSet>
     <AssociationSet Name="FK_Direcciones_Fiscales_2" Association="eFacDB.FK_Direcciones_Fiscales_2">
@@ -111,7 +109,7 @@
       <End Role="Empresa" EntitySet="Empresa" />
       <End Role="Factura" EntitySet="Factura" />
     </AssociationSet>
-    <AssociationSet Name="FK_Folios_1" Association="eFacDB.FK_Folios_1">
+    <AssociationSet Name="FK_Folios_0" Association="eFacDB.FK_Folios_0">
       <End Role="Empresa" EntitySet="Empresa" />
       <End Role="Folios" EntitySet="Folios" />
     </AssociationSet>
@@ -122,10 +120,6 @@
     <AssociationSet Name="FK_Productos_0" Association="eFacDB.FK_Productos_0">
       <End Role="Empresa" EntitySet="Empresa" />
       <End Role="Productos" EntitySet="Productos" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Traslados_0" Association="eFacDB.FK_Traslados_0">
-      <End Role="Empresa" EntitySet="Empresa" />
-      <End Role="Traslados" EntitySet="Traslados" />
     </AssociationSet>
     <AssociationSet Name="FK_UnidadMedida_0" Association="eFacDB.FK_UnidadMedida_0">
       <End Role="Empresa" EntitySet="Empresa" />
@@ -142,14 +136,6 @@
     <AssociationSet Name="FK_Factura_1" Association="eFacDB.FK_Factura_1">
       <End Role="Usuarios" EntitySet="Usuarios" />
       <End Role="Factura" EntitySet="Factura" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Retenciones_0" Association="eFacDB.FK_Retenciones_0">
-      <End Role="Factura" EntitySet="Factura" />
-      <End Role="Retenciones" EntitySet="Retenciones" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Traslados_1" Association="eFacDB.FK_Traslados_1">
-      <End Role="Factura" EntitySet="Factura" />
-      <End Role="Traslados" EntitySet="Traslados" />
     </AssociationSet>
     <AssociationSet Name="FK_Usuarios_0" Association="eFacDB.FK_Usuarios_0">
       <End Role="Grupos" EntitySet="Grupos" />
@@ -186,7 +172,7 @@
     <Property Name="chrStatus" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Empresa" Relationship="eFacDB.FK_Certificates_0" FromRole="Certificates" ToRole="Empresa" />
     <NavigationProperty Name="Factura" Relationship="eFacDB.FK_Factura_4" FromRole="Certificates" ToRole="Factura" />
-    <NavigationProperty Name="Folios" Relationship="eFacDB.FK_Folios_0" FromRole="Certificates" ToRole="Folios" />
+    <NavigationProperty Name="Folios" Relationship="eFacDB.FK_Folios_1" FromRole="Certificates" ToRole="Folios" />
   </EntityType>
   <EntityType Name="CFD">
     <Key>
@@ -235,9 +221,9 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int64" Nullable="false" />
-    <Property Name="str_codigo" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-    <Property Name="str_descripcion" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="str_codigo" Type="String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" />
+    <Property Name="str_descripcion" Type="String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="Configuracion_Regional">
     <Key>
@@ -257,9 +243,9 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int64" Nullable="false" />
-    <Property Name="str_codigo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="str_descripcion" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="str_codigo" Type="String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" />
+    <Property Name="str_descripcion" Type="String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="ConfiguracionContadorTabla">
     <Key>
@@ -294,19 +280,19 @@
     <Property Name="intID" Type="Int32" Nullable="false" />
     <Property Name="intID_Factura" Type="Int32" Nullable="false" />
     <Property Name="intID_Producto" Type="Int32" Nullable="false" />
-    <Property Name="dcmCantidad" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
-    <Property Name="dcmDescuento" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
-    <Property Name="dcmImporte" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="dcmCantidad" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="dcmDescuento" Type="Decimal" Nullable="false" Precision="14" Scale="6" />
+    <Property Name="dcmImporte" Type="Decimal" Nullable="false" Precision="14" Scale="6" />
     <Property Name="strUnidad" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="strConcepto" Type="String" Nullable="false" MaxLength="400" Unicode="true" FixedLength="false" />
-    <Property Name="dcmPrecioUnitario" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="dcmPrecioUnitario" Type="Decimal" Nullable="false" Precision="14" Scale="6" />
     <Property Name="strPatida" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="dcmIVA" Type="Decimal" Precision="10" Scale="2" />
-    <Property Name="retIVA" Type="Decimal" Precision="10" Scale="2" />
-    <Property Name="retISR" Type="Decimal" Precision="10" Scale="2" />
-    <Property Name="retIEPS" Type="Decimal" Precision="10" Scale="2" />
-    <NavigationProperty Name="Productos" Relationship="eFacDB.FK_Detalle_Factura_0" FromRole="Detalle_Factura" ToRole="Productos" />
-    <NavigationProperty Name="Factura" Relationship="eFacDB.FK_Detalle_Factura_1" FromRole="Detalle_Factura" ToRole="Factura" />
+    <Property Name="dcmIVA" Type="Decimal" Precision="14" Scale="6" />
+    <Property Name="retIVA" Type="Decimal" Precision="14" Scale="6" />
+    <Property Name="retISR" Type="Decimal" Precision="14" Scale="6" />
+    <Property Name="retIEPS" Type="Decimal" Precision="14" Scale="6" />
+    <NavigationProperty Name="Factura" Relationship="eFacDB.FK_Detalle_Factura_0" FromRole="Detalle_Factura" ToRole="Factura" />
+    <NavigationProperty Name="Productos" Relationship="eFacDB.FK_Detalle_Factura_1" FromRole="Detalle_Factura" ToRole="Productos" />
   </EntityType>
   <EntityType Name="Direcciones_Fiscales">
     <Key>
@@ -363,10 +349,9 @@
     <NavigationProperty Name="ConfiguracionContadorTabla" Relationship="eFacDB.FK_ConfiguracionContadorTabla_0" FromRole="Empresa" ToRole="ConfiguracionContadorTabla" />
     <NavigationProperty Name="ConfiguracionEmail" Relationship="eFacDB.FK_ConfiguracionEmail_0" FromRole="Empresa" ToRole="ConfiguracionEmail" />
     <NavigationProperty Name="Factura" Relationship="eFacDB.FK_Factura_0" FromRole="Empresa" ToRole="Factura" />
-    <NavigationProperty Name="Folios" Relationship="eFacDB.FK_Folios_1" FromRole="Empresa" ToRole="Folios" />
+    <NavigationProperty Name="Folios" Relationship="eFacDB.FK_Folios_0" FromRole="Empresa" ToRole="Folios" />
     <NavigationProperty Name="Grupos" Relationship="eFacDB.FK_Grupos_0" FromRole="Empresa" ToRole="Grupos" />
     <NavigationProperty Name="Productos" Relationship="eFacDB.FK_Productos_0" FromRole="Empresa" ToRole="Productos" />
-    <NavigationProperty Name="Traslados" Relationship="eFacDB.FK_Traslados_0" FromRole="Empresa" ToRole="Traslados" />
     <NavigationProperty Name="UnidadMedida" Relationship="eFacDB.FK_UnidadMedida_0" FromRole="Empresa" ToRole="UnidadMedida" />
     <NavigationProperty Name="Usuarios" Relationship="eFacDB.FK_Usuarios_1" FromRole="Empresa" ToRole="Usuarios" />
   </EntityType>
@@ -395,9 +380,9 @@
     <Property Name="intID_Cliente" Type="Int32" Nullable="false" />
     <Property Name="strForma_Pago" Type="String" Nullable="false" MaxLength="75" Unicode="true" FixedLength="false" />
     <Property Name="strObervaciones" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
-    <Property Name="dcmSubTotal" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
-    <Property Name="dcmIVA" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
-    <Property Name="dcmTotal" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="dcmSubTotal" Type="Decimal" Nullable="false" Precision="14" Scale="6" />
+    <Property Name="dcmIVA" Type="Decimal" Nullable="false" Precision="14" Scale="6" />
+    <Property Name="dcmTotal" Type="Decimal" Nullable="false" Precision="14" Scale="6" />
     <Property Name="chrStatus" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="false" />
     <Property Name="strProveedor" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="strNumero" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
@@ -406,15 +391,15 @@
     <Property Name="intID_Certificate" Type="Int32" Nullable="false" />
     <Property Name="strCadenaOriginal" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
     <Property Name="strSelloDigital" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-    <Property Name="dcmDescuento" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="dcmDescuento" Type="Decimal" Precision="14" Scale="6" />
     <Property Name="dtmFechaCancelacion" Type="DateTime" />
     <Property Name="dtmFechaEnvio" Type="DateTime" />
     <Property Name="strXMLpath" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
     <Property Name="strPDFpath" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
     <Property Name="strPDFdemoPath" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
-    <Property Name="dcmRetIVA" Type="Decimal" Precision="10" Scale="2" />
-    <Property Name="dcmRetISR" Type="Decimal" Precision="10" Scale="2" />
-    <Property Name="dcmRetIEPS" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="dcmRetIVA" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="dcmRetISR" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="dcmRetIEPS" Type="Decimal" Precision="12" Scale="6" />
     <Property Name="Divisa" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="TipoCambio" Type="Decimal" Precision="12" Scale="6" />
     <Property Name="CondPago" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
@@ -430,11 +415,9 @@
     <NavigationProperty Name="Certificates" Relationship="eFacDB.FK_Factura_4" FromRole="Factura" ToRole="Certificates" />
     <NavigationProperty Name="CFD" Relationship="eFacDB.FK_Factura_3" FromRole="Factura" ToRole="CFD" />
     <NavigationProperty Name="Clientes" Relationship="eFacDB.FK_Factura_2" FromRole="Factura" ToRole="Clientes" />
-    <NavigationProperty Name="Detalle_Factura" Relationship="eFacDB.FK_Detalle_Factura_1" FromRole="Factura" ToRole="Detalle_Factura" />
+    <NavigationProperty Name="Detalle_Factura" Relationship="eFacDB.FK_Detalle_Factura_0" FromRole="Factura" ToRole="Detalle_Factura" />
     <NavigationProperty Name="Empresa" Relationship="eFacDB.FK_Factura_0" FromRole="Factura" ToRole="Empresa" />
     <NavigationProperty Name="Usuarios" Relationship="eFacDB.FK_Factura_1" FromRole="Factura" ToRole="Usuarios" />
-    <NavigationProperty Name="Retenciones" Relationship="eFacDB.FK_Retenciones_0" FromRole="Factura" ToRole="Retenciones" />
-    <NavigationProperty Name="Traslados" Relationship="eFacDB.FK_Traslados_1" FromRole="Factura" ToRole="Traslados" />
   </EntityType>
   <EntityType Name="Folios">
     <Key>
@@ -450,9 +433,9 @@
     <Property Name="intID_Empresa" Type="Int32" Nullable="false" />
     <Property Name="chrStatus" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="false" />
     <Property Name="intFolioActual" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Certificates" Relationship="eFacDB.FK_Folios_0" FromRole="Folios" ToRole="Certificates" />
+    <NavigationProperty Name="Certificates" Relationship="eFacDB.FK_Folios_1" FromRole="Folios" ToRole="Certificates" />
     <NavigationProperty Name="CFD" Relationship="eFacDB.FK_CFD_1" FromRole="Folios" ToRole="CFD" />
-    <NavigationProperty Name="Empresa" Relationship="eFacDB.FK_Folios_1" FromRole="Folios" ToRole="Empresa" />
+    <NavigationProperty Name="Empresa" Relationship="eFacDB.FK_Folios_0" FromRole="Folios" ToRole="Empresa" />
   </EntityType>
   <EntityType Name="Grupos">
     <Key>
@@ -469,17 +452,17 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int64" Nullable="false" />
-    <Property Name="str_codigo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="str_descripcion" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="str_codigo" Type="String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" />
+    <Property Name="str_descripcion" Type="String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="Municipio">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int64" Nullable="false" />
-    <Property Name="str_codigo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="str_descripcion" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="str_codigo" Type="String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" />
+    <Property Name="str_descripcion" Type="String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="Paises">
     <Key>
@@ -496,15 +479,15 @@
     </Key>
     <Property Name="intID" Type="Int32" Nullable="false" />
     <Property Name="intID_Categoria" Type="Int32" Nullable="false" />
-    <Property Name="strNombre" Type="String" Nullable="false" MaxLength="75" Unicode="true" FixedLength="false" />
+    <Property Name="strNombre" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
     <Property Name="strNombreCorto" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="strCodigo" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="dcmPrecio1" Type="Decimal" Precision="10" Scale="2" />
-    <Property Name="dcmPrecio2" Type="Decimal" Precision="10" Scale="2" />
-    <Property Name="dcmPrecio3" Type="Decimal" Precision="10" Scale="2" />
-    <Property Name="dcmPrecio4" Type="Decimal" Precision="10" Scale="2" />
-    <Property Name="dcmPrecio5" Type="Decimal" Precision="10" Scale="2" />
-    <Property Name="dcmDescuent" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="dcmPrecio1" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="dcmPrecio2" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="dcmPrecio3" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="dcmPrecio4" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="dcmPrecio5" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="dcmDescuent" Type="Decimal" Nullable="false" Precision="10" Scale="6" />
     <Property Name="intUnidad" Type="Int32" Nullable="false" />
     <Property Name="strDescripcion" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
     <Property Name="intID_Empresa" Type="Int32" Nullable="false" />
@@ -517,47 +500,22 @@
     <Property Name="porcRetIva" Type="Decimal" Precision="10" Scale="4" />
     <Property Name="gravaRetIsr" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
     <Property Name="porcRetIsr" Type="Decimal" Precision="10" Scale="4" />
-    <Property Name="existencias" Type="Decimal" Precision="10" Scale="4" />
-    <Property Name="stockMin" Type="Decimal" Precision="10" Scale="4" />
-    <Property Name="stockMax" Type="Decimal" Precision="10" Scale="4" />
-    <Property Name="puntoReorden" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="existencias" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="stockMin" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="stockMax" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="puntoReorden" Type="Decimal" Precision="10" Scale="2" />
     <NavigationProperty Name="Categorias" Relationship="eFacDB.FK_Productos_2" FromRole="Productos" ToRole="Categorias" />
-    <NavigationProperty Name="Detalle_Factura" Relationship="eFacDB.FK_Detalle_Factura_0" FromRole="Productos" ToRole="Detalle_Factura" />
+    <NavigationProperty Name="Detalle_Factura" Relationship="eFacDB.FK_Detalle_Factura_1" FromRole="Productos" ToRole="Detalle_Factura" />
     <NavigationProperty Name="Empresa" Relationship="eFacDB.FK_Productos_0" FromRole="Productos" ToRole="Empresa" />
     <NavigationProperty Name="UnidadMedida" Relationship="eFacDB.FK_Productos_1" FromRole="Productos" ToRole="UnidadMedida" />
-  </EntityType>
-  <EntityType Name="Retenciones">
-    <Key>
-      <PropertyRef Name="intId" />
-    </Key>
-    <Property Name="intId" Type="Int64" Nullable="false" />
-    <Property Name="IdFactura" Type="Int32" Nullable="false" />
-    <Property Name="strTipoIva" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="decImporte" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
-    <Property Name="intIdEmpresa" Type="Int64" Nullable="false" />
-    <NavigationProperty Name="Factura" Relationship="eFacDB.FK_Retenciones_0" FromRole="Retenciones" ToRole="Factura" />
   </EntityType>
   <EntityType Name="TipoRemolque">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int64" Nullable="false" />
-    <Property Name="str_codigo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="str_descripcion" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-  </EntityType>
-  <EntityType Name="Traslados">
-    <Key>
-      <PropertyRef Name="intID" />
-    </Key>
-    <Property Name="intID" Type="Int32" Nullable="false" />
-    <Property Name="intID_Factura" Type="Int32" Nullable="false" />
-    <Property Name="strTipoImpuesto" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
-    <Property Name="dcmTasa" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
-    <Property Name="dcmImporte" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
-    <Property Name="TotalImpuestoTrasladado" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
-    <Property Name="intID_Empresa" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Empresa" Relationship="eFacDB.FK_Traslados_0" FromRole="Traslados" ToRole="Empresa" />
-    <NavigationProperty Name="Factura" Relationship="eFacDB.FK_Traslados_1" FromRole="Traslados" ToRole="Factura" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="str_codigo" Type="String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" />
+    <Property Name="str_descripcion" Type="String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="UnidadMedida">
     <Key>
@@ -594,6 +552,8 @@
     <Property Name="strAseguradoraCarga" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="strAseguradoraRepCivil" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="strTipoVehiculo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="strConfigVehicular" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="NoEconomico" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
   </EntityType>
   <Association Name="FK_Categorias_0">
     <End Role="Empresa" Type="eFacDB.Empresa" Multiplicity="1" />
@@ -643,7 +603,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Folios_0">
+  <Association Name="FK_Folios_1">
     <End Role="Certificates" Type="eFacDB.Certificates" Multiplicity="1" />
     <End Role="Folios" Type="eFacDB.Folios" Multiplicity="*" />
     <ReferentialConstraint>
@@ -788,18 +748,6 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Detalle_Factura_0">
-    <End Role="Productos" Type="eFacDB.Productos" Multiplicity="1" />
-    <End Role="Detalle_Factura" Type="eFacDB.Detalle_Factura" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Productos">
-        <PropertyRef Name="intID" />
-      </Principal>
-      <Dependent Role="Detalle_Factura">
-        <PropertyRef Name="intID_Producto" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Detalle_Factura_1">
     <End Role="Factura" Type="eFacDB.Factura" Multiplicity="1" />
     <End Role="Detalle_Factura" Type="eFacDB.Detalle_Factura" Multiplicity="*" />
     <ReferentialConstraint>
@@ -808,6 +756,18 @@
       </Principal>
       <Dependent Role="Detalle_Factura">
         <PropertyRef Name="intID_Factura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detalle_Factura_1">
+    <End Role="Productos" Type="eFacDB.Productos" Multiplicity="1" />
+    <End Role="Detalle_Factura" Type="eFacDB.Detalle_Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="intID" />
+      </Principal>
+      <Dependent Role="Detalle_Factura">
+        <PropertyRef Name="intID_Producto" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -847,7 +807,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Folios_1">
+  <Association Name="FK_Folios_0">
     <End Role="Empresa" Type="eFacDB.Empresa" Multiplicity="1" />
     <End Role="Folios" Type="eFacDB.Folios" Multiplicity="*" />
     <ReferentialConstraint>
@@ -879,18 +839,6 @@
         <PropertyRef Name="intID" />
       </Principal>
       <Dependent Role="Productos">
-        <PropertyRef Name="intID_Empresa" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Traslados_0">
-    <End Role="Empresa" Type="eFacDB.Empresa" Multiplicity="1" />
-    <End Role="Traslados" Type="eFacDB.Traslados" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Empresa">
-        <PropertyRef Name="intID" />
-      </Principal>
-      <Dependent Role="Traslados">
         <PropertyRef Name="intID_Empresa" />
       </Dependent>
     </ReferentialConstraint>
@@ -940,30 +888,6 @@
       </Principal>
       <Dependent Role="Factura">
         <PropertyRef Name="intID_Usuario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Retenciones_0">
-    <End Role="Factura" Type="eFacDB.Factura" Multiplicity="1" />
-    <End Role="Retenciones" Type="eFacDB.Retenciones" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Factura">
-        <PropertyRef Name="intID" />
-      </Principal>
-      <Dependent Role="Retenciones">
-        <PropertyRef Name="IdFactura" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Traslados_1">
-    <End Role="Factura" Type="eFacDB.Factura" Multiplicity="1" />
-    <End Role="Traslados" Type="eFacDB.Traslados" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Factura">
-        <PropertyRef Name="intID" />
-      </Principal>
-      <Dependent Role="Traslados">
-        <PropertyRef Name="intID_Factura" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

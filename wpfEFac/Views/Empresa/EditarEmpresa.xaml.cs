@@ -24,11 +24,12 @@ namespace wpfEFac.Views.Empresa
     {
         private EditarEmpresaViewModel ctx;
         private int id;
+        eFacDBEntities db;
 
         public EditarEmpresa(int id)  
         {
             InitializeComponent();
-            
+            db = new eFacDBEntities();
             this.id = id;
             ctx = new EditarEmpresaViewModel();
             this.Loaded += EditarEmpresa_Loaded;
@@ -70,6 +71,11 @@ namespace wpfEFac.Views.Empresa
             this.txtFolioInicio.Text = empresa.Folios.FirstOrDefault().intFolio_Inicial.ToString();
             this.txtFolioFinal.Text = empresa.Folios.FirstOrDefault().intFolio_Final.ToString();
             this.txtFolioActual.Text = empresa.Folios.FirstOrDefault().intFolioActual.ToString();
+
+            cmbSerie.ItemsSource = ctx.GetFolios();
+            cmbSerie.DisplayMemberPath = "strSerie";
+            cmbSerie.SelectedValuePath = "intID";
+            cmbSerie.SelectedValue = empresa.Folios.FirstOrDefault().intID;
         }
 
         private void LoadCertificado(Models.Empresa empresa)
@@ -642,6 +648,46 @@ namespace wpfEFac.Views.Empresa
             }
 
             return true;
+        }
+
+        private void bttAddDireccion_Click(object sender, RoutedEventArgs e)
+        {
+            NuevaDireccion newDir = new NuevaDireccion();
+            newDir.Show();
+        }
+
+        private void btnAgregarFolios_Click(object sender, RoutedEventArgs e)
+        {
+            AgregarSerieFolio newSF = new AgregarSerieFolio();
+            newSF.Closed += (s, args) =>
+            {
+                if (newSF.DialogResult.Value)
+                {
+                    this.Loaded += EditarEmpresa_Loaded;
+                }
+            };
+            newSF.ShowDialog();
+        }
+
+        private void cmbSerie_DropDownClosed(object sender, EventArgs e)
+        {
+            try
+            {
+                var idFolio = cmbSerie.SelectedValue.ToString();
+
+                int intFolio = int.Parse(idFolio);
+
+                var value = db.Folios.FirstOrDefault(x => x.intID == intFolio);
+
+                this.txtIdFolio.Text = intFolio.ToString();
+                this.txtNumeroAprobacion.Text = value.intNumero_Aprovacion.ToString();
+                this.txtSerie.Text = value.strSerie;
+                this.txtAñoAprobacion.Text = value.strAño_Aprovacion;
+                this.txtFolioInicio.Text = value.intFolio_Inicial.ToString();
+                this.txtFolioFinal.Text = value.intFolio_Final.ToString();
+                this.txtFolioActual.Text = value.intFolioActual.ToString();
+            }
+            catch (Exception ex) { }
         }
 
     }
