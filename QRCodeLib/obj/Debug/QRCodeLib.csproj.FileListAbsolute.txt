@@ -168,3 +168,12 @@ L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\QRCodeLib\ThoughtWorks.QRCode.pd
 L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\QRCodeLib\Newtonsoft.Json.dll
 L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\QRCodeLib\Newtonsoft.Json.xml
 L:\codeAdesoft\Red_facturalo_v4\jr_adesoft_2017\QRCodeLib\obj\Debug\QRCodeLib.csprojResolveAssemblyReference.cache
+E:\projectFacturacion\red_v4\QRCodeLib\obj\Debug\QRCodeLib.csprojResolveAssemblyReference.cache
+E:\projectFacturacion\red_v4\QRCodeLib\obj\Debug\ThoughtWorks.QRCode.Properties.Resources.resources
+E:\projectFacturacion\red_v4\QRCodeLib\obj\Debug\QRCodeLib.csproj.GenerateResource.Cache
+E:\projectFacturacion\red_v4\QRCodeLib\obj\Debug\ThoughtWorks.QRCode.dll
+E:\projectFacturacion\red_v4\QRCodeLib\obj\Debug\ThoughtWorks.QRCode.pdb
+E:\projectFacturacion\red_v4\QRCodeLib\ThoughtWorks.QRCode.dll
+E:\projectFacturacion\red_v4\QRCodeLib\ThoughtWorks.QRCode.pdb
+E:\projectFacturacion\red_v4\QRCodeLib\Newtonsoft.Json.dll
+E:\projectFacturacion\red_v4\QRCodeLib\Newtonsoft.Json.xml

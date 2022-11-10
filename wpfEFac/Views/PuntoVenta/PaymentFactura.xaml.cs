@@ -579,8 +579,8 @@ namespace wpfEFac.Views.PuntoVenta
                     "",//txtDomicilioDestinatario.Text,
                     "",//txtEntregarEn.Text, 
                     null,
-                    ""
-                    //myAddenda
+                    ""//myAddenda,
+
                     ))
                 {
 
@@ -976,11 +976,13 @@ namespace wpfEFac.Views.PuntoVenta
 
                  decimal dcmTotalTraslado = 0;
                  decimal dcmTrasladoBase = 0;
+                 decimal dcmTrasladoBase0 = 0;
                  decimal dcmTotalRetIva = 0;
                  decimal dcmTotalRetIsr = 0;
                  decimal dcmTotalRetIeps = 0;
                  decimal dcmSaldoInsoluto = 0;
                  decimal dcmPagado = 0;
+                 Boolean isTasa0=false;
 
 
                 foreach (var item in dtgFacturasPago.Items) {
@@ -1002,14 +1004,54 @@ namespace wpfEFac.Views.PuntoVenta
                   
                     foreach(var it in detallFactura){
 
-                        decimal dcmBaseDRtotal = 0;
-                        decimal dcmImporteDRtotal = 0;
+                        //decimal dcmBaseDRtotal = 0;
+                        //decimal dcmImporteDRtotal = 0;
 
                         var valueIva = lstImpVarios.Find(i => i.porcImp == it.dcmIVA);
                         var valueRetIva = lstImpVarios.Find(i => i.porcImp == it.retIVA);
                         var valueRetIsr = lstImpVarios.Find(i => i.porcImp == it.retISR);
                         var valueRetIeps = lstImpVarios.Find(i => i.porcImp == it.retIEPS);
 
+
+
+
+                        if (it.dcmIVA == decimal.Parse("0"))
+                        {
+                            isTasa0=true;
+                            dcmTotalTraslado += it.dcmImporte * it.dcmIVA.Value;
+                            dcmTrasladoBase0 += it.dcmImporte;
+
+                            try
+                            {
+
+                                if (valueIva.porcImp == it.dcmIVA)
+                                {
+                                    valueIva.sumaBaseImp = it.dcmImporte + valueIva.sumaBaseImp;
+                                    valueIva.sumaImporteImp = it.dcmImporte * it.dcmIVA.Value + valueIva.sumaImporteImp;
+
+
+                                }
+
+                            }
+                            catch (Exception e)
+                            {
+
+                                lstImpVarios.Add(new ImpuestosVarios()
+                                {
+                                    porcImp = it.dcmIVA.Value,
+                                    TypeIva = true,
+                                    TypeRetIva = false,
+                                    TypeRetIsr = false,
+                                    TypeRetIeps = false,
+                                    sumaBaseImp = it.dcmImporte,
+                                    sumaImporteImp = it.dcmImporte * it.dcmIVA.Value
+
+
+                                });
+                            }
+
+
+                        }
 
                         
                        if (it.dcmIVA == decimal.Parse("0.16")) {
@@ -1158,352 +1200,6 @@ namespace wpfEFac.Views.PuntoVenta
 
                      
 
-
-                        //if (valueIVA == null && it.dcmIVA > 0)
-                        //{
-                           
-
-                        //    dcmBaseDRtotal = 0;
-                        //    dcmImporteDRtotal = 0;
-                          
-                        //    dcmBaseDRtotal = it.dcmImporte;
-                        //    dcmImporteDRtotal = it.dcmImporte * it.dcmIVA.Value;
-                          
-                        //    fillDataImpDR.Add(new DataCompPago.DataCompPagoImpuestosDR()
-                        //    {
-                        //        dcmTasaOCuotaDR = it.dcmIVA.Value,
-                        //        dcmBaseDR = decimal.Parse(dcmBaseDRtotal.ToString("#0.00")),
-                        //        dcmImporteDR = decimal.Parse(dcmImporteDRtotal.ToString("#0.00")),
-                        //        strTipoFactorDR = "Tasa",
-                        //        strImpuestoDR = "002",
-                        //        boolTraslado = true,
-                        //        boolRetencion = false
-
-
-                        //    });
-
-                        
-
-                            
-                        //}
-                        //else
-                        //{
-
-                        //    if (it.dcmIVA > 0)
-                        //    {
-                        //        if (it.dcmIVA == valueIVA.dcmTasaOCuotaDR)
-                        //        {
-
-                        //            valueIVA.dcmBaseDR = it.dcmImporte;
-                        //            valueIVA.dcmImporteDR = it.dcmImporte * it.dcmIVA.Value;
-                                    
-                                 
-                        //            fillDataImpDR.Add(new DataCompPago.DataCompPagoImpuestosDR()
-                        //            {
-                        //                dcmTasaOCuotaDR = it.dcmIVA.Value,
-                        //                dcmBaseDR = decimal.Parse(valueIVA.dcmBaseDR.ToString("#0.00")),
-                        //                dcmImporteDR = decimal.Parse(valueIVA.dcmImporteDR.ToString("#0.00")),
-                        //                strTipoFactorDR = "Tasa",
-                        //                strImpuestoDR = "002",
-                        //                boolTraslado = true,
-                        //                boolRetencion = false
-
-                        //            });
-
-                                  
-                        //        }
-                        //        else
-                        //        {
-                                   
-
-                        //            dcmBaseDRtotal = 0;
-                        //            dcmImporteDRtotal = 0;
-                                   
-                        //            dcmBaseDRtotal = it.dcmImporte;
-                        //            dcmImporteDRtotal = it.dcmImporte * it.dcmIVA.Value;
-
-                                   
-                        //            fillDataImpDR.Add(new DataCompPago.DataCompPagoImpuestosDR()
-                        //            {
-                        //                dcmTasaOCuotaDR = it.dcmIVA.Value,
-                        //                dcmBaseDR = decimal.Parse(dcmBaseDRtotal.ToString("#0.00")),
-                        //                dcmImporteDR = decimal.Parse(dcmImporteDRtotal.ToString("#0.00")),
-                        //                strTipoFactorDR = "Tasa",
-                        //                strImpuestoDR = "002",
-                        //                boolTraslado = true,
-                        //                boolRetencion = false
-
-
-                        //            });
-
-                                   
-
-                        //        }
-
-                        //    }
-                        //}
-
-                        //if (valueRetIva == null && it.retIVA > 0)
-                        //{
-                           
-
-                        //    dcmBaseDRtotal = 0;
-                        //    dcmImporteDRtotal = 0;
-                          
-                        //    dcmBaseDRtotal += it.dcmImporte;
-                        //    dcmImporteDRtotal += it.dcmImporte * it.retIVA.Value;
-
-                           
-                        //    fillDataImpDR.Add(new DataCompPago.DataCompPagoImpuestosDR()
-                        //    {
-                        //        dcmTasaOCuotaDR = it.retIVA.Value,
-                        //        dcmBaseDR = decimal.Parse(dcmBaseDRtotal.ToString("#0.00")),
-                        //        dcmImporteDR = decimal.Parse(dcmImporteDRtotal.ToString("#0.00")),
-                        //        strTipoFactorDR = "Tasa",
-                        //        strImpuestoDR = "002",
-                        //        boolTraslado = false,
-                        //        boolRetencion = true
-
-
-
-                        //    });
-
-                            
-                        //}
-                        //else
-                        //{
-                        //    if (it.retIVA > 0)
-                        //    {
-                        //        if (it.retIVA == valueRetIva.dcmTasaOCuotaDR)
-                        //        {
-
-                                  
-                        //            valueRetIva.dcmBaseDR += it.dcmImporte;
-                        //            valueRetIva.dcmImporteDR += it.dcmImporte * it.retIVA.Value;
-
-                                  
-                        //            fillDataImpDR.Add(new DataCompPago.DataCompPagoImpuestosDR()
-                        //            {
-                        //                dcmTasaOCuotaDR = it.retIVA.Value,
-                        //                dcmBaseDR = decimal.Parse(valueRetIva.dcmBaseDR.ToString("#0.00")),
-                        //                dcmImporteDR = decimal.Parse(valueRetIva.dcmImporteDR.ToString("#0.00")),
-                        //                strTipoFactorDR = "Tasa",
-                        //                strImpuestoDR = "002",
-                        //                boolTraslado = false,
-                        //                boolRetencion = true
-
-                        //            });
-
-                                   
-
-
-                        //        }
-                        //        else
-                        //        {
-                                   
-
-                        //            dcmBaseDRtotal = 0;
-                        //            dcmImporteDRtotal = 0;
-                                
-                        //            dcmBaseDRtotal += it.dcmImporte;
-                        //            dcmImporteDRtotal += it.dcmImporte * it.retIVA.Value;
-
-                        //            fillDataImpDR.Add(new DataCompPago.DataCompPagoImpuestosDR()
-                        //            {
-                        //                dcmTasaOCuotaDR = it.retIVA.Value,
-                        //                dcmBaseDR = decimal.Parse(dcmBaseDRtotal.ToString("#0.00")),
-                        //                dcmImporteDR = decimal.Parse(dcmImporteDRtotal.ToString("#0.00")),
-                        //                strTipoFactorDR = "Tasa",
-                        //                strImpuestoDR = "002",
-                        //                boolTraslado = false,
-                        //                boolRetencion = true
-
-
-
-                        //            });
-
-                                   
-
-
-                        //        }
-                        //    }
-                        //}
-
-                        //if (valueRetIsr == null && it.retISR > 0)
-                        //{
-
-                         
-                        //    dcmBaseDRtotal = 0;
-                        //    dcmImporteDRtotal = 0;
-                           
-                        //    dcmBaseDRtotal += it.dcmImporte;
-                        //    dcmImporteDRtotal += it.dcmImporte * it.retISR.Value;
-
-
-                        //    fillDataImpDR.Add(new DataCompPago.DataCompPagoImpuestosDR()
-                        //    {
-                        //        dcmTasaOCuotaDR = it.retISR.Value,
-                        //        dcmBaseDR = decimal.Parse(dcmBaseDRtotal.ToString("#0.00")),
-                        //        dcmImporteDR = decimal.Parse(dcmImporteDRtotal.ToString("#0.00")),
-                        //        strTipoFactorDR = "Tasa",
-                        //        strImpuestoDR = "001",
-                        //        boolTraslado = false,
-                        //        boolRetencion = true
-
-
-
-                        //    });
-
-                           
-                        //}
-                        //else
-                        //{
-                        //    if (it.retISR > 0)
-                        //    {
-                        //        if (it.retISR == valueRetIsr.dcmTasaOCuotaDR)
-                        //        {
-
-                                  
-
-                        //            valueRetIsr.dcmBaseDR += it.dcmImporte;
-                        //            valueRetIsr.dcmImporteDR += it.dcmImporte * it.retISR.Value;
-
-                                  
-
-                        //            fillDataImpDR.Add(new DataCompPago.DataCompPagoImpuestosDR()
-                        //            {
-                        //                dcmTasaOCuotaDR = it.retISR.Value,
-                        //                dcmBaseDR = decimal.Parse(valueRetIsr.dcmBaseDR.ToString("#0.00")),
-                        //                dcmImporteDR = decimal.Parse(valueRetIsr.dcmImporteDR.ToString("#0.00")),
-                        //                strTipoFactorDR = "Tasa",
-                        //                strImpuestoDR = "001",
-                        //                boolTraslado = false,
-                        //                boolRetencion = true
-
-                        //            });
-
-
-                                   
-
-                        //        }
-                        //        else
-                        //        {
-                                  
-
-                        //            dcmBaseDRtotal = 0;
-                        //            dcmImporteDRtotal = 0;
-
-                                 
-                        //            dcmBaseDRtotal += it.dcmImporte;
-                        //            dcmImporteDRtotal += it.dcmImporte * it.retIVA.Value;
-
-                                 
-                        //            fillDataImpDR.Add(new DataCompPago.DataCompPagoImpuestosDR()
-                        //            {
-                        //                dcmTasaOCuotaDR = it.retISR.Value,
-                        //                dcmBaseDR = decimal.Parse(dcmBaseDRtotal.ToString("#0.00")),
-                        //                dcmImporteDR = decimal.Parse(dcmImporteDRtotal.ToString("#0.00")),
-                        //                strTipoFactorDR = "Tasa",
-                        //                strImpuestoDR = "001",
-                        //                boolTraslado = false,
-                        //                boolRetencion = true
-
-
-
-                        //            });
-
-                                  
-
-
-                        //        }
-                        //    }
-                        //}
-
-                        //if (valueRetIeps == null && it.retIEPS > 0)
-                        //{
-                           
-                           
-
-                        //    dcmBaseDRtotal += it.dcmImporte;
-                        //    dcmImporteDRtotal += it.dcmImporte * it.retIEPS.Value;
-
-
-                          
-                        //    fillDataImpDR.Add(new DataCompPago.DataCompPagoImpuestosDR()
-                        //    {
-                        //        dcmTasaOCuotaDR = it.retIEPS.Value,
-                        //        dcmBaseDR = decimal.Parse(dcmBaseDRtotal.ToString("#0.00")),
-                        //        dcmImporteDR = decimal.Parse(dcmImporteDRtotal.ToString("#0.00")),
-                        //        strTipoFactorDR = "Tasa",
-                        //        strImpuestoDR = "003",
-                        //        boolTraslado = false,
-                        //        boolRetencion = true
-
-                        //    });
-
-                            
-                        //}
-                        //else
-                        //{
-                        //    if (it.retIEPS > 0)
-                        //    {
-                        //        if (it.retIEPS == valueRetIeps.dcmTasaOCuotaDR)
-                        //        {
-                                 
-
-                        //            valueRetIeps.dcmBaseDR += it.dcmImporte;
-                        //            valueRetIeps.dcmImporteDR += it.dcmImporte * it.retIEPS.Value;
-
-                        //            fillDataImpDR.Add(new DataCompPago.DataCompPagoImpuestosDR()
-                        //            {
-                        //                dcmTasaOCuotaDR = it.retIEPS.Value,
-                        //                dcmBaseDR = decimal.Parse(valueRetIeps.dcmBaseDR.ToString("#0.00")),
-                        //                dcmImporteDR = decimal.Parse(valueRetIeps.dcmImporteDR.ToString("#0.00")),
-                        //                strTipoFactorDR = "Tasa",
-                        //                strImpuestoDR = "003",
-                        //                boolTraslado = false,
-                        //                boolRetencion = true
-
-                        //            });
-
-                                   
-
-
-                        //        }
-                        //        else
-                        //        {
-                                   
-
-                        //            dcmBaseDRtotal = 0;
-                        //            dcmImporteDRtotal = 0;
-                                  
-
-                        //            dcmBaseDRtotal += it.dcmImporte;
-                        //            dcmImporteDRtotal += it.dcmImporte * it.retIVA.Value;
-
-                                  
-
-                        //            fillDataImpDR.Add(new DataCompPago.DataCompPagoImpuestosDR()
-                        //            {
-                        //                dcmTasaOCuotaDR = it.retIEPS.Value,
-                        //                dcmBaseDR = decimal.Parse(dcmBaseDRtotal.ToString("#0.00")),
-                        //                dcmImporteDR = decimal.Parse(dcmImporteDRtotal.ToString("#0.00")),
-                        //                strTipoFactorDR = "Tasa",
-                        //                strImpuestoDR = "003",
-                        //                boolTraslado = false,
-                        //                boolRetencion = true
-
-
-
-                        //            });
-
-                                   
-
-
-
-                        //        }
-                        //    }
-                        //}
                         
                    
                         
@@ -1678,6 +1374,25 @@ namespace wpfEFac.Views.PuntoVenta
                         });
                     }
                 }
+
+
+                if (isTasa0)
+                {
+                    fillDataImpP.Add(new DataCompPago.DataCompPagoImpuestosP()
+                    {
+
+                        dcmTasaOCuotaP = decimal.Parse("0.0"),
+                        dcmBaseP = decimal.Parse(dcmTrasladoBase0.ToString("#0.00")),
+                        dcmImporteP = decimal.Parse("0.00"),
+                        strTipoFactorP = "Exento",
+                        strImpuestoP = "002",
+                        boolTraslado = true,
+                        boolRetencion = false
+
+                    });
+                }
+
+
 
                 if (dcmTotalRetIva > 0)
                 {

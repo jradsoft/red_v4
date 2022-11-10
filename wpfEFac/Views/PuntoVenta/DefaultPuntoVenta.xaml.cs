@@ -2305,6 +2305,8 @@ namespace wpfEFac.Views
             decimal NodototalIva = 0;
             decimal NodototalBaseIva = 0;
             Boolean isIva = false;
+            decimal NodototalBaseIva0 = 0;
+            Boolean isIva0 = false;
             decimal NodototalRetIva = 0;
             Boolean isRetIva = false;
             decimal NodototalRetIsr = 0;
@@ -2431,22 +2433,45 @@ namespace wpfEFac.Views
 
                         if (i.boolTraslado == true)
                         {
-                            // myPagoListTrasl = new List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR>();
-
-                            myPagoListTrasl.Add(new dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR
+                            if (i.dcmTasaOCuotaDR > 0)
                             {
-                                TipoFactorDR = dllPag.c_TipoFactor.Tasa,
-                                TasaOCuotaDR = decimal.Parse(i.dcmTasaOCuotaDR.ToString("#0.000000")),
-                                TasaOCuotaDRSpecified = true,
-                                ImpuestoDR = i.strImpuestoDR,//dllPag.c_Impuesto.Item002,
-                                ImporteDR = i.dcmImporteDR,
-                                ImporteDRSpecified = true,
-                                BaseDR = i.dcmBaseDR
+                                // myPagoListTrasl = new List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR>();
+
+                                myPagoListTrasl.Add(new dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR
+                                {
+                                    TipoFactorDR = dllPag.c_TipoFactor.Tasa,
+                                    TasaOCuotaDR = decimal.Parse(i.dcmTasaOCuotaDR.ToString("#0.000000")),
+                                    TasaOCuotaDRSpecified = true,
+                                    ImpuestoDR = i.strImpuestoDR,//dllPag.c_Impuesto.Item002,
+                                    ImporteDR = i.dcmImporteDR,
+                                    ImporteDRSpecified = true,
+                                    BaseDR = i.dcmBaseDR
 
 
 
 
-                            });
+                                });
+                            }
+
+                            if (i.dcmTasaOCuotaDR == 0)
+                            {
+                                // myPagoListTrasl = new List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR>();
+
+                                myPagoListTrasl.Add(new dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR
+                                {
+                                    TipoFactorDR = dllPag.c_TipoFactor.Exento,
+                                    //TasaOCuotaDR = decimal.Parse(i.dcmTasaOCuotaDR.ToString("#0.000000")),
+                                    //TasaOCuotaDRSpecified = true,
+                                    ImpuestoDR = i.strImpuestoDR,//dllPag.c_Impuesto.Item002,
+                                   // ImporteDR = i.dcmImporteDR,
+                                   // ImporteDRSpecified = true,
+                                    BaseDR = i.dcmBaseDR
+
+
+
+
+                                });
+                            }
 
 
                         }
@@ -2530,21 +2555,42 @@ namespace wpfEFac.Views
 
                     if (i.boolTraslado)
                     {
-
-                        myPagoImpTrasP.Add(new dllPag.PagosPagoImpuestosPTrasladoP
+                        if (i.dcmTasaOCuotaP == 0)
                         {
-                            BaseP = i.dcmBaseP,
-                            ImporteP = i.dcmImporteP,
-                            ImportePSpecified = true,
-                            ImpuestoP = dllPag.c_Impuesto.Item002,//"002",
-                            TipoFactorP = dllPag.c_TipoFactor.Tasa,
-                            TasaOCuotaP = decimal.Parse("0.160000"),
-                            TasaOCuotaPSpecified = true
-                        });
+                            myPagoImpTrasP.Add(new dllPag.PagosPagoImpuestosPTrasladoP
+                            {
+                                BaseP = i.dcmBaseP,
+                                //ImporteP = i.dcmImporteP,
+                                //ImportePSpecified = true,
+                                ImpuestoP = dllPag.c_Impuesto.Item002,//"002",
+                                TipoFactorP = dllPag.c_TipoFactor.Exento,
+                                //TasaOCuotaP = i.dcmTasaOCuotaP,
+                                //TasaOCuotaPSpecified = true
+                            });
 
-                        NodototalIva = i.dcmImporteP;
-                        NodototalBaseIva = i.dcmBaseP;
-                        isIva = true;
+                            
+                            isIva0 = true;
+                            NodototalBaseIva0 = i.dcmBaseP;
+                           
+                        }
+
+                        if (i.dcmTasaOCuotaP > 0)
+                        {
+                            myPagoImpTrasP.Add(new dllPag.PagosPagoImpuestosPTrasladoP
+                            {
+                                BaseP = i.dcmBaseP,
+                                ImporteP = i.dcmImporteP,
+                                ImportePSpecified = true,
+                                ImpuestoP = dllPag.c_Impuesto.Item002,//"002",
+                                TipoFactorP = dllPag.c_TipoFactor.Tasa,
+                                TasaOCuotaP = i.dcmTasaOCuotaP,
+                                TasaOCuotaPSpecified = true
+                            });
+
+                            NodototalIva = i.dcmImporteP;
+                            NodototalBaseIva = i.dcmBaseP;
+                            isIva = true;
+                        }
 
 
 
@@ -2634,6 +2680,13 @@ namespace wpfEFac.Views
                     totalesPago.TotalTrasladosImpuestoIVA16Specified = isIva;
                     totalesPago.TotalTrasladosBaseIVA16 = NodototalBaseIva;
                     totalesPago.TotalTrasladosBaseIVA16Specified = isIva;
+                }
+                if (isIva0) {
+
+                    totalesPago.TotalTrasladosBaseIVAExento = NodototalBaseIva0;
+                    totalesPago.TotalTrasladosBaseIVAExentoSpecified = isIva0;
+                    
+                
                 }
                 //totalesPago.TotalTrasladosBaseIVA16 = 0;
                 //totalesPago.TotalTrasladosBaseIVA16Specified = true;

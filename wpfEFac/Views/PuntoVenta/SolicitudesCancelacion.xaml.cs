@@ -90,8 +90,8 @@ namespace wpfEFac.Views.PuntoVenta
              
 
                 ServicioTimbradoWS myService = new ServicioTimbradoWS();
-                //RespuestaPendientes response = myService.consultarAutorizacionesPendientes(UserPac.idEquipo,keyB64,cerB64);/*Produccion*/
-                RespuestaPendientes response = myService.consultarAutorizacionesPendientes("0955d485e26c486392909ee79f5ad5c3", keyB64, cerB64);/*Test*/
+                RespuestaPendientes response = myService.consultarAutorizacionesPendientes(UserPac.idEquipo,keyB64,cerB64);/*Produccion*/
+                //RespuestaPendientes response = myService.consultarAutorizacionesPendientes("0955d485e26c486392909ee79f5ad5c3", keyB64, cerB64);/*Test*/
 
                 string estatus = response.code + "/" + response.message;
 
@@ -103,7 +103,7 @@ namespace wpfEFac.Views.PuntoVenta
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("error " + ex);
 
             }
         

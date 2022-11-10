@@ -1052,7 +1052,7 @@
   <xsl:template match="//pago10:ImpuestosDR/pago10:TrasladosDR/pago10:TrasladoDR">
 
     <b>
-      Traslados   Tasa <xsl:value-of select="@TasaOCuotaDR "/>
+      Traslados  <xsl:value-of select="@TipoFactorDR"/>  <xsl:value-of select="@TasaOCuotaDR "/>
       Impuesto <xsl:value-of select="@ImpuestoDR "/>
       Base <xsl:value-of select="@BaseDR "/>
       Importe <xsl:value-of select="@ImporteDR "/>
