@@ -1458,7 +1458,7 @@ namespace wpfEFac.Views.PuntoVenta
                 myDatagrid.rfcCtaOrdenante = rfcOrde;
                 myDatagrid.rfcCtaBeneficiario = rfcBen;
                 myDatagrid.strNumOperacion = txtNuOperacion.Text;
-                myDatagrid.strMoneda = cmbMoneda.Text;
+                myDatagrid.strMoneda = cmbMoneda.Text.Split('-')[0];
                 myDatagrid.strTipoCambio = txtTipoCambio.Text;
 
 
