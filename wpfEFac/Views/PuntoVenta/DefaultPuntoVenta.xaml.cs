@@ -2313,7 +2313,9 @@ namespace wpfEFac.Views
             Boolean isRetIsr = false;
             decimal NodototaRetIeps = 0;
             Boolean isRetIeps = false;
-
+            Boolean valueTC = true;
+            string strMoneda = "";
+            string tipoCambio = "";
             DataCompPago.DataComplementoPago dataJson = JsonConvert.DeserializeObject<DataCompPago.DataComplementoPago>(f.strCadenaOriginal);
 
             if (f.strObervaciones == "FACTORAJE")
@@ -2332,33 +2334,120 @@ namespace wpfEFac.Views
                 foreach (var item in dataJson.fillData)  //f.Detalle_Factura)
                 {
                     myPagoRel = new List<dllPag.PagosPagoDoctoRelacionado>();
-                    //List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRRetencionDR> myPagoListImpRet = new List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRRetencionDR>();
-                    // List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR> myPagoListTrasl = new List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR>();
 
-                    //   string[] words = item.strPatida.Split('|');
-                    //    string myUUID = words[0];
-                    //    string myFol = words[1];
-                    //    string mySer = words[2];
+                    myPagoImp = new dllPag.PagosPagoDoctoRelacionadoImpuestosDR();
+                    myPagoListTrasl = new List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR>();
+                    myPagoListImpRet = new List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRRetencionDR>();
+                   
                     myFormaPago = item.strFormaPago.Split('-')[0];
+                    strMoneda = item.strMoneda;
+                    tipoCambio = dataJson.strTipoCambio;
 
-                    myPagoRel.Add(new dllPag.PagosPagoDoctoRelacionado
+
+                    foreach (var i in item.fillDataImpuestosDR)
                     {
 
 
+                        if (i.boolTraslado == true)
+                        {
+                            if (i.dcmTasaOCuotaDR > 0)
+                            {
+                                // myPagoListTrasl = new List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR>();
 
-                        IdDocumento = item.strUUID,// myUUID,
-                        Serie = item.strSerie,//mySer,
-                        Folio = item.strFolio,// myFol,
-                        MonedaDR = item.strMoneda,//"MXN",
-                        //MetodoDePagoDR = "PPD",
+                                myPagoListTrasl.Add(new dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR
+                                {
+                                    TipoFactorDR = dllPag.c_TipoFactor.Tasa,
+                                    TasaOCuotaDR = decimal.Parse(i.dcmTasaOCuotaDR.ToString("#0.000000")),
+                                    TasaOCuotaDRSpecified = true,
+                                    ImpuestoDR = i.strImpuestoDR,//dllPag.c_Impuesto.Item002,
+                                    ImporteDR = i.dcmImporteDR,
+                                    ImporteDRSpecified = true,
+                                    BaseDR = i.dcmBaseDR
+
+
+
+
+                                });
+                            }
+
+                            if (i.dcmTasaOCuotaDR == 0)
+                            {
+                                // myPagoListTrasl = new List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR>();
+
+                                myPagoListTrasl.Add(new dllPag.PagosPagoDoctoRelacionadoImpuestosDRTrasladoDR
+                                {
+                                    TipoFactorDR = dllPag.c_TipoFactor.Exento,
+                                    //TasaOCuotaDR = decimal.Parse(i.dcmTasaOCuotaDR.ToString("#0.000000")),
+                                    //TasaOCuotaDRSpecified = true,
+                                    ImpuestoDR = i.strImpuestoDR,//dllPag.c_Impuesto.Item002,
+                                    // ImporteDR = i.dcmImporteDR,
+                                    // ImporteDRSpecified = true,
+                                    BaseDR = i.dcmBaseDR
+
+
+
+
+                                });
+                            }
+
+
+                        }
+
+                        if (i.boolRetencion == true)
+                        {
+                            //  myPagoListImpRet = new List<dllPag.PagosPagoDoctoRelacionadoImpuestosDRRetencionDR>();
+
+                            myPagoListImpRet.Add(new dllPag.PagosPagoDoctoRelacionadoImpuestosDRRetencionDR
+                            {
+                                TipoFactorDR = dllPag.c_TipoFactor.Tasa,
+                                TasaOCuotaDR = decimal.Parse(i.dcmTasaOCuotaDR.ToString("#0.000000")),
+                                //TasaOCuotaDRSpecified = true,
+                                ImpuestoDR = i.strImpuestoDR,//dllPag.c_Impuesto.Item002,
+                                ImporteDR = i.dcmImporteDR,
+                                //  ImporteDRSpecified = true,
+                                BaseDR = i.dcmBaseDR
+
+
+
+
+                            });
+
+
+
+
+                        }
+
+                    }
+
+
+
+                    myPagoImp.TrasladosDR = myPagoListTrasl.ToArray();
+                    myPagoImp.RetencionesDR = myPagoListImpRet.ToArray();
+
+
+
+
+
+
+                    myPagoRel.Add(new dllPag.PagosPagoDoctoRelacionado
+                    {
+                        IdDocumento = item.strUUID,//myUUID,
+                        Serie = item.strSerie,
+                        Folio = item.strFolio,
+                        MonedaDR = strMoneda,
+                        // MetodoDePagoDR = "PPD",
                         NumParcialidad = f.CondPago,
                         ImpSaldoAnt = decimal.Parse(item.dcmImporte.ToString("#0.00")),
-                        // ImpSaldoAntSpecified = true,
+                        //  ImpSaldoAntSpecified = true,
                         ImpPagado = decimal.Parse(item.dcmPagado.ToString("#0.00")),
-                        //ImpPagadoSpecified = true,
+                        //   ImpPagadoSpecified = true,
                         ImpSaldoInsoluto = decimal.Parse(item.dcmPendiente.ToString("#0.00")),
-                        //ImpSaldoInsolutoSpecified = true,
+                        //   ImpSaldoInsolutoSpecified = true,
+                        ObjetoImpDR = dllPag.c_ObjetoImp.Item02,
 
+                        EquivalenciaDR = 1,
+                        EquivalenciaDRSpecified = true,
+                        ImpuestosDR = myPagoImp
 
 
                     });
@@ -2377,6 +2466,8 @@ namespace wpfEFac.Views
                         MonedaP = dataJson.strMoneda,//"MXN",
                         FormaDePagoP = myFormaPago, //myFormaPago.Substring(0, 2),
                         FechaPago = f.dtmFecha,
+                        TipoCambioP = decimal.Parse(tipoCambio),
+                        TipoCambioPSpecified = valueTC,
                         DoctoRelacionado = myPagoRel.ToArray()
 
 
@@ -2403,9 +2494,8 @@ namespace wpfEFac.Views
 
 
 
-                string strMoneda = "";
-                string tipoCambio = "";
-                Boolean valueTC = true;
+                
+                
 
 
                 foreach (var item in dataJson.fillData)  //f.Detalle_Factura)
@@ -2420,10 +2510,7 @@ namespace wpfEFac.Views
                     strMoneda = item.strMoneda;
                     tipoCambio = dataJson.strTipoCambio;
 
-                    //if (dataJson.strMoneda == "USD") {
-                    //     valueTC = true;             
-                    //}
-
+                   
 
 
 
